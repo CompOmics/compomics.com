@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+
+// CompOmics — LIGHT palette (warm cream / ivory)
+// Logo colours kept as accents:  #276ba6 blue · #d63729 red · #3b3838 charcoal
+
+$ink:        #14110d;   // near-black warm text
+$ink-soft:   #2c2823;
+$muted:      #7e7a74;   // warm grey for secondary text
+$cream:      #fffdf3;   // page background (warm ivory)
+$cream-2:    #faf7ec;   // subtle panel background
+$cream-3:    #f4f0e2;   // deeper panel / hover
+$line:       #e6e1d0;   // warm hairline border
+$line-soft:  #efebdd;
+
+$primary:    #1f5f8f;   // deepened logo blue
+$secondary:  #c5392b;   // deepened logo red
+$accent:     #14110d;
+
+$light:      $cream-2;
+$dark:       $ink;
+$code-bg:    #f4f0e2;
+
+// derived surface tokens
+$surface-hover: #ffffff;                  // raised card on hover
+$icon-bg:       rgba(31, 95, 143, 0.09);  // faint blue chip behind tool icons
+
+$body-bg:    $cream;
+$body-color: $ink-soft;
+
+$navbar-bg:  $cream;
+$navbar-fg:  $ink-soft;
+$navbar-hl:  $primary;

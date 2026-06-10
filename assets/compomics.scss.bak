@@ -477,19 +477,6 @@ blockquote {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.18s ease;
-
-  // clickable: lift slightly, sharpen photo, tint the name
-  &:hover {
-    transform: translateY(-3px);
-    text-decoration: none;
-    color: inherit;
-
-    .team-photo { filter: grayscale(0%); border-color: $primary; }
-    .team-name  { color: $primary; }
-  }
 }
 
 .team-photo {
@@ -610,35 +597,5 @@ blockquote {
   margin: 2.5rem 0 0.75rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid #e0eaf3;
-}
-
-// ── Publications list ─────────────────────────────────────────────────────────
-ol.pub-list {
-  list-style: decimal;
-  padding-left: 1.5rem;
-  margin: 0 0 2rem;
-}
-
-li.pub-entry {
-  margin-bottom: 0.75rem;
-  line-height: 1.55;
-
-  .pub-authors {
-    color: #555;
-    font-size: 0.92rem;
-  }
-
-  .pub-title a {
-    font-weight: 600;
-    color: $primary;
-    text-decoration: none;
-
-    &:hover { text-decoration: underline; }
-  }
-
-  .pub-meta {
-    color: #6c757d;
-    font-size: 0.9rem;
-  }
 }
 

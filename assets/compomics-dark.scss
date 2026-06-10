@@ -1,0 +1,43 @@
+/*-- scss:defaults --*/
+
+// CompOmics — DARK palette (warm charcoal, matches the cream light theme)
+// Same token names as compomics-light.scss, different values.
+
+$ink:        #ece7db;   // primary text (warm off-white)
+$ink-soft:   #cdc7b9;   // secondary text
+$muted:      #8f897a;   // muted warm grey
+$cream:      #15130e;   // page background (warm near-black)
+$cream-2:    #1d1a14;   // subtle panel background
+$cream-3:    #262219;   // deeper panel
+$line:       #34302a;   // warm border
+$line-soft:  #2a2620;
+
+$primary:    #5aa7da;   // brighter blue for contrast on dark
+$secondary:  #e8705f;   // brighter red
+$accent:     #ece7db;
+
+$light:      $cream-2;
+$dark:       $ink;
+$code-bg:    #1d1a14;
+
+// derived surface tokens
+$surface-hover: #2b2720;                   // raised card on hover
+$icon-bg:       rgba(90, 167, 218, 0.16);  // faint blue chip behind tool icons
+
+$body-bg:    $cream;
+$body-color: $ink-soft;
+
+$navbar-bg:  #15130e;
+$navbar-fg:  $ink-soft;
+$navbar-hl:  $primary;
+
+/*-- scss:rules --*/
+
+// This file is compiled only into the DARK bundle, so these rules apply only in
+// dark mode: swap the full-colour navbar logo for the white "negative" version.
+// Root-absolute path (site served at domain root); file copied via `resources:`.
+.navbar-brand img { visibility: hidden; }
+.navbar-brand {
+  background: url('/assets/images/CompOmics_neg.png') no-repeat left center;
+  background-size: contain;
+}
