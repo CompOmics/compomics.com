@@ -79,51 +79,6 @@
     ]
   },
   {
-    "doi": "10.26434/chemrxiv.15000466/v2",
-    "title": "Hardware Software Synergy in Proteomics: Systematic Evaluation Across Mass Spectrometry Platforms, Search Engines, and Rescoring Methods",
-    "authors": [
-      "Sander Heyndrickx",
-      "Robbin Bouwmeester",
-      "Arthur Declercq",
-      "Robbe Devreese",
-      "Magnus Palmblad",
-      "Wout Bittremieux",
-      "Tess AV Afanasyeva",
-      "Joel Lapin",
-      "Arzu Tugce Guler",
-      "Pierre-Olivier Schmit",
-      "Christine Carapito",
-      "Lennart Martens",
-      "Ralf Gabriels"
-    ],
-    "author_orcids": [
-      "0009-0004-1818-8619",
-      "0000-0001-6807-7029",
-      "0000-0002-9376-1399",
-      "0000-0002-3432-1502",
-      "0000-0002-5865-8994",
-      "0000-0002-3105-1359",
-      "0000-0003-3962-0779",
-      "0009-0009-5013-238X",
-      "0000-0002-6043-7824",
-      "0000-0003-2269-2389",
-      "0000-0002-0079-319X",
-      "0000-0003-4277-658X",
-      "0000-0002-1679-1711"
-    ],
-    "journal": "",
-    "year": 2026,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-3432-1502",
-      "0000-0002-9376-1399",
-      "0009-0004-1818-8619"
-    ]
-  },
-  {
     "doi": "10.1021/acs.analchem.6c01359",
     "title": "High-Throughput Quantification of Spike Protein Expression by LC–MS for mRNA-LNP Evaluation and Immune Response Profiling",
     "authors": [
@@ -581,31 +536,6 @@
     ]
   },
   {
-    "doi": "10.1101/2025.04.14.648669",
-    "title": "Assessing the relation between protein phosphorylation, AlphaFold3 models and conformational variability",
-    "authors": [
-      "Pathmanaban Ramasamy",
-      "Jasper Zuallaert",
-      "Lennart Martens",
-      "Wim F. Vranken"
-    ],
-    "author_orcids": [
-      "0000-0003-4039-5230",
-      "0000-0003-1491-4914",
-      "0000-0003-4277-658X",
-      "0000-0001-7470-4324"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4039-5230",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/nar/gkaf1133",
     "title": "BioSamples database: the global hub for sample metadata and multi-omics integration",
     "authors": [
@@ -727,43 +657,6 @@
       "0000-0001-6807-7029",
       "0000-0002-3432-1502",
       "0000-0002-7471-9195",
-      "0000-0002-9376-1399",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2025.02.18.638865",
-    "title": "Collisional cross-section prediction for multiconformational peptide ions with IM2Deep",
-    "authors": [
-      "Robbe Devreese",
-      "Alireza Nameni",
-      "Arthur Declercq",
-      "Emmy Terryn",
-      "Ralf Gabriels",
-      "Francis Impens",
-      "Kris Gevaert",
-      "Lennart Martens",
-      "Robbin Bouwmeester"
-    ],
-    "author_orcids": [
-      "0000-0002-3432-1502",
-      null,
-      "0000-0002-9376-1399",
-      null,
-      "0000-0002-1679-1711",
-      "0000-0003-2886-9616",
-      "0000-0002-4237-0283",
-      "0000-0003-4277-658X",
-      "0000-0001-6807-7029"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-3432-1502",
       "0000-0002-9376-1399",
       "0000-0003-4277-658X"
     ]
@@ -1341,38 +1234,6 @@
     ]
   },
   {
-    "doi": "10.26434/chemrxiv-2024-4v6q0-v2",
-    "title": "Metaproteomics beyond databases: addressing the challenges and potentials of de novo sequencing",
-    "authors": [
-      "Tim Van Den Bossche",
-      "Denis Beslic",
-      "Sam van Puyenbroeck",
-      "Tomi Suomi",
-      "Tanja Holstein",
-      "Lennart Martens",
-      "Laura L. Elo",
-      "Thilo Muth"
-    ],
-    "author_orcids": [
-      "0000-0002-5916-2587",
-      null,
-      null,
-      "0000-0003-3639-979X",
-      "0000-0002-1552-1453",
-      null,
-      "0000-0001-5648-4532",
-      null
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587"
-    ]
-  },
-  {
     "doi": "10.26434/chemrxiv-2024-jg1mq-v2",
     "title": "Metaproteomics in the One Health Framework for Unraveling Microbial Effectors in Microbiomes",
     "authors": [
@@ -1844,50 +1705,6 @@
     ]
   },
   {
-    "doi": "10.1101/2025.09.11.675345",
-    "title": "The\n                  <i>E. coli</i>\n                  PeptideAtlas Build: Characterizing the observed\n                  <i>Escherichia coli</i>\n                  pan-proteome and its post-translational modifications",
-    "authors": [
-      "Caroline Jachmann",
-      "Zhi Sun",
-      "Kevin Velghe",
-      "Florence Arsène-Ploetze",
-      "Aurélie Hirschler",
-      "Jasper Zuallaert",
-      "Christine Carapito",
-      "Robbin Bouwmeester",
-      "Kay Nieselt",
-      "Eric Deutsch",
-      "Lennart Martens",
-      "Ralf Gabriels",
-      "Tim Van Den Bossche"
-    ],
-    "author_orcids": [
-      "0009-0000-4679-7295",
-      "0000-0003-3324-6851",
-      "0000-0002-9968-6043",
-      "0000-0002-8299-447X",
-      "0000-0001-5066-6263",
-      "0000-0003-1491-4914",
-      "0000-0002-0079-319X",
-      "0000-0001-6807-7029",
-      "0000-0002-1283-7065",
-      "0000-0001-8732-0928",
-      "0000-0003-4277-658X",
-      "0000-0002-1679-1711",
-      "0000-0002-5916-2587"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-9968-6043",
-      "0009-0000-4679-7295"
-    ]
-  },
-  {
     "doi": "10.1002/imt2.70031",
     "title": "The microbiologist's guide to metaproteomics",
     "authors": [
@@ -1996,40 +1813,6 @@
     "group_orcids": [
       "0000-0002-5916-2587",
       "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2025.10.31.685771",
-    "title": "iDeepLC: chemical structure information yields improved retention time prediction of peptides with unseen modifications",
-    "authors": [
-      "Alireza Nameni",
-      "Arthur Declercq",
-      "Ralf Gabriels",
-      "Robbe Devreese",
-      "Sven Degroeve",
-      "Lennart Martens",
-      "Robbin Bouwmeester"
-    ],
-    "author_orcids": [
-      "0000-0002-7471-9195",
-      "0000-0002-9376-1399",
-      "0000-0002-1679-1711",
-      "0000-0002-3432-1502",
-      "0000-0001-8349-3370",
-      "0000-0003-4277-658X",
-      "0000-0001-6807-7029"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-3432-1502",
-      "0000-0002-7471-9195",
-      "0000-0002-9376-1399",
       "0000-0003-4277-658X"
     ]
   },
@@ -2274,76 +2057,6 @@
     ]
   },
   {
-    "doi": "10.1101/2024.05.06.592686",
-    "title": "Communicating mass spectrometry quality information in mzQC with Python, R, and Java",
-    "authors": [
-      "Chris Bielow",
-      "Nils Hoffmann",
-      "David Jimenez-Morales",
-      "Tim Van Den Bossche",
-      "Juan Antonio Vizcaíno",
-      "David L. Tabb",
-      "Wout Bittremieux",
-      "Mathias Walzer"
-    ],
-    "author_orcids": [
-      "0000-0001-5756-3988",
-      "0000-0002-6540-6875",
-      null,
-      "0000-0002-5916-2587",
-      "0000-0002-3905-4335",
-      "0000-0001-7223-578X",
-      "0000-0002-3105-1359",
-      "0000-0003-4538-2754"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587"
-    ]
-  },
-  {
-    "doi": "10.1101/2024.09.18.613707",
-    "title": "Data-Independent Acquisition Mass Spectrometry as a Tool for Metaproteomics: Interlaboratory Comparison Using a Model Microbiome",
-    "authors": [
-      "Andrew T. Rajczewski",
-      "J. Alfredo Blakeley-Ruiz",
-      "Annaliese Meyer",
-      "Simina Vintila",
-      "Matthew R. McIlvin",
-      "Tim Van Den Bossche",
-      "Brian C. Searle",
-      "Timothy J. Griffin",
-      "Mak A. Saito",
-      "Manuel Kleiner",
-      "Pratik D. Jagtap"
-    ],
-    "author_orcids": [
-      "0000-0002-5119-8075",
-      "0000-0001-7638-5849",
-      "0000-0001-7642-9100",
-      "0000-0003-0018-0016",
-      "0000-0002-5301-8365",
-      "0000-0002-5916-2587",
-      "0000-0001-8760-6731",
-      "0000-0001-6801-2559",
-      "0000-0001-6040-9295",
-      "0000-0001-6904-0287",
-      "0000-0003-0984-0973"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587"
-    ]
-  },
-  {
     "doi": "10.1016/j.chroma.2024.464768",
     "title": "Deep reinforcement learning for the direct optimization of gradient separations in liquid chromatography",
     "authors": [
@@ -2555,38 +2268,6 @@
     ]
   },
   {
-    "doi": "10.26434/chemrxiv-2024-4v6q0",
-    "title": "Metaproteomics beyond databases: addressing the challenges and potentials of de novo sequencing",
-    "authors": [
-      "Tim Van Den Bossche",
-      "Denis Beslic",
-      "Sam van Puyenbroeck",
-      "Tomi Suomi",
-      "Tanja Holstein",
-      "Lennart Martens",
-      "Laura L. Elo",
-      "Thilo Muth"
-    ],
-    "author_orcids": [
-      "0000-0002-5916-2587",
-      null,
-      null,
-      "0000-0003-3639-979X",
-      "0000-0002-1552-1453",
-      null,
-      "0000-0001-5648-4532",
-      null
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587"
-    ]
-  },
-  {
     "doi": "10.1101/2024.05.15.594287",
     "title": "MultiStageSearch: a multi-step proteogenomic workflow for taxonomic identification of viral proteome samples adressing database bias",
     "authors": [
@@ -2608,45 +2289,6 @@
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2024.06.21.599989",
-    "title": "PathwayPilot: A User-Friendly Tool for Visualizing and Navigating Metabolic Pathways",
-    "authors": [
-      "Tibo Vande Moortele",
-      "Pieter Verschaffelt",
-      "Qingyao Huang",
-      "Nadezhda T. Doncheva",
-      "Tanja Holstein",
-      "Caroline Jachmann",
-      "Peter Dawyndt",
-      "Lennart Martens",
-      "Bart Mesuere",
-      "Tim Van Den Bossche"
-    ],
-    "author_orcids": [
-      "0000-0002-7813-934X",
-      "0000-0002-6675-1048",
-      "0000-0002-8255-4722",
-      "0000-0002-8806-6850",
-      "0000-0002-1552-1453",
-      "0009-0000-4679-7295",
-      "0000-0002-1623-9070",
-      "0000-0003-4277-658X",
-      "0000-0003-0610-3441",
-      "0000-0002-5916-2587"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X",
-      "0009-0000-4679-7295"
     ]
   },
   {
@@ -2834,72 +2476,6 @@
     ]
   },
   {
-    "doi": "10.1101/2024.05.20.594958",
-    "title": "The Peptonizer2000: bringing confidence to metaproteomics",
-    "authors": [
-      "Tanja Holstein",
-      "Pieter Verschaffelt",
-      "Tim Van Den Bossche",
-      "Simon Van de Vyver",
-      "Lennart Martens",
-      "Bart Mesuere",
-      "Thilo Muth"
-    ],
-    "author_orcids": [
-      "0000-0002-1552-1453",
-      "0000-0002-6675-1048",
-      "0000-0002-5916-2587",
-      null,
-      "0000-0003-4277-658X",
-      null,
-      "0000-0001-8304-2684"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2024.09.26.615136",
-    "title": "Unipept in 2024: Expanding Metaproteomics Analysis with Support for Missed Cleavages, Semi-Tryptic and Non-Tryptic Peptides",
-    "authors": [
-      "Tibo Vande Moortele",
-      "Bram Devlaminck",
-      "Simon Van de Vyver",
-      "Tim Van Den Bossche",
-      "Lennart Martens",
-      "Peter Dawyndt",
-      "Bart Mesuere",
-      "Pieter Verschaffelt"
-    ],
-    "author_orcids": [
-      "0000-0002-7813-934X",
-      "0009-0009-7656-5458",
-      "0009-0009-7810-2174",
-      "0000-0002-5916-2587",
-      "0000-0003-4277-658X",
-      "0000-0002-1623-9070",
-      "0000-0003-0610-3441",
-      "0000-0002-6675-1048"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.26434/chemrxiv-2024-jg1mq",
     "title": "Unraveling Microbial Effectors: Metaproteomics in the One Health Framework",
     "authors": [
@@ -2985,79 +2561,6 @@
     "pages": "100708",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2024.03.29.587218",
-    "title": "msqrob2TMT: robust linear mixed models for inferring differential abundant proteins in labelled experiments with arbitrarily complex design",
-    "authors": [
-      "Stijn Vandenbulcke",
-      "Christophe Vanderaa",
-      "Oliver Crook",
-      "Lennart Martens",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0001-7443-5427",
-      "0000-0001-5669-8506",
-      "0000-0003-4277-658X",
-      "0000-0002-9050-4370"
-    ],
-    "journal": "",
-    "year": 2024,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1038/s41467-023-36844-y",
-    "title": "Author Correction: Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit",
-    "authors": [
-      "Morgane Boone",
-      "Pathmanaban Ramasamy",
-      "Jasper Zuallaert",
-      "Robbin Bouwmeester",
-      "Berre Van Moer",
-      "Davy Maddelein",
-      "Demet Turan",
-      "Niels Hulstaert",
-      "Hannah Eeckhaut",
-      "Elien Vandermarliere",
-      "Lennart Martens",
-      "Sven Degroeve",
-      "Wesley De Neve",
-      "Wim Vranken",
-      "Nico Callewaert"
-    ],
-    "author_orcids": [
-      "0000-0002-7807-5542",
-      "0000-0003-4039-5230",
-      null,
-      "0000-0001-6807-7029",
-      "0000-0002-6315-3755",
-      null,
-      null,
-      null,
-      "0000-0003-1519-3653",
-      null,
-      "0000-0003-4277-658X",
-      null,
-      "0000-0002-8190-3839",
-      null,
-      "0000-0003-2069-6917"
-    ],
-    "journal": "Nature Communications",
-    "year": 2023,
-    "volume": "14",
-    "issue": "1",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0003-4039-5230"
     ]
   },
   {
@@ -3375,40 +2878,6 @@
     ]
   },
   {
-    "doi": "10.1101/2023.02.09.527820",
-    "title": "Unipept Desktop 2.0: construction of targeted reference protein databases for proteogenomics analyses",
-    "authors": [
-      "Pieter Verschaffelt",
-      "Alessandro Tanca",
-      "Marcello Abbondio",
-      "Tim Van Den Bossche",
-      "Tibo Vande Moortele",
-      "Peter Dawyndt",
-      "Lennart Martens",
-      "Bart Mesuere"
-    ],
-    "author_orcids": [
-      "0000-0002-6675-1048",
-      "0000-0002-6066-7048",
-      "0000-0003-2126-4817",
-      "0000-0002-5916-2587",
-      "0000-0002-7813-934X",
-      "0000-0002-1623-9070",
-      "0000-0003-4277-658X",
-      "0000-0003-0610-3441"
-    ],
-    "journal": "",
-    "year": 2023,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/nar/gkad335",
     "title": "Updated MS²PIP web server supports cutting-edge proteomics applications",
     "authors": [
@@ -3446,36 +2915,6 @@
     ]
   },
   {
-    "doi": "10.21203/rs.3.rs-2937726/v1",
-    "title": "lesSDRF Is More: Maximizing The Value Of Proteomics Data Through Streamlined Metadata Annotation",
-    "authors": [
-      "Tine Claeys",
-      "Tim Van Den Bossche",
-      "Yasset Perez-Riverol",
-      "Kris Gevaert",
-      "Juan Antonio Vizcaino",
-      "Lennart Martens"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-5916-2587",
-      "0000-0001-6579-6941",
-      null,
-      "0000-0002-3905-4335",
-      "0000-0003-4277-658X"
-    ],
-    "journal": "",
-    "year": 2023,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-9408-488X",
-      "0000-0002-5916-2587",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1038/s41467-023-42543-5",
     "title": "lesSDRF is more: maximizing the value of proteomics data through streamlined metadata annotation",
     "authors": [
@@ -3501,36 +2940,6 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-5916-2587",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2023.07.05.547780",
-    "title": "msqrob2PTM: differential abundance and differential usage analysis of MS-based proteomics data at the post-translational modification and peptidoform level",
-    "authors": [
-      "Nina Demeulemeester",
-      "Marie Gébelin",
-      "Lucas Caldi Gomes",
-      "Paul Lingor",
-      "Christine Carapito",
-      "Lennart Martens",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      "0000-0002-8290-2432",
-      null,
-      "0000-0003-4959-2169",
-      "0000-0001-9362-7096",
-      "0000-0002-0079-319X",
-      "0000-0003-4277-658X",
-      "0000-0002-9050-4370"
-    ],
-    "journal": "",
-    "year": 2023,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
       "0000-0003-4277-658X"
     ]
   },
@@ -3661,75 +3070,6 @@
     ]
   },
   {
-    "doi": "10.1101/2022.01.25.477699",
-    "title": "A comprehensive evaluation of consensus spectrum generation methods in proteomics",
-    "authors": [
-      "Xiyang Luo",
-      "Wout Bittremieux",
-      "Johannes Griss",
-      "Eric W Deutsch",
-      "Timo Sachsenberg",
-      "Lev I. Levitsky",
-      "Mark V. Ivanov",
-      "Julia A. Bubis",
-      "Ralf Gabriels",
-      "Henry Webel",
-      "Aniel Sanchez",
-      "Mingze Bai",
-      "Lukas Kall",
-      "Yasset Perez-Riverol"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-3105-1359",
-      "0000-0003-2206-9511",
-      "0000-0001-8732-0928",
-      "0000-0002-2833-6070",
-      "0000-0002-4048-0876",
-      "0000-0003-4762-2846",
-      "0000-0002-4895-6146",
-      "0000-0002-1679-1711",
-      "0000-0001-8833-7617",
-      "0000-0002-0278-8802",
-      "0000-0002-9782-2056",
-      "0000-0001-5689-9797",
-      "0000-0001-6579-6941"
-    ],
-    "journal": "",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711"
-    ]
-  },
-  {
-    "doi": "10.1101/2022.03.08.483252",
-    "title": "A panoramic perspective on human phosphosites",
-    "authors": [
-      "Pathmanaban Ramasamy",
-      "Elien Vandermarliere",
-      "Wim vranken",
-      "Lennart Martens"
-    ],
-    "author_orcids": [
-      "0000-0003-4039-5230",
-      "0000-0001-5514-1060",
-      "0000-0001-7470-4324",
-      "0000-0003-4277-658X"
-    ],
-    "journal": "",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4039-5230",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1101/2022.11.28.518163",
     "title": "A study on experimental bias in post-translational modification predictors",
     "authors": [
@@ -3793,48 +3133,6 @@
     "year": 2022,
     "volume": "9",
     "issue": "1",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/2022.05.05.490796",
-    "title": "An interactive mass spectrometry atlas of histone posttranslational modifications in T-cell acute leukemia",
-    "authors": [
-      "Lien Provez",
-      "Bart Van Puyvelde",
-      "Laura Corveleyn",
-      "Nina Demeulemeester",
-      "Sigrid Verhelst",
-      "Béatrice Lintermans",
-      "Simon Daled",
-      "Juliette Roels",
-      "Lieven Clement",
-      "Lennart Martens",
-      "Dieter Deforce",
-      "Pieter Van Vlierberghe",
-      "Maarten Dhaenens"
-    ],
-    "author_orcids": [
-      "0000-0003-2236-2347",
-      "0000-0002-7368-1762",
-      "0000-0002-4167-3581",
-      "0000-0002-8290-2432",
-      "0000-0002-6791-3782",
-      null,
-      "0000-0001-8129-2217",
-      "0000-0001-7230-3690",
-      "0000-0002-9050-4370",
-      "0000-0003-4277-658X",
-      "0000-0002-0635-661X",
-      "0000-0001-9063-7205",
-      "0000-0002-9801-3509"
-    ],
-    "journal": "",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
@@ -4394,32 +3692,6 @@
     ]
   },
   {
-    "doi": "10.1101/2022.12.29.521938",
-    "title": "Proteins with amino acid repeats constitute rapidly evolvable and human-specific essentialome",
-    "authors": [
-      "Anjali Kumari Singh",
-      "Ishita Amar",
-      "Harikrishnan Ramadasan",
-      "Keertana Sai Kappagantula",
-      "Sreenivas Chavali"
-    ],
-    "author_orcids": [
-      "0000-0002-0444-7913",
-      "0000-0002-8252-0610",
-      "0000-0003-1473-1595",
-      "0000-0002-2948-733X",
-      "0000-0001-8307-1645"
-    ],
-    "journal": "",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-1473-1595"
-    ]
-  },
-  {
     "doi": "10.1021/acs.jproteome.1c00771",
     "title": "Proteomics Standards Initiative’s ProForma 2.0: Unifying the Encoding of Proteoforms and Peptidoforms",
     "authors": [
@@ -4470,37 +3742,6 @@
     "group_orcids": [
       "0000-0002-1679-1711",
       "0000-0002-5916-2587"
-    ]
-  },
-  {
-    "doi": "10.1101/2022.11.17.516857",
-    "title": "Quality control for the target decoy approach for peptide identification",
-    "authors": [
-      "Elke Debrie",
-      "Milan Malfait",
-      "Ralf Gabriels",
-      "Arthur Declerq",
-      "Adriaan Sticker",
-      "Lennart Martens",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      "0000-0002-1679-1711",
-      null,
-      null,
-      "0000-0003-4277-658X",
-      "0000-0002-9050-4370"
-    ],
-    "journal": "",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711",
-      "0000-0003-4277-658X"
     ]
   },
   {
@@ -4619,58 +3860,6 @@
     ],
     "journal": "",
     "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711"
-    ]
-  },
-  {
-    "doi": "10.1101/2021.11.24.469852",
-    "title": "A comprehensive LFQ benchmark dataset on modern day acquisition strategies in proteomics",
-    "authors": [
-      "Bart Van Puyvelde",
-      "Simon Daled",
-      "Sander Willems",
-      "Ralf Gabriels",
-      "Anne Gonzalez de Peredo",
-      "Karima Chaoui",
-      "Emmanuelle Mouton-Barbosa",
-      "David Bouyssié",
-      "Kurt Boonen",
-      "Christopher J. Hughes",
-      "Lee A. Gethings",
-      "Yasset Perez-Riverol",
-      "Nic Bloomfield",
-      "Stephen Tate",
-      "Odile Schiltz",
-      "Lennart Martens",
-      "Dieter Deforce",
-      "Maarten Dhaenens"
-    ],
-    "author_orcids": [
-      "0000-0002-7368-1762",
-      "0000-0001-8129-2217",
-      "0000-0002-7124-610X",
-      "0000-0002-1679-1711",
-      "0000-0001-6152-6311",
-      null,
-      "0000-0002-7793-4560",
-      null,
-      "0000-0002-6252-7065",
-      null,
-      "0000-0003-3513-364X",
-      "0000-0001-6579-6941",
-      "0000-0002-1599-8438",
-      "0000-0001-5508-0819",
-      "0000-0002-3606-2356",
-      "0000-0003-4277-658X",
-      "0000-0002-0635-661X",
-      "0000-0002-9801-3509"
-    ],
-    "journal": "",
-    "year": 2021,
     "volume": "",
     "issue": "",
     "pages": "",
@@ -4936,112 +4125,6 @@
     ]
   },
   {
-    "doi": "10.1101/2021.03.05.433915",
-    "title": "Critical Assessment of Metaproteome Investigation (CAMPI): A Multi-Lab Comparison of Established Workflows",
-    "authors": [
-      "Tim Van Den Bossche",
-      "Benoit J. Kunath",
-      "Kay Schallert",
-      "Stephanie S. Schäpe",
-      "Paul E. Abraham",
-      "Jean Armengaud",
-      "Magnus Ø. Arntzen",
-      "Ariane Bassignani",
-      "Dirk Benndorf",
-      "Stephan Fuchs",
-      "Richard J. Giannone",
-      "Timothy J. Griffin",
-      "Live H. Hagen",
-      "Rashi Halder",
-      "Céline Henry",
-      "Robert L. Hettich",
-      "Robert Heyer",
-      "Pratik Jagtap",
-      "Nico Jehmlich",
-      "Marlene Jensen",
-      "Catherine Juste",
-      "Manuel Kleiner",
-      "Olivier Langella",
-      "Theresa Lehmann",
-      "Emma Leith",
-      "Patrick May",
-      "Bart Mesuere",
-      "Guylaine Miotello",
-      "Samantha L. Peters",
-      "Olivier Pible",
-      "Pedro T. Queiros",
-      "Udo Reichl",
-      "Bernhard Y. Renard",
-      "Henning Schiebenhoefer",
-      "Alexander Sczyrba",
-      "Alessandro Tanca",
-      "Kathrin Trappe",
-      "Jean-Pierre Trezzi",
-      "Sergio Uzzau",
-      "Pieter Verschaffelt",
-      "Martin von Bergen",
-      "Paul Wilmes",
-      "Maximilian Wolf",
-      "Lennart Martens",
-      "Thilo Muth"
-    ],
-    "author_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-3356-8562",
-      "0000-0002-1683-7222",
-      "0000-0002-1440-1353",
-      "0000-0003-2685-9123",
-      "0000-0003-1589-445X",
-      "0000-0002-1803-727X",
-      "0000-0001-6267-4519",
-      "0000-0003-4021-8525",
-      "0000-0002-1338-2699",
-      "0000-0001-8551-0138",
-      "0000-0001-6801-2559",
-      "0000-0003-2606-5331",
-      "0000-0002-1402-1254",
-      "0000-0002-2355-1791",
-      "0000-0001-7708-786X",
-      null,
-      "0000-0003-0984-0973",
-      "0000-0002-5638-6868",
-      null,
-      "0000-0002-3691-9866",
-      "0000-0001-6904-0287",
-      "0000-0002-3039-6718",
-      null,
-      null,
-      "0000-0001-8698-3770",
-      "0000-0003-0610-3441",
-      "0000-0002-2398-1249",
-      "0000-0002-3755-9786",
-      "0000-0003-4398-6730",
-      "0000-0002-0831-4261",
-      "0000-0001-6538-1332",
-      "0000-0003-4589-9809",
-      "0000-0002-4471-9709",
-      "0000-0002-4405-3847",
-      "0000-0002-6066-7048",
-      "0000-0002-2887-1575",
-      "0000-0001-7418-754X",
-      "0000-0001-6246-2794",
-      "0000-0002-6675-1048",
-      null,
-      "0000-0002-6478-2924",
-      null,
-      "0000-0003-4277-658X",
-      "0000-0001-8304-2684"
-    ],
-    "journal": "",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587"
-    ]
-  },
-  {
     "doi": "10.1016/j.mcpro.2021.100071",
     "title": "Data Management of Sensitive Human Proteomics Data: Current Practices, Recommendations, and Perspectives for the Future",
     "authors": [
@@ -5144,34 +4227,6 @@
     "issue": "11",
     "pages": "1363-1369",
     "group_orcids": [
-      "0000-0002-1679-1711",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.21203/rs.3.rs-275246/v1",
-    "title": "DeepLC can predict retention times for peptides that carry as-yet unseen modifications",
-    "authors": [
-      "Lennart Martens",
-      "Robbin Bouwmeester",
-      "Ralf Gabriels",
-      "Niels Hulstaert",
-      "Sven Degroeve"
-    ],
-    "author_orcids": [
-      "0000-0003-4277-658X",
-      "0000-0001-6807-7029",
-      "0000-0002-1679-1711",
-      null,
-      null
-    ],
-    "journal": "",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
       "0000-0002-1679-1711",
       "0000-0003-4277-658X"
     ]
@@ -5676,36 +4731,6 @@
     ]
   },
   {
-    "doi": "10.1101/2021.08.11.455803",
-    "title": "Pout2Prot: an efficient tool to create protein (sub)groups from Percolator output files",
-    "authors": [
-      "Kay Schallert",
-      "Pieter Verschaffelt",
-      "Bart Mesuere",
-      "Dirk Benndorf",
-      "Lennart Martens",
-      "Tim Van Den Bossche"
-    ],
-    "author_orcids": [
-      "0000-0002-1683-7222",
-      "0000-0002-6675-1048",
-      "0000-0003-0610-3441",
-      "0000-0003-4021-8525",
-      "0000-0003-4277-658X",
-      "0000-0002-5916-2587"
-    ],
-    "journal": "",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5916-2587",
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1242/bio.058919",
     "title": "Research culture: science from bench to society",
     "authors": [
@@ -6199,35 +5224,6 @@
     ]
   },
   {
-    "doi": "10.21203/rs.3.rs-691927/v1",
-    "title": "ionbot: a novel, innovative and sensitive machine learning approach to LC-MS/MS peptide identification",
-    "authors": [
-      "Sven Degroeve",
-      "Ralf Gabriels",
-      "Kevin Velghe",
-      "Robbin Bouwmeester",
-      "Natalia Tichshenko",
-      "Lennart Martens"
-    ],
-    "author_orcids": [
-      "0000-0001-8349-3370",
-      "0000-0002-1679-1711",
-      null,
-      "0000-0001-6807-7029",
-      null,
-      null
-    ],
-    "journal": "",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-1679-1711"
-    ]
-  },
-  {
     "doi": "10.2174/1389203721666200426232531",
     "title": "Biochemical and Computational Approaches for the Large-Scale Analysis of Protein Arginine Methylation by Mass Spectrometry",
     "authors": [
@@ -6446,32 +5442,6 @@
     ]
   },
   {
-    "doi": "10.1101/2020.03.28.013003",
-    "title": "DeepLC can predict retention times for peptides that carry as-yet unseen modifications",
-    "authors": [
-      "Robbin Bouwmeester",
-      "Ralf Gabriels",
-      "Niels Hulstaert",
-      "Lennart Martens",
-      "Sven Degroeve"
-    ],
-    "author_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0002-1679-1711",
-      "0000-0003-1172-5202",
-      "0000-0003-4277-658X",
-      "0000-0001-8349-3370"
-    ],
-    "journal": "",
-    "year": 2020,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.7717/peerj.9714",
     "title": "Extracellular vesicles in patients in the acute phase of psychosis and after clinical improvement: an explorative study",
     "authors": [
@@ -6572,41 +5542,6 @@
     ]
   },
   {
-    "doi": "10.1101/2020.11.16.384834",
-    "title": "MegaGO: a fast yet powerful approach to assess functional similarity across meta-omics data sets",
-    "authors": [
-      "Pieter Verschaffelt",
-      "Tim Van Den Bossche",
-      "Wassim Gabriel",
-      "Michał Burdukiewicz",
-      "Alessio Soggiu",
-      "Lennart Martens",
-      "Bernhard Y. Renard",
-      "Henning Schiebenhoefer",
-      "Bart Mesuere"
-    ],
-    "author_orcids": [
-      "0000-0002-6675-1048",
-      "0000-0002-5916-2587",
-      "0000-0001-6440-9794",
-      "0000-0001-8926-582X",
-      "0000-0001-7680-6068",
-      "0000-0003-4277-658X",
-      "0000-0003-4589-9809",
-      "0000-0002-4471-9709",
-      "0000-0003-0610-3441"
-    ],
-    "journal": "",
-    "year": 2020,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-6675-1048",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/nar/gkaa1058",
     "title": "MobiDB: intrinsically disordered proteins in 2021",
     "authors": [
@@ -6648,34 +5583,6 @@
     "volume": "49",
     "issue": "D1",
     "pages": "D361-D367",
-    "group_orcids": [
-      "0000-0003-4039-5230"
-    ]
-  },
-  {
-    "doi": "10.1101/2020.12.04.411744",
-    "title": "Online biophysical predictions for SARS-CoV-2 proteins",
-    "authors": [
-      "Luciano Kagami",
-      "Joel Roca-Martínez",
-      "Jose Gavaldá-García",
-      "Pathmanaban Ramasamy",
-      "K. Anton Feenstra",
-      "Wim Vranken"
-    ],
-    "author_orcids": [
-      "0000-0002-4960-6500",
-      "0000-0002-4313-3845",
-      "0000-0001-6431-3442",
-      "0000-0003-4039-5230",
-      "0000-0001-6755-9667",
-      "0000-0001-7470-4324"
-    ],
-    "journal": "",
-    "year": 2020,
-    "volume": "",
-    "issue": "",
-    "pages": "",
     "group_orcids": [
       "0000-0003-4039-5230"
     ]
@@ -6980,37 +5887,6 @@
     ]
   },
   {
-    "doi": "10.1101/2020.12.11.419523",
-    "title": "The Personalized Proteome: Comparing Proteogenomics and Open Variant Search Approaches for Single Amino Acid Variant Detection",
-    "authors": [
-      "Renee Salz",
-      "Robbin Bouwmeester",
-      "Ralf Gabriels",
-      "Sven Degroeve",
-      "Lennart Martens",
-      "Pieter-Jan Volders",
-      "Peter A.C. ’t Hoen"
-    ],
-    "author_orcids": [
-      "0000-0003-1035-7866",
-      null,
-      "0000-0002-1679-1711",
-      null,
-      "0000-0003-4277-658X",
-      null,
-      null
-    ],
-    "journal": "",
-    "year": 2020,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/bioinformatics/btaa553",
     "title": "Unipept CLI 2.0: adding support for visualizations and functional annotations",
     "authors": [
@@ -7041,59 +5917,6 @@
     "group_orcids": [
       "0000-0002-5916-2587",
       "0000-0002-6675-1048"
-    ]
-  },
-  {
-    "doi": "10.1101/2020.12.07.415539",
-    "title": "Universal Spectrum Identifier for mass spectra",
-    "authors": [
-      "Eric W. Deutsch",
-      "Yasset Perez-Riverol",
-      "Jeremy Carver",
-      "Shin Kawano",
-      "Luis Mendoza",
-      "Tim Van Den Bossche",
-      "Ralf Gabriels",
-      "Pierre-Alain Binz",
-      "Benjamin Pullman",
-      "Zhi Sun",
-      "Jim Shofstahl",
-      "Wout Bittremieux",
-      "Tytus D. Mak",
-      "Joshua Klein",
-      "Yunping Zhu",
-      "Henry Lam",
-      "Juan Antonio Vizcaíno",
-      "Nuno Bandeira"
-    ],
-    "author_orcids": [
-      "0000-0001-8732-0928",
-      "0000-0001-6579-6941",
-      "0000-0003-0384-8130",
-      "0000-0002-7969-2972",
-      "0000-0003-0128-8643",
-      "0000-0002-5916-2587",
-      "0000-0002-1679-1711",
-      "0000-0002-0045-7698",
-      "0000-0002-2733-4911",
-      "0000-0003-3324-6851",
-      "0000-0001-5968-1742",
-      "0000-0002-3105-1359",
-      "0000-0001-9501-5640",
-      "0000-0003-1279-6838",
-      null,
-      "0000-0001-7928-0364",
-      "0000-0002-3905-4335",
-      "0000-0001-8385-3655"
-    ],
-    "journal": "",
-    "year": 2020,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711",
-      "0000-0002-5916-2587"
     ]
   },
   {
@@ -7238,35 +6061,6 @@
     ]
   },
   {
-    "doi": "10.1101/640458",
-    "title": "COSS: A fast and user-friendly tool for spectral library searching",
-    "authors": [
-      "Genet Abay Shiferaw",
-      "Elien Vandermarliere",
-      "Niels Hulstaert",
-      "Ralf Gabriels",
-      "Lennart Martens",
-      "Pieter-Jan Volders"
-    ],
-    "author_orcids": [
-      "0000-0001-9956-417X",
-      "0000-0001-5514-1060",
-      "0000-0003-1172-5202",
-      "0000-0002-1679-1711",
-      "0000-0003-4277-658X",
-      "0000-0002-2685-2637"
-    ],
-    "journal": "",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-1679-1711",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1080/14789450.2019.1609944",
     "title": "Challenges and promise at the interface of metaproteomics and genomics: an overview of recent progress in metaproteogenomic data analysis",
     "authors": [
@@ -7315,32 +6109,6 @@
     "pages": "3694-3703",
     "group_orcids": [
       "0000-0001-6807-7029",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/782466",
-    "title": "MSqRob takes the missing hurdle: uniting intensity- and count-based proteomics",
-    "authors": [
-      "Ludger J.E. Goeminne",
-      "Adriaan Sticker",
-      "Lennart Martens",
-      "Kris Gevaert",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      "0000-0002-8285-7766",
-      null,
-      "0000-0003-4277-658X",
-      "0000-0002-4237-0283",
-      "0000-0002-9050-4370"
-    ],
-    "journal": "",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
       "0000-0003-4277-658X"
     ]
   },
@@ -7520,60 +6288,6 @@
     ]
   },
   {
-    "doi": "10.1101/668863",
-    "title": "Robust summarization and inference in proteome-wide label-free quantification",
-    "authors": [
-      "Adriaan Sticker",
-      "Ludger Goeminne",
-      "Lennart Martens",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      "0000-0002-4808-7227",
-      "0000-0002-8285-7766",
-      "0000-0003-4277-658X",
-      "0000-0002-9050-4370"
-    ],
-    "journal": "",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/684985",
-    "title": "Scop3P: a comprehensive resource of human phosphosites within their full context",
-    "authors": [
-      "Pathmanaban Ramasamy",
-      "Demet Turan",
-      "Natalia Tichshenko",
-      "Niels Hulstaert",
-      "Elien Vandermarliere",
-      "Wim Vranken",
-      "Lennart Martens"
-    ],
-    "author_orcids": [
-      "0000-0003-4039-5230",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4039-5230"
-    ]
-  },
-  {
     "doi": "10.1038/s41598-019-47952-5",
     "title": "Stress-induced phospho-ubiquitin formation causes parkin degradation",
     "authors": [
@@ -7714,34 +6428,6 @@
     ]
   },
   {
-    "doi": "10.1101/622852",
-    "title": "ThermoRawFileParser: modular, scalable and cross-platform RAW file conversion",
-    "authors": [
-      "Niels Hulstaert",
-      "Timo Sachsenberg",
-      "Mathias Walzer",
-      "Harald Barsnes",
-      "Lennart Martens",
-      "Yasset Perez-Riverol"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-2833-6070",
-      "0000-0003-4538-2754",
-      "0000-0001-9696-2148",
-      "0000-0003-4277-658X",
-      "0000-0001-6579-6941"
-    ],
-    "journal": "",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1177/2472555218818756",
     "title": "Transfer Learning with Deep Convolutional Neural Networks for Classifying Cellular Morphological Changes",
     "authors": [
@@ -7875,51 +6561,6 @@
     ]
   },
   {
-    "doi": "10.1101/428805",
-    "title": "Accurate peptide fragmentation predictions allow data driven approaches to replace and improve upon proteomics search engine scoring functions",
-    "authors": [
-      "Ana Sílvia C. Silva",
-      "Lennart Martens",
-      "Sven Degroeve"
-    ],
-    "author_orcids": [
-      "0000-0003-2584-4034",
-      "0000-0003-4277-658X",
-      null
-    ],
-    "journal": "",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/259168",
-    "title": "Comprehensive and empirical evaluation of machine learning algorithms for LC retention time prediction",
-    "authors": [
-      "Robbin Bouwmeester",
-      "Lennart Martens",
-      "Sven Degroeve"
-    ],
-    "author_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0003-4277-658X",
-      null
-    ],
-    "journal": "",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1021/acs.analchem.8b03224",
     "title": "Data-Driven Rescoring of Metabolite Annotations Significantly Improves Sensitivity",
     "authors": [
@@ -8004,54 +6645,6 @@
     ]
   },
   {
-    "doi": "10.1101/241349",
-    "title": "Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit",
-    "authors": [
-      "M. Boone",
-      "P. Ramasamy",
-      "J. Zuallaert",
-      "R. Bouwmeester",
-      "B. Van Moer",
-      "D. Maddelein",
-      "D. Turan",
-      "N. Hulstaert",
-      "H. Eeckhaut",
-      "E. Vandermarliere",
-      "L. Martens",
-      "S. Degroeve",
-      "W. De Neve",
-      "W. Vranken",
-      "N. Callewaert"
-    ],
-    "author_orcids": [
-      "0000-0002-7807-5542",
-      "0000-0003-4039-5230",
-      "0000-0003-1491-4914",
-      "0000-0001-6807-7029",
-      "0000-0002-6315-3755",
-      null,
-      "0000-0002-2401-9385",
-      null,
-      null,
-      "0000-0001-5514-1060",
-      "0000-0003-4277-658X",
-      "0000-0001-8349-3370",
-      "0000-0002-8190-3839",
-      "0000-0001-7470-4324",
-      "0000-0003-2069-6917"
-    ],
-    "journal": "",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0001-6807-7029",
-      "0000-0003-4039-5230",
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/gbe/evy024",
     "title": "More than the “Killer Trait”: Infection with the Bacterial Endosymbiont Caedibacter taeniospiralis Causes Transcriptomic Modulation in Paramecium Host",
     "authors": [
@@ -8107,28 +6700,6 @@
     "pages": "765-769",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/345728",
-    "title": "Transfer learning with deep convolutional neural networks for classifying cellular morphological changes",
-    "authors": [
-      "Alexander Kensert",
-      "Philip J Harrison",
-      "Ola Spjuth"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      "0000-0003-4046-9017",
-      "0000-0002-8083-2864"
-    ],
-    "journal": "",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5295-010X"
     ]
   },
   {
@@ -8251,26 +6822,6 @@
     ]
   },
   {
-    "doi": "10.7287/peerj.preprints.2689v1",
-    "title": "Do you speak open science? Resources and tips to learn the language",
-    "authors": [
-      "Paola Masuzzo",
-      "Lennart Martens"
-    ],
-    "author_orcids": [
-      "0000-0003-3699-1195",
-      "0000-0003-4277-658X"
-    ],
-    "journal": "",
-    "year": 2017,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1021/acs.analchem.7b03544",
     "title": "MPA Portable: A Stand-Alone Software Package for Analyzing Metaproteome Samples on the Go",
     "authors": [
@@ -8320,28 +6871,6 @@
     "volume": "14",
     "issue": "7",
     "pages": "643-644",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1101/094581",
-    "title": "Mass spectrometrists should search for all peptides, but assess only the ones they care about",
-    "authors": [
-      "Adriaan Sticker",
-      "Lennart Martens",
-      "Lieven Clement"
-    ],
-    "author_orcids": [
-      "0000-0002-4808-7227",
-      "0000-0003-4277-658X",
-      null
-    ],
-    "journal": "",
-    "year": 2017,
-    "volume": "",
-    "issue": "",
-    "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
     ]
@@ -10884,20 +9413,6 @@
     "volume": "9",
     "issue": "18",
     "pages": "4421-4424",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1038/nmeth0709-546a",
-    "title": "Erratum: Corrigendum: A HUPO test sample study reveals common problems in mass spectrometry–based proteomics",
-    "authors": [],
-    "author_orcids": [],
-    "journal": "Nature Methods",
-    "year": 2009,
-    "volume": "6",
-    "issue": "7",
-    "pages": "546-546",
     "group_orcids": [
       "0000-0003-4277-658X"
     ]
