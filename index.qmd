@@ -9,20 +9,16 @@ execute:
 
 ::: {.grid .vision-section}
 
-::: {.g-col-12 .g-col-md-7 .vision-text}
+::: {.g-col-12 .g-col-md-4 .vision-head}
 ### Our Vision
+:::
 
+::: {.g-col-12 .g-col-md-8 .vision-text}
 CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.
 
 Our **mission** is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.
 
 We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.
-:::
-
-::: {.g-col-12 .g-col-md-5}
-```{=html}
-<img src="assets/images/front_page.jpg" class="vision-img" alt="CompOmics research" />
-```
 :::
 
 :::
@@ -86,26 +82,33 @@ display(HTML(f"""
 
 ```{=html}
 <div class="location-section">
-  <div class="location-text">
+  <div class="location-info">
+    <span class="location-eyebrow">Visit us</span>
     <h2 class="location-title">Where to find us</h2>
-    <p class="location-group"><strong>Computational Omics and Systems Biology Group</strong></p>
+    <div class="location-group">Computational Omics and Systems Biology Group</div>
     <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
     VIB-UGent Center for Medical Biotechnology, VIB</p>
-    <p class="location-addr">Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</p>
-    <p class="location-email"><strong>E-mail:</strong> <a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></p>
-  </div>
-  <div class="location-img">
-    <a href="https://beeldbank.ugent.be/nl/fotoalbum/foto/z2019-087-040" target="_blank" rel="noopener noreferrer">
-      <img src="assets/images/Transitie UGent.png" alt="Ghent University Technology Park" />
+
+    <div class="location-row">
+      <i class="bi bi-geo-alt location-row-icon"></i>
+      <div>Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</div>
+    </div>
+    <div class="location-row">
+      <i class="bi bi-envelope location-row-icon"></i>
+      <div><a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></div>
+    </div>
+
+    <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=Technologiepark+75,+9052+Zwijnaarde,+Belgium" target="_blank" rel="noopener noreferrer">
+      <i class="bi bi-signpost-2"></i> Get directions
     </a>
   </div>
-</div>
-<div class="location-map">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
-    width="100%" height="320" style="border:0; border-radius: 0.75rem;"
-    allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <div class="location-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
+      width="100%" height="100%" style="border:0;"
+      allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </div>
 ```
