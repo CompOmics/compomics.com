@@ -3,6 +3,8 @@ project:
   output-dir: _site
   resources:
     - data/
+    # used by the dark-mode logo swap in CSS (not referenced from any .qmd)
+    - assets/images/CompOmics_neg.png
 
 website:
   title: "CompOmics"
@@ -11,7 +13,7 @@ website:
   site-url: https://compomics.github.io
 
   navbar:
-    logo: assets/images/CompOmics_neg.png
+    logo: assets/images/CompOmics_logo.png
     logo-alt: "CompOmics"
     title: false
     right:
@@ -40,8 +42,8 @@ website:
 format:
   html:
     theme:
-      light: [flatly, assets/compomics.scss]
-      dark: [darkly, assets/compomics.scss]
+      light: [flatly, assets/compomics-light.scss, assets/compomics.scss]
+      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss]
     toc: true
     toc-depth: 2
     code-fold: false
