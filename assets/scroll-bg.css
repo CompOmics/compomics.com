@@ -1,0 +1,276 @@
+/* ============================================================
+   CompOmics landing — scroll-driven background scenes
+   Five fixed background frames cross-fade as the homepage scrolls.
+   ============================================================ */
+
+html { background: #0f1217; }
+body { background: transparent !important; }
+#quarto-content, main.content, #quarto-document-content,
+.page-columns, .column-page, .column-body, .content { background: transparent !important; }
+#title-block-header { display: none; }
+
+#cmp-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #0f1217;
+  pointer-events: none;
+}
+
+#cmp-bg::before,
+#cmp-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+#cmp-bg::before {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,.08), rgba(255,255,255,0) 42%),
+    linear-gradient(to bottom, rgba(8,10,14,.45) 0%, rgba(8,10,14,.15) 22%, rgba(8,10,14,.20) 60%, rgba(8,10,14,.72) 100%);
+}
+
+#cmp-bg::after {
+  background: linear-gradient(135deg, rgba(31,95,143,.16), rgba(214,55,41,.05) 45%, rgba(0,0,0,0) 70%);
+  mix-blend-mode: screen;
+  opacity: .65;
+}
+
+.cmp-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 900ms ease, transform 1200ms ease;
+  filter: saturate(.92) contrast(1.03) brightness(.95);
+}
+
+.cmp-frame.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cmp-scenes {
+  position: relative;
+  z-index: 1;
+}
+
+.cmp-scene {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(4rem, 10vh, 7rem) 0;
+  box-sizing: border-box;
+}
+
+.cmp-wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.1rem, 4vw, 3rem);
+}
+
+.cmp-hero-copy {
+  max-width: 760px;
+  padding: 2rem 0;
+}
+
+.cmp-hero-kicker,
+.cmp-panel-kicker {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.84);
+  margin-bottom: .9rem;
+}
+
+.cmp-hero-title {
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  line-height: .95;
+  font-size: clamp(4rem, 14vw, 9rem);
+  letter-spacing: -0.04em;
+  margin: 0;
+  text-shadow: 0 3px 34px rgba(0,0,0,.55);
+}
+
+.cmp-hero-sub,
+.cmp-sub-light {
+  color: rgba(255,255,255,.92);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  max-width: 46ch;
+  text-shadow: 0 1px 16px rgba(0,0,0,.55);
+}
+
+.cmp-hero-sub {
+  margin: 1.2rem 0 0;
+}
+
+.cmp-scrollcue {
+  margin-top: 2.25rem;
+  color: rgba(255,255,255,.82);
+  font-family: "Roboto Mono", monospace;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.cmp-scrollcue::before { content: "↓ "; }
+
+.cmp-panel {
+  background: rgba(255,253,243,.93);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230,225,208,.95);
+  border-radius: 1rem;
+  padding: clamp(1.6rem, 3.5vw, 2.8rem);
+  max-width: 760px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+}
+
+.cmp-panel h2,
+.cmp-h-light {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.cmp-panel h2 {
+  color: #14110d;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  margin-bottom: 1rem;
+}
+
+.cmp-panel p {
+  font-family: "Roboto", sans-serif;
+  color: #2c2823;
+  line-height: 1.8;
+  margin: 0 0 1rem;
+}
+
+.cmp-panel p:last-child { margin-bottom: 0; }
+.cmp-panel p.lead {
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #14110d;
+}
+.cmp-panel strong { color: #14110d; font-weight: 700; }
+
+.cmp-section-head {
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+.cmp-h-light {
+  color: #fff;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  text-shadow: 0 2px 26px rgba(0,0,0,.55);
+  margin-bottom: .55rem;
+}
+
+.cmp-sub-light {
+  margin: 0;
+}
+
+.cmp-tiles-row {
+  margin-top: 1rem;
+  gap: 1.25rem;
+}
+
+.cmp-tiles-row .nav-tile {
+  background: rgba(255,253,243,.90);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-color: rgba(230,225,208,.95);
+  min-height: 220px;
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-desc {
+  color: #524d46;
+}
+
+.cmp-tiles-row .nav-tile:hover {
+  background: rgba(255,255,255,.97);
+}
+
+.cmp-team-wrap {
+  max-width: 900px;
+}
+
+.cmp-team-copy {
+  max-width: 560px;
+  padding: 2rem 0;
+}
+
+.cmp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.6rem;
+  padding: .85rem 1.5rem;
+  border-radius: 2rem;
+  background: #1f5f8f;
+  border: 1px solid #1f5f8f;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 34px rgba(0,0,0,.28);
+  transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.cmp-btn:hover {
+  background: #184c73;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(0,0,0,.32);
+}
+
+.cmp-location-wrap {
+  max-width: 1080px;
+}
+
+.cmp-location-wrap .location-section {
+  margin: 0;
+  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+}
+
+@media (max-width: 720px) {
+  .cmp-scene {
+    padding: 3.25rem 0;
+  }
+
+  .cmp-hero-title {
+    font-size: clamp(3rem, 18vw, 5rem);
+  }
+
+  .cmp-hero-copy {
+    max-width: 100%;
+  }
+
+  .cmp-tiles-row .nav-tile {
+    min-height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-frame {
+    transition: none;
+    transform: none;
+  }
+}

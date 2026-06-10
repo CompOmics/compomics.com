@@ -5,110 +5,214 @@ toc: false
 execute:
   freeze: false
   echo: false
----
+include-in-header:
+  text: |
+    <link rel="stylesheet" href="assets/scroll-bg.css">
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
+      const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
 
-::: {.grid .vision-section}
+      if (!scenes.length || !frames.length) {
+        return;
+      }
 
-::: {.g-col-12 .g-col-md-4 .vision-head}
-### Our Vision
-:::
+      let rafId = 0;
 
-::: {.g-col-12 .g-col-md-8 .vision-text}
-CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.
+      const setActive = function(index) {
+        scenes.forEach(function(scene, sceneIndex) {
+          scene.classList.toggle('is-active', sceneIndex === index);
+        });
 
-Our **mission** is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.
+        frames.forEach(function(frame, frameIndex) {
+          frame.classList.toggle('is-active', frameIndex === index);
+        });
+      };
 
-We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.
-:::
+      const pickActiveScene = function() {
+        const viewportCenter = window.innerHeight * 0.46;
+        let activeIndex = 0;
+        let smallestDistance = Infinity;
 
-:::
+        scenes.forEach(function(scene, index) {
+          const rect = scene.getBoundingClientRect();
+          const sceneCenter = rect.top + (rect.height / 2);
+          const distance = Math.abs(sceneCenter - viewportCenter);
 
----
+          if (distance < smallestDistance) {
+            smallestDistance = distance;
+            activeIndex = index;
+          }
+        });
 
-```{python}
-import json, os
-from pathlib import Path
-from IPython.display import HTML
+        setActive(activeIndex);
+      };
 
-project_root = Path(os.environ.get("QUARTO_PROJECT_DIR", Path.cwd()))
-pub_file = project_root / "data" / "publications.json"
-pub_count = len(json.loads(pub_file.read_text(encoding="utf-8"))) if pub_file.exists() else "—"
+      const schedulePick = function() {
+        window.cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(pickActiveScene);
+      };
 
-display(HTML(f"""
-<div class="grid stats-row">
-  <a href="research.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">3</span>
-    <span class="stat-label">Research Lines</span>
-  </a>
-  <a href="publications.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">{pub_count}</span>
-    <span class="stat-label">Publications</span>
-  </a>
-  <a href="tools/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">22</span>
-    <span class="stat-label">Tools</span>
-  </a>
-  <a href="team/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">27</span>
-    <span class="stat-label">Members</span>
-  </a>
-</div>
-"""))
-```
+      window.addEventListener('scroll', schedulePick, { passive: true });
+      window.addEventListener('resize', schedulePick);
 
----
-
-```{=html}
-<div class="nav-tiles-row">
-  <a href="tools/" class="nav-tile">
-    <i class="bi bi-tools nav-tile-icon"></i>
-    <div class="nav-tile-title">Tools</div>
-    <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
-  </a>
-  <a href="team/" class="nav-tile">
-    <i class="bi bi-people-fill nav-tile-icon"></i>
-    <div class="nav-tile-title">Team</div>
-    <div class="nav-tile-desc">Meet our researchers and developers</div>
-  </a>
-  <a href="publications.html" class="nav-tile">
-    <i class="bi bi-journal-text nav-tile-icon"></i>
-    <div class="nav-tile-title">Publications</div>
-    <div class="nav-tile-desc">Our research output and scientific papers</div>
-  </a>
-</div>
-```
-
+      schedulePick();
+    });
+    </script>
 ---
 
 ```{=html}
-<div class="location-section">
-  <div class="location-info">
-    <span class="location-eyebrow">Visit us</span>
-    <h2 class="location-title">Where to find us</h2>
-    <div class="location-group">Computational Omics and Systems Biology Group</div>
-    <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
-    VIB-UGent Center for Medical Biotechnology, VIB</p>
-
-    <div class="location-row">
-      <i class="bi bi-geo-alt location-row-icon"></i>
-      <div>Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</div>
-    </div>
-    <div class="location-row">
-      <i class="bi bi-envelope location-row-icon"></i>
-      <div><a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></div>
-    </div>
-
-    <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=Technologiepark+75,+9052+Zwijnaarde,+Belgium" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-signpost-2"></i> Get directions
-    </a>
-  </div>
-  <div class="location-map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
-      width="100%" height="100%" style="border:0;"
-      allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
+<div id="cmp-bg" aria-hidden="true">
+  <img class="cmp-frame is-active" src="assets/frames/bg-1.jpg" srcset="assets/frames/bg-1-sm.jpg 900w, assets/frames/bg-1.jpg 1800w" sizes="100vw" alt="" loading="eager" fetchpriority="high" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-2.jpg" srcset="assets/frames/bg-2-sm.jpg 900w, assets/frames/bg-2.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-3.jpg" srcset="assets/frames/bg-3-sm.jpg 900w, assets/frames/bg-3.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-4.jpg" srcset="assets/frames/bg-4-sm.jpg 900w, assets/frames/bg-4.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-5.jpg" srcset="assets/frames/bg-5-sm.jpg 900w, assets/frames/bg-5.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
 </div>
+
+<div class="cmp-scenes">
+  <section class="cmp-scene cmp-scene-hero">
+    <div class="cmp-wrap">
+      <div class="cmp-hero-copy">
+        <div class="cmp-hero-kicker">Ghent University / VIB</div>
+        <h1 class="cmp-hero-title">CompOmics</h1>
+        <p class="cmp-hero-sub">Computational proteomics tools, methods, and standards for turning mass spectrometry data into biological insight.</p>
+        <div class="cmp-scrollcue">Scroll to explore</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-vision">
+    <div class="cmp-wrap">
+      <div class="cmp-panel">
+        <div class="cmp-panel-kicker">Our vision</div>
+        <h2>We build open, reusable proteomics infrastructure.</h2>
+        <p class="lead">CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.</p>
+        <p>Our <strong>mission</strong> is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.</p>
+        <p>We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-tools">
+    <div class="cmp-wrap">
+      <div class="cmp-section-head">
+        <div class="cmp-panel-kicker">Explore the work</div>
+        <h2 class="cmp-h-light">Tools and publications</h2>
+        <p class="cmp-sub-light">Software, protocols, and scientific output that support the proteomics community.</p>
+      </div>
+
+      <div class="nav-tiles-row cmp-tiles-row">
+        <a href="tools/" class="nav-tile">
+          <i class="bi bi-tools nav-tile-icon"></i>
+          <div class="nav-tile-title">Tools</div>
+          <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
+        </a>
+        <a href="publications.html" class="nav-tile">
+          <i class="bi bi-journal-text nav-tile-icon"></i>
+          <div class="nav-tile-title">Publications</div>
+          <div class="nav-tile-desc">Our research output and scientific papers</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-team">
+    <div class="cmp-wrap cmp-team-wrap">
+      <div class="cmp-team-copy">
+        <div class="cmp-panel-kicker">People</div>
+        <h2 class="cmp-h-light">Meet the team</h2>
+        <p class="cmp-sub-light">Researchers, developers, and support staff behind the CompOmics platform.</p>
+        <a href="team/" class="cmp-btn">Visit the team page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-location">
+    <div class="cmp-wrap cmp-location-wrap">
+      <div class="location-section">
+        <div class="location-info">
+          <span class="location-eyebrow">Visit us</span>
+          <h2 class="location-title">Where to find us</h2>
+          <div class="location-group">Computational Omics and Systems Biology Group</div>
+          <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
+          VIB-UGent Center for Medical Biotechnology, VIB</p>
+
+          <div class="location-row">
+            <i class="bi bi-geo-alt location-row-icon"></i>
+            <div>Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</div>
+          </div>
+          <div class="location-row">
+            <i class="bi bi-envelope location-row-icon"></i>
+            <div><a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></div>
+          </div>
+
+          <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=Technologiepark+75,+9052+Zwijnaarde,+Belgium" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-signpost-2"></i> Get directions
+          </a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
+            width="100%" height="100%" style="border:0;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
+  const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
+
+  if (!scenes.length || !frames.length) {
+    return;
+  }
+
+  let rafId = 0;
+
+  const setActive = function(index) {
+    scenes.forEach(function(scene, sceneIndex) {
+      scene.classList.toggle('is-active', sceneIndex === index);
+    });
+
+    frames.forEach(function(frame, frameIndex) {
+      frame.classList.toggle('is-active', frameIndex === index);
+    });
+  };
+
+  const pickActiveScene = function() {
+    const viewportCenter = window.innerHeight * 0.46;
+    let activeIndex = 0;
+    let smallestDistance = Infinity;
+
+    scenes.forEach(function(scene, index) {
+      const rect = scene.getBoundingClientRect();
+      const sceneCenter = rect.top + (rect.height / 2);
+      const distance = Math.abs(sceneCenter - viewportCenter);
+
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        activeIndex = index;
+      }
+    });
+
+    setActive(activeIndex);
+  };
+
+  const schedulePick = function() {
+    window.cancelAnimationFrame(rafId);
+    rafId = window.requestAnimationFrame(pickActiveScene);
+  };
+
+  window.addEventListener('scroll', schedulePick, { passive: true });
+  window.addEventListener('resize', schedulePick);
+
+  schedulePick();
+})();
+</script>
 ```

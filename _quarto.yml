@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - data/
+    - assets/frames/
     # used by the dark-mode logo swap in CSS (not referenced from any .qmd)
     - assets/images/CompOmics_neg.png
 
