@@ -1,0 +1,15 @@
+---
+title: "Alireza"
+description: "Team member, computational proteomics"
+image: ../assets/images/alireza.jpg
+order: 6
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

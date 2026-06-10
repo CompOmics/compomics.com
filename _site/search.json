@@ -1,0 +1,765 @@
+[
+  {
+    "objectID": "tools/index.html",
+    "href": "tools/index.html",
+    "title": "Tools & Software",
+    "section": "",
+    "text": "All tools are freely available under permissive licences. Source code is on GitHub."
+  },
+  {
+    "objectID": "team/jane-doe.html",
+    "href": "team/jane-doe.html",
+    "title": "Jane Doe",
+    "section": "",
+    "text": "Short bio: research focus, background, and interests."
+  },
+  {
+    "objectID": "team/jane-doe.html#about",
+    "href": "team/jane-doe.html#about",
+    "title": "Jane Doe",
+    "section": "",
+    "text": "Short bio: research focus, background, and interests."
+  },
+  {
+    "objectID": "team/jane-doe.html#links",
+    "href": "team/jane-doe.html#links",
+    "title": "Jane Doe",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID\nGoogle Scholar"
+  },
+  {
+    "objectID": "team/index.html",
+    "href": "team/index.html",
+    "title": "Team",
+    "section": "",
+    "text": "We are a multidisciplinary team of bioinformaticians, computer scientists, and proteomics researchers based at Ghent University and VIB.\nGroup Leader\n\n  \n    \n    Lennart Martens\n    Group Leader\n  \n\n\nPostdoctoral Researchers\n\n  \n    \n    Sakina Bombaywala\n    Postdoctoral Researcher\n  \n  \n    \n    Robbin Bouwmeester\n    Postdoctoral Researcher\n  \n  \n    \n    Tine Claeys\n    Postdoctoral Researcher\n  \n  \n    \n    Arthur Declercq\n    Postdoctoral Researcher\n  \n  \n    \n    Ralf Gabriels\n    Postdoctoral Researcher\n  \n  \n    \n    Alexander Kensert\n    Postdoctoral Researcher\n  \n  \n    \n    Enrico Massignani\n    Postdoctoral Researcher\n  \n  \n    \n    Pathmanaban Ramasamy\n    Postdoctoral Researcher\n  \n  \n    \n    Tim Van Den Bossche\n    Postdoctoral Researcher\n  \n  \n    \n    Pieter Verschaffelt\n    Postdoctoral Researcher\n  \n\n\nPredoctoral Researchers\n\n  \n    \n    Toon Callens\n    Predoctoral Researcher\n  \n  \n    \n    Robbe Devreese\n    Predoctoral Researcher\n  \n  \n    \n    Sander Heyndrickx\n    Predoctoral Researcher\n  \n  \n    \n    Sude Güneş\n    Predoctoral Researcher\n  \n  \n    \n    Caroline Jachmann\n    Predoctoral Researcher\n  \n  \n    \n    Xuxa Malliet\n    Predoctoral Researcher\n  \n  \n    \n    Alireza Nameni\n    Predoctoral Researcher\n  \n  \n    \n    Harikrishnan Ramadassan\n    Predoctoral Researcher\n  \n  \n    \n    Sam van Puyenbroeck\n    Predoctoral Researcher\n  \n\n\nSupport Staff\n\n  \n    \n    Lyudmila Kovalchuke\n    Project Manager\n  \n  \n    \n    Patricia Lefèvre\n    Group Secretary\n  \n  \n    \n    Natalia Tichshenko\n    Software Developer\n  \n  \n    \n    Kevin Velghe\n    Software Developer\n  \n  \n    \n    Jasper Zuallaert\n    Staff Scientist"
+  },
+  {
+    "objectID": "tools/example-tool.html",
+    "href": "tools/example-tool.html",
+    "title": "Tools & Software",
+    "section": "",
+    "text": "All tools are freely available under permissive licences. Source code is on GitHub.\n\n\n\n\n\nPrediction\n\n\n  \n    ⏱️\n    \n      DeepLC\n      Retention time\n    \n  \n  \n    Predicts when peptides will elute from the LC column during a mass spectrometry run. Handles modified peptides accurately — even modifications never seen during training. Adapts to new instruments and setups through transfer learning, requiring only a small number of example peptides.\n    \n      ⬡ GitHub\n      Docs\n      PyPI\n      Web app\n    \n    \n      Bouwmeester et al. (2021). DeepLC can predict retention times for peptides that carry as-yet unseen modifications. Nature Methods. 10.1038/s41592-021-01301-5\n      Bouwmeester, Nameni et al. (2026). Transfer learning in DeepLC improves LC retention time prediction. Nature Communications. 10.1038/s41467-026-68981-5\n    \n  \n  \n    Developers\n    \n      \n        RB\n        Robbin BouwmeesterLead developer\n      \n      \n        RG\n        Ralf GabrielsContributor\n      \n      \n        SD\n        Sven DegroeveContributor\n      \n    \n  \n\n\n\n  \n    📊\n    \n      MS²PIP\n      Fragment intensity\n    \n  \n  \n    Predicts fragment ion peak intensities from peptide sequence alone. Used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is available through MS²DIP.\n    \n      ⬡ GitHub\n      Web app\n    \n    \n      Degroeve & Martens (2013). MS²PIP: a tool for MS/MS peak intensity prediction. Bioinformatics. 10.1093/bioinformatics/btt355\n    \n  \n  \n    Developers\n    \n      \n        SD\n        Sven DegroeveOriginal author\n      \n      \n        AD\n        Arthur DeclercqLead developer\n      \n    \n  \n\n\n\n  \n    💨\n    \n      IM2Deep\n      Ion mobility\n    \n  \n  \n    Predicts collisional cross-section (CCS) values for peptides, including multiply modified ones. Enables confident ion mobility filtering in DDA and DIA workflows.\n    \n      ⬡ GitHub\n    \n    \n      Declercq et al. (2024). IM2Deep: predicting collisional cross sections for multi-modified peptides. Journal of Proteome Research. 10.1021/acs.jproteome.4c00098\n    \n  \n  \n    Developers\n    \n      \n        AD\n        Arthur DeclercqLead developer\n      \n      \n        RB\n        Robbin BouwmeesterContributor\n      \n    \n  \n\n\n\nRescoring\n\n\n  \n    🏆\n    \n      MS²Rescore\n      PSM rescoring\n    \n  \n  \n    Rescores peptide-spectrum matches by combining predicted LC-MS/MS features — retention time, fragment intensities, and ion mobility — with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Validated for immunopeptidomics and metaproteomics.\n    \n      ⬡ GitHub\n      Docs\n    \n    \n      Declercq et al. (2022). MS²Rescore: data-driven rescoring dramatically boosts immunopeptide identification rates. Molecular & Cellular Proteomics. 10.1016/j.mcpro.2022.100266\n    \n  \n  \n    Developers\n    \n      \n        RG\n        Ralf GabrielsLead developer\n      \n      \n        AD\n        Arthur DeclercqContributor\n      \n    \n  \n\n\n\nData Standards & Utilities\n\n\n  \n    🔧\n    \n      psm_utils\n      PSM handling\n    \n  \n  \n    A Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.\n    \n      ⬡ GitHub\n      Docs\n      PyPI\n    \n  \n  \n    Developers\n    \n      \n        RG\n        Ralf GabrielsLead developer\n      \n    \n  \n\n\n\n  \n    🗂️\n    \n      lesSDRF\n      Metadata\n    \n  \n  \n    An interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.\n    \n      ⬡ GitHub\n      Web app\n    \n    \n      Van Puyvelde et al. (2022). lesSDRF: a desktop app for SDRF proteomics metadata annotation. Journal of Proteome Research. 10.1021/acs.jproteome.2c00120\n    \n  \n  \n    Developers\n    \n      \n        SV\n        Sander Van PuyveldeLead developer\n      \n    \n  \n\n\n\n  \n    📂\n    \n      Thermo Raw File Parser\n      File conversion\n    \n  \n  \n    Converts Thermo .raw files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.\n    \n      ⬡ GitHub\n    \n    \n      Hulstaert et al. (2020). ThermoRawFileParser: modular, scalable, and cross-platform RAW file conversion. Journal of Proteome Research. 10.1021/acs.jproteome.9b00328\n    \n  \n  \n    Developers\n    \n      \n        NH\n        Niels HulstaertLead developer\n      \n    \n  \n\n\n\nTaxonomy & Metaproteomics\n\n\n  \n    🌿\n    \n      Unipept\n      Metaproteomics\n    \n  \n  \n    Tryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month. Integrates with major proteomics workflows via Python and R clients.\n    \n      ⬡ GitHub\n      Web app\n      API docs\n    \n    \n      Mesuere et al. (2012). Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples. Journal of Proteome Research. 10.1021/pr300576s\n    \n  \n  \n    Developers\n    \n      \n        BM\n        Bart MesuereLead developer\n      \n      \n        TV\n        Tibo Vande MoorteleContributor\n      \n    \n  \n\n\n\n  \n    🎲\n    \n      Peptonizer2000\n      Taxonomy\n    \n  \n  \n    Provides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.\n    \n      ⬡ GitHub\n    \n  \n  \n    Developers\n    \n      \n        TV\n        Tibo Vande MoorteleLead developer"
+  },
+  {
+    "objectID": "tools/example-tool.html#overview",
+    "href": "tools/example-tool.html#overview",
+    "title": "Example Tool",
+    "section": "",
+    "text": "Brief description of the tool: what problem it solves, who it is for, and what makes it distinctive."
+  },
+  {
+    "objectID": "tools/example-tool.html#installation",
+    "href": "tools/example-tool.html#installation",
+    "title": "Example Tool",
+    "section": "Installation",
+    "text": "Installation\npip install example-tool"
+  },
+  {
+    "objectID": "tools/example-tool.html#quick-start",
+    "href": "tools/example-tool.html#quick-start",
+    "title": "Example Tool",
+    "section": "Quick Start",
+    "text": "Quick Start\nimport example_tool\n\n# minimal usage example"
+  },
+  {
+    "objectID": "tools/example-tool.html#citation",
+    "href": "tools/example-tool.html#citation",
+    "title": "Example Tool",
+    "section": "Citation",
+    "text": "Citation\nIf you use this tool, please cite:\n\nAuthor et al. (year). Title. Journal. DOI: 10.xxxx/xxxxx"
+  },
+  {
+    "objectID": "tools/example-tool.html#links",
+    "href": "tools/example-tool.html#links",
+    "title": "Example Tool",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nDocumentation\nPyPI"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "CompOmics is a bioinformatics research group at Ghent University and VIB, focused on computational proteomics. We develop open-source software and methods to push the boundaries of mass spectrometry-based proteomics."
+  },
+  {
+    "objectID": "research.html#overview",
+    "href": "research.html#overview",
+    "title": "Research",
+    "section": "",
+    "text": "CompOmics is a bioinformatics research group at Ghent University and VIB, focused on computational proteomics. We develop open-source software and methods to push the boundaries of mass spectrometry-based proteomics."
+  },
+  {
+    "objectID": "research.html#research-themes",
+    "href": "research.html#research-themes",
+    "title": "Research",
+    "section": "Research Themes",
+    "text": "Research Themes\n\nPeptide & Protein Identification\nDevelopment of database search engines, post-processing tools, and validation strategies for PSM-level and protein-level identification in DDA and DIA workflows.\n\n\nAI-Based Spectrum & Retention Time Prediction\nWe train and apply deep learning models to predict MS2 spectra, retention times, and other peptide properties, enabling data-independent analysis and rescoring workflows.\n\n\nFAIR Proteomics Data\nWe contribute to community standards including HUPO-PSI formats (mzML, mzTab, mzSpecLib), ProteomeXchange/PRIDE data sharing, and ProteomicsML for machine learning-ready datasets.\n\n\nProteomics Data Infrastructure\nBuilding scalable data formats (Parquet, Feather), APIs, and pipelines to make large-scale proteomics data accessible and reusable by the community."
+  },
+  {
+    "objectID": "research.html#collaborations-consortia",
+    "href": "research.html#collaborations-consortia",
+    "title": "Research",
+    "section": "Collaborations & Consortia",
+    "text": "Collaborations & Consortia\n\nHUPO-PSI\nProteomeXchange\nPRIDE\nProteomicsML"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CompOmics",
+    "section": "",
+    "text": "Our Vision\nCompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.\nOur mission is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.\nWe are committed to open science: all our software, datasets, and workflows are publicly available and built to last.\n\n\n\n\n\n\n\n\n3 Research Lines\n\n\n524 Publications\n\n\n22 Tools\n\n\n27 Members\n\n\n\n\n  \n    \n    Tools\n    Open-source software for proteomics data analysis\n  \n  \n    \n    Team\n    Meet our researchers and developers\n  \n  \n    \n    Publications\n    Our research output and scientific papers\n  \n\n\n\n  \n    Where to find us\n    Computational Omics and Systems Biology Group\n    Department of Biomolecular Medicine, Ghent University\n    VIB-UGent Center for Medical Biotechnology, VIB\n    Technologiepark 759052 Gent-Zwijnaarde, Belgium\n    E-mail: lennart.martens@UGent.be"
+  },
+  {
+    "objectID": "index.html#latest-news",
+    "href": "index.html#latest-news",
+    "title": "",
+    "section": "Latest News",
+    "text": "Latest News\nNews items will appear here — see news/index.qmd."
+  },
+  {
+    "objectID": "index.html#selected-tools",
+    "href": "index.html#selected-tools",
+    "title": "",
+    "section": "Selected Tools",
+    "text": "Selected Tools\nTool highlights will appear here — see tools/index.qmd."
+  },
+  {
+    "objectID": "news/index.html",
+    "href": "news/index.html",
+    "title": "News",
+    "section": "",
+    "text": "Welcome to the new CompOmics website\n\n\n\nannouncement\n\n\n\nOur new website is live.\n\n\n\n\n\nJun 9, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "news/posts/2024-06-01-welcome.html",
+    "href": "news/posts/2024-06-01-welcome.html",
+    "title": "Welcome to the new CompOmics website",
+    "section": "",
+    "text": "Welcome to the new CompOmics website, built with Quarto.\nMore news and updates will follow here."
+  },
+  {
+    "objectID": "tools/index.html#prediction",
+    "href": "tools/index.html#prediction",
+    "title": "Tools & Software",
+    "section": "Prediction",
+    "text": "Prediction\n\n  \n    \n      \n      DeepLC\n    \n    Predicts when peptides will elute from the LC column during a mass spectrometry run. Unlike other tools, it handles modified peptides accurately, even modifications it has never seen before. When applied to a new instrument or experimental setup, it adapts quickly through transfer learning, requiring only a small number of example peptides rather than a full retraining.\n    \n       GitHub\n       Docs\n       PyPI\n       Bioconda\n       Web app\n       Paper 2021\n       Paper 2026\n    \n  \n  \n    CompOmics Developers\n     Robbin Bouwmeester\n     Ralf Gabriels\n  \n\n\n  \n    \n      \n      MS²PIP\n    \n    Predicts fragment ion peak intensities from peptide sequence alone. These predictions are used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is possible through MS²DIP.\n    \n       GitHub\n       Web app\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Arthur Declercq\n     Ralf Gabriels\n  \n\n\n  \n    \n      \n      IM2Deep\n    \n    Predicts collisional cross-section (CCS) values for peptides including multiply modified ones. Supports ion mobility filtering in DDA and DIA workflows.\n    \n       GitHub\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Arthur Declercq\n     Robbin Bouwmeester"
+  },
+  {
+    "objectID": "tools/index.html#rescoring",
+    "href": "tools/index.html#rescoring",
+    "title": "Tools & Software",
+    "section": "Rescoring",
+    "text": "Rescoring\n\n  \n    \n      \n      MS²Rescore\n    \n    Rescores peptide-spectrum matches by combining predicted LC-MS/MS features (retention time, fragment intensities, and ion mobility) with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Works with DDA and DIA data, and has been validated for immunopeptidomics and metaproteomics.\n    \n       GitHub\n       Docs\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Ralf Gabriels\n     Arthur Declercq"
+  },
+  {
+    "objectID": "tools/index.html#data-standards-utilities",
+    "href": "tools/index.html#data-standards-utilities",
+    "title": "Tools & Software",
+    "section": "Data Standards & Utilities",
+    "text": "Data Standards & Utilities\n\n  \n    \n      \n      psm_utils\n    \n    A Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.\n    \n       GitHub\n       Docs\n       PyPI\n    \n  \n  \n    CompOmics Developers\n     Ralf Gabriels\n  \n\n\n  \n    \n      \n      lesSDRF\n    \n    An interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.\n    \n       GitHub\n       Web app\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Sander Van Puyvelde\n  \n\n\n  \n    \n      \n      Thermo Raw File Parser\n    \n    Converts Thermo .raw files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.\n    \n       GitHub\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Robbin Bouwmeester"
+  },
+  {
+    "objectID": "tools/index.html#taxonomy-metaproteomics",
+    "href": "tools/index.html#taxonomy-metaproteomics",
+    "title": "Tools & Software",
+    "section": "Taxonomy & Metaproteomics",
+    "text": "Taxonomy & Metaproteomics\n\n  \n    \n      \n      Unipept\n    \n    Tryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month and integrates with major proteomics workflows via a Python and R client.\n    \n       GitHub\n       Web app\n       API docs\n       Paper\n    \n  \n  \n    CompOmics Developers\n     Robbin Bouwmeester\n     Arthur Declercq\n  \n\n\n  \n    \n      \n      Peptonizer2000\n    \n    Provides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.\n    \n       GitHub\n    \n  \n  \n    CompOmics Developers\n     Robbin Bouwmeester"
+  },
+  {
+    "objectID": "tools/index.html#rescoring-1",
+    "href": "tools/index.html#rescoring-1",
+    "title": "Tools & Software",
+    "section": "Rescoring",
+    "text": "Rescoring\n\n  \n    \n      \n      MS²Rescore\n    \n    Rescores peptide-spectrum matches by combining predicted LC-MS/MS features (retention time, fragment intensities, and ion mobility) with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Works with DDA and DIA data, and has been validated for immunopeptidomics and metaproteomics.\n    \n       GitHub\n       Docs\n       Paper\n    \n  \n  \n    Developers\n    Ralf Gabriels\n    Arthur Declercq"
+  },
+  {
+    "objectID": "tools/index.html#data-standards-utilities-1",
+    "href": "tools/index.html#data-standards-utilities-1",
+    "title": "Tools & Software",
+    "section": "Data Standards & Utilities",
+    "text": "Data Standards & Utilities\n\n  \n    \n      \n      psm_utils\n    \n    A Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.\n    \n       GitHub\n       Docs\n       PyPI\n    \n  \n  \n    Developers\n    Ralf Gabriels\n  \n\n\n  \n    \n      \n      lesSDRF\n    \n    An interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.\n    \n       GitHub\n       Web app\n       Paper\n    \n  \n  \n    Developers\n    Sander Van Puyvelde\n  \n\n\n  \n    \n      \n      Thermo Raw File Parser\n    \n    Converts Thermo .raw files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.\n    \n       GitHub\n       Paper\n    \n  \n  \n    Developers\n    Niels Hulstaert"
+  },
+  {
+    "objectID": "tools/index.html#taxonomy-metaproteomics-1",
+    "href": "tools/index.html#taxonomy-metaproteomics-1",
+    "title": "Tools & Software",
+    "section": "Taxonomy & Metaproteomics",
+    "text": "Taxonomy & Metaproteomics\n\n  \n    \n      \n      Unipept\n    \n    Tryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month and integrates with major proteomics workflows via a Python and R client.\n    \n       GitHub\n       Web app\n       API docs\n       Paper\n    \n  \n  \n    Developers\n    Bart Mesuere\n    Tibo Vande Moortele\n  \n\n\n  \n    \n      \n      Peptonizer2000\n    \n    Provides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.\n    \n       GitHub\n    \n  \n  \n    Developers\n    Tibo Vande Moortele\n  \n\nPredicts when peptides will elute from the LC column during a mass spectrometry run. Unlike other tools, it handles modified peptides accurately, even modifications it has never seen before. When applied to a new instrument or experimental setup, it adapts quickly through transfer learning, requiring only a small number of example peptides rather than a full retraining.\nDevelopers: Robbin Bouwmeester, Ralf Gabriels, Niels Hulstaert, Sven Degroeve\nLinks: GitHub · Docs · PyPI · Bioconda · Web app\nCitation:\n\nBouwmeester et al. (2021). DeepLC can predict retention times for peptides that carry as-yet unseen modifications. Nature Methods. DOI: 10.1038/s41592-021-01301-5\n\n\nBouwmeester, Nameni et al. (2026). Transfer learning in DeepLC improves LC retention time prediction across substantially different modifications and setups. Nature Communications. DOI: 10.1038/s41467-026-68981-5\n\n\n\nMS²PIP\nPredicts fragment ion peak intensities from peptide sequence alone. These predictions are used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is possible through MS²DIP.\nDevelopers: Sven Degroeve, Arthur Declercq, Ralf Gabriels\nLinks: GitHub · Web app\nCitation:\n\nDegroeve & Martens (2013). MS²PIP: a tool for MS/MS peak intensity prediction. Bioinformatics. DOI: 10.1093/bioinformatics/btt355\n\n\n\n\nIM2Deep\nPredicts collisional cross-section (CCS) values for peptides including multiply modified ones. Supports ion mobility filtering in DDA and DIA workflows.\nDevelopers: Arthur Declercq, Robbin Bouwmeester\nLinks: GitHub\nCitation:\n\nDeclercq et al. (2024). IM2Deep: predicting collisional cross sections for multi-modified peptides. Journal of Proteome Research. DOI: 10.1021/acs.jproteome.4c00098"
+  },
+  {
+    "objectID": "tools/index.html#prediction-1",
+    "href": "tools/index.html#prediction-1",
+    "title": "Tools & Software",
+    "section": "Prediction",
+    "text": "Prediction\n\n  \n    \n      \n      DeepLC\n    \n    Predicts when peptides will elute from the LC column during a mass spectrometry run. Unlike other tools, it handles modified peptides accurately, even modifications it has never seen before. When applied to a new instrument or experimental setup, it adapts quickly through transfer learning, requiring only a small number of example peptides rather than a full retraining.\n    \n       GitHub\n       Docs\n       PyPI\n       Bioconda\n       Web app\n       Paper 2021\n       Paper 2026\n    \n  \n  \n    Developers\n    Robbin Bouwmeester\n    Ralf Gabriels\n    Niels Hulstaert\n    Sven Degroeve\n  \n\n\n  \n    \n      \n      MS²PIP\n    \n    Predicts fragment ion peak intensities from peptide sequence alone. These predictions are used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is possible through MS²DIP.\n    \n       GitHub\n       Web app\n       Paper\n    \n  \n  \n    Developers\n    Sven Degroeve\n    Arthur Declercq\n    Ralf Gabriels\n  \n\n\n  \n    \n      \n      IM2Deep\n    \n    Predicts collisional cross-section (CCS) values for peptides including multiply modified ones. Supports ion mobility filtering in DDA and DIA workflows.\n    \n       GitHub\n       Paper\n    \n  \n  \n    Developers\n    Arthur Declercq\n    Robbin Bouwmeester"
+  },
+  {
+    "objectID": "tools/index.html#rescoring-2",
+    "href": "tools/index.html#rescoring-2",
+    "title": "Tools & Software",
+    "section": "Rescoring",
+    "text": "Rescoring\n\nMS²Rescore\nRescores peptide-spectrum matches by combining predicted LC-MS/MS features (retention time, fragment intensities, and ion mobility) with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Works with DDA and DIA data, and has been validated for immunopeptidomics and metaproteomics.\nDevelopers: Ralf Gabriels, Arthur Declercq\nLinks: GitHub · Docs\nCitation:\n\nDeclercq et al. (2022). MS²Rescore: data-driven rescoring dramatically boosts immunopeptide identification rates. Molecular & Cellular Proteomics. DOI: 10.1016/j.mcpro.2022.100266"
+  },
+  {
+    "objectID": "tools/index.html#data-standards-utilities-2",
+    "href": "tools/index.html#data-standards-utilities-2",
+    "title": "Tools & Software",
+    "section": "Data Standards & Utilities",
+    "text": "Data Standards & Utilities\n\npsm_utils\nA Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.\nDevelopers: Ralf Gabriels\nLinks: GitHub · Docs · PyPI\n\n\n\nlesSDRF\nAn interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.\nDevelopers: Sander Van Puyvelde\nLinks: GitHub · Web app\nCitation:\n\nVan Puyvelde et al. (2022). lesSDRF: a desktop app for SDRF proteomics metadata annotation. Journal of Proteome Research. DOI: 10.1021/acs.jproteome.2c00120\n\n\n\n\nThermo Raw File Parser\nConverts Thermo .raw files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.\nDevelopers: Niels Hulstaert\nLinks: GitHub\nCitation:\n\nHulstaert et al. (2020). ThermoRawFileParser: modular, scalable, and cross-platform RAW file conversion. Journal of Proteome Research. DOI: 10.1021/acs.jproteome.9b00328"
+  },
+  {
+    "objectID": "tools/index.html#taxonomy-metaproteomics-2",
+    "href": "tools/index.html#taxonomy-metaproteomics-2",
+    "title": "Tools & Software",
+    "section": "Taxonomy & Metaproteomics",
+    "text": "Taxonomy & Metaproteomics\n\nUnipept\nTryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month and integrates with major proteomics workflows via a Python and R client.\nDevelopers: Bart Mesuere, Tibo Vande Moortele\nLinks: GitHub · Web app · API docs\nCitation:\n\nMesuere et al. (2012). Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples. Journal of Proteome Research. DOI: 10.1021/pr300576s\n\n\n\n\nPeptonizer2000\nProvides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.\nDevelopers: Tibo Vande Moortele\nLinks: GitHub"
+  },
+  {
+    "objectID": "team/toon.html",
+    "href": "team/toon.html",
+    "title": "Toon",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/toon.html#about",
+    "href": "team/toon.html#about",
+    "title": "Toon",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/toon.html#links",
+    "href": "team/toon.html#links",
+    "title": "Toon",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/tim.html",
+    "href": "team/tim.html",
+    "title": "Tim",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/tim.html#about",
+    "href": "team/tim.html#about",
+    "title": "Tim",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/tim.html#links",
+    "href": "team/tim.html#links",
+    "title": "Tim",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/sander.html",
+    "href": "team/sander.html",
+    "title": "Sander Van Puyvelde",
+    "section": "",
+    "text": "Research focus: FAIR data standards for proteomics, SDRF metadata annotation, and LLM-assisted experimental reporting."
+  },
+  {
+    "objectID": "team/sander.html#about",
+    "href": "team/sander.html#about",
+    "title": "Sander Van Puyvelde",
+    "section": "",
+    "text": "Research focus: FAIR data standards for proteomics, SDRF metadata annotation, and LLM-assisted experimental reporting."
+  },
+  {
+    "objectID": "team/sander.html#links",
+    "href": "team/sander.html#links",
+    "title": "Sander Van Puyvelde",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID\nGoogle Scholar"
+  },
+  {
+    "objectID": "team/sakina.html",
+    "href": "team/sakina.html",
+    "title": "Sakina",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sakina.html#about",
+    "href": "team/sakina.html#about",
+    "title": "Sakina",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sakina.html#links",
+    "href": "team/sakina.html#links",
+    "title": "Sakina",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/robbe.html",
+    "href": "team/robbe.html",
+    "title": "Robbe",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/robbe.html#about",
+    "href": "team/robbe.html#about",
+    "title": "Robbe",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/robbe.html#links",
+    "href": "team/robbe.html#links",
+    "title": "Robbe",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/pieter.html",
+    "href": "team/pieter.html",
+    "title": "Pieter",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/pieter.html#about",
+    "href": "team/pieter.html#about",
+    "title": "Pieter",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/pieter.html#links",
+    "href": "team/pieter.html#links",
+    "title": "Pieter",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/pathmanaban.html",
+    "href": "team/pathmanaban.html",
+    "title": "Pathmanaban",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/pathmanaban.html#about",
+    "href": "team/pathmanaban.html#about",
+    "title": "Pathmanaban",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/pathmanaban.html#links",
+    "href": "team/pathmanaban.html#links",
+    "title": "Pathmanaban",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/lyuda.html",
+    "href": "team/lyuda.html",
+    "title": "Lyuda",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/lyuda.html#about",
+    "href": "team/lyuda.html#about",
+    "title": "Lyuda",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/lyuda.html#links",
+    "href": "team/lyuda.html#links",
+    "title": "Lyuda",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/kevin.html",
+    "href": "team/kevin.html",
+    "title": "Kevin",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/kevin.html#about",
+    "href": "team/kevin.html#about",
+    "title": "Kevin",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/kevin.html#links",
+    "href": "team/kevin.html#links",
+    "title": "Kevin",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/hari.html",
+    "href": "team/hari.html",
+    "title": "Hari",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/hari.html#about",
+    "href": "team/hari.html#about",
+    "title": "Hari",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/hari.html#links",
+    "href": "team/hari.html#links",
+    "title": "Hari",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/caro.html",
+    "href": "team/caro.html",
+    "title": "Caro",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/caro.html#about",
+    "href": "team/caro.html#about",
+    "title": "Caro",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/caro.html#links",
+    "href": "team/caro.html#links",
+    "title": "Caro",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/alireza.html",
+    "href": "team/alireza.html",
+    "title": "Alireza",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/alireza.html#about",
+    "href": "team/alireza.html#about",
+    "title": "Alireza",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/alireza.html#links",
+    "href": "team/alireza.html#links",
+    "title": "Alireza",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/alex.html",
+    "href": "team/alex.html",
+    "title": "Alex",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/alex.html#about",
+    "href": "team/alex.html#about",
+    "title": "Alex",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/alex.html#links",
+    "href": "team/alex.html#links",
+    "title": "Alex",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/arthur.html",
+    "href": "team/arthur.html",
+    "title": "Arthur Declercq",
+    "section": "",
+    "text": "Research focus: deep learning for ion mobility and CCS prediction, and rescoring of peptide-spectrum matches."
+  },
+  {
+    "objectID": "team/arthur.html#about",
+    "href": "team/arthur.html#about",
+    "title": "Arthur Declercq",
+    "section": "",
+    "text": "Research focus: deep learning for ion mobility and CCS prediction, and rescoring of peptide-spectrum matches."
+  },
+  {
+    "objectID": "team/arthur.html#links",
+    "href": "team/arthur.html#links",
+    "title": "Arthur Declercq",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID\nGoogle Scholar"
+  },
+  {
+    "objectID": "team/enrico.html",
+    "href": "team/enrico.html",
+    "title": "Enrico",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/enrico.html#about",
+    "href": "team/enrico.html#about",
+    "title": "Enrico",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/enrico.html#links",
+    "href": "team/enrico.html#links",
+    "title": "Enrico",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/jasper.html",
+    "href": "team/jasper.html",
+    "title": "Jasper",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/jasper.html#about",
+    "href": "team/jasper.html#about",
+    "title": "Jasper",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/jasper.html#links",
+    "href": "team/jasper.html#links",
+    "title": "Jasper",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/lennart.html",
+    "href": "team/lennart.html",
+    "title": "Lennart",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/lennart.html#about",
+    "href": "team/lennart.html#about",
+    "title": "Lennart",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/lennart.html#links",
+    "href": "team/lennart.html#links",
+    "title": "Lennart",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/natalia.html",
+    "href": "team/natalia.html",
+    "title": "Natalia",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/natalia.html#about",
+    "href": "team/natalia.html#about",
+    "title": "Natalia",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/natalia.html#links",
+    "href": "team/natalia.html#links",
+    "title": "Natalia",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/patricia.html",
+    "href": "team/patricia.html",
+    "title": "Patricia",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/patricia.html#about",
+    "href": "team/patricia.html#about",
+    "title": "Patricia",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/patricia.html#links",
+    "href": "team/patricia.html#links",
+    "title": "Patricia",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/ralf.html",
+    "href": "team/ralf.html",
+    "title": "Ralf Gabriels",
+    "section": "",
+    "text": "Research focus: PSM rescoring pipelines, open data standards for proteomics, and software infrastructure for mass spectrometry-based proteomics."
+  },
+  {
+    "objectID": "team/ralf.html#about",
+    "href": "team/ralf.html#about",
+    "title": "Ralf Gabriels",
+    "section": "",
+    "text": "Research focus: PSM rescoring pipelines, open data standards for proteomics, and software infrastructure for mass spectrometry-based proteomics."
+  },
+  {
+    "objectID": "team/ralf.html#links",
+    "href": "team/ralf.html#links",
+    "title": "Ralf Gabriels",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID\nGoogle Scholar"
+  },
+  {
+    "objectID": "team/robbin.html",
+    "href": "team/robbin.html",
+    "title": "Robbin Bouwmeester",
+    "section": "",
+    "text": "Research focus: deep learning models for peptide property prediction, with a specialisation in LC retention time and transfer learning across experimental setups."
+  },
+  {
+    "objectID": "team/robbin.html#about",
+    "href": "team/robbin.html#about",
+    "title": "Robbin Bouwmeester",
+    "section": "",
+    "text": "Research focus: deep learning models for peptide property prediction, with a specialisation in LC retention time and transfer learning across experimental setups."
+  },
+  {
+    "objectID": "team/robbin.html#links",
+    "href": "team/robbin.html#links",
+    "title": "Robbin Bouwmeester",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID\nGoogle Scholar"
+  },
+  {
+    "objectID": "team/sam.html",
+    "href": "team/sam.html",
+    "title": "Sam",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sam.html#about",
+    "href": "team/sam.html#about",
+    "title": "Sam",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sam.html#links",
+    "href": "team/sam.html#links",
+    "title": "Sam",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/sude.html",
+    "href": "team/sude.html",
+    "title": "Sude",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sude.html#about",
+    "href": "team/sude.html#about",
+    "title": "Sude",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/sude.html#links",
+    "href": "team/sude.html#links",
+    "title": "Sude",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/tine.html",
+    "href": "team/tine.html",
+    "title": "Tine",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/tine.html#about",
+    "href": "team/tine.html#about",
+    "title": "Tine",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/tine.html#links",
+    "href": "team/tine.html#links",
+    "title": "Tine",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "team/xuxa.html",
+    "href": "team/xuxa.html",
+    "title": "Xuxa",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/xuxa.html#about",
+    "href": "team/xuxa.html#about",
+    "title": "Xuxa",
+    "section": "",
+    "text": "Research focus: computational proteomics at Ghent University and VIB."
+  },
+  {
+    "objectID": "team/xuxa.html#links",
+    "href": "team/xuxa.html#links",
+    "title": "Xuxa",
+    "section": "Links",
+    "text": "Links\n\nGitHub\nORCID"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Publications are listed below. For a full list, see our Google Scholar page or ORCID profiles."
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024\n\nAuthor A, Author B, Author C. (2024). Title of the paper. Journal Name, vol(issue), pages. DOI"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2023",
+    "text": "2023\n\nAuthor A, Author B. (2023). Title of another paper. Journal Name, vol(issue), pages. DOI\n\n\n\n\n\n\n\n\nTipPreprints\n\n\n\nRecent preprints are available on bioRxiv."
+  }
+]

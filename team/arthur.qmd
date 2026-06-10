@@ -1,0 +1,16 @@
+---
+title: "Arthur Declercq"
+description: "PhD researcher, peptide property prediction and ion mobility"
+image: ../assets/images/arthur.jpg
+order: 3
+---
+
+## About
+
+Research focus: deep learning for ion mobility and CCS prediction, and rescoring of peptide-spectrum matches.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)
+- [Google Scholar](https://scholar.google.com/)

@@ -1,0 +1,61 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "CompOmics"
+  description: "Computational Proteomics — Ghent University / VIB"
+  favicon: assets/images/favicon.png
+  site-url: https://compomics.github.io
+
+  navbar:
+    logo: assets/images/CompOmics_neg.png
+    logo-alt: "CompOmics"
+    title: false
+    right:
+      - text: "Research"
+        href: research.qmd
+      - text: "Tools"
+        href: tools/index.qmd
+      - text: "Team"
+        href: team/index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "Tutorials"
+        href: news/index.qmd
+      - icon: github
+        href: https://github.com/compomics
+        aria-label: GitHub
+
+  page-footer:
+    left: "© CompOmics — Ghent University / VIB"
+    right:
+      - text: "GitHub"
+        href: https://github.com/compomics
+
+format:
+  html:
+    theme:
+      light: [flatly, assets/compomics.scss]
+      dark: [darkly, assets/compomics.scss]
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+    highlight-style: github
+    include-after-body:
+      text: |
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('a[href]').forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes(location.hostname)) {
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'noopener noreferrer');
+            }
+          });
+        });
+        </script>
+
+execute:
+  freeze: auto

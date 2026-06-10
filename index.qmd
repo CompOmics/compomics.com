@@ -1,0 +1,101 @@
+---
+title: ""
+page-layout: full
+toc: false
+---
+
+::: {.grid .vision-section}
+
+::: {.g-col-12 .g-col-md-7 .vision-text}
+### Our Vision
+
+CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.
+
+Our **mission** is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.
+
+We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.
+:::
+
+::: {.g-col-12 .g-col-md-5}
+```{=html}
+<img src="assets/images/front_page.jpg" class="vision-img" alt="CompOmics research" />
+```
+:::
+
+:::
+
+---
+
+::: {.grid .stats-row}
+
+::: {.g-col-6 .g-col-md-3 .stat-tile}
+[3]{.stat-number}
+[Research Lines]{.stat-label}
+:::
+
+::: {.g-col-6 .g-col-md-3 .stat-tile}
+[524]{.stat-number}
+[Publications]{.stat-label}
+:::
+
+::: {.g-col-6 .g-col-md-3 .stat-tile}
+[22]{.stat-number}
+[Tools]{.stat-label}
+:::
+
+::: {.g-col-6 .g-col-md-3 .stat-tile}
+[27]{.stat-number}
+[Members]{.stat-label}
+:::
+
+:::
+
+---
+
+```{=html}
+<div class="nav-tiles-row">
+  <a href="tools/" class="nav-tile">
+    <i class="bi bi-tools nav-tile-icon"></i>
+    <div class="nav-tile-title">Tools</div>
+    <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
+  </a>
+  <a href="team/" class="nav-tile">
+    <i class="bi bi-people-fill nav-tile-icon"></i>
+    <div class="nav-tile-title">Team</div>
+    <div class="nav-tile-desc">Meet our researchers and developers</div>
+  </a>
+  <a href="publications.html" class="nav-tile">
+    <i class="bi bi-journal-text nav-tile-icon"></i>
+    <div class="nav-tile-title">Publications</div>
+    <div class="nav-tile-desc">Our research output and scientific papers</div>
+  </a>
+</div>
+```
+
+---
+
+```{=html}
+<div class="location-section">
+  <div class="location-text">
+    <h2 class="location-title">Where to find us</h2>
+    <p class="location-group"><strong>Computational Omics and Systems Biology Group</strong></p>
+    <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
+    VIB-UGent Center for Medical Biotechnology, VIB</p>
+    <p class="location-addr">Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</p>
+    <p class="location-email"><strong>E-mail:</strong> <a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></p>
+  </div>
+  <div class="location-img">
+    <a href="https://beeldbank.ugent.be/nl/fotoalbum/foto/z2019-087-040" target="_blank" rel="noopener noreferrer">
+      <img src="assets/images/Transitie UGent.png" alt="Ghent University Technology Park" />
+    </a>
+  </div>
+</div>
+<div class="location-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
+    width="100%" height="320" style="border:0; border-radius: 0.75rem;"
+    allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+```

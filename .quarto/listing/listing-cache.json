@@ -1,0 +1,15 @@
+{
+  "listingMap": {
+    "news\\index.qmd": [
+      "posts/*.qmd"
+    ],
+    "team\\index.qmd": [
+      "*.qmd",
+      "!index.qmd"
+    ],
+    "tools\\index.qmd": [
+      "*.qmd",
+      "!index.qmd"
+    ]
+  }
+}

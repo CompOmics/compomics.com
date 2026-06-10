@@ -1,0 +1,45 @@
+[
+  {
+    "listing": "/tools/index.html",
+    "items": [
+      "/tools/example-tool.html"
+    ]
+  },
+  {
+    "listing": "/team/index.html",
+    "items": [
+      "/team/robbin.html",
+      "/team/jane-doe.html",
+      "/team/ralf.html",
+      "/team/arthur.html",
+      "/team/sander.html",
+      "/team/alex.html",
+      "/team/alireza.html",
+      "/team/caro.html",
+      "/team/enrico.html",
+      "/team/hari.html",
+      "/team/jasper.html",
+      "/team/kevin.html",
+      "/team/lennart.html",
+      "/team/lyuda.html",
+      "/team/natalia.html",
+      "/team/pathmanaban.html",
+      "/team/patricia.html",
+      "/team/pieter.html",
+      "/team/robbe.html",
+      "/team/sakina.html",
+      "/team/sam.html",
+      "/team/sude.html",
+      "/team/tim.html",
+      "/team/tine.html",
+      "/team/toon.html",
+      "/team/xuxa.html"
+    ]
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/posts/2024-06-01-welcome.html"
+    ]
+  }
+]

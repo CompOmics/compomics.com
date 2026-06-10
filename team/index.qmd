@@ -1,0 +1,150 @@
+---
+title: "Team"
+toc: false
+---
+
+We are a multidisciplinary team of bioinformaticians, computer scientists, and proteomics researchers based at Ghent University and VIB.
+
+```{=html}
+<h3 class="team-section-title">Group Leader</h3>
+<div class="team-grid">
+  <div class="team-card">
+    <img src="../assets/images/lennart.jpg" class="team-photo" alt="Lennart Martens">
+    <div class="team-name">Lennart Martens</div>
+    <div class="team-role">Group Leader</div>
+  </div>
+</div>
+
+<h3 class="team-section-title">Postdoctoral Researchers</h3>
+<div class="team-grid">
+  <div class="team-card">
+    <img src="../assets/images/sakina.jpg" class="team-photo" alt="Sakina Bombaywala">
+    <div class="team-name">Sakina Bombaywala</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/robbin.jpg" class="team-photo" alt="Robbin Bouwmeester">
+    <div class="team-name">Robbin Bouwmeester</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/tine.jpg" class="team-photo" alt="Tine Claeys">
+    <div class="team-name">Tine Claeys</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/arthur.jpg" class="team-photo" alt="Arthur Declercq">
+    <div class="team-name">Arthur Declercq</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/ralf.jpg" class="team-photo" alt="Ralf Gabriels">
+    <div class="team-name">Ralf Gabriels</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/alex.jpg" class="team-photo" alt="Alexander Kensert">
+    <div class="team-name">Alexander Kensert</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/enrico.jpg" class="team-photo" alt="Enrico Massignani">
+    <div class="team-name">Enrico Massignani</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/pathmanaban.jpg" class="team-photo" alt="Pathmanaban Ramasamy">
+    <div class="team-name">Pathmanaban Ramasamy</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/tim.jpg" class="team-photo" alt="Tim Van Den Bossche">
+    <div class="team-name">Tim Van Den Bossche</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/pieter.jpg" class="team-photo" alt="Pieter Verschaffelt">
+    <div class="team-name">Pieter Verschaffelt</div>
+    <div class="team-role">Postdoctoral Researcher</div>
+  </div>
+</div>
+
+<h3 class="team-section-title">Predoctoral Researchers</h3>
+<div class="team-grid">
+  <div class="team-card">
+    <img src="../assets/images/toon.jpg" class="team-photo" alt="Toon Callens">
+    <div class="team-name">Toon Callens</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/robbe.jpg" class="team-photo" alt="Robbe Devreese">
+    <div class="team-name">Robbe Devreese</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/sander.jpg" class="team-photo" alt="Sander Heyndrickx">
+    <div class="team-name">Sander Heyndrickx</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/sude.jpg" class="team-photo" alt="Sude Güneş">
+    <div class="team-name">Sude Güneş</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/caro.jpg" class="team-photo" alt="Caroline Jachmann">
+    <div class="team-name">Caroline Jachmann</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/xuxa.jpg" class="team-photo" alt="Xuxa Malliet">
+    <div class="team-name">Xuxa Malliet</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/alireza.jpg" class="team-photo" alt="Alireza Nameni">
+    <div class="team-name">Alireza Nameni</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/hari.jpg" class="team-photo" alt="Harikrishnan Ramadassan">
+    <div class="team-name">Harikrishnan Ramadassan</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/sam.jpg" class="team-photo" alt="Sam van Puyenbroeck">
+    <div class="team-name">Sam van Puyenbroeck</div>
+    <div class="team-role">Predoctoral Researcher</div>
+  </div>
+</div>
+
+<h3 class="team-section-title">Support Staff</h3>
+<div class="team-grid">
+  <div class="team-card">
+    <img src="../assets/images/lyuda.jpg" class="team-photo" alt="Lyudmila Kovalchuke">
+    <div class="team-name">Lyudmila Kovalchuke</div>
+    <div class="team-role">Project Manager</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/patricia.jpg" class="team-photo" alt="Patricia Lefèvre">
+    <div class="team-name">Patricia Lefèvre</div>
+    <div class="team-role">Group Secretary</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/natalia.jpg" class="team-photo" alt="Natalia Tichshenko">
+    <div class="team-name">Natalia Tichshenko</div>
+    <div class="team-role">Software Developer</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/kevin.jpg" class="team-photo" alt="Kevin Velghe">
+    <div class="team-name">Kevin Velghe</div>
+    <div class="team-role">Software Developer</div>
+  </div>
+  <div class="team-card">
+    <img src="../assets/images/jasper.jpg" class="team-photo" alt="Jasper Zuallaert">
+    <div class="team-name">Jasper Zuallaert</div>
+    <div class="team-role">Staff Scientist</div>
+  </div>
+</div>
+```
+

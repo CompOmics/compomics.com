@@ -1,0 +1,15 @@
+---
+title: "Alex"
+description: "Team member, computational proteomics"
+image: ../assets/images/alex.jpg
+order: 5
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

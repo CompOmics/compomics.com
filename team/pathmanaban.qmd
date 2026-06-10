@@ -1,0 +1,15 @@
+---
+title: "Pathmanaban"
+description: "Team member, computational proteomics"
+image: ../assets/images/pathmanaban.jpg
+order: 15
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

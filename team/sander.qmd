@@ -1,0 +1,16 @@
+---
+title: "Sander Van Puyvelde"
+description: "PhD researcher, proteomics metadata and SDRF annotation"
+image: ../assets/images/sander.jpg
+order: 4
+---
+
+## About
+
+Research focus: FAIR data standards for proteomics, SDRF metadata annotation, and LLM-assisted experimental reporting.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)
+- [Google Scholar](https://scholar.google.com/)

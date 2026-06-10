@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent.">
+
+<title>Tools &amp; Software – CompOmics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d58168542e1b05ab509c510cbeb13b13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ca2cd98d9063e9ae40c601beba500e0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images/CompOmics_neg.png" alt="CompOmics" class="navbar-logo light-content">
+    <img src="../assets/images/CompOmics_neg.png" alt="CompOmics" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CompOmics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tools/index.html"> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../team/index.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../news/index.html"> 
+<span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/compomics"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tools &amp; Software</h1>
+</div>
+
+<div>
+  <div class="description">
+    Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>All tools are freely available under permissive licences. Source code is on <a href="https://github.com/compomics">GitHub</a>.</p>
+<style>
+.tools-page { margin-top: 2rem; }
+
+.cat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0096C7;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e8f0;
+}
+
+.tool-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem;
+  margin-bottom: 10px;
+  border: 0.5px solid #dde6ef;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+.tool-row:hover { border-color: #b0c8dd; }
+
+.tool-id { display: flex; align-items: flex-start; gap: 10px; }
+
+.tool-icon-wrap {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+
+.tool-name {
+  font-size: 15px; font-weight: 600;
+  margin: 0 0 4px; line-height: 1.3;
+}
+
+.tool-tag {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.tool-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin: 0 0 10px;
+  color: #415a77;
+}
+
+.tool-links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.tool-links a {
+  font-size: 12px; font-weight: 500;
+  color: #0096C7; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 3px;
+}
+.tool-links a:hover { text-decoration: underline; }
+
+.tool-citation {
+  font-size: 12px; color: #778da9;
+  border-left: 2px solid #dde6ef;
+  padding-left: 8px; margin: 0;
+  line-height: 1.5;
+}
+.tool-citation a { color: #778da9; }
+
+.meta-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #0096C7; margin-bottom: 10px;
+}
+
+.dev-list { display: flex; flex-direction: column; gap: 8px; }
+
+.dev-item { display: flex; align-items: center; gap: 8px; }
+
+.dev-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; color: white; flex-shrink: 0;
+}
+
+.dev-name { font-size: 13px; font-weight: 500; margin: 0; line-height: 1.2; }
+.dev-role { font-size: 11px; color: #778da9; margin: 0; }
+
+@media (max-width: 800px) {
+  .tool-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="tools-page">
+
+<!-- ── PREDICTION ── -->
+<div class="cat-label">Prediction</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#e0f7fa;">⏱️</div>
+    <div>
+      <p class="tool-name">DeepLC</p>
+      <span class="tool-tag" style="background:#e0f7fa; color:#006888;">Retention time</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Predicts when peptides will elute from the LC column during a mass spectrometry run. Handles modified peptides accurately — even modifications never seen during training. Adapts to new instruments and setups through transfer learning, requiring only a small number of example peptides.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/DeepLC">⬡ GitHub</a>
+      <a href="https://compomics.github.io/DeepLC">Docs</a>
+      <a href="https://pypi.org/project/deeplc/">PyPI</a>
+      <a href="https://iomics.ugent.be/deeplc/">Web app</a>
+    </div>
+    <p class="tool-citation">
+      Bouwmeester et al. (2021). <em>DeepLC can predict retention times for peptides that carry as-yet unseen modifications.</em> Nature Methods. <a href="https://doi.org/10.1038/s41592-021-01301-5">10.1038/s41592-021-01301-5</a><br>
+      Bouwmeester, Nameni et al. (2026). <em>Transfer learning in DeepLC improves LC retention time prediction.</em> Nature Communications. <a href="https://doi.org/10.1038/s41467-026-68981-5">10.1038/s41467-026-68981-5</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#0096C7;">RB</div>
+        <div><p class="dev-name">Robbin Bouwmeester</p><p class="dev-role">Lead developer</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">RG</div>
+        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Contributor</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">SD</div>
+        <div><p class="dev-name">Sven Degroeve</p><p class="dev-role">Contributor</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#e8f5e9;">📊</div>
+    <div>
+      <p class="tool-name">MS²PIP</p>
+      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Fragment intensity</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Predicts fragment ion peak intensities from peptide sequence alone. Used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is available through MS²DIP.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/ms2pip">⬡ GitHub</a>
+      <a href="https://iomics.ugent.be/ms2pip/">Web app</a>
+    </div>
+    <p class="tool-citation">
+      Degroeve &amp; Martens (2013). <em>MS²PIP: a tool for MS/MS peak intensity prediction.</em> Bioinformatics. <a href="https://doi.org/10.1093/bioinformatics/btt355">10.1093/bioinformatics/btt355</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#2e7d32;">SD</div>
+        <div><p class="dev-name">Sven Degroeve</p><p class="dev-role">Original author</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">AD</div>
+        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Lead developer</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#e8f5e9;">💨</div>
+    <div>
+      <p class="tool-name">IM2Deep</p>
+      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Ion mobility</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Predicts collisional cross-section (CCS) values for peptides, including multiply modified ones. Enables confident ion mobility filtering in DDA and DIA workflows.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/im2deep">⬡ GitHub</a>
+    </div>
+    <p class="tool-citation">
+      Declercq et al. (2024). <em>IM2Deep: predicting collisional cross sections for multi-modified peptides.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.4c00098">10.1021/acs.jproteome.4c00098</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">AD</div>
+        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Lead developer</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#0096C7;">RB</div>
+        <div><p class="dev-name">Robbin Bouwmeester</p><p class="dev-role">Contributor</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RESCORING ── -->
+<div class="cat-label">Rescoring</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#ede7f6;">🏆</div>
+    <div>
+      <p class="tool-name">MS²Rescore</p>
+      <span class="tool-tag" style="background:#ede7f6; color:#4527a0;">PSM rescoring</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Rescores peptide-spectrum matches by combining predicted LC-MS/MS features — retention time, fragment intensities, and ion mobility — with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Validated for immunopeptidomics and metaproteomics.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/ms2rescore">⬡ GitHub</a>
+      <a href="https://ms2rescore.readthedocs.io">Docs</a>
+    </div>
+    <p class="tool-citation">
+      Declercq et al. (2022). <em>MS²Rescore: data-driven rescoring dramatically boosts immunopeptide identification rates.</em> Molecular &amp; Cellular Proteomics. <a href="https://doi.org/10.1016/j.mcpro.2022.100266">10.1016/j.mcpro.2022.100266</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#7c4dff;">RG</div>
+        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Lead developer</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">AD</div>
+        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Contributor</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DATA STANDARDS ── -->
+<div class="cat-label">Data Standards &amp; Utilities</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#fff8e1;">🔧</div>
+    <div>
+      <p class="tool-name">psm_utils</p>
+      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">PSM handling</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">A Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/psm_utils">⬡ GitHub</a>
+      <a href="https://psm-utils.readthedocs.io">Docs</a>
+      <a href="https://pypi.org/project/psm-utils/">PyPI</a>
+    </div>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#e65100;">RG</div>
+        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Lead developer</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#fff8e1;">🗂️</div>
+    <div>
+      <p class="tool-name">lesSDRF</p>
+      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">Metadata</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">An interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/lesSDRF">⬡ GitHub</a>
+      <a href="https://lessdrf.streamlit.app/">Web app</a>
+    </div>
+    <p class="tool-citation">
+      Van Puyvelde et al. (2022). <em>lesSDRF: a desktop app for SDRF proteomics metadata annotation.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.2c00120">10.1021/acs.jproteome.2c00120</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#e65100;">SV</div>
+        <div><p class="dev-name">Sander Van Puyvelde</p><p class="dev-role">Lead developer</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#fff8e1;">📂</div>
+    <div>
+      <p class="tool-name">Thermo Raw File Parser</p>
+      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">File conversion</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Converts Thermo <code>.raw</code> files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/ThermoRawFileParser">⬡ GitHub</a>
+    </div>
+    <p class="tool-citation">
+      Hulstaert et al. (2020). <em>ThermoRawFileParser: modular, scalable, and cross-platform RAW file conversion.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.9b00328">10.1021/acs.jproteome.9b00328</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#e65100;">NH</div>
+        <div><p class="dev-name">Niels Hulstaert</p><p class="dev-role">Lead developer</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TAXONOMY ── -->
+<div class="cat-label">Taxonomy &amp; Metaproteomics</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#e8f5e9;">🌿</div>
+    <div>
+      <p class="tool-name">Unipept</p>
+      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Metaproteomics</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Tryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month. Integrates with major proteomics workflows via Python and R clients.</p>
+    <div class="tool-links">
+      <a href="https://github.com/unipept/unipept">⬡ GitHub</a>
+      <a href="https://unipept.ugent.be/">Web app</a>
+      <a href="https://unipept.ugent.be/apidocs">API docs</a>
+    </div>
+    <p class="tool-citation">
+      Mesuere et al. (2012). <em>Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/pr300576s">10.1021/pr300576s</a>
+    </p>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#2e7d32;">BM</div>
+        <div><p class="dev-name">Bart Mesuere</p><p class="dev-role">Lead developer</p></div>
+      </div>
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#415a77;">TV</div>
+        <div><p class="dev-name">Tibo Vande Moortele</p><p class="dev-role">Contributor</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-row">
+  <div class="tool-id">
+    <div class="tool-icon-wrap" style="background:#e8f5e9;">🎲</div>
+    <div>
+      <p class="tool-name">Peptonizer2000</p>
+      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Taxonomy</span>
+    </div>
+  </div>
+  <div>
+    <p class="tool-desc">Provides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.</p>
+    <div class="tool-links">
+      <a href="https://github.com/compomics/Peptonizer2000">⬡ GitHub</a>
+    </div>
+  </div>
+  <div>
+    <div class="meta-label">Developers</div>
+    <div class="dev-list">
+      <div class="dev-item">
+        <div class="dev-avatar" style="background:#2e7d32;">TV</div>
+        <div><p class="dev-name">Tibo Vande Moortele</p><p class="dev-role">Lead developer</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/compomics\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© CompOmics — Ghent University / VIB</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/compomics">
+<p>GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,15 @@
+---
+title: "Kevin"
+description: "Team member, computational proteomics"
+image: ../assets/images/kevin.jpg
+order: 11
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

@@ -1,0 +1,16 @@
+---
+title: "Robbin Bouwmeester"
+description: "Postdoctoral researcher, deep learning for retention time prediction"
+image: ../assets/images/robbin.jpg
+order: 1
+---
+
+## About
+
+Research focus: deep learning models for peptide property prediction, with a specialisation in LC retention time and transfer learning across experimental setups.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)
+- [Google Scholar](https://scholar.google.com/)

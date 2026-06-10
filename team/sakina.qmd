@@ -1,0 +1,15 @@
+---
+title: "Sakina"
+description: "Team member, computational proteomics"
+image: ../assets/images/sakina.jpg
+order: 19
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

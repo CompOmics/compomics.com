@@ -1,0 +1,15 @@
+---
+title: "Enrico"
+description: "Team member, computational proteomics"
+image: ../assets/images/enrico.jpg
+order: 8
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

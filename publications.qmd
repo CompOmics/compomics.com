@@ -1,0 +1,24 @@
+---
+title: "Publications"
+---
+
+Publications are listed below. For a full list, see our [Google Scholar page](https://scholar.google.com/) or [ORCID profiles](https://orcid.org/).
+
+---
+
+## 2024
+
+> **Author A**, Author B, Author C. (2024). *Title of the paper.* *Journal Name*, vol(issue), pages. [DOI](https://doi.org)
+
+---
+
+## 2023
+
+> **Author A**, Author B. (2023). *Title of another paper.* *Journal Name*, vol(issue), pages. [DOI](https://doi.org)
+
+---
+
+::: {.callout-tip}
+## Preprints
+Recent preprints are available on [bioRxiv](https://www.biorxiv.org/).
+:::

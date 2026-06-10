@@ -1,0 +1,10 @@
+---
+title: "News"
+listing:
+  contents: "posts/*.qmd"
+  type: default
+  fields: [date, title, description, categories]
+  categories: true
+  sort: "date desc"
+  feed: true
+---

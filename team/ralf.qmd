@@ -1,0 +1,16 @@
+---
+title: "Ralf Gabriels"
+description: "Postdoctoral researcher, peptide rescoring and proteomics data standards"
+image: ../assets/images/ralf.jpg
+order: 2
+---
+
+## About
+
+Research focus: PSM rescoring pipelines, open data standards for proteomics, and software infrastructure for mass spectrometry-based proteomics.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)
+- [Google Scholar](https://scholar.google.com/)

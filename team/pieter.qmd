@@ -1,0 +1,15 @@
+---
+title: "Pieter"
+description: "Team member, computational proteomics"
+image: ../assets/images/pieter.jpg
+order: 17
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)

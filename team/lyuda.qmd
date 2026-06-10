@@ -1,0 +1,15 @@
+---
+title: "Lyuda"
+description: "Team member, computational proteomics"
+image: ../assets/images/lyuda.jpg
+order: 13
+---
+
+## About
+
+Research focus: computational proteomics at Ghent University and VIB.
+
+## Links
+
+- [GitHub](https://github.com/compomics)
+- [ORCID](https://orcid.org/)
