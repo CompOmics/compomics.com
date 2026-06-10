@@ -9,7 +9,7 @@ include-in-header:
   text: |
     <link rel="stylesheet" href="assets/scroll-bg.css">
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
       const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
 
@@ -19,44 +19,64 @@ include-in-header:
 
       let rafId = 0;
 
-      const setActive = function(index) {
-        scenes.forEach(function(scene, sceneIndex) {
-          scene.classList.toggle('is-active', sceneIndex === index);
-        });
-
-        frames.forEach(function(frame, frameIndex) {
-          frame.classList.toggle('is-active', frameIndex === index);
-        });
+      const clamp = function (value, min, max) {
+        return Math.min(max, Math.max(min, value));
       };
 
-      const pickActiveScene = function() {
-        const viewportCenter = window.innerHeight * 0.46;
+      const blendStart = 0.82;
+      const blendSpan = 0.18;
+
+      const update = function () {
+        const viewportCenter = window.innerHeight * 0.48;
+        const sceneTops = scenes.map(function (scene) {
+          return scene.getBoundingClientRect().top + window.scrollY;
+        });
+
         let activeIndex = 0;
-        let smallestDistance = Infinity;
 
-        scenes.forEach(function(scene, index) {
-          const rect = scene.getBoundingClientRect();
-          const sceneCenter = rect.top + (rect.height / 2);
-          const distance = Math.abs(sceneCenter - viewportCenter);
-
-          if (distance < smallestDistance) {
-            smallestDistance = distance;
+        for (let index = 0; index < sceneTops.length - 1; index += 1) {
+          if (window.scrollY + viewportCenter >= sceneTops[index]) {
             activeIndex = index;
           }
+        }
+
+        scenes.forEach(function (scene, sceneIndex) {
+          scene.classList.toggle('is-active', sceneIndex === activeIndex);
         });
 
-        setActive(activeIndex);
+        const currentTop = sceneTops[activeIndex];
+        const nextTop = sceneTops[Math.min(activeIndex + 1, sceneTops.length - 1)];
+        const span = Math.max(1, nextTop - currentTop);
+        const progress = clamp((window.scrollY + viewportCenter - currentTop) / span, 0, 1);
+        const blend = clamp((progress - blendStart) / blendSpan, 0, 1);
+        const blurAmount = blend > 0 && blend < 1 ? (Math.sin(Math.PI * blend) * 12) : 0;
+
+        frames.forEach(function (frame, frameIndex) {
+          let opacity = 0;
+
+          if (frameIndex === activeIndex) {
+            opacity = 1 - blend;
+          } else if (frameIndex === activeIndex + 1) {
+            opacity = blend;
+          }
+
+          frame.classList.toggle('is-active', opacity > 0.01);
+          frame.style.opacity = opacity.toFixed(4);
+          frame.style.filter = opacity > 0 && opacity < 1
+            ? 'blur(' + blurAmount.toFixed(2) + 'px) saturate(.9) contrast(1.06) brightness(.86)'
+            : 'none';
+          frame.style.transform = 'none';
+        });
       };
 
-      const schedulePick = function() {
+      const scheduleUpdate = function () {
         window.cancelAnimationFrame(rafId);
-        rafId = window.requestAnimationFrame(pickActiveScene);
+        rafId = window.requestAnimationFrame(update);
       };
 
-      window.addEventListener('scroll', schedulePick, { passive: true });
-      window.addEventListener('resize', schedulePick);
-
-      schedulePick();
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate);
+      scheduleUpdate();
     });
     </script>
 ---
@@ -164,55 +184,4 @@ include-in-header:
   </section>
 </div>
 
-<script>
-(function () {
-  const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
-  const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
-
-  if (!scenes.length || !frames.length) {
-    return;
-  }
-
-  let rafId = 0;
-
-  const setActive = function(index) {
-    scenes.forEach(function(scene, sceneIndex) {
-      scene.classList.toggle('is-active', sceneIndex === index);
-    });
-
-    frames.forEach(function(frame, frameIndex) {
-      frame.classList.toggle('is-active', frameIndex === index);
-    });
-  };
-
-  const pickActiveScene = function() {
-    const viewportCenter = window.innerHeight * 0.46;
-    let activeIndex = 0;
-    let smallestDistance = Infinity;
-
-    scenes.forEach(function(scene, index) {
-      const rect = scene.getBoundingClientRect();
-      const sceneCenter = rect.top + (rect.height / 2);
-      const distance = Math.abs(sceneCenter - viewportCenter);
-
-      if (distance < smallestDistance) {
-        smallestDistance = distance;
-        activeIndex = index;
-      }
-    });
-
-    setActive(activeIndex);
-  };
-
-  const schedulePick = function() {
-    window.cancelAnimationFrame(rafId);
-    rafId = window.requestAnimationFrame(pickActiveScene);
-  };
-
-  window.addEventListener('scroll', schedulePick, { passive: true });
-  window.addEventListener('resize', schedulePick);
-
-  schedulePick();
-})();
-</script>
 ```

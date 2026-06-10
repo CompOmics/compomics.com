@@ -28,14 +28,16 @@ body { background: transparent !important; }
 
 #cmp-bg::before {
   background:
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,.08), rgba(255,255,255,0) 42%),
-    linear-gradient(to bottom, rgba(8,10,14,.45) 0%, rgba(8,10,14,.15) 22%, rgba(8,10,14,.20) 60%, rgba(8,10,14,.72) 100%);
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,.05), rgba(255,255,255,0) 38%),
+    linear-gradient(to bottom, rgba(6,8,12,.62) 0%, rgba(6,8,12,.28) 20%, rgba(6,8,12,.34) 58%, rgba(6,8,12,.84) 100%);
 }
 
 #cmp-bg::after {
-  background: linear-gradient(135deg, rgba(31,95,143,.16), rgba(214,55,41,.05) 45%, rgba(0,0,0,0) 70%);
+  background:
+    linear-gradient(135deg, rgba(31,95,143,.10), rgba(214,55,41,.04) 45%, rgba(0,0,0,0) 70%),
+    linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0) 52%);
   mix-blend-mode: screen;
-  opacity: .65;
+  opacity: .82;
 }
 
 .cmp-frame {
@@ -46,14 +48,13 @@ body { background: transparent !important; }
   object-fit: cover;
   object-position: center center;
   opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 900ms ease, transform 1200ms ease;
-  filter: saturate(.92) contrast(1.03) brightness(.95);
+  transform: none;
+  transition: opacity 1.15s ease, filter 1.15s ease;
+  filter: saturate(.9) contrast(1.06) brightness(.86);
 }
 
 .cmp-frame.is-active {
   opacity: 1;
-  transform: scale(1);
 }
 
 .cmp-scenes {
@@ -128,14 +129,14 @@ body { background: transparent !important; }
 .cmp-scrollcue::before { content: "↓ "; }
 
 .cmp-panel {
-  background: rgba(255,253,243,.93);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(230,225,208,.95);
+  background: rgba(255,253,243,.90);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(230,225,208,.86);
   border-radius: 1rem;
   padding: clamp(1.6rem, 3.5vw, 2.8rem);
   max-width: 760px;
-  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+  box-shadow: 0 24px 70px rgba(0,0,0,.40);
 }
 
 .cmp-panel h2,
@@ -169,6 +170,47 @@ body { background: transparent !important; }
 }
 .cmp-panel strong { color: #14110d; font-weight: 700; }
 
+.cmp-scene-vision .cmp-panel {
+  background: rgba(18, 22, 28, .74);
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+}
+
+.cmp-scene-vision .cmp-panel-kicker {
+  color: rgba(255,255,255,.92);
+}
+
+.cmp-scene-vision .cmp-panel h2,
+.cmp-scene-vision .cmp-panel p,
+.cmp-scene-vision .cmp-panel strong {
+  color: #f5f3eb;
+}
+
+.cmp-scene-vision .cmp-panel p.lead {
+  color: rgba(255,255,255,.94);
+}
+
+.cmp-scene-vision .cmp-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+
+.cmp-scene-vision .cmp-panel {
+  position: relative;
+}
+
+.cmp-scene-vision .cmp-panel h2 {
+  color: #ffffff;
+}
+
+.cmp-scene-vision .cmp-panel p:last-child {
+  margin-bottom: 0;
+}
+
 .cmp-section-head {
   margin-bottom: 1.5rem;
   max-width: 760px;
@@ -191,11 +233,12 @@ body { background: transparent !important; }
 }
 
 .cmp-tiles-row .nav-tile {
-  background: rgba(255,253,243,.90);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-color: rgba(230,225,208,.95);
+  background: rgba(255,253,243,.84);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-color: rgba(230,225,208,.86);
   min-height: 220px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
 }
 
 .cmp-tiles-row .nav-tile .nav-tile-desc {
@@ -247,7 +290,7 @@ body { background: transparent !important; }
 
 .cmp-location-wrap .location-section {
   margin: 0;
-  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
 }
 
 @media (max-width: 720px) {
@@ -272,5 +315,9 @@ body { background: transparent !important; }
   .cmp-frame {
     transition: none;
     transform: none;
+  }
+
+  .cmp-scene-vision .cmp-panel::before {
+    display: none;
   }
 }
