@@ -1,5 +1,5 @@
 ---
-title: "Patricia"
+title: "Patricia Lefevre"
 description: "Team member, computational proteomics"
 image: ../assets/images/patricia.jpg
 order: 16

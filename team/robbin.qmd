@@ -3,6 +3,7 @@ title: "Robbin Bouwmeester"
 description: "Postdoctoral researcher, deep learning for retention time prediction"
 image: ../assets/images/robbin.jpg
 order: 1
+orcid: "https://orcid.org/0000-0001-6807-7029"
 ---
 
 ## About
@@ -12,5 +13,5 @@ Research focus: deep learning models for peptide property prediction, with a spe
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0001-6807-7029)
 - [Google Scholar](https://scholar.google.com/)

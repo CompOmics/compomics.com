@@ -1,8 +1,9 @@
 ---
-title: "Alex"
+title: "Alexander Kensert"
 description: "Team member, computational proteomics"
 image: ../assets/images/alex.jpg
 order: 5
+orcid: "https://orcid.org/0000-0002-5295-010X"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0002-5295-010X)

@@ -2,6 +2,9 @@
 title: ""
 page-layout: full
 toc: false
+execute:
+  freeze: false
+  echo: false
 ---
 
 ::: {.grid .vision-section}
@@ -26,14 +29,23 @@ We are committed to open science: all our software, datasets, and workflows are 
 
 ---
 
-```{=html}
+```{python}
+import json, os
+from pathlib import Path
+from IPython.display import HTML
+
+project_root = Path(os.environ.get("QUARTO_PROJECT_DIR", Path.cwd()))
+pub_file = project_root / "data" / "publications.json"
+pub_count = len(json.loads(pub_file.read_text(encoding="utf-8"))) if pub_file.exists() else "—"
+
+display(HTML(f"""
 <div class="grid stats-row">
   <a href="research.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
     <span class="stat-number">3</span>
     <span class="stat-label">Research Lines</span>
   </a>
   <a href="publications.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">524</span>
+    <span class="stat-number">{pub_count}</span>
     <span class="stat-label">Publications</span>
   </a>
   <a href="tools/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
@@ -45,6 +57,7 @@ We are committed to open science: all our software, datasets, and workflows are 
     <span class="stat-label">Members</span>
   </a>
 </div>
+"""))
 ```
 
 ---

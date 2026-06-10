@@ -1,8 +1,9 @@
 ---
-title: "Caro"
+title: "Caroline Jachmann"
 description: "Team member, computational proteomics"
 image: ../assets/images/caro.jpg
 order: 7
+orcid: "https://orcid.org/0009-0000-4679-7295"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0009-0000-4679-7295)

@@ -1,8 +1,9 @@
 ---
-title: "Sander Van Puyvelde"
+title: "Sander Heyndrickx"
 description: "PhD researcher, proteomics metadata and SDRF annotation"
 image: ../assets/images/sander.jpg
 order: 4
+orcid: "https://orcid.org/0009-0004-1818-8619"
 ---
 
 ## About
@@ -12,5 +13,5 @@ Research focus: FAIR data standards for proteomics, SDRF metadata annotation, an
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0009-0004-1818-8619)
 - [Google Scholar](https://scholar.google.com/)

@@ -1,8 +1,9 @@
 ---
-title: "Kevin"
+title: "Kevin Velghe"
 description: "Team member, computational proteomics"
 image: ../assets/images/kevin.jpg
 order: 11
+orcid: "https://orcid.org/0000-0002-9968-6043"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0002-9968-6043)

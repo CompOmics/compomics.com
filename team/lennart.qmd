@@ -1,8 +1,9 @@
 ---
-title: "Lennart"
+title: "Lennart Martens"
 description: "Team member, computational proteomics"
 image: ../assets/images/lennart.jpg
 order: 12
+orcid: "https://orcid.org/0000-0003-4277-658X"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0003-4277-658X)

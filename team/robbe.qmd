@@ -1,8 +1,9 @@
 ---
-title: "Robbe"
+title: "Robbe Devreese"
 description: "Team member, computational proteomics"
 image: ../assets/images/robbe.jpg
 order: 18
+orcid: "https://orcid.org/0000-0002-3432-1502"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0002-3432-1502)

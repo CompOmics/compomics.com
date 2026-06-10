@@ -1,8 +1,9 @@
 ---
-title: "Natalia"
+title: "Natalia Tichshenko"
 description: "Team member, computational proteomics"
 image: ../assets/images/natalia.jpg
 order: 14
+orcid: "https://orcid.org/0000-0001-7914-0759"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0000-0001-7914-0759)

@@ -1,8 +1,9 @@
 ---
-title: "Sude"
+title: "Sude Gunes"
 description: "Team member, computational proteomics"
 image: ../assets/images/sude.jpg
 order: 21
+orcid: "https://orcid.org/0009-0008-8343-4221"
 ---
 
 ## About
@@ -12,4 +13,4 @@ Research focus: computational proteomics at Ghent University and VIB.
 ## Links
 
 - [GitHub](https://github.com/compomics)
-- [ORCID](https://orcid.org/)
+- [ORCID](https://orcid.org/0009-0008-8343-4221)
