@@ -6,145 +6,344 @@ toc: false
 We are a multidisciplinary team of bioinformaticians, computer scientists, and proteomics researchers based at Ghent University and VIB.
 
 ```{=html}
-<h3 class="team-section-title">Group Leader</h3>
-<div class="team-grid">
-  <a href="lennart.html" class="team-card">
-    <img src="../assets/images/lennart.jpg" class="team-photo" alt="Lennart Martens">
-    <div class="team-name">Lennart Martens</div>
-    <div class="team-role">Group Leader</div>
-  </a>
-</div>
+<section class="team-shell">
+  <div class="team-shell-intro">
 
-<h3 class="team-section-title">Postdoctoral Researchers</h3>
-<div class="team-grid">
-  <a href="sakina.html" class="team-card">
-    <img src="../assets/images/sakina.jpg" class="team-photo" alt="Sakina Bombaywala">
-    <div class="team-name">Sakina Bombaywala</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="robbin.html" class="team-card">
-    <img src="../assets/images/robbin.jpg" class="team-photo" alt="Robbin Bouwmeester">
-    <div class="team-name">Robbin Bouwmeester</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="tine.html" class="team-card">
-    <img src="../assets/images/tine.jpg" class="team-photo" alt="Tine Claeys">
-    <div class="team-name">Tine Claeys</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="arthur.html" class="team-card">
-    <img src="../assets/images/arthur.jpg" class="team-photo" alt="Arthur Declercq">
-    <div class="team-name">Arthur Declercq</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="ralf.html" class="team-card">
-    <img src="../assets/images/ralf.jpg" class="team-photo" alt="Ralf Gabriels">
-    <div class="team-name">Ralf Gabriels</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="alex.html" class="team-card">
-    <img src="../assets/images/alex.jpg" class="team-photo" alt="Alexander Kensert">
-    <div class="team-name">Alexander Kensert</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="enrico.html" class="team-card">
-    <img src="../assets/images/enrico.jpg" class="team-photo" alt="Enrico Massignani">
-    <div class="team-name">Enrico Massignani</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="pathmanaban.html" class="team-card">
-    <img src="../assets/images/pathmanaban.jpg" class="team-photo" alt="Pathmanaban Ramasamy">
-    <div class="team-name">Pathmanaban Ramasamy</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="tim.html" class="team-card">
-    <img src="../assets/images/tim.jpg" class="team-photo" alt="Tim Van Den Bossche">
-    <div class="team-name">Tim Van Den Bossche</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-  <a href="pieter.html" class="team-card">
-    <img src="../assets/images/pieter.jpg" class="team-photo" alt="Pieter Verschaffelt">
-    <div class="team-name">Pieter Verschaffelt</div>
-    <div class="team-role">Postdoctoral Researcher</div>
-  </a>
-</div>
+  <h3 class="team-section-title">Group Leader</h3>
+  <div class="team-grid team-grid-selectors">
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="lennart">
+        <img src="../assets/images/lennart.jpg" class="team-photo" alt="Lennart Martens">
+        <div class="team-name">Lennart Martens</div>
+      </button>
+    </div>
+  </div>
+  
+  <h3 class="team-section-title">Predoctoral Researchers</h3>
+  <div class="team-grid team-grid-selectors">
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="sakina">
+        <img src="../assets/images/sakina.jpg" class="team-photo" alt="Sakina Bombaywala">
+        <div class="team-name">Sakina Bombaywala</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="robbin">
+        <img src="../assets/images/robbin.jpg" class="team-photo" alt="Robbin Bouwmeester">
+        <div class="team-name">Robbin Bouwmeester</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="tine">
+        <img src="../assets/images/tine.jpg" class="team-photo" alt="Tine Claeys">
+        <div class="team-name">Tine Claeys</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="arthur">
+        <img src="../assets/images/arthur.jpg" class="team-photo" alt="Arthur Declercq">
+        <div class="team-name">Arthur Declercq</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="ralf">
+        <img src="../assets/images/ralf.jpg" class="team-photo" alt="Ralf Gabriels">
+        <div class="team-name">Ralf Gabriels</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="alex">
+        <img src="../assets/images/alex.jpg" class="team-photo" alt="Alexander Kensert">
+        <div class="team-name">Alexander Kensert</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="enrico">
+        <img src="../assets/images/enrico.jpg" class="team-photo" alt="Enrico Massignani">
+        <div class="team-name">Enrico Massignani</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="pathmanaban">
+        <img src="../assets/images/pathmanaban.jpg" class="team-photo" alt="Pathmanaban Ramasamy">
+        <div class="team-name">Pathmanaban Ramasamy</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="tim">
+        <img src="../assets/images/tim.jpg" class="team-photo" alt="Tim Van Den Bossche">
+        <div class="team-name">Tim Van Den Bossche</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="pieter">
+        <img src="../assets/images/pieter.jpg" class="team-photo" alt="Pieter Verschaffelt">
+        <div class="team-name">Pieter Verschaffelt</div>
+      </button>
+    </div>
+  </div>
 
-<h3 class="team-section-title">Predoctoral Researchers</h3>
-<div class="team-grid">
-  <a href="toon.html" class="team-card">
-    <img src="../assets/images/toon.jpg" class="team-photo" alt="Toon Callens">
-    <div class="team-name">Toon Callens</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="robbe.html" class="team-card">
-    <img src="../assets/images/robbe.jpg" class="team-photo" alt="Robbe Devreese">
-    <div class="team-name">Robbe Devreese</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="sander.html" class="team-card">
-    <img src="../assets/images/sander.jpg" class="team-photo" alt="Sander Heyndrickx">
-    <div class="team-name">Sander Heyndrickx</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="sude.html" class="team-card">
-    <img src="../assets/images/sude.jpg" class="team-photo" alt="Sude Güneş">
-    <div class="team-name">Sude Güneş</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="caro.html" class="team-card">
-    <img src="../assets/images/caro.jpg" class="team-photo" alt="Caroline Jachmann">
-    <div class="team-name">Caroline Jachmann</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="xuxa.html" class="team-card">
-    <img src="../assets/images/xuxa.jpg" class="team-photo" alt="Xuxa Malliet">
-    <div class="team-name">Xuxa Malliet</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="alireza.html" class="team-card">
-    <img src="../assets/images/alireza.jpg" class="team-photo" alt="Alireza Nameni">
-    <div class="team-name">Alireza Nameni</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="hari.html" class="team-card">
-    <img src="../assets/images/hari.jpg" class="team-photo" alt="Harikrishnan Ramadassan">
-    <div class="team-name">Harikrishnan Ramadassan</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-  <a href="sam.html" class="team-card">
-    <img src="../assets/images/sam.jpg" class="team-photo" alt="Sam van Puyenbroeck">
-    <div class="team-name">Sam van Puyenbroeck</div>
-    <div class="team-role">Predoctoral Researcher</div>
-  </a>
-</div>
+  <h3 class="team-section-title">Predoctoral Researchers</h3>
+  <div class="team-grid team-grid-selectors">
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="toon">
+        <img src="../assets/images/toon.jpg" class="team-photo" alt="Toon Callens">
+        <div class="team-name">Toon Callens</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="robbe">
+        <img src="../assets/images/robbe.jpg" class="team-photo" alt="Robbe Devreese">
+        <div class="team-name">Robbe Devreese</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="sander">
+        <img src="../assets/images/sander.jpg" class="team-photo" alt="Sander Heyndrickx">
+        <div class="team-name">Sander Heyndrickx</div>
+      </button>
+      <template class="team-profile-tpl">
+        <div class="team-detail-header">
+          <div class="team-detail-eyebrow">Profile</div>
+          <h3>Sander Heyndrickx</h3>
+          <p class="team-detail-role">Predoctoral Researcher</p>
+        </div>
+        <section class="team-detail-section">
+          <h4>About</h4>
+          <p>Sander obtained his Master's degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2025. His interest in the computational side of biology was sparked during his studies, in part through a course on metabolomics taught by Prof. Lennart Martens and through his Master's thesis, which focused on using deep learning to predict post-translational modifications and on leveraging these predictions to filter the search space for search engines.</p>
+        </section>
+        <section class="team-detail-section">
+          <h4>Current work</h4>
+          <p>He is now a predoctoral researcher in the CompOmics group, where his PhD project centres on the development of data analysis tools for middle-down proteomics. He also works on omics foundation models. His research includes a collaboration with the University of Southern Denmark, with Prof. Ole Nørregaard Jensen, on middle-down proteomics.</p>
+        </section>
+        <section class="team-detail-section">
+          <h4>Recognition</h4>
+          <p>In 2026 he received the Flash Talk prize at EuBIC. Outside the lab, Sander is passionate about science and technology, and he is an avid sportsman who enjoys running, cycling, and hiking.</p>
+        </section>
+        <section class="team-detail-section">
+          <h4>Key publications</h4>
+          <div class="team-pub-list">
+            <a class="team-pub-item" href="https://doi.org/10.26434/chemrxiv.15000466/v2" target="_blank" rel="noopener">
+              <span class="team-pub-title">Hardware Software Synergy in Proteomics</span>
+              <span class="team-pub-venue">ChemRxiv · 2026</span>
+            </a>
+          </div>
+        </section>
+      </template>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="sude">
+        <img src="../assets/images/sude.jpg" class="team-photo" alt="Sude Güneş">
+        <div class="team-name">Sude Güneş</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="caro">
+        <img src="../assets/images/caro.jpg" class="team-photo" alt="Caroline Jachmann">
+        <div class="team-name">Caroline Jachmann</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="xuxa">
+        <img src="../assets/images/xuxa.jpg" class="team-photo" alt="Xuxa Malliet">
+        <div class="team-name">Xuxa Malliet</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="alireza">
+        <img src="../assets/images/alireza.jpg" class="team-photo" alt="Alireza Nameni">
+        <div class="team-name">Alireza Nameni</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="hari">
+        <img src="../assets/images/hari.jpg" class="team-photo" alt="Harikrishnan Ramadassan">
+        <div class="team-name">Harikrishnan Ramadassan</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="sam">
+        <img src="../assets/images/sam.jpg" class="team-photo" alt="Sam van Puyenbroeck">
+        <div class="team-name">Sam van Puyenbroeck</div>
+      </button>
+    </div>
+  </div>
 
-<h3 class="team-section-title">Support Staff</h3>
-<div class="team-grid">
-  <a href="lyuda.html" class="team-card">
-    <img src="../assets/images/lyuda.jpg" class="team-photo" alt="Lyudmila Kovalchuke">
-    <div class="team-name">Lyudmila Kovalchuke</div>
-    <div class="team-role">Project Manager</div>
-  </a>
-  <a href="patricia.html" class="team-card">
-    <img src="../assets/images/patricia.jpg" class="team-photo" alt="Patricia Lefèvre">
-    <div class="team-name">Patricia Lefèvre</div>
-    <div class="team-role">Group Secretary</div>
-  </a>
-  <a href="natalia.html" class="team-card">
-    <img src="../assets/images/natalia.jpg" class="team-photo" alt="Natalia Tichshenko">
-    <div class="team-name">Natalia Tichshenko</div>
-    <div class="team-role">Software Developer</div>
-  </a>
-  <a href="kevin.html" class="team-card">
-    <img src="../assets/images/kevin.jpg" class="team-photo" alt="Kevin Velghe">
-    <div class="team-name">Kevin Velghe</div>
-    <div class="team-role">Software Developer</div>
-  </a>
-  <a href="jasper.html" class="team-card">
-    <img src="../assets/images/jasper.jpg" class="team-photo" alt="Jasper Zuallaert">
-    <div class="team-name">Jasper Zuallaert</div>
-    <div class="team-role">Staff Scientist</div>
-  </a>
-</div>
+  <h3 class="team-section-title">Support Staff</h3>
+  <div class="team-grid team-grid-selectors">
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="lyuda">
+        <img src="../assets/images/lyuda.jpg" class="team-photo" alt="Lyudmila Kovalchuke">
+        <div class="team-name">Lyudmila Kovalchuke</div>
+        <div class="team-role">Project Manager</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="patricia">
+        <img src="../assets/images/patricia.jpg" class="team-photo" alt="Patricia Lefèvre">
+        <div class="team-name">Patricia Lefèvre</div>
+        <div class="team-role">Group Secretary</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="natalia">
+        <img src="../assets/images/natalia.jpg" class="team-photo" alt="Natalia Tichshenko">
+        <div class="team-name">Natalia Tichshenko</div>
+        <div class="team-role">Software Developer</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="kevin">
+        <img src="../assets/images/kevin.jpg" class="team-photo" alt="Kevin Velghe">
+        <div class="team-name">Kevin Velghe</div>
+        <div class="team-role">Software Developer</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="jasper">
+        <img src="../assets/images/jasper.jpg" class="team-photo" alt="Jasper Zuallaert">
+        <div class="team-name">Jasper Zuallaert</div>
+        <div class="team-role">Staff Scientist</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const cards = Array.from(document.querySelectorAll('.team-card[data-member]'));
+  if (!cards.length) return;
+
+  let activeCard = null;
+
+  const memberData = {
+    lennart: { title: 'Lennart Martens', role: 'Group Leader' },
+    sakina: { title: 'Sakina Bombaywala', role: 'Postdoctoral Researcher' },
+    robbin: { title: 'Robbin Bouwmeester', role: 'Postdoctoral Researcher' },
+    tine: { title: 'Tine Claeys', role: 'Postdoctoral Researcher' },
+    arthur: { title: 'Arthur Declercq', role: 'Postdoctoral Researcher' },
+    ralf: { title: 'Ralf Gabriels', role: 'Postdoctoral Researcher' },
+    alex: { title: 'Alexander Kensert', role: 'Postdoctoral Researcher' },
+    enrico: { title: 'Enrico Massignani', role: 'Postdoctoral Researcher' },
+    pathmanaban: { title: 'Pathmanaban Ramasamy', role: 'Postdoctoral Researcher' },
+    tim: { title: 'Tim Van Den Bossche', role: 'Postdoctoral Researcher' },
+    pieter: { title: 'Pieter Verschaffelt', role: 'Postdoctoral Researcher' },
+    toon: { title: 'Toon Callens', role: 'Predoctoral Researcher' },
+    robbe: { title: 'Robbe Devreese', role: 'Predoctoral Researcher' },
+    sander: { title: 'Sander Heyndrickx', role: 'Predoctoral Researcher' },
+    sude: { title: 'Sude Güneş', role: 'Predoctoral Researcher' },
+    caro: { title: 'Caroline Jachmann', role: 'Predoctoral Researcher' },
+    xuxa: { title: 'Xuxa Malliet', role: 'Predoctoral Researcher' },
+    alireza: { title: 'Alireza Nameni', role: 'Predoctoral Researcher' },
+    hari: { title: 'Harikrishnan Ramadassan', role: 'Predoctoral Researcher' },
+    sam: { title: 'Sam van Puyenbroeck', role: 'Predoctoral Researcher' },
+    lyuda: { title: 'Lyudmila Kovalchuke', role: 'Project Manager' },
+    patricia: { title: 'Patricia Lefèvre', role: 'Group Secretary' },
+    natalia: { title: 'Natalia Tichshenko', role: 'Software Developer' },
+    kevin: { title: 'Kevin Velghe', role: 'Software Developer' },
+    jasper: { title: 'Jasper Zuallaert', role: 'Staff Scientist' }
+  };
+
+  function getLastWrapInRow(clickedCard, grid) {
+    const wraps = Array.from(grid.querySelectorAll(':scope > .team-card-wrap'));
+    const cr = clickedCard.getBoundingClientRect();
+    let lastWrap = clickedCard.closest('.team-card-wrap');
+    wraps.forEach(function(wrap) {
+      const btn = wrap.querySelector('.team-card');
+      if (btn) {
+        const br = btn.getBoundingClientRect();
+        if (br.top < cr.bottom && cr.top < br.bottom) {
+          lastWrap = wrap;
+        }
+      }
+    });
+    return lastWrap;
+  }
+
+  function buildExpander(card) {
+    const wrap = card.closest('.team-card-wrap');
+    const tpl = wrap ? wrap.querySelector('.team-profile-tpl') : null;
+    const expander = document.createElement('div');
+    expander.className = 'team-profile-expander';
+    if (tpl) {
+      expander.appendChild(tpl.content.cloneNode(true));
+    } else {
+      const base = memberData[card.dataset.member] || {};
+      expander.innerHTML =
+        '<div class="team-detail-header">' +
+          '<div class="team-detail-eyebrow">Profile</div>' +
+          '<h3>' + (base.title || card.dataset.member) + '</h3>' +
+          '<p class="team-detail-role">' + (base.role || '') + '</p>' +
+        '</div>' +
+        '<section class="team-detail-section"><h4>About</h4><p>Detailed profile text will be added here.</p></section>';
+    }
+    return expander;
+  }
+
+  function openExpander(card, grid) {
+    const expander = buildExpander(card);
+    const lastWrap = getLastWrapInRow(card, grid);
+    lastWrap.after(expander);
+
+    requestAnimationFrame(function() {
+      // Position the notch arrow under the clicked card
+      const cardRect = card.getBoundingClientRect();
+      const expanderRect = expander.getBoundingClientRect();
+      if (expanderRect.width > 0) {
+        expander.style.setProperty('--notch-x', (cardRect.left + cardRect.width / 2 - expanderRect.left) + 'px');
+      }
+
+      // Animate open
+      expander.style.maxHeight = expander.scrollHeight + 'px';
+      expander.style.opacity = '1';
+
+      expander.addEventListener('transitionend', function onEnd(e) {
+        if (e.propertyName !== 'max-height') return;
+        expander.removeEventListener('transitionend', onEnd);
+        expander.style.maxHeight = 'none';
+        expander.style.overflow = 'visible';
+      });
+    });
+
+    card.classList.add('is-selected');
+    activeCard = card;
+  }
+
+  function closeExpander(expander, onDone) {
+    expander.style.overflow = 'hidden';
+    expander.style.maxHeight = expander.scrollHeight + 'px';
+    requestAnimationFrame(function() {
+      expander.style.maxHeight = '0';
+      expander.style.opacity = '0';
+      expander.addEventListener('transitionend', function onEnd(e) {
+        if (e.propertyName !== 'max-height') return;
+        expander.removeEventListener('transitionend', onEnd);
+        expander.remove();
+        if (onDone) onDone();
+      });
+    });
+  }
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      const grid = card.closest('.team-grid');
+      const existing = grid.querySelector('.team-profile-expander');
+      const sameCard = activeCard === card;
+
+      cards.forEach(function(c) { c.classList.remove('is-selected'); });
+      activeCard = null;
+
+      if (existing) {
+        if (sameCard) {
+          closeExpander(existing);
+          return;
+        }
+        existing.remove();
+      }
+
+      openExpander(card, grid);
+    });
+  });
+})();
+</script>
 ```
-

@@ -477,6 +477,14 @@ blockquote {
   margin: 2.5rem 0;
 }
 
+.team-card-wrap {
+  display: contents;
+}
+
+.team-grid-selectors {
+  margin-bottom: 1.75rem;
+}
+
 .team-card {
   display: flex;
   flex-direction: column;
@@ -486,13 +494,33 @@ blockquote {
   color: inherit;
   transition: transform 0.18s ease;
 
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     text-decoration: none;
     color: inherit;
 
-    .team-photo { filter: grayscale(0%); border-color: $primary; }
-    .team-name  { color: $primary; }
+    .team-photo {
+      filter: grayscale(0%);
+      border-color: $primary;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 0 0 3px rgba(31, 95, 143, 0.12);
+    }
+    .team-name { color: $primary; }
+  }
+
+  &.is-selected {
+    .team-photo {
+      filter: grayscale(0%);
+      border-color: $primary;
+      box-shadow: 0 0 0 4px rgba(31, 95, 143, 0.08);
+    }
+
+    .team-name { color: $primary; }
   }
 }
 
@@ -506,7 +534,7 @@ blockquote {
   box-shadow: none;
   margin-bottom: 0.75rem;
   display: block;
-  transition: filter 0.2s ease;
+  transition: filter 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   filter: grayscale(12%);
 
   &:hover { filter: grayscale(0%); }
@@ -519,6 +547,7 @@ blockquote {
   color: $ink;
   margin-bottom: 0.1rem;
   line-height: 1.3;
+  min-height: calc(1.02rem * 1.3 * 2);
 }
 
 .team-role {
@@ -540,6 +569,189 @@ blockquote {
   margin: 3rem 0 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid $line;
+}
+
+.team-shell-intro {
+  max-width: 72ch;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0.35rem 0 0;
+    color: $muted;
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+}
+
+.team-detail-panel,
+.team-profile-expander {
+  position: relative;
+  margin-top: 2rem;
+  padding: clamp(1.6rem, 3.5vw, 2.8rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.98), rgba(21, 28, 39, 0.95));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+
+  &[hidden] { display: none; }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(90, 167, 218, 0.14), rgba(90, 167, 218, 0) 36%),
+      linear-gradient(135deg, rgba(10, 14, 20, 0.18), rgba(10, 14, 20, 0.64));
+    pointer-events: none;
+  }
+}
+
+.team-profile-expander {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 1.15rem;
+  color: #f6f2ea;
+
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: var(--notch-x, 50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #0e1219;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+.team-detail-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.15rem;
+  color: #f6f2ea;
+}
+
+.team-detail-header {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 72ch;
+}
+
+.team-detail-eyebrow {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.team-detail-header h3 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff;
+  line-height: 1.08;
+}
+
+.team-detail-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.team-detail-section {
+  max-width: 78ch;
+  padding-top: 0.35rem;
+
+  h4 {
+    margin: 0 0 0.35rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: $font-family-heading;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 0.98rem;
+  }
+}
+
+.team-pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.team-pub-item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  padding: 0.45rem 0.8rem 0.45rem 0.8rem;
+  border: 1px solid rgba(90, 167, 218, 0.28);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  max-width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+
+  &::after {
+    content: "↗";
+    font-size: 0.7rem;
+    color: rgba(90, 167, 218, 0.55);
+    align-self: center;
+    margin-left: 0.15rem;
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+
+  &:hover {
+    border-color: rgba(90, 167, 218, 0.65);
+    background: rgba(90, 167, 218, 0.12);
+    box-shadow: 0 0 12px rgba(90, 167, 218, 0.18);
+    text-decoration: none;
+
+    &::after {
+      color: rgba(90, 167, 218, 0.95);
+      transform: translate(1px, -1px);
+    }
+  }
+}
+
+.team-pub-title {
+  font-family: $font-family-heading;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.3;
+}
+
+.team-pub-venue {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(90, 167, 218, 0.85);
+  white-space: nowrap;
 }
 
 // ── Location section — single elegant panel, address + map ───────────────────
