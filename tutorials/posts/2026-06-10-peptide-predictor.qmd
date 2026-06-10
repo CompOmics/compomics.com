@@ -1,0 +1,20 @@
+---
+title: "Multi-modal Peptide Property Prediction with CompOmics Tools"
+date: 2026-06-10
+description: "Predict fragment ion intensities (MS2PIP), retention times (DeepLC), and ion mobility / CCS values (IM2Deep) for any peptide sequence."
+categories: [proteomics, prediction, python, ms2pip, deeplc, im2deep]
+---
+
+This tutorial covers three complementary CompOmics predictors that together characterise a peptide's behaviour in an LC-MS/MS experiment: **MS2PIP** (MS2 fragment ion intensities), **DeepLC** (retention time), and **IM2Deep** (collisional cross section). Combined, they provide the feature set needed to build in silico spectral libraries or to rescore PSMs with MS2Rescore.
+
+The source notebook is available in the [CompOmics website repository](https://github.com/compomics/compomics.github.io/tree/main/tutorials/notebooks).
+
+```{=html}
+<iframe
+  src="../notebooks/peptide-predictor.html"
+  width="100%"
+  height="1100px"
+  style="border: 1px solid #e6e1d0; border-radius: 0.5rem; display: block;"
+  title="Multi-modal Peptide Property Prediction with CompOmics Tools">
+</iframe>
+```
