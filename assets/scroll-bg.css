@@ -190,7 +190,7 @@ body { background: transparent !important; }
 
 .cmp-hero-kicker,
 .cmp-panel-kicker {
-  font-family: "Roboto Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: .18em;
@@ -199,13 +199,17 @@ body { background: transparent !important; }
   margin-bottom: .9rem;
 }
 
+.cmp-scenes h1 a,
+.cmp-scenes h2 a,
+.cmp-scenes h3 a { display: none !important; }
+
 .cmp-hero-title {
-  font-family: "Open Sans", system-ui, sans-serif;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-weight: 800;
   color: #fff;
   line-height: .95;
   font-size: clamp(4rem, 14vw, 9rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin: 0;
   text-shadow: 0 3px 34px rgba(0,0,0,.55);
 }
@@ -226,7 +230,7 @@ body { background: transparent !important; }
 .cmp-scrollcue {
   margin-top: 2.25rem;
   color: #fefefe;
-  font-family: "Roboto Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: .78rem;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -247,7 +251,7 @@ body { background: transparent !important; }
 
 .cmp-panel h2,
 .cmp-h-light {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-weight: 800;
   line-height: 1.08;
   margin: 0;
@@ -262,7 +266,7 @@ body { background: transparent !important; }
 }
 
 .cmp-panel p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   color: #2c2823;
   line-height: 1.8;
   margin: 0 0 1rem;
@@ -287,7 +291,7 @@ body { background: transparent !important; }
 }
 
 .cmp-vision-v2-headline {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-weight: 800;
   font-size: clamp(2.6rem, 6vw, 4.2rem);
   line-height: 1.06;
@@ -298,7 +302,6 @@ body { background: transparent !important; }
   padding: 0;
 }
 
-.cmp-scene-vision .cmp-vision-v2-headline,
 .cmp-scene-tools .cmp-vision-v2-headline {
   background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
   -webkit-background-clip: text;
@@ -308,7 +311,7 @@ body { background: transparent !important; }
 }
 
 .cmp-vision-v2-lead {
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   color: rgba(255,255,255,.88);
   font-size: clamp(1rem, 1.8vw, 1.18rem);
   line-height: 1.72;
@@ -371,7 +374,7 @@ body { background: transparent !important; }
 }
 
 .cmp-pillar-title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-weight: 700;
   font-size: 1.02rem;
   color: #ffffff;
@@ -380,7 +383,7 @@ body { background: transparent !important; }
 }
 
 .cmp-pillar-desc {
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   color: rgba(255,255,255,.72);
   font-size: .88rem;
   line-height: 1.65;
@@ -482,7 +485,7 @@ body { background: transparent !important; }
   background: #1f5f8f;
   border: 1px solid #1f5f8f;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
@@ -512,7 +515,7 @@ body { background: transparent !important; }
 }
 
 .cmp-location-wrap .location-eyebrow {
-  font-family: "Roboto Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
   color: rgba(255,255,255,.80);
   letter-spacing: .18em;
 }
@@ -550,7 +553,7 @@ body { background: transparent !important; }
 }
 
 .cmp-location-wrap .location-directions {
-  font-family: "Roboto Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
   border-color: #d63729;
   color: #d63729;
   background: transparent;

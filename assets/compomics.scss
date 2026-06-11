@@ -1,9 +1,9 @@
 /*-- scss:defaults --*/
 
-// Typography — matched to legacy compomics.com (Open Sans headings, Roboto body)
-$font-family-sans-serif: "Roboto", system-ui, -apple-system, sans-serif;
-$font-family-heading:    "Open Sans", "Roboto", system-ui, sans-serif;
-$font-family-monospace:  "Roboto Mono", "JetBrains Mono", monospace;
+// Typography
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, sans-serif;
+$font-family-heading:    "Bricolage Grotesque", system-ui, sans-serif;
+$font-family-monospace:  "JetBrains Mono", monospace;
 $headings-font-family:   $font-family-heading;
 $headings-font-weight:   700;
 
@@ -12,7 +12,7 @@ $headings-font-weight:   700;
 
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 // ── Global ───────────────────────────────────────────────────────────────────
 body {
