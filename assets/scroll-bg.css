@@ -190,8 +190,8 @@ body { background: transparent !important; }
 
 .cmp-hero-kicker,
 .cmp-panel-kicker {
-  font-family: "Roboto", system-ui, sans-serif;
-  font-size: .8rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -225,7 +225,7 @@ body { background: transparent !important; }
 
 .cmp-scrollcue {
   margin-top: 2.25rem;
-  color: rgba(255,255,255,.82);
+  color: #fefefe;
   font-family: "Roboto Mono", monospace;
   font-size: .78rem;
   letter-spacing: .14em;
@@ -276,50 +276,122 @@ body { background: transparent !important; }
 }
 .cmp-panel strong { color: #14110d; font-weight: 700; }
 
-.cmp-scene-vision .cmp-panel {
-  background: rgba(18, 22, 28, .74);
-  border-color: rgba(255,255,255,.12);
-  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+/* --- Vision section v2: open layout, headline on photo, pillar cards --- */
+.cmp-vision-v2 {
+  max-width: 960px;
 }
 
-.cmp-scene-vision .cmp-panel-kicker {
-  color: rgba(255,255,255,.92);
-  /* Now the box's title (the old heading was removed) — size it up. */
-  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
-  letter-spacing: .01em;
-  margin-bottom: 1.1rem;
-  text-transform: capitalize;
+.cmp-vision-v2 .cmp-panel-kicker {
+  color: rgba(255,255,255,.80);
+  margin-bottom: 1rem;
 }
 
-.cmp-scene-vision .cmp-panel h2,
-.cmp-scene-vision .cmp-panel p,
-.cmp-scene-vision .cmp-panel strong {
-  color: #f5f3eb;
-}
-
-.cmp-scene-vision .cmp-panel p.lead {
-  color: rgba(255,255,255,.94);
-}
-
-.cmp-scene-vision .cmp-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-}
-
-.cmp-scene-vision .cmp-panel {
-  position: relative;
-}
-
-.cmp-scene-vision .cmp-panel h2 {
+.cmp-vision-v2-headline {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.06;
   color: #ffffff;
+  text-shadow: 0 3px 34px rgba(0,0,0,.55);
+  margin: 0 0 1.4rem;
+  border: none;
+  padding: 0;
 }
 
-.cmp-scene-vision .cmp-panel p:last-child {
-  margin-bottom: 0;
+.cmp-scene-vision .cmp-vision-v2-headline,
+.cmp-scene-tools .cmp-vision-v2-headline {
+  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.cmp-vision-v2-lead {
+  font-family: "Roboto", sans-serif;
+  color: rgba(255,255,255,.88);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.72;
+  max-width: 60ch;
+  text-shadow: 0 1px 16px rgba(0,0,0,.55);
+  margin: 0 0 2.5rem;
+  border-left: 2px solid #1f5f8f;
+  padding-left: 1.1rem;
+}
+
+.cmp-vision-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.cmp-pillar {
+  background: rgba(18, 22, 28, .74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-top: 3px solid #1f5f8f;
+  border-radius: 0 0 .75rem .75rem;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 20px 56px rgba(0,0,0,.40);
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s ease, transform .5s ease, background .18s ease, border-color .18s ease;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .05s;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .18s;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .31s;
+}
+
+.cmp-pillar:hover {
+  background: rgba(28, 34, 42, .86);
+  border-top-color: #d63729;
+  border-color: rgba(255,255,255,.22);
+}
+
+.cmp-pillar-icon {
+  font-size: 1.5rem;
+  color: #5aa6da;
+  display: block;
+  margin-bottom: .85rem;
+}
+
+.cmp-pillar-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #ffffff;
+  margin-bottom: .5rem;
+  letter-spacing: -.01em;
+}
+
+.cmp-pillar-desc {
+  font-family: "Roboto", sans-serif;
+  color: rgba(255,255,255,.72);
+  font-size: .88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .cmp-vision-pillars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .cmp-section-head {
@@ -338,13 +410,6 @@ body { background: transparent !important; }
   margin: 0;
 }
 
-/* Tools & Publications sits over a lighter frame where white washes out —
-   use dark text for the (minimal) heading so it stays legible. Scoped so
-   "Meet the team" stays light. */
-.cmp-scene-tools .cmp-h-light {
-  color: #14110d;
-  text-shadow: 0 1px 14px rgba(255,255,255,.5);
-}
 
 .cmp-tiles-row {
   margin-top: 1rem;
@@ -360,6 +425,21 @@ body { background: transparent !important; }
   border-color: rgba(255,255,255,.12);
   min-height: 220px;
   box-shadow: 0 28px 78px rgba(0,0,0,.48);
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s ease, transform .5s ease, background .18s ease, border-color .18s ease;
+}
+
+.cmp-scene-tools.is-active .cmp-tiles-row .nav-tile:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .05s;
+}
+
+.cmp-scene-tools.is-active .cmp-tiles-row .nav-tile:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .18s;
 }
 
 .cmp-tiles-row .nav-tile .nav-tile-title {
@@ -424,7 +504,67 @@ body { background: transparent !important; }
 
 .cmp-location-wrap .location-section {
   margin: 0;
-  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+  background: rgba(18, 22, 28, .74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+}
+
+.cmp-location-wrap .location-eyebrow {
+  font-family: "Roboto Mono", monospace;
+  color: rgba(255,255,255,.80);
+  letter-spacing: .18em;
+}
+
+.cmp-location-wrap .location-title {
+  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-bottom: none;
+}
+
+.cmp-location-wrap .location-group {
+  color: rgba(255,255,255,.90);
+}
+
+.cmp-location-wrap .location-affil {
+  color: rgba(255,255,255,.60);
+}
+
+.cmp-location-wrap .location-row {
+  color: rgba(255,255,255,.78);
+}
+
+.cmp-location-wrap .location-row a {
+  color: rgba(255,255,255,.78);
+}
+
+.cmp-location-wrap .location-row a:hover {
+  color: #5aa6da;
+}
+
+.cmp-location-wrap .location-row-icon {
+  color: #5aa6da;
+}
+
+.cmp-location-wrap .location-directions {
+  font-family: "Roboto Mono", monospace;
+  border-color: #d63729;
+  color: #d63729;
+  background: transparent;
+  transition: background .18s ease, color .18s ease;
+}
+
+.cmp-location-wrap .location-directions:hover {
+  background: #d63729;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cmp-location-wrap .location-map iframe {
+  filter: grayscale(18%) contrast(0.98);
 }
 
 @media (max-width: 720px) {
@@ -451,7 +591,10 @@ body { background: transparent !important; }
     transform: none;
   }
 
-  .cmp-scene-vision .cmp-panel::before {
-    display: none;
+  .cmp-pillar,
+  .cmp-tiles-row .nav-tile {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
