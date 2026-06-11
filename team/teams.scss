@@ -1,0 +1,84 @@
+/*-- scss:rules --*/
+
+#title-block-header { display: none !important; }
+
+.team-grid {
+  @media (min-width: 860px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.page-hero-band {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 1300px;
+  height: clamp(450px, 32vh, 600px);
+  overflow: hidden;
+  margin-bottom: 3rem;
+  margin-top: -1rem;
+}
+
+.page-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 41%;
+  filter: saturate(.88) contrast(1.06) brightness(.72);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(6,8,12,.55) 0%,
+      rgba(6,8,12,.22) 55%,
+      rgba(255,253,243,1) 100%),
+    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 60%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.5rem clamp(1.8rem, 4.5vh, 3rem);
+}
+
+.page-hero-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  margin-bottom: .55rem;
+}
+
+.page-hero-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  color: #fff;
+  line-height: .95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 3px 28px rgba(0,0,0,.5);
+  border: none;
+  padding: 0;
+}
+
+.page-hero-sub {
+  color: rgba(255,255,255,.88);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: clamp(.95rem, 1.8vw, 1.12rem);
+  margin: .65rem 0 0;
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
+  max-width: 52ch;
+}

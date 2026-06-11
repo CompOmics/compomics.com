@@ -3,7 +3,31 @@ title: "Team"
 toc: false
 ---
 
-We are a multidisciplinary team of bioinformaticians, computer scientists, and proteomics researchers based at Ghent University and VIB.
+```{=html}
+<div class="page-hero-band">
+  <img class="page-hero-img" src="../assets/frames/bg-1.jpg" alt="">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-kicker">People</div>
+    <h1 class="page-hero-title">Team</h1>
+    <p class="page-hero-sub">Bioinformaticians, computer scientists, and proteomics researchers based at Ghent University and VIB.</p>
+  </div>
+</div>
+<script>
+(function () {
+  function alignHero() {
+    var ref = document.querySelector('.team-section-title');
+    var content = document.querySelector('.page-hero-content');
+    var band = document.querySelector('.page-hero-band');
+    if (!ref || !content || !band) return;
+    var offset = ref.getBoundingClientRect().left - band.getBoundingClientRect().left;
+    content.style.paddingLeft = Math.max(16, offset) + 'px';
+  }
+  document.addEventListener('DOMContentLoaded', alignHero);
+  window.addEventListener('resize', alignHero);
+})();
+</script>
+```
 
 ```{=html}
 <section class="team-shell">
