@@ -74,6 +74,27 @@
   padding: 0;
 }
 
+.team-detail-email {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, .10);
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: rgba(255, 255, 255, .38);
+  font-size: .80rem;
+  letter-spacing: .01em;
+
+  .bi { font-size: .78rem; }
+
+  a {
+    color: rgba(255, 255, 255, .38);
+    text-decoration: none;
+    transition: color .15s ease;
+    &:hover { color: rgba(255, 255, 255, .72); text-decoration: none; }
+  }
+}
+
 .page-hero-sub {
   color: rgba(255,255,255,.88);
   font-family: "Source Sans 3", system-ui, sans-serif;
