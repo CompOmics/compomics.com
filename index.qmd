@@ -13,6 +13,101 @@ include-in-header:
       const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
       const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
 
+      // Hero cursor "eraser": the logo + title are fully visible, and the
+      // circular area under the cursor fades to transparent (inverse spotlight).
+      const reveal = document.getElementById('cmp-hero-reveal');
+      const heroScene = document.querySelector('.cmp-scene-hero');
+      if (reveal && heroScene) {
+        const hideSpot = function () {
+          reveal.style.setProperty('--mx', '-600px');
+          reveal.style.setProperty('--my', '-600px');
+        };
+        heroScene.addEventListener('pointermove', function (event) {
+          const rect = reveal.getBoundingClientRect();
+          reveal.style.setProperty('--mx', (event.clientX - rect.left) + 'px');
+          reveal.style.setProperty('--my', (event.clientY - rect.top) + 'px');
+        });
+        heroScene.addEventListener('pointerleave', hideSpot);
+        hideSpot();
+
+        // Double-click the logo: it springs to life, dashes right across the
+        // word, and the title is wiped away as it passes — revealing the photo
+        // behind — then it springs back and the text redraws.
+        const mark = reveal.querySelector('.cmp-hero-mark');
+        const title = reveal.querySelector('.cmp-hero-title');
+        let sweeping = false;
+
+        const easeInOut = function (t) {
+          return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        };
+
+        const runSweep = function () {
+          if (sweeping || !mark || !title) { return; }
+          sweeping = true;
+          reveal.classList.add('is-sweeping');
+
+          const markRect = mark.getBoundingClientRect();
+          const titleRect = title.getBoundingClientRect();
+          // Logo travels from its spot to just past the end of the word.
+          const travel = (titleRect.right - markRect.left) + markRect.width * 0.15;
+
+          const T_wake = 340;   // spring-to-life wiggle, mostly in place
+          const T_go = 1150;    // dash across the word
+          const T_hold = 750;   // pause on the revealed photo
+          const T_back = 900;   // spring back, text redraws
+          const start = performance.now();
+
+          const frame = function (now) {
+            const t = now - start;
+            let p; // 0..1 sweep progress (logo position + wipe)
+            let done = false;
+
+            if (t < T_go) {
+              p = easeInOut(t / T_go);
+            } else if (t < T_go + T_hold) {
+              p = 1;
+            } else if (t < T_go + T_hold + T_back) {
+              p = 1 - easeInOut((t - T_go - T_hold) / T_back);
+            } else {
+              p = 0;
+              done = true;
+            }
+
+            // Wake-up: quick scale pop + rotate wiggle at the very start.
+            let scale = 1;
+            let rot = 0;
+            if (t < T_wake) {
+              const w = t / T_wake;
+              scale = 1 + 0.22 * Math.sin(Math.PI * w);
+              rot = 12 * Math.sin(Math.PI * 2 * w);
+            }
+
+            const dx = p * travel;
+            mark.style.transform = 'translateX(' + dx + 'px) rotate(' + rot + 'deg) scale(' + scale + ')';
+
+            // Wipe boundary = logo's right edge, in the title's own coordinates.
+            const boundary = (markRect.right + dx) - titleRect.left;
+            title.style.setProperty('--wipe', boundary + 'px');
+
+            if (done) {
+              mark.style.transform = '';
+              title.style.removeProperty('--wipe');
+              reveal.classList.remove('is-sweeping');
+              sweeping = false;
+            } else {
+              window.requestAnimationFrame(frame);
+            }
+          };
+
+          window.requestAnimationFrame(frame);
+        };
+
+        if (mark) {
+          mark.style.cursor = 'pointer';
+          mark.addEventListener('dblclick', runSweep);
+        }
+      }
+
       if (!scenes.length || !frames.length) {
         return;
       }
@@ -94,10 +189,10 @@ include-in-header:
   <section class="cmp-scene cmp-scene-hero">
     <div class="cmp-wrap">
       <div class="cmp-hero-copy">
-        <div class="cmp-hero-kicker">Ghent University / VIB</div>
-        <h1 class="cmp-hero-title">CompOmics</h1>
-        <p class="cmp-hero-sub">Computational proteomics tools, methods, and standards for turning mass spectrometry data into biological insight.</p>
-        <div class="cmp-scrollcue">Scroll to explore</div>
+        <div class="cmp-hero-titlerow" id="cmp-hero-reveal">
+          <img class="cmp-hero-mark" src="assets/images/favicon.png" alt="" aria-hidden="true">
+          <h1 class="cmp-hero-title">CompOmics</h1>
+        </div>
       </div>
     </div>
   </section>
@@ -106,7 +201,6 @@ include-in-header:
     <div class="cmp-wrap">
       <div class="cmp-panel">
         <div class="cmp-panel-kicker">Our vision</div>
-        <h2>We build open, reusable proteomics infrastructure.</h2>
         <p class="lead">CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.</p>
         <p>Our <strong>mission</strong> is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.</p>
         <p>We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.</p>
@@ -117,9 +211,7 @@ include-in-header:
   <section class="cmp-scene cmp-scene-tools">
     <div class="cmp-wrap">
       <div class="cmp-section-head">
-        <div class="cmp-panel-kicker">Explore the work</div>
         <h2 class="cmp-h-light">Tools and publications</h2>
-        <p class="cmp-sub-light">Software, protocols, and scientific output that support the proteomics community.</p>
       </div>
 
       <div class="nav-tiles-row cmp-tiles-row">

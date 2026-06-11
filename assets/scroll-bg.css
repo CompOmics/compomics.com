@@ -9,6 +9,100 @@ body { background: transparent !important; }
 .page-columns, .column-page, .column-body, .content { background: transparent !important; }
 #title-block-header { display: none; }
 
+/* ------------------------------------------------------------
+   Landing-page navbar: transparent over the cinematic hero.
+   (This file only loads on the homepage, so other pages keep
+   their solid cream navbar.)
+   ------------------------------------------------------------ */
+/* Landing navbar: bare and transparent — no logo (the logo lives in the
+   hero now), no glass band. Just the links over the imagery, with a faint
+   top scrim so they stay legible. */
+.navbar {
+  background-color: transparent !important;
+  background-image: linear-gradient(to bottom, rgba(6,8,12,.5), rgba(6,8,12,0)) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* logo removed from the navbar on the landing page */
+.navbar-brand { display: none !important; }
+
+.navbar .nav-link {
+  color: rgba(255,255,255,.85) !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* toggles legible on dark */
+.navbar .quarto-color-scheme-toggle,
+.navbar-toggler { color: rgba(255,255,255,.85) !important; border-color: rgba(255,255,255,.28) !important; }
+
+/* ------------------------------------------------------------
+   Hero logo mark — the molecule, to the left of the title.
+   ------------------------------------------------------------ */
+.cmp-hero-titlerow {
+  display: flex;
+  align-items: center;
+  gap: clamp(.7rem, 1.8vw, 1.6rem);
+  width: fit-content;
+
+  /* Spotlight reveal: hidden by default; only the circular area under the
+     cursor (positioned via --mx/--my from JS) is shown. */
+  --mx: -600px;
+  --my: -600px;
+  --spot: 440px;
+  /* Inverse spotlight ("eraser"): the logo + title are fully visible at rest,
+     and the circular area under the cursor fades to transparent — erasing the
+     part you hover. Center is transparent, edges stay opaque. */
+  -webkit-mask-image: radial-gradient(circle var(--spot) at var(--mx) var(--my),
+    transparent 0%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.5) 52%, rgba(0,0,0,.8) 74%, #000 100%);
+  mask-image: radial-gradient(circle var(--spot) at var(--mx) var(--my),
+    transparent 0%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.5) 52%, rgba(0,0,0,.8) 74%, #000 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.cmp-hero-mark {
+  height: clamp(3rem, 8.5vw, 5.4rem);
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,.45));
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* ---- Double-click logo sweep: the logo dashes across the word and wipes
+   the title away, revealing the photo behind. Driven by --wipe from JS. ---- */
+.cmp-hero-titlerow.is-sweeping {
+  /* suspend the cursor eraser while the logo does its run */
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.cmp-hero-titlerow.is-sweeping .cmp-hero-mark {
+  position: relative;
+  z-index: 3; /* logo rides on top of the text it erases */
+}
+
+.cmp-hero-titlerow.is-sweeping .cmp-hero-title {
+  position: relative;
+  z-index: 2;
+  --wipe: -200px;
+  -webkit-mask-image: linear-gradient(to right,
+    transparent 0, transparent calc(var(--wipe) - 48px), #000 var(--wipe));
+  mask-image: linear-gradient(to right,
+    transparent 0, transparent calc(var(--wipe) - 48px), #000 var(--wipe));
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+  .cmp-hero-titlerow { gap: .6rem; }
+  .cmp-hero-mark { height: clamp(2.4rem, 11vw, 3.4rem); }
+}
+
 #cmp-bg {
   position: fixed;
   inset: 0;
@@ -80,6 +174,18 @@ body { background: transparent !important; }
 .cmp-hero-copy {
   max-width: 760px;
   padding: 2rem 0;
+}
+
+/* Lift the logo + title up out of the lower portion of the hero photo so
+   they don't sit over people's faces. */
+.cmp-scene-hero .cmp-hero-copy {
+  transform: translateY(-16vh);
+}
+
+@media (max-width: 720px) {
+  .cmp-scene-hero .cmp-hero-copy {
+    transform: translateY(-10vh);
+  }
 }
 
 .cmp-hero-kicker,
@@ -178,6 +284,11 @@ body { background: transparent !important; }
 
 .cmp-scene-vision .cmp-panel-kicker {
   color: rgba(255,255,255,.92);
+  /* Now the box's title (the old heading was removed) — size it up. */
+  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+  letter-spacing: .01em;
+  margin-bottom: 1.1rem;
+  text-transform: capitalize;
 }
 
 .cmp-scene-vision .cmp-panel h2,
@@ -227,26 +338,49 @@ body { background: transparent !important; }
   margin: 0;
 }
 
+/* Tools & Publications sits over a lighter frame where white washes out —
+   use dark text for the (minimal) heading so it stays legible. Scoped so
+   "Meet the team" stays light. */
+.cmp-scene-tools .cmp-h-light {
+  color: #14110d;
+  text-shadow: 0 1px 14px rgba(255,255,255,.5);
+}
+
 .cmp-tiles-row {
   margin-top: 1rem;
   gap: 1.25rem;
 }
 
+/* Dark frosted-glass cards — matched to the Vision panel so the landing
+   reads as one cohesive dark, cinematic piece (cream is the inner-page look). */
 .cmp-tiles-row .nav-tile {
-  background: rgba(255,253,243,.84);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-color: rgba(230,225,208,.86);
+  background: rgba(18,22,28,.74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: rgba(255,255,255,.12);
   min-height: 220px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-title {
+  color: #f5f3eb;
 }
 
 .cmp-tiles-row .nav-tile .nav-tile-desc {
-  color: #524d46;
+  color: rgba(255,255,255,.80);
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-icon {
+  color: #5aa6da;
 }
 
 .cmp-tiles-row .nav-tile:hover {
-  background: rgba(255,255,255,.97);
+  background: rgba(28,34,42,.82);
+  border-color: rgba(255,255,255,.24);
+}
+
+.cmp-tiles-row .nav-tile:hover .nav-tile-title {
+  color: #8ec6ee;
 }
 
 .cmp-team-wrap {
