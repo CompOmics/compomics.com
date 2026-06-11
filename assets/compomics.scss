@@ -593,9 +593,9 @@ blockquote {
   padding: clamp(1.6rem, 3.5vw, 2.8rem);
   border-radius: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: linear-gradient(135deg, rgba(13, 17, 23, 0.98), rgba(21, 28, 39, 0.95));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(90, 167, 218, 0.20);
+  background: linear-gradient(135deg, #0d1f38, #142d50);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(90, 167, 218, 0.08);
 
   &[hidden] { display: none; }
 
@@ -604,8 +604,8 @@ blockquote {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at top right, rgba(90, 167, 218, 0.14), rgba(90, 167, 218, 0) 36%),
-      linear-gradient(135deg, rgba(10, 14, 20, 0.18), rgba(10, 14, 20, 0.64));
+      radial-gradient(circle at top right, rgba(90, 167, 218, 0.22), rgba(90, 167, 218, 0) 42%),
+      linear-gradient(135deg, rgba(10, 20, 40, 0.20), rgba(10, 20, 40, 0.55));
     pointer-events: none;
   }
 }
@@ -632,7 +632,7 @@ blockquote {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid #0e1219;
+    border-bottom: 8px solid #0d1f38;
     pointer-events: none;
     z-index: 2;
   }
