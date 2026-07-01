@@ -205,24 +205,8 @@ include-in-header:
       <div class="cmp-vision-v2">
         <div class="cmp-panel-kicker">Our vision</div>
         <h2 class="cmp-vision-v2-headline">Computational proteomics,<br>open to all.</h2>
-        <p class="cmp-vision-v2-lead">We unlock the full potential of mass spectrometry data — making proteomics faster, more accurate, and accessible worldwide through open-source tools and community resources.</p>
-        <div class="cmp-vision-pillars">
-          <div class="cmp-pillar">
-            <i class="bi bi-lightning-charge cmp-pillar-icon"></i>
-            <div class="cmp-pillar-title">Algorithmic Innovation</div>
-            <p class="cmp-pillar-desc">Novel methods for spectrum interpretation, peptide identification, and large-scale protein quantification.</p>
-          </div>
-          <div class="cmp-pillar">
-            <i class="bi bi-layers cmp-pillar-icon"></i>
-            <div class="cmp-pillar-title">Machine Learning</div>
-            <p class="cmp-pillar-desc">AI-driven models for retention time and fragmentation prediction, trained on community-scale proteomics data.</p>
-          </div>
-          <div class="cmp-pillar">
-            <i class="bi bi-globe2 cmp-pillar-icon"></i>
-            <div class="cmp-pillar-title">Open Data Standards</div>
-            <p class="cmp-pillar-desc">FAIR-compliant sharing via PRIDE, ProteomeXchange, and community formats — all software and data built to last.</p>
-          </div>
-        </div>
+        <p class="cmp-vision-v2-lead">CompOmics develops computational methods and software across the full proteomics workflow, from predicting peptide behaviour to making public data reusable at scale.</p>
+        <a href="research/" class="cmp-btn">Discover our research lines</a>
       </div>
     </div>
   </section>

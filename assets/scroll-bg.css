@@ -313,13 +313,11 @@ body { background: transparent !important; }
 .cmp-vision-v2-lead {
   font-family: "Source Sans 3", sans-serif;
   color: rgba(255,255,255,.88);
-  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.72;
   max-width: 60ch;
   text-shadow: 0 1px 16px rgba(0,0,0,.55);
   margin: 0 0 2.5rem;
-  border-left: 2px solid #1f5f8f;
-  padding-left: 1.1rem;
 }
 
 .cmp-vision-pillars {
