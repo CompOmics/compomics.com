@@ -1,5 +1,6 @@
 ---
 title: "Publications"
+description: "Peer-reviewed papers and preprints from the CompOmics computational proteomics group at Ghent University / VIB."
 toc: false
 execute:
   freeze: false

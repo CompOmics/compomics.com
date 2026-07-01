@@ -1,5 +1,7 @@
 ---
 title: ""
+pagetitle: "CompOmics — Computational Proteomics"
+description: "CompOmics — computational proteomics at Ghent University / VIB. Open-source tools, AI models, and FAIR data for mass spectrometry-based proteomics."
 page-layout: full
 toc: false
 execute:

@@ -1,5 +1,6 @@
 ---
 title: "Tutorials"
+description: "Hands-on tutorials for CompOmics proteomics tools and workflows."
 listing:
   contents: "posts/*.qmd"
   type: default
