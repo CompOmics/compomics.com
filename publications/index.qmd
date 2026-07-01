@@ -189,9 +189,16 @@ else:
     lines.append('</select>')
     lines.append('</div>')
 
+    # type chips — peer-reviewed vs preprint
+    lines.append('<div class="pub-chips pub-type-chips" id="pub-type-chips" role="group" aria-label="Filter by type">')
+    lines.append('<button type="button" class="pub-chip is-active" data-type="all">All</button>')
+    lines.append('<button type="button" class="pub-chip" data-type="published">Peer-reviewed</button>')
+    lines.append('<button type="button" class="pub-chip" data-type="preprint">Preprint</button>')
+    lines.append('</div>')
+
     # year chips — individual chips for >= 2016, everything older folded into "< 2016"
     YEAR_CAP = 2016
-    lines.append('<div class="pub-chips" role="group" aria-label="Filter by year">')
+    lines.append('<div class="pub-chips" id="pub-year-chips" role="group" aria-label="Filter by year">')
     lines.append('<button type="button" class="pub-chip is-active" data-year="all">All</button>')
     has_pre_cap = False
     for year in years_sorted:
@@ -294,7 +301,8 @@ else:
 (function () {
   const search = document.getElementById('pub-search-input');
   const clear = document.getElementById('pub-search-clear');
-  const chips = Array.from(document.querySelectorAll('.pub-chip'));
+  const yearChips = Array.from(document.querySelectorAll('#pub-year-chips .pub-chip'));
+  const typeChips = Array.from(document.querySelectorAll('#pub-type-chips .pub-chip'));
   const personSel = document.getElementById('pub-person-select');
   const entries = Array.from(document.querySelectorAll('.pub-entry'));
   const blocks = Array.from(document.querySelectorAll('.pub-year-block'));
@@ -305,17 +313,26 @@ else:
   if (!search || !countEl) return;
 
   let activeYear = 'all';
+  let activeType = 'all';
   let activePerson = '';
   let query = '';
 
   function yearLabel() {
-    const chip = chips.find(function (c) { return c.dataset.year === activeYear; });
+    const chip = yearChips.find(function (c) { return c.dataset.year === activeYear; });
     return chip ? chip.textContent.trim() : activeYear;
+  }
+  function typeLabel() {
+    const chip = typeChips.find(function (c) { return c.dataset.type === activeType; });
+    return chip ? chip.textContent.trim() : activeType;
   }
 
   function resetYear() {
     activeYear = 'all';
-    chips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === 'all'); });
+    yearChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === 'all'); });
+  }
+  function resetType() {
+    activeType = 'all';
+    typeChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.type === 'all'); });
   }
   function resetPerson() {
     activePerson = '';
@@ -332,6 +349,7 @@ else:
     const bits = [];
     if (query) bits.push({ k: 'query', label: '“' + query + '”' });
     if (activePerson && personSel) bits.push({ k: 'person', label: personSel.selectedOptions[0].text });
+    if (activeType !== 'all') bits.push({ k: 'type', label: typeLabel() });
     if (activeYear !== 'all') bits.push({ k: 'year', label: yearLabel() });
 
     if (!bits.length) { activeEl.hidden = true; activeEl.innerHTML = ''; return; }
@@ -360,9 +378,10 @@ else:
     let visible = 0;
     entries.forEach(function (e) {
       const okYear = yearMatches(e.dataset.year);
+      const okType = activeType === 'all' || e.dataset.type === activeType;
       const okQuery = !query || e.dataset.search.indexOf(query) !== -1;
       const okPerson = !activePerson || (e.dataset.members || '').indexOf('|' + activePerson + '|') !== -1;
-      const show = okYear && okQuery && okPerson;
+      const show = okYear && okType && okQuery && okPerson;
       e.classList.toggle('is-hidden', !show);
       if (show) visible += 1;
     });
@@ -374,11 +393,20 @@ else:
     buildActiveBar();
   }
 
-  chips.forEach(function (chip) {
+  yearChips.forEach(function (chip) {
     chip.addEventListener('click', function () {
-      chips.forEach(function (c) { c.classList.remove('is-active'); });
+      yearChips.forEach(function (c) { c.classList.remove('is-active'); });
       chip.classList.add('is-active');
       activeYear = chip.dataset.year;
+      apply();
+    });
+  });
+
+  typeChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      typeChips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      activeType = chip.dataset.type;
       apply();
     });
   });
@@ -408,12 +436,13 @@ else:
   if (activeEl) {
     activeEl.addEventListener('click', function (ev) {
       const clearAll = ev.target.closest('.pub-active-clear');
-      if (clearAll) { resetQuery(); resetPerson(); resetYear(); apply(); return; }
+      if (clearAll) { resetQuery(); resetPerson(); resetType(); resetYear(); apply(); return; }
       const tag = ev.target.closest('.pub-active-tag');
       if (!tag) return;
       const kind = tag.dataset.kind;
       if (kind === 'query') resetQuery();
       else if (kind === 'person') resetPerson();
+      else if (kind === 'type') resetType();
       else if (kind === 'year') resetYear();
       apply();
     });
