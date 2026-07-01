@@ -344,6 +344,38 @@ else:
     if (clear) clear.hidden = true;
   }
 
+  // ── URL sync (deep-linkable filters: ?q=&person=&type=&year=) ──────────────
+  function writeUrl() {
+    const p = new URLSearchParams();
+    if (query) p.set('q', query);
+    if (activePerson) p.set('person', activePerson);
+    if (activeType !== 'all') p.set('type', activeType);
+    if (activeYear !== 'all') p.set('year', activeYear);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  function initFromUrl() {
+    const p = new URLSearchParams(location.search);
+    const q = p.get('q');
+    if (q) { query = q.trim().toLowerCase(); search.value = q; if (clear) clear.hidden = query === ''; }
+    const person = (p.get('person') || '').toLowerCase();
+    if (person && personSel) {
+      const opt = Array.from(personSel.options).find(function (o) { return o.value === person; });
+      if (opt) { activePerson = opt.value; personSel.value = opt.value; }
+    }
+    const type = p.get('type');
+    if (type && typeChips.some(function (c) { return c.dataset.type === type; })) {
+      activeType = type;
+      typeChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.type === type); });
+    }
+    const year = p.get('year');
+    if (year && yearChips.some(function (c) { return c.dataset.year === year; })) {
+      activeYear = year;
+      yearChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === year); });
+    }
+  }
+
   function buildActiveBar() {
     if (!activeEl) return;
     const bits = [];
@@ -391,6 +423,7 @@ else:
     countEl.textContent = visible + (visible === 1 ? ' publication' : ' publications');
     if (emptyEl) emptyEl.hidden = visible !== 0;
     buildActiveBar();
+    writeUrl();
   }
 
   yearChips.forEach(function (chip) {
@@ -485,6 +518,7 @@ else:
     });
   }
 
+  initFromUrl();
   apply();
 })();
 </script>
