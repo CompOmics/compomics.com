@@ -1,5 +1,6 @@
 ---
 title: "Team"
+description: "Bioinformaticians, computer scientists, and proteomics researchers of the CompOmics group at Ghent University and VIB."
 toc: false
 ---
 

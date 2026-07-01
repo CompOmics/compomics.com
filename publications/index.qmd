@@ -1,0 +1,526 @@
+---
+title: "Publications"
+description: "Peer-reviewed papers and preprints from the CompOmics computational proteomics group at Ghent University / VIB."
+toc: false
+execute:
+  freeze: false
+  echo: false
+---
+
+```{=html}
+<header class="pub-head">
+  <div class="pub-head-kicker">Research output</div>
+  <h1 class="pub-head-title">Publications</h1>
+  <p class="pub-head-sub">Peer-reviewed papers and preprints from CompOmics group members. For a complete list, see our <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> page or individual <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID profiles</a>.</p>
+</header>
+```
+
+```{python}
+import html
+import json
+import os
+import re
+from pathlib import Path
+from IPython.display import HTML
+
+project_root = Path(os.environ.get("QUARTO_PROJECT_DIR") or Path.cwd())
+if not (project_root / "data" / "publications.json").exists():
+    # fallback: walk up from the working directory to find the project root
+    for cand in [Path.cwd(), *Path.cwd().parents]:
+        if (cand / "data" / "publications.json").exists():
+            project_root = cand
+            break
+pub_file = project_root / "data" / "publications.json"
+
+if not pub_file.exists():
+    display(HTML(
+        '<div class="callout callout-warning"><p>No publications data found. '
+        'Run <code>python publications/fetch_publications.py</code> to populate '
+        '<code>data/publications.json</code>, then re-render this page.</p></div>'
+    ))
+else:
+    publications = json.loads(pub_file.read_text(encoding="utf-8"))
+
+    # Build set of lowercase team member name strings from team profile titles.
+    # Used as fallback when CrossRef does not supply per-author ORCIDs.
+    def _load_group_names():
+        names = set()
+        team_dir = project_root / "team"
+        for path in team_dir.glob("*.qmd"):
+            if path.name == "index.qmd":
+                continue
+            text = path.read_text(encoding="utf-8")
+            m = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', text, re.MULTILINE)
+            if m:
+                names.add(m.group(1).strip().lower())
+        return names
+
+    # Current CompOmics members (keep in sync with team/index.qmd). Used both for
+    # author highlighting and for the "by person" filter dropdown.
+    MEMBERS = [
+        "Lennart Martens", "Sakina Bombaywala", "Robbin Bouwmeester", "Tine Claeys",
+        "Arthur Declercq", "Ralf Gabriels", "Alexander Kensert", "Enrico Massignani",
+        "Pathmanaban Ramasamy", "Tim Van Den Bossche", "Pieter Verschaffelt",
+        "Toon Callens", "Robbe Devreese", "Sander Heyndrickx", "Sude Güneş",
+        "Caroline Jachmann", "Xuxa Malliet", "Alireza Nameni", "Harikrishnan Ramadasan",
+        "Sam Van Puyenbroeck", "Lyudmila Kovalchuke", "Patricia Lefèvre",
+        "Natalia Tichshenko", "Kevin Velghe", "Daria Fijalkowska", "Jasper Zuallaert",
+    ]
+
+    # names for bold highlighting = team qmd titles (if any) ∪ the member list above
+    group_names = _load_group_names() | {m.lower() for m in MEMBERS}
+
+    _member_tokens = [(m, set(m.lower().split())) for m in MEMBERS]
+
+    def matched_members(authors):
+        """Return the member names that appear among a publication's authors."""
+        author_token_sets = [set(a.lower().split()) for a in authors]
+        hits = []
+        for name, mtok in _member_tokens:
+            if any(mtok.issubset(at) for at in author_token_sets):
+                hits.append(name)
+        return hits
+
+    def _is_group_member(author_name, author_orcid, group_orcids_set):
+        # Primary: ORCID match (requires re-running the fetch script)
+        if author_orcid and author_orcid in group_orcids_set:
+            return True
+        # Fallback: all tokens of a group member name must appear in the author name tokens
+        author_tokens = set(author_name.lower().split())
+        return any(set(gn.split()).issubset(author_tokens) for gn in group_names)
+
+    AUTHOR_LIMIT = 8  # authors shown before the "+ N more" toggle
+
+    def format_authors(authors, author_orcids, group_orcids):
+        group_set = set(group_orcids or [])
+        orcids = author_orcids or [None] * len(authors)
+        labelled = []
+        for name, orcid in zip(authors, orcids):
+            safe = html.escape(name)
+            if _is_group_member(name, orcid, group_set):
+                labelled.append(f"<strong>{safe}</strong>")
+            else:
+                labelled.append(safe)
+        if len(labelled) <= AUTHOR_LIMIT:
+            return ", ".join(labelled)
+        shown = ", ".join(labelled[:AUTHOR_LIMIT])
+        rest = ", ".join(labelled[AUTHOR_LIMIT:])
+        n = len(labelled) - AUTHOR_LIMIT
+        return (
+            f'{shown}<span class="pub-authors-rest" hidden>, {rest}</span>'
+            f'<button type="button" class="pub-authors-toggle" '
+            f'data-more="+{n} more" data-less="show less">+{n} more</button>'
+        )
+
+    def format_location(pub):
+        parts = []
+        if pub.get("volume"):
+            loc = pub["volume"]
+            if pub.get("issue"):
+                loc += f"({pub['issue']})"
+            parts.append(loc)
+        if pub.get("pages"):
+            parts.append(pub["pages"])
+        return ":".join(parts)
+
+    # Preprint detection — by DOI prefix or journal/server name.
+    PREPRINT_DOI_PREFIXES = (
+        "10.1101",    # bioRxiv / medRxiv (Cold Spring Harbor)
+        "10.26434",   # ChemRxiv
+        "10.21203",   # Research Square
+        "10.20944",   # Preprints.org
+        "10.31219",   # OSF Preprints
+        "10.31234",   # PsyArXiv
+        "10.48550",   # arXiv
+        "10.64898",   # bioRxiv (newer prefix)
+    )
+    PREPRINT_JOURNAL_HINTS = (
+        "biorxiv", "medrxiv", "chemrxiv", "arxiv", "research square",
+        "preprints.org", "ssrn", "osf", "preprint",
+    )
+
+    def is_preprint(doi, journal):
+        d = (doi or "").lower()
+        j = (journal or "").lower()
+        if any(d.startswith(p) for p in PREPRINT_DOI_PREFIXES):
+            return True
+        return any(h in j for h in PREPRINT_JOURNAL_HINTS)
+
+    def build_citation(authors, year, title, journal, location, doi):
+        authors_txt = ", ".join(authors)
+        parts = [authors_txt] if authors_txt else []
+        parts.append(f"({year})." if year else "")
+        parts.append(f"{title}.")
+        venue = journal + ((" " + location) if location else "") if journal else location
+        if venue:
+            parts.append(f"{venue}.")
+        if doi:
+            parts.append(f"https://doi.org/{doi}")
+        return " ".join(p for p in parts if p)
+
+    by_year = {}
+    for pub in publications:
+        year = pub.get("year") or 0
+        by_year.setdefault(year, []).append(pub)
+
+    years_sorted = sorted(by_year.keys(), reverse=True)
+
+    lines = []
+
+    # ── Toolbar: search + year filter chips ──────────────────────────────────
+    lines.append('<div class="pub-toolbar">')
+    lines.append(
+        '<div class="pub-search">'
+        '<i class="bi bi-search pub-search-icon" aria-hidden="true"></i>'
+        '<input type="search" id="pub-search-input" class="pub-search-input" '
+        'placeholder="Search title, author, journal…" autocomplete="off" '
+        'spellcheck="false" aria-label="Search publications">'
+        '<button type="button" class="pub-search-clear" id="pub-search-clear" '
+        'aria-label="Clear search" hidden>&times;</button>'
+        '</div>'
+    )
+    # person dropdown (current members, alphabetical by surname)
+    lines.append('<div class="pub-person">')
+    lines.append('<i class="bi bi-person pub-person-icon" aria-hidden="true"></i>')
+    lines.append('<select id="pub-person-select" class="pub-person-select" aria-label="Filter by person">')
+    lines.append('<option value="">All people</option>')
+    for name in sorted(MEMBERS, key=lambda n: n.split()[-1].lower()):
+        val = html.escape(name.lower(), quote=True)
+        lines.append(f'<option value="{val}">{html.escape(name)}</option>')
+    lines.append('</select>')
+    lines.append('</div>')
+
+    # type chips — peer-reviewed vs preprint
+    lines.append('<div class="pub-chips pub-type-chips" id="pub-type-chips" role="group" aria-label="Filter by type">')
+    lines.append('<button type="button" class="pub-chip is-active" data-type="all">All</button>')
+    lines.append('<button type="button" class="pub-chip" data-type="published">Peer-reviewed</button>')
+    lines.append('<button type="button" class="pub-chip" data-type="preprint">Preprint</button>')
+    lines.append('</div>')
+
+    # year chips — individual chips for >= 2016, everything older folded into "< 2016"
+    YEAR_CAP = 2016
+    lines.append('<div class="pub-chips" id="pub-year-chips" role="group" aria-label="Filter by year">')
+    lines.append('<button type="button" class="pub-chip is-active" data-year="all">All</button>')
+    has_pre_cap = False
+    for year in years_sorted:
+        if isinstance(year, int) and year >= YEAR_CAP:
+            lines.append(f'<button type="button" class="pub-chip" data-year="{year}">{year}</button>')
+        else:
+            has_pre_cap = True
+    if has_pre_cap:
+        lines.append(f'<button type="button" class="pub-chip" data-year="pre{YEAR_CAP}">&lt; {YEAR_CAP}</button>')
+    lines.append('</div>')
+    lines.append('</div>')
+
+    lines.append('<div class="pub-countbar">')
+    lines.append('<div class="pub-count" id="pub-count" aria-live="polite"></div>')
+    lines.append('<div class="pub-active" id="pub-active" hidden></div>')
+    lines.append('</div>')
+
+    # ── Publication list, grouped by year ────────────────────────────────────
+    lines.append('<div class="pub-list-wrap" id="pub-list">')
+    for year in years_sorted:
+        yval = str(year) if year else "unknown"
+        ylabel = str(year) if year else "Unknown year"
+        lines.append(f'<section class="pub-year-block" data-year="{yval}">')
+        lines.append(f'<h2 class="pub-year">{ylabel}</h2>')
+        lines.append('<ol class="pub-list">')
+        for pub in by_year[year]:
+            title = pub.get("title", "Untitled")
+            doi = pub.get("doi", "")
+            journal = pub.get("journal", "")
+            authors_list = pub.get("authors", [])
+            authors_str = format_authors(
+                authors_list,
+                pub.get("author_orcids", []),
+                pub.get("group_orcids", []),
+            )
+            location = format_location(pub)
+
+            title_safe = html.escape(title)
+            title_html = (
+                f'<a href="https://doi.org/{html.escape(doi)}" target="_blank" rel="noopener noreferrer">{title_safe}</a>'
+                if doi else title_safe
+            )
+
+            preprint = is_preprint(doi, journal)
+
+            # venue pill: journal + location (volume(issue):pages)
+            venue_txt = journal + ((", " + location) if (journal and location) else (location or "")) if (journal or location) else ""
+            venue_html = (
+                f'<span class="pub-venue">{html.escape(venue_txt)}</span>' if venue_txt else ""
+            )
+            badge_html = (
+                '<span class="pub-badge pub-badge-preprint">Preprint</span>' if preprint else ""
+            )
+
+            # searchable haystack (plain text, attribute-escaped)
+            haystack = " ".join([title, " ".join(authors_list), journal, ylabel]).lower()
+            haystack = html.escape(haystack, quote=True)
+
+            # pipe-delimited member names for the person filter (with edge pipes)
+            hits = matched_members(authors_list)
+            members_attr = ("|" + "|".join(m.lower() for m in hits) + "|") if hits else ""
+            members_attr = html.escape(members_attr, quote=True)
+
+            citation = build_citation(authors_list, ylabel if year else "", title, journal, location, doi)
+            cite_attr = html.escape(citation, quote=True)
+            type_attr = "preprint" if preprint else "published"
+
+            cite_btn = (
+                f'<button type="button" class="pub-cite" data-citation="{cite_attr}" '
+                f'title="Copy citation" aria-label="Copy citation">'
+                f'<i class="bi bi-quote"></i></button>'
+            )
+
+            lines.append(
+                f'<li class="pub-entry" data-year="{yval}" data-type="{type_attr}" '
+                f'data-members="{members_attr}" data-search="{haystack}">'
+                f'<div class="pub-entry-main">'
+                f'<span class="pub-title">{title_html}</span>'
+                f'<span class="pub-authors">{authors_str}</span>'
+                f'<div class="pub-tags">{badge_html}{venue_html}</div>'
+                f'</div>'
+                f'{cite_btn}'
+                f'</li>'
+            )
+        lines.append("</ol>")
+        lines.append("</section>")
+    lines.append("</div>")
+
+    lines.append(
+        '<div class="pub-empty" id="pub-empty" hidden>'
+        '<i class="bi bi-search"></i><p>No publications match your search.</p>'
+        '</div>'
+    )
+
+    display(HTML("\n".join(lines)))
+```
+
+```{=html}
+<script>
+(function () {
+  const search = document.getElementById('pub-search-input');
+  const clear = document.getElementById('pub-search-clear');
+  const yearChips = Array.from(document.querySelectorAll('#pub-year-chips .pub-chip'));
+  const typeChips = Array.from(document.querySelectorAll('#pub-type-chips .pub-chip'));
+  const personSel = document.getElementById('pub-person-select');
+  const entries = Array.from(document.querySelectorAll('.pub-entry'));
+  const blocks = Array.from(document.querySelectorAll('.pub-year-block'));
+  const countEl = document.getElementById('pub-count');
+  const emptyEl = document.getElementById('pub-empty');
+  const activeEl = document.getElementById('pub-active');
+  const listWrap = document.getElementById('pub-list');
+  if (!search || !countEl) return;
+
+  let activeYear = 'all';
+  let activeType = 'all';
+  let activePerson = '';
+  let query = '';
+
+  function yearLabel() {
+    const chip = yearChips.find(function (c) { return c.dataset.year === activeYear; });
+    return chip ? chip.textContent.trim() : activeYear;
+  }
+  function typeLabel() {
+    const chip = typeChips.find(function (c) { return c.dataset.type === activeType; });
+    return chip ? chip.textContent.trim() : activeType;
+  }
+
+  function resetYear() {
+    activeYear = 'all';
+    yearChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === 'all'); });
+  }
+  function resetType() {
+    activeType = 'all';
+    typeChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.type === 'all'); });
+  }
+  function resetPerson() {
+    activePerson = '';
+    if (personSel) personSel.value = '';
+  }
+  function resetQuery() {
+    query = '';
+    search.value = '';
+    if (clear) clear.hidden = true;
+  }
+
+  // ── URL sync (deep-linkable filters: ?q=&person=&type=&year=) ──────────────
+  function writeUrl() {
+    const p = new URLSearchParams();
+    if (query) p.set('q', query);
+    if (activePerson) p.set('person', activePerson);
+    if (activeType !== 'all') p.set('type', activeType);
+    if (activeYear !== 'all') p.set('year', activeYear);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  function initFromUrl() {
+    const p = new URLSearchParams(location.search);
+    const q = p.get('q');
+    if (q) { query = q.trim().toLowerCase(); search.value = q; if (clear) clear.hidden = query === ''; }
+    const person = (p.get('person') || '').toLowerCase();
+    if (person && personSel) {
+      const opt = Array.from(personSel.options).find(function (o) { return o.value === person; });
+      if (opt) { activePerson = opt.value; personSel.value = opt.value; }
+    }
+    const type = p.get('type');
+    if (type && typeChips.some(function (c) { return c.dataset.type === type; })) {
+      activeType = type;
+      typeChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.type === type); });
+    }
+    const year = p.get('year');
+    if (year && yearChips.some(function (c) { return c.dataset.year === year; })) {
+      activeYear = year;
+      yearChips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === year); });
+    }
+  }
+
+  function buildActiveBar() {
+    if (!activeEl) return;
+    const bits = [];
+    if (query) bits.push({ k: 'query', label: '“' + query + '”' });
+    if (activePerson && personSel) bits.push({ k: 'person', label: personSel.selectedOptions[0].text });
+    if (activeType !== 'all') bits.push({ k: 'type', label: typeLabel() });
+    if (activeYear !== 'all') bits.push({ k: 'year', label: yearLabel() });
+
+    if (!bits.length) { activeEl.hidden = true; activeEl.innerHTML = ''; return; }
+
+    let html = '';
+    bits.forEach(function (b) {
+      html += '<button type="button" class="pub-active-tag" data-kind="' + b.k + '">'
+        + b.label + '<i class="bi bi-x"></i></button>';
+    });
+    html += '<button type="button" class="pub-active-clear">Clear all</button>';
+    activeEl.innerHTML = html;
+    activeEl.hidden = false;
+  }
+
+  function yearMatches(y) {
+    if (activeYear === 'all') return true;
+    if (activeYear.indexOf('pre') === 0) {
+      const cap = parseInt(activeYear.slice(3), 10);
+      const n = parseInt(y, 10);
+      return y === 'unknown' || (!isNaN(n) && n < cap);
+    }
+    return y === activeYear;
+  }
+
+  function apply() {
+    let visible = 0;
+    entries.forEach(function (e) {
+      const okYear = yearMatches(e.dataset.year);
+      const okType = activeType === 'all' || e.dataset.type === activeType;
+      const okQuery = !query || e.dataset.search.indexOf(query) !== -1;
+      const okPerson = !activePerson || (e.dataset.members || '').indexOf('|' + activePerson + '|') !== -1;
+      const show = okYear && okType && okQuery && okPerson;
+      e.classList.toggle('is-hidden', !show);
+      if (show) visible += 1;
+    });
+    blocks.forEach(function (b) {
+      b.classList.toggle('is-hidden', !b.querySelector('.pub-entry:not(.is-hidden)'));
+    });
+    countEl.textContent = visible + (visible === 1 ? ' publication' : ' publications');
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+    buildActiveBar();
+    writeUrl();
+  }
+
+  yearChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      yearChips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      activeYear = chip.dataset.year;
+      apply();
+    });
+  });
+
+  typeChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      typeChips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      activeType = chip.dataset.type;
+      apply();
+    });
+  });
+
+  if (personSel) {
+    personSel.addEventListener('change', function () {
+      activePerson = personSel.value;
+      apply();
+    });
+  }
+
+  search.addEventListener('input', function () {
+    query = search.value.trim().toLowerCase();
+    if (clear) clear.hidden = query === '';
+    apply();
+  });
+
+  if (clear) {
+    clear.addEventListener('click', function () {
+      resetQuery();
+      search.focus();
+      apply();
+    });
+  }
+
+  // active-filter bar: remove one filter or clear all
+  if (activeEl) {
+    activeEl.addEventListener('click', function (ev) {
+      const clearAll = ev.target.closest('.pub-active-clear');
+      if (clearAll) { resetQuery(); resetPerson(); resetType(); resetYear(); apply(); return; }
+      const tag = ev.target.closest('.pub-active-tag');
+      if (!tag) return;
+      const kind = tag.dataset.kind;
+      if (kind === 'query') resetQuery();
+      else if (kind === 'person') resetPerson();
+      else if (kind === 'type') resetType();
+      else if (kind === 'year') resetYear();
+      apply();
+    });
+  }
+
+  // list delegation: copy-citation + author "+N more" toggle
+  if (listWrap) {
+    listWrap.addEventListener('click', function (ev) {
+      const toggle = ev.target.closest('.pub-authors-toggle');
+      if (toggle) {
+        const rest = toggle.parentElement.querySelector('.pub-authors-rest');
+        if (rest) {
+          const hidden = rest.hasAttribute('hidden');
+          if (hidden) { rest.removeAttribute('hidden'); toggle.textContent = toggle.dataset.less; }
+          else { rest.setAttribute('hidden', ''); toggle.textContent = toggle.dataset.more; }
+        }
+        return;
+      }
+      const cite = ev.target.closest('.pub-cite');
+      if (cite) {
+        const text = cite.dataset.citation || '';
+        const icon = cite.querySelector('i');
+        const done = function () {
+          cite.classList.add('is-copied');
+          if (icon) icon.className = 'bi bi-check-lg';
+          setTimeout(function () {
+            cite.classList.remove('is-copied');
+            if (icon) icon.className = 'bi bi-quote';
+          }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      }
+    });
+  }
+
+  initFromUrl();
+  apply();
+})();
+</script>
+```

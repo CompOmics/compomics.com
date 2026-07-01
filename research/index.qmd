@@ -1,5 +1,6 @@
 ---
 title: "Research"
+description: "CompOmics research themes: peptide and protein identification, AI-based spectrum and retention-time prediction, and FAIR proteomics data."
 toc: false
 ---
 
