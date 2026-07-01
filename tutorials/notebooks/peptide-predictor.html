@@ -162,11 +162,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
-<div id="cell-install" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:46.223837Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:46.223724Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:46.227906Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:46.227169Z&quot;}}" data-execution_count="1">
+<div id="cell-install" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:07.166107Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:07.165992Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:07.170128Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:07.169454Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies (run once)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install ms2pip deeplc im2deep psm-utils tensorflow-cpu remotezip alphatims python-lzf</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-imports" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:46.229104Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:46.228993Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:52.699649Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:52.698720Z&quot;}}" data-execution_count="2">
+<div id="cell-imports" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:07.171465Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:07.171360Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:12.611365Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:12.610391Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>tqdm.tqdm <span class="op">=</span> _SilentTqdm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="64243b96" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:52.701082Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:52.700854Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:52.708949Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:52.708200Z&quot;}}" data-execution_count="3">
+<div id="64243b96" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:12.612826Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:12.612577Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:12.621113Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:12.620291Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>We download the dataset directly from the ProteomicsML GitHub repository.</p>
-<div id="cell-download" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:52.710015Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:52.709902Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:54.726504Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:54.725756Z&quot;}}" data-execution_count="4">
+<div id="cell-download" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:12.622241Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:12.622129Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:14.008581Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:14.007778Z&quot;}}" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/ProteomicsML/ProteomicsML/main"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"/datasets/ionmobility/Meier_IM_CCS/combined_sm.zip"</span></span>
@@ -351,7 +351,7 @@ Loaded 718,917 PSMs</code></pre>
 <li><strong>Convert</strong> MaxQuant modified sequences to <a href="https://github.com/HUPO-PSI/ProForma">ProForma</a> notation, which is the unified format accepted by all three tools. For example: <code>_AAEM(ox)K_</code> (charge 2) → <code>AAEM[Oxidation]K/2</code> Modifications are placed in square brackets immediately after the modified residue; the charge state follows a <code>/</code> suffix. N-terminal modifications use a <code>-</code> separator, e.g.&nbsp;<code>_(ac)PEPTIDE_</code> → <code>[Acetyl]-PEPTIDE/2</code>.</li>
 <li><strong>Sample</strong> 200 PSMs for the predictions.</li>
 </ol>
-<div id="cell-preproc-code" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:54.727784Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:54.727662Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:54.928520Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:54.927774Z&quot;}}" data-execution_count="5">
+<div id="cell-preproc-code" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:14.009728Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:14.009614Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:14.211109Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:14.210287Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>MQ_MOD_MAP <span class="op">=</span> {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ac"</span>: <span class="st">"Acetyl"</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ox"</span>: <span class="st">"Oxidation"</span>,</span>
@@ -457,7 +457,7 @@ Working sample:   200 PSMs</code></pre>
 </div>
 </div>
 </div>
-<div id="a313e951" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:54.929694Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:54.929569Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:54.942044Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:54.941113Z&quot;}}" data-execution_count="6">
+<div id="a313e951" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:14.212316Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:14.212207Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:14.223746Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:14.223051Z&quot;}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build a shared PSMList for the 200-peptide sample, used by DeepLC and IM2Deep below</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>psm_list <span class="op">=</span> PSMList(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    psm_list<span class="op">=</span>[</span>
@@ -486,7 +486,7 @@ Working sample:   200 PSMs</code></pre>
 <h3 class="anchored" data-anchor-id="downloading-real-observed-spectra">4.1 Downloading real observed spectra</h3>
 <p>MaxQuant’s <code>msms.txt</code> search result table stores, for every identified spectrum, the list of matched fragment ions (<code>Matches</code>), their m/z (<code>Masses</code>), and their observed intensities (<code>Intensities</code>) — i.e.&nbsp;a ready-made observed spectrum for every PSM. We download this file for a single small HeLa run (<code>HeLa_5min</code>, ~50 ng on column) from PXD010012 and pick the 4 highest-confidence, unmodified, charge-2 PSMs (by number of matched fragment ions) as our reference spectra.</p>
 <p>We use <code>remotezip</code> to stream only the single file we need out of the PRIDE FTP archive, rather than downloading the full submission.</p>
-<div id="f1fa6921" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:54.943245Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:54.943131Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:56.071732Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:56.070928Z&quot;}}" data-execution_count="7">
+<div id="f1fa6921" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:14.224946Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:14.224831Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:15.256795Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:15.255894Z&quot;}}" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>RAW_RUN <span class="op">=</span> <span class="st">"20180924_50ngHeLa_1.0.25.1_Hystar5.0SR1_S2-B4_1_2057"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>MSMS_URL <span class="op">=</span> (</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD010012/HeLa_5min_txt.zip"</span></span>
@@ -596,7 +596,7 @@ Working sample:   200 PSMs</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-ms2pip-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:56.072896Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:56.072770Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:57.585687Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:57.584751Z&quot;}}" data-execution_count="8">
+<div id="cell-ms2pip-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:15.257962Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:15.257833Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:16.687634Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:16.686480Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>obs_psm_list <span class="op">=</span> PSMList(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    psm_list<span class="op">=</span>[</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        PSM(peptidoform<span class="op">=</span>row[<span class="st">"proforma"</span>], spectrum_id<span class="op">=</span><span class="bu">str</span>(i))</span>
@@ -631,7 +631,7 @@ Working sample:   200 PSMs</code></pre>
 Total ions predicted: 130</code></pre>
 </div>
 </div>
-<div id="cell-ms2pip-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:57.587148Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:57.586995Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:26:58.029984Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:26:58.029189Z&quot;}}" data-execution_count="9">
+<div id="cell-ms2pip-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:16.689162Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:16.689039Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:17.137076Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:17.136380Z&quot;}}" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_predicted_vs_observed(ax, sample_idx, ms2pip_df, obs_df, row):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    pred <span class="op">=</span> ms2pip_df[ms2pip_df[<span class="st">"sample_idx"</span>] <span class="op">==</span> sample_idx]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    pred_max <span class="op">=</span> pred[<span class="st">"intensity"</span>].<span class="bu">max</span>()</span>
@@ -669,15 +669,17 @@ Total ions predicted: 130</code></pre>
 <span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, idx <span class="kw">in</span> <span class="bu">zip</span>(axes.flat, <span class="bu">range</span>(<span class="bu">len</span>(obs_psms))):</span>
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    plot_predicted_vs_observed(ax, idx, ms2pip_df, obs_peaks[idx], obs_psms.iloc[idx])</span>
 <span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>fig.legend(handles<span class="op">=</span>handles, loc<span class="op">=</span><span class="st">"lower center"</span>, ncol<span class="op">=</span><span class="dv">4</span>, fontsize<span class="op">=</span><span class="dv">8</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.02</span>))</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>fig.suptitle(</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MS2PIP — Predicted vs Observed HCD Fragment Ion Spectra</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"(</span><span class="sc">{</span>RAW_RUN<span class="sc">}</span><span class="ss">, PXD010012)"</span>,</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    fontsize<span class="op">=</span><span class="dv">12</span>,</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    fontweight<span class="op">=</span><span class="st">"bold"</span>,</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>fig.legend(</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>    handles<span class="op">=</span>handles, loc<span class="op">=</span><span class="st">"lower center"</span>, ncol<span class="op">=</span><span class="dv">4</span>, fontsize<span class="op">=</span><span class="dv">8</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.02</span>)</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>fig.suptitle(</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MS2PIP — Predicted vs Observed HCD Fragment Ion Spectra</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"(</span><span class="sc">{</span>RAW_RUN<span class="sc">}</span><span class="ss">, PXD010012)"</span>,</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    fontsize<span class="op">=</span><span class="dv">12</span>,</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    fontweight<span class="op">=</span><span class="st">"bold"</span>,</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -701,7 +703,7 @@ Total ions predicted: 130</code></pre>
 <blockquote class="blockquote">
 <p><strong>Practical note</strong>: in a real analysis you would typically use hundreds of confidently identified PSMs from the same LC run as anchors. Here we use 50 for demonstration purposes.</p>
 </blockquote>
-<div id="cell-deeplc-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:26:58.031460Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:26:58.031195Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:00.075095Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:00.074272Z&quot;}}" data-execution_count="10">
+<div id="cell-deeplc-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:17.138485Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:17.138366Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:18.926123Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:18.925363Z&quot;}}" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select 50 anchor PSMs (retention_time already set) for calibration and fine-tuning</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cal_indices <span class="op">=</span> sample.sample(<span class="dv">50</span>, random_state<span class="op">=</span><span class="dv">7</span>).index.tolist()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>cal_psm_list <span class="op">=</span> PSMList(psm_list<span class="op">=</span>[psm_list[i] <span class="cf">for</span> i <span class="kw">in</span> cal_indices])</span>
@@ -743,10 +745,10 @@ Total ions predicted: 130</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>DeepLC        raw   MAE =  17.44 min  |  Pearson r = 0.9609
 DeepLC calibrated   MAE =   4.82 min  |  Pearson r = 0.9611
-DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
+DeepLC fine-tuned   MAE =   4.28 min  |  Pearson r = 0.9650</code></pre>
 </div>
 </div>
-<div id="cell-deeplc-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:00.076525Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:00.076256Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:00.241468Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:00.240657Z&quot;}}" data-execution_count="11">
+<div id="cell-deeplc-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:18.927501Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:18.927231Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:19.092784Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:19.091939Z&quot;}}" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="fl">5.2</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, (label, res) <span class="kw">in</span> <span class="bu">zip</span>(axes, deeplc_results.items()):</span>
@@ -785,7 +787,7 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <h2 class="anchored" data-anchor-id="im2deep-collisional-cross-section-prediction">6. IM2Deep: Collisional Cross-Section Prediction</h2>
 <p><a href="https://github.com/compomics/IM2Deep">IM2Deep</a> predicts the collisional cross-section (CCS) of peptide ions. CCS is a measure of how a peptide ion’s three-dimensional shape affects its drift time through a buffer gas in an ion mobility device. It is an intrinsic physicochemical property of a peptide ion at a given charge state and does not depend on the LC gradient — which is why IM2Deep can predict <strong>absolute CCS values without calibration</strong>.</p>
 <p>CCS is measured on timsTOF instruments using trapped ion mobility spectrometry (TIMS). Combined with RT, it provides a second orthogonal dimension for peptide identification and scoring. IM2Deep uses the same <code>PSMList</code> interface as DeepLC.</p>
-<div id="cell-im2deep-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:00.242642Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:00.242528Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:00.507778Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:00.506861Z&quot;}}" data-execution_count="12">
+<div id="cell-im2deep-predict" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:19.094569Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:19.094446Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:19.316913Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:19.316088Z&quot;}}" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reuse the PSMList built for MS2PIP (includes charge encoded in ProForma string)</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>pred_ccs <span class="op">=</span> im2deep.predict(psm_list)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>obs_ccs <span class="op">=</span> sample[<span class="st">"CCS"</span>].values</span>
@@ -800,7 +802,7 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <pre><code>IM2Deep  MARE = 1.49%  |  Pearson r = 0.9863</code></pre>
 </div>
 </div>
-<div id="cell-im2deep-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:00.509223Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:00.509114Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:00.580258Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:00.579515Z&quot;}}" data-execution_count="13">
+<div id="cell-im2deep-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:19.318105Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:19.317997Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:19.388642Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:19.387873Z&quot;}}" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">5.5</span>, <span class="fl">5.5</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>ax.scatter(obs_ccs, pred_ccs, alpha<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">"#2E7D32"</span>, linewidths<span class="op">=</span><span class="dv">0</span>)</span>
@@ -838,7 +840,7 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <blockquote class="blockquote">
 <p><strong>Note</strong>: this downloads ~1.4 GB (the <code>analysis.tdf</code>/<code>analysis.tdf_bin</code> pair for one raw file, extracted directly from the PRIDE FTP archive without downloading the full, much larger raw-data submission) and requires <code>alphatims</code>. This is by far the heaviest step in the tutorial; it is cached to disk so it only runs once.</p>
 </blockquote>
-<div id="4e0573ee" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:00.581397Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:00.581287Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:00.586211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:00.585517Z&quot;}}" data-execution_count="14">
+<div id="4e0573ee" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:19.389888Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:19.389777Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:19.393681Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:19.393000Z&quot;}}" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>RAW_ZIP_URL <span class="op">=</span> (</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/11/PXD010012/HeLa_5min_raw.zip"</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -862,12 +864,12 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <pre><code>Raw data available in data/2057.d/</code></pre>
 </div>
 </div>
-<div id="7e723bb8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:00.587229Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:00.587122Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:19.334644Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:19.333736Z&quot;}}" data-execution_count="15">
+<div id="7e723bb8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:19.394720Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:19.394616Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:33.980167Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:33.979454Z&quot;}}" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>CONFORMER_SEQUENCE <span class="op">=</span> <span class="st">"VETGVLKPGMVVTFAPVNVTTEVK"</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>CONFORMER_CHARGE <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>CONFORMER_MZ <span class="op">=</span> <span class="fl">839.132859</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>RT_WINDOW <span class="op">=</span> (<span class="fl">238.0</span>, <span class="fl">252.0</span>)  <span class="co"># seconds, covers both identifications</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>PPM_TOLERANCE <span class="op">=</span> <span class="fl">20e-6</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>RT_WINDOW <span class="op">=</span> (<span class="fl">242.0</span>, <span class="fl">246.0</span>)  <span class="co"># seconds, covers both identifications</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>PPM_TOLERANCE <span class="op">=</span> <span class="fl">3e-6</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>tims_data <span class="op">=</span> alphatims.bruker.TimsTOF(RAW_D_DIR)</span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -903,10 +905,10 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <pre><code>WARNING:root:WARNING: Acquisition software is Bruker otofControl, mz min/max values are assumed to be 5 m/z wider than defined in analysis.tdf!</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Observed conformer CCS values: [604.9 695.9] Å²</code></pre>
+<pre><code>Observed conformer CCS values: [605.7 698.3] Å²</code></pre>
 </div>
 </div>
-<div id="139922ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T12:27:19.335883Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T12:27:19.335762Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T12:27:20.178952Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T12:27:20.178168Z&quot;}}" data-execution_count="16">
+<div id="139922ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-01T14:16:33.981387Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-01T14:16:33.981268Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-01T14:16:34.844022Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-01T14:16:34.843219Z&quot;}}" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>conformer_psm_list <span class="op">=</span> PSMList(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    psm_list<span class="op">=</span>[</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        PSM(</span>
@@ -919,26 +921,34 @@ DeepLC fine-tuned   MAE =   3.41 min  |  Pearson r = 0.9786</code></pre>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"IM2Deep multi-conformer predicted CCS: </span><span class="sc">{</span>predicted_ccs<span class="sc">.</span><span class="bu">round</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="ss"> Å²"</span>)</span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>ax.plot(ccs_axis, intensity_smooth, color<span class="op">=</span><span class="st">"#455A64"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">"Observed mobilogram"</span>)</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>ax.fill_between(ccs_axis, intensity_smooth, color<span class="op">=</span><span class="st">"#455A64"</span>, alpha<span class="op">=</span><span class="fl">0.15</span>)</span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ccs <span class="kw">in</span> observed_ccs:</span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    ax.axvline(ccs, color<span class="op">=</span><span class="st">"#2E7D32"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ccs <span class="kw">in</span> predicted_ccs:</span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    ax.axvline(ccs, color<span class="op">=</span><span class="st">"#B71C1C"</span>, linestyle<span class="op">=</span><span class="st">":"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>ax.plot([], [], color<span class="op">=</span><span class="st">"#2E7D32"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"Observed conformer CCS"</span>)</span>
-<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>ax.plot([], [], color<span class="op">=</span><span class="st">"#B71C1C"</span>, linestyle<span class="op">=</span><span class="st">":"</span>, label<span class="op">=</span><span class="st">"IM2Deep multi-conformer prediction"</span>)</span>
-<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"CCS (Å²)"</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Summed intensity (a.u.)"</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>ax.set_title(</span>
-<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>CONFORMER_SEQUENCE<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>CONFORMER_CHARGE<span class="sc">}</span><span class="ss">+ — real ion mobilogram, "</span></span>
-<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span><span class="bu">len</span>(observed_ccs)<span class="sc">}</span><span class="ss"> conformers"</span>,</span>
-<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    fontsize<span class="op">=</span><span class="dv">11</span>,</span>
-<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>ax.plot(</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    ccs_axis,</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    intensity_smooth,</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"#455A64"</span>,</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="fl">1.5</span>,</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Observed mobilogram"</span>,</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>ax.fill_between(ccs_axis, intensity_smooth, color<span class="op">=</span><span class="st">"#455A64"</span>, alpha<span class="op">=</span><span class="fl">0.15</span>)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ccs <span class="kw">in</span> observed_ccs:</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    ax.axvline(ccs, color<span class="op">=</span><span class="st">"#2E7D32"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ccs <span class="kw">in</span> predicted_ccs:</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    ax.axvline(ccs, color<span class="op">=</span><span class="st">"#B71C1C"</span>, linestyle<span class="op">=</span><span class="st">":"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>ax.plot([], [], color<span class="op">=</span><span class="st">"#2E7D32"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"Observed conformer CCS"</span>)</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>ax.plot(</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    [], [], color<span class="op">=</span><span class="st">"#B71C1C"</span>, linestyle<span class="op">=</span><span class="st">":"</span>, label<span class="op">=</span><span class="st">"IM2Deep multi-conformer prediction"</span></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"CCS (Å²)"</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Summed intensity (a.u.)"</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>ax.set_title(</span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>CONFORMER_SEQUENCE<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>CONFORMER_CHARGE<span class="sc">}</span><span class="ss">+ — real ion mobilogram, "</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span><span class="bu">len</span>(observed_ccs)<span class="sc">}</span><span class="ss"> conformers"</span>,</span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>    fontsize<span class="op">=</span><span class="dv">11</span>,</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
