@@ -8,3 +8,9 @@ _site/
 /.quarto/
 
 **/*.quarto_ipynb
+
+.venv/
+.quarto/
+**/*.quarto_ipynb
+_site/
+/.quarto/

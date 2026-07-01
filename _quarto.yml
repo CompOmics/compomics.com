@@ -19,6 +19,11 @@ website:
   description: "Computational Proteomics — Ghent University / VIB"
   favicon: assets/images/favicon.png
   site-url: https://compomics.github.io
+  # default social-preview image (per-page title/description come from front matter)
+  image: /assets/images/CompOmics_logo.png
+  open-graph: true
+  twitter-card:
+    card-style: summary
 
   navbar:
     logo: assets/images/CompOmics_logo.png
@@ -26,13 +31,13 @@ website:
     title: false
     right:
       - text: "Research"
-        href: research.qmd
+        href: research/index.qmd
       - text: "Tools"
         href: tools/index.qmd
       - text: "Team"
         href: team/index.qmd
       - text: "Publications"
-        href: publications.qmd
+        href: publications/index.qmd
       - text: "Tutorials"
         href: tutorials/index.qmd
       - text: "News"
@@ -50,8 +55,8 @@ website:
 format:
   html:
     theme:
-      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss, tools/tools.scss]
-      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss, tools/tools.scss]
+      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss, research/research.scss, tools/tools.scss, publications/publications.scss]
+      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss, research/research.scss, tools/tools.scss, publications/publications.scss]
     toc: true
     toc-depth: 2
     code-fold: false

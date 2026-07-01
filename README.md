@@ -27,10 +27,16 @@ In your GitHub repo settings: **Settings → Pages → Source → GitHub Actions
 ```
 _quarto.yml          # site config, navbar, theme
 index.qmd            # home page
-research.qmd         # research overview
-publications.qmd     # publications list
+research/
+  index.qmd          # research overview
+  research.scss      # research page styles
+publications/
+  index.qmd          # publications list (searchable, filterable by year)
+  publications.scss  # publications page styles
+  fetch_publications.py  # pulls DOIs from ORCID, enriches via CrossRef
 tools/
-  index.qmd          # tools listing (auto-generated)
+  index.qmd          # tools + community projects (searchable/filterable)
+  tools.scss         # tools page styles
   example-tool.qmd   # one file per tool
 team/
   index.qmd          # team listing (auto-generated)
