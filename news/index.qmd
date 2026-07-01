@@ -1,5 +1,6 @@
 ---
 title: "News"
+description: "News and updates from the CompOmics computational proteomics group."
 listing:
   contents: "posts/*.qmd"
   type: default

@@ -2,12 +2,12 @@
 Fetch publications for CompOmics group members from ORCID and enrich via CrossRef.
 
 Dependencies: requests, PyYAML
-Usage: python scripts/fetch_publications.py
-Output: data/publications.json, updates index.qmd publication count
+Usage: python publications/fetch_publications.py
+Output: data/publications.json
 
 To update the publications page:
-  1. python scripts/fetch_publications.py
-  2. quarto render publications.qmd
+  1. python publications/fetch_publications.py
+  2. quarto render publications/index.qmd
 """
 
 import json
