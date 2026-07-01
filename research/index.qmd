@@ -1,0 +1,74 @@
+---
+title: "Research"
+toc: false
+---
+
+```{=html}
+<header class="research-header">
+  <div class="research-header-kicker">What we do</div>
+  <h1 class="research-header-title">Research</h1>
+  <p class="research-header-sub">CompOmics develops computational methods and software across the full proteomics workflow, from predicting peptide behaviour to making public data reusable at scale.</p>
+</header>
+
+<div class="research-grid">
+
+  <article class="research-card" style="--accent:#1f5f8f">
+    <div class="research-num">01</div>
+    <span class="research-icon"><i class="bi bi-graph-up-arrow"></i></span>
+    <div class="research-card-title">Analyte prediction</div>
+    <p class="research-card-desc">Deep learning models that predict how peptides behave in the mass spectrometer, from fragmentation intensities to retention time and ion mobility.</p>
+    <div class="research-tags">
+      <span class="research-tag">DeepLC</span>
+      <span class="research-tag">MS²PIP</span>
+      <span class="research-tag">IM2Deep</span>
+      <span class="research-tag">IM2Fly</span>
+    </div>
+  </article>
+
+  <article class="research-card" style="--accent:#c5392b">
+    <div class="research-num">02</div>
+    <span class="research-icon"><i class="bi bi-fingerprint"></i></span>
+    <div class="research-card-title">Identification</div>
+    <p class="research-card-desc">Search engine post-processing and data-driven rescoring that push confident peptide and protein identification in both DDA and DIA workflows.</p>
+    <div class="research-tags">
+      <span class="research-tag">MS²Rescore</span>
+      <span class="research-tag">TIMS²Rescore</span>
+      <span class="research-tag">Mumble</span>
+    </div>
+  </article>
+
+  <article class="research-card" style="--accent:#2f8f6f">
+    <div class="research-num">03</div>
+    <span class="research-icon"><i class="bi bi-diagram-3"></i></span>
+    <div class="research-card-title">Metaproteomics</div>
+    <p class="research-card-desc">Taxonomic and functional interpretation of complex microbial communities measured by mass spectrometry.</p>
+    <div class="research-tags">
+      <span class="research-tag">Unipept</span>
+      <span class="research-tag">Peptonizer</span>
+    </div>
+  </article>
+
+  <article class="research-card" style="--accent:#b0792a">
+    <div class="research-num">04</div>
+    <span class="research-icon"><i class="bi bi-database-check"></i></span>
+    <div class="research-card-title">FAIR data principles</div>
+    <p class="research-card-desc">Metadata annotation and community standards that make proteomics data findable, accessible, interoperable, and reusable, and ready for machine learning.</p>
+    <div class="research-tags">
+      <span class="research-tag">lesSDRF</span>
+    </div>
+  </article>
+
+  <article class="research-card" style="--accent:#6a4c93">
+    <div class="research-num">05</div>
+    <span class="research-icon"><i class="bi bi-arrow-repeat"></i></span>
+    <div class="research-card-title">Reprocessing</div>
+    <p class="research-card-desc">Large-scale orthogonal reanalysis of public proteomics data for tissue profiling, PTM mapping, and biomarker discovery.</p>
+    <div class="research-tags">
+      <span class="research-tag">MLMarker</span>
+      <span class="research-tag">ModPA</span>
+      <span class="research-tag">Scop3P</span>
+    </div>
+  </article>
+
+</div>
+```
