@@ -192,13 +192,63 @@
   }
 }
 
+.pub-countbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin-bottom: 1.6rem;
+}
+
 .pub-count {
   font-family: $font-family-monospace;
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $muted;
-  margin-bottom: 1.6rem;
+}
+
+// active-filter summary
+.pub-active {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+
+  &[hidden] { display: none; }
+}
+
+.pub-active-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.35rem 0.22rem 0.7rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: $primary;
+  border: 1px solid $primary;
+  border-radius: 2rem;
+  cursor: pointer;
+
+  i { font-size: 0.8rem; opacity: 0.85; }
+
+  &:hover i { opacity: 1; }
+}
+
+.pub-active-clear {
+  font-family: $font-family-sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $muted;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover { color: $secondary; }
 }
 
 // ── Year blocks + entries ────────────────────────────────────────────────────
@@ -208,15 +258,26 @@
   &.is-hidden { display: none; }
 }
 
+// year section divider
 .pub-year {
   font-family: $font-family-heading;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: $primary;
-  letter-spacing: 0.02em;
-  margin: 0 0 0.6rem;
-  padding: 0 0 0.5rem;
-  border-bottom: 1px solid $line;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: $ink;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: none;
+
+  // thin baseline rule with a coloured lead segment
+  &::after {
+    content: "";
+    display: block;
+    margin-top: 0.4rem;
+    height: 2px;
+    background: linear-gradient(to right, $primary 0 3rem, $line 3rem);
+  }
 }
 
 .pub-list {
@@ -227,8 +288,8 @@
 
 .pub-entry {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.6rem;
   padding: 0.85rem 0.9rem;
   border-radius: 0.5rem;
   border-left: 2px solid transparent;
@@ -237,9 +298,19 @@
   &:hover {
     background: $cream-2;
     border-left-color: $primary;
+
+    .pub-cite { opacity: 1; }
   }
 
   &.is-hidden { display: none; }
+}
+
+.pub-entry-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
 }
 
 .pub-title {
@@ -267,10 +338,88 @@
   strong { color: $ink-soft; font-weight: 700; }
 }
 
-.pub-meta {
+// "+ N more" author toggle
+.pub-authors-toggle {
+  margin-left: 0.35rem;
+  padding: 0;
   font-family: $font-family-sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: $primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover { text-decoration: underline; text-underline-offset: 2px; }
+}
+
+// tags row: preprint badge + venue pill
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+
+.pub-badge {
+  font-family: $font-family-sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.16rem 0.5rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+}
+
+.pub-badge-preprint {
+  color: #fff;
+  background: #c8912f; // amber — signals "not yet peer-reviewed"
+}
+
+.pub-venue {
+  font-family: $font-family-sans-serif;
+  font-size: 0.76rem;
   color: $muted;
+  padding: 0.16rem 0.6rem;
+  border: 1px solid $line;
+  border-radius: 2rem;
+  background: $cream-2;
+}
+
+// copy-citation button
+.pub-cite {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: $muted;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+
+  &:hover { color: $primary; background: $cream; border-color: $line; }
+  &:focus-visible { opacity: 1; outline: 2px solid $primary; outline-offset: 2px; }
+
+  // brief "copied" confirmation (icon swapped to a check in JS)
+  &.is-copied {
+    opacity: 1;
+    color: #fff;
+    background: #2f9e8b;   // green
+    border-color: #2f9e8b;
+  }
+}
+
+@media (max-width: 640px) {
+  .pub-cite { opacity: 1; }  // no hover on touch — always show
 }
 
 // ── Empty state ──────────────────────────────────────────────────────────────

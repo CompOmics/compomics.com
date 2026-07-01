@@ -88,6 +88,8 @@ else:
         author_tokens = set(author_name.lower().split())
         return any(set(gn.split()).issubset(author_tokens) for gn in group_names)
 
+    AUTHOR_LIMIT = 8  # authors shown before the "+ N more" toggle
+
     def format_authors(authors, author_orcids, group_orcids):
         group_set = set(group_orcids or [])
         orcids = author_orcids or [None] * len(authors)
@@ -98,9 +100,16 @@ else:
                 labelled.append(f"<strong>{safe}</strong>")
             else:
                 labelled.append(safe)
-        if len(labelled) <= 6:
+        if len(labelled) <= AUTHOR_LIMIT:
             return ", ".join(labelled)
-        return ", ".join(labelled[:6]) + " et al."
+        shown = ", ".join(labelled[:AUTHOR_LIMIT])
+        rest = ", ".join(labelled[AUTHOR_LIMIT:])
+        n = len(labelled) - AUTHOR_LIMIT
+        return (
+            f'{shown}<span class="pub-authors-rest" hidden>, {rest}</span>'
+            f'<button type="button" class="pub-authors-toggle" '
+            f'data-more="+{n} more" data-less="show less">+{n} more</button>'
+        )
 
     def format_location(pub):
         parts = []
@@ -112,6 +121,41 @@ else:
         if pub.get("pages"):
             parts.append(pub["pages"])
         return ":".join(parts)
+
+    # Preprint detection — by DOI prefix or journal/server name.
+    PREPRINT_DOI_PREFIXES = (
+        "10.1101",    # bioRxiv / medRxiv (Cold Spring Harbor)
+        "10.26434",   # ChemRxiv
+        "10.21203",   # Research Square
+        "10.20944",   # Preprints.org
+        "10.31219",   # OSF Preprints
+        "10.31234",   # PsyArXiv
+        "10.48550",   # arXiv
+        "10.64898",   # bioRxiv (newer prefix)
+    )
+    PREPRINT_JOURNAL_HINTS = (
+        "biorxiv", "medrxiv", "chemrxiv", "arxiv", "research square",
+        "preprints.org", "ssrn", "osf", "preprint",
+    )
+
+    def is_preprint(doi, journal):
+        d = (doi or "").lower()
+        j = (journal or "").lower()
+        if any(d.startswith(p) for p in PREPRINT_DOI_PREFIXES):
+            return True
+        return any(h in j for h in PREPRINT_JOURNAL_HINTS)
+
+    def build_citation(authors, year, title, journal, location, doi):
+        authors_txt = ", ".join(authors)
+        parts = [authors_txt] if authors_txt else []
+        parts.append(f"({year})." if year else "")
+        parts.append(f"{title}.")
+        venue = journal + ((" " + location) if location else "") if journal else location
+        if venue:
+            parts.append(f"{venue}.")
+        if doi:
+            parts.append(f"https://doi.org/{doi}")
+        return " ".join(p for p in parts if p)
 
     by_year = {}
     for pub in publications:
@@ -160,7 +204,10 @@ else:
     lines.append('</div>')
     lines.append('</div>')
 
+    lines.append('<div class="pub-countbar">')
     lines.append('<div class="pub-count" id="pub-count" aria-live="polite"></div>')
+    lines.append('<div class="pub-active" id="pub-active" hidden></div>')
+    lines.append('</div>')
 
     # ── Publication list, grouped by year ────────────────────────────────────
     lines.append('<div class="pub-list-wrap" id="pub-list">')
@@ -187,9 +234,17 @@ else:
                 f'<a href="https://doi.org/{html.escape(doi)}" target="_blank" rel="noopener noreferrer">{title_safe}</a>'
                 if doi else title_safe
             )
-            journal_html = f"<em>{html.escape(journal)}</em>" if journal else ""
-            meta_parts = [p for p in [journal_html, location] if p]
-            meta_html = ", ".join(meta_parts) + "." if meta_parts else ""
+
+            preprint = is_preprint(doi, journal)
+
+            # venue pill: journal + location (volume(issue):pages)
+            venue_txt = journal + ((", " + location) if (journal and location) else (location or "")) if (journal or location) else ""
+            venue_html = (
+                f'<span class="pub-venue">{html.escape(venue_txt)}</span>' if venue_txt else ""
+            )
+            badge_html = (
+                '<span class="pub-badge pub-badge-preprint">Preprint</span>' if preprint else ""
+            )
 
             # searchable haystack (plain text, attribute-escaped)
             haystack = " ".join([title, " ".join(authors_list), journal, ylabel]).lower()
@@ -200,12 +255,26 @@ else:
             members_attr = ("|" + "|".join(m.lower() for m in hits) + "|") if hits else ""
             members_attr = html.escape(members_attr, quote=True)
 
+            citation = build_citation(authors_list, ylabel if year else "", title, journal, location, doi)
+            cite_attr = html.escape(citation, quote=True)
+            type_attr = "preprint" if preprint else "published"
+
+            cite_btn = (
+                f'<button type="button" class="pub-cite" data-citation="{cite_attr}" '
+                f'title="Copy citation" aria-label="Copy citation">'
+                f'<i class="bi bi-quote"></i></button>'
+            )
+
             lines.append(
-                f'<li class="pub-entry" data-year="{yval}" data-members="{members_attr}" data-search="{haystack}">'
+                f'<li class="pub-entry" data-year="{yval}" data-type="{type_attr}" '
+                f'data-members="{members_attr}" data-search="{haystack}">'
+                f'<div class="pub-entry-main">'
                 f'<span class="pub-title">{title_html}</span>'
                 f'<span class="pub-authors">{authors_str}</span>'
-                + (f'<span class="pub-meta">{meta_html}</span>' if meta_html else "")
-                + "</li>"
+                f'<div class="pub-tags">{badge_html}{venue_html}</div>'
+                f'</div>'
+                f'{cite_btn}'
+                f'</li>'
             )
         lines.append("</ol>")
         lines.append("</section>")
@@ -231,11 +300,51 @@ else:
   const blocks = Array.from(document.querySelectorAll('.pub-year-block'));
   const countEl = document.getElementById('pub-count');
   const emptyEl = document.getElementById('pub-empty');
+  const activeEl = document.getElementById('pub-active');
+  const listWrap = document.getElementById('pub-list');
   if (!search || !countEl) return;
 
   let activeYear = 'all';
   let activePerson = '';
   let query = '';
+
+  function yearLabel() {
+    const chip = chips.find(function (c) { return c.dataset.year === activeYear; });
+    return chip ? chip.textContent.trim() : activeYear;
+  }
+
+  function resetYear() {
+    activeYear = 'all';
+    chips.forEach(function (c) { c.classList.toggle('is-active', c.dataset.year === 'all'); });
+  }
+  function resetPerson() {
+    activePerson = '';
+    if (personSel) personSel.value = '';
+  }
+  function resetQuery() {
+    query = '';
+    search.value = '';
+    if (clear) clear.hidden = true;
+  }
+
+  function buildActiveBar() {
+    if (!activeEl) return;
+    const bits = [];
+    if (query) bits.push({ k: 'query', label: '“' + query + '”' });
+    if (activePerson && personSel) bits.push({ k: 'person', label: personSel.selectedOptions[0].text });
+    if (activeYear !== 'all') bits.push({ k: 'year', label: yearLabel() });
+
+    if (!bits.length) { activeEl.hidden = true; activeEl.innerHTML = ''; return; }
+
+    let html = '';
+    bits.forEach(function (b) {
+      html += '<button type="button" class="pub-active-tag" data-kind="' + b.k + '">'
+        + b.label + '<i class="bi bi-x"></i></button>';
+    });
+    html += '<button type="button" class="pub-active-clear">Clear all</button>';
+    activeEl.innerHTML = html;
+    activeEl.hidden = false;
+  }
 
   function yearMatches(y) {
     if (activeYear === 'all') return true;
@@ -262,6 +371,7 @@ else:
     });
     countEl.textContent = visible + (visible === 1 ? ' publication' : ' publications');
     if (emptyEl) emptyEl.hidden = visible !== 0;
+    buildActiveBar();
   }
 
   chips.forEach(function (chip) {
@@ -288,11 +398,61 @@ else:
 
   if (clear) {
     clear.addEventListener('click', function () {
-      search.value = '';
-      query = '';
-      clear.hidden = true;
+      resetQuery();
       search.focus();
       apply();
+    });
+  }
+
+  // active-filter bar: remove one filter or clear all
+  if (activeEl) {
+    activeEl.addEventListener('click', function (ev) {
+      const clearAll = ev.target.closest('.pub-active-clear');
+      if (clearAll) { resetQuery(); resetPerson(); resetYear(); apply(); return; }
+      const tag = ev.target.closest('.pub-active-tag');
+      if (!tag) return;
+      const kind = tag.dataset.kind;
+      if (kind === 'query') resetQuery();
+      else if (kind === 'person') resetPerson();
+      else if (kind === 'year') resetYear();
+      apply();
+    });
+  }
+
+  // list delegation: copy-citation + author "+N more" toggle
+  if (listWrap) {
+    listWrap.addEventListener('click', function (ev) {
+      const toggle = ev.target.closest('.pub-authors-toggle');
+      if (toggle) {
+        const rest = toggle.parentElement.querySelector('.pub-authors-rest');
+        if (rest) {
+          const hidden = rest.hasAttribute('hidden');
+          if (hidden) { rest.removeAttribute('hidden'); toggle.textContent = toggle.dataset.less; }
+          else { rest.setAttribute('hidden', ''); toggle.textContent = toggle.dataset.more; }
+        }
+        return;
+      }
+      const cite = ev.target.closest('.pub-cite');
+      if (cite) {
+        const text = cite.dataset.citation || '';
+        const icon = cite.querySelector('i');
+        const done = function () {
+          cite.classList.add('is-copied');
+          if (icon) icon.className = 'bi bi-check-lg';
+          setTimeout(function () {
+            cite.classList.remove('is-copied');
+            if (icon) icon.className = 'bi bi-quote';
+          }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      }
     });
   }
 
