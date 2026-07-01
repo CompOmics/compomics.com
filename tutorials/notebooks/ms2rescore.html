@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="ms2rescore_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="ms2rescore_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="ms2rescore_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="ms2rescore_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="ms2rescore_files/libs/bootstrap/bootstrap-14e8f36bc0611d0af2b7a9b576cff92d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -198,9 +198,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1781190563.609225  117741 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1782898880.437581 1648231 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1781190564.400742  117741 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.</code></pre>
+I0000 00:00:1782898882.275350 1648231 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.</code></pre>
 </div>
 </div>
 <div id="cell-mpl-inline" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-11T15:09:24.646302Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-11T15:09:24.646035Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-11T15:09:24.652061Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-11T15:09:24.650440Z&quot;}}" data-execution_count="3">
@@ -325,7 +325,7 @@ Targets at 1 % FDR (Andromeda score): 5,480</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ms2rescore_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ms2rescore_files/figure-html/cell-7-output-1.png" width="661" height="372" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -369,15 +369,15 @@ Targets at 1 % FDR (Andromeda score): 5,480</code></pre>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                <span class="st">"ms2pip"</span>: {<span class="st">"model"</span>: <span class="st">"HCD2021"</span>, <span class="st">"ms2_tolerance"</span>: <span class="fl">0.02</span>},</span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                <span class="st">"deeplc"</span>: {<span class="st">"calibration_set_size"</span>: <span class="fl">0.15</span>},</span>
 <span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>            },</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rescoring_engine"</span>: {<span class="st">"mokapot"</span>: {<span class="st">"train_fdr"</span>: <span class="fl">0.05</span>}},</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rescoring_engine"</span>: {<span class="st">"mokapot"</span>: {<span class="st">"train_fdr"</span>: <span class="fl">0.05</span>, <span class="st">"write_weights"</span>: <span class="va">True</span>}},</span>
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>            <span class="st">"log_level"</span>: <span class="st">"warning"</span>,</span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">"write_report"</span>: <span class="va">False</span>,</span>
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Running MS</span><span class="ch">\u00b2</span><span class="st">Rescore..."</span>)</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"(feature generation + mokapot training typically takes 10</span><span class="ch">\u2013</span><span class="st">15 minutes)"</span>)</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Running MS²Rescore..."</span>)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"(feature generation + mokapot training typically takes 10–15 minutes)"</span>)</span>
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>rescore(config)</span>
 <span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Done."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -403,7 +403,7 @@ Targets at 1 % FDR (Andromeda score): 5,480</code></pre>
 <li><strong><code>provenance:before_rescoring_score</code></strong>: the original Andromeda score</li>
 <li><strong><code>rescoring:*</code></strong>: all features that were passed to mokapot</li>
 </ul>
-<p>We compare target PSMs identified at 1 % FDR before and after rescoring, and plot the FDR curves to show the improvement across all FDR thresholds.</p>
+<p>We compare target PSMs identified at 1 % FDR before and after rescoring, plot the FDR curves to show the improvement across all FDR thresholds, and inspect the mokapot model’s learned feature weights to see which features drove the improvement.</p>
 <div id="cell-results-count" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-11T15:14:07.233938Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-11T15:14:07.233597Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-11T15:14:07.545315Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-11T15:14:07.544555Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>output_tsv <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">"ms2rescore.psms.tsv"</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_after <span class="op">=</span> pd.read_csv(output_tsv, sep<span class="op">=</span><span class="st">"    "</span>)</span>
@@ -431,9 +431,9 @@ Targets at 1 % FDR (Andromeda score): 5,480</code></pre>
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Gain:  +</span><span class="sc">{</span>n_after <span class="op">-</span> n_before<span class="sc">:,}</span><span class="ss">  (+</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>(n_after <span class="op">-</span> n_before)<span class="op">/</span>n_before<span class="sc">:.1f}</span><span class="ss"> %)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Targets at 1 % FDR
-  Before rescoring (Andromeda):  6,082
-  After  rescoring (mokapot):    7,112
-  Gain:  +1,030  (+16.9 %)</code></pre>
+  Before rescoring (Andromeda):  6,085
+  After  rescoring (mokapot):    7,110
+  Gain:  +1,025  (+16.8 %)</code></pre>
 </div>
 </div>
 <div id="cell-fdr-plot" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-11T15:14:07.546596Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-11T15:14:07.546463Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-11T15:14:07.694290Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-11T15:14:07.693512Z&quot;}}" data-execution_count="9">
@@ -472,35 +472,33 @@ Targets at 1 % FDR (Andromeda score): 5,480</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ms2rescore_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ms2rescore_files/figure-html/cell-10-output-1.png" width="1141" height="468" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div id="cell-feature-contrib" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-06-11T15:14:07.695792Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-06-11T15:14:07.695661Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-06-11T15:14:08.879896Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-06-11T15:14:08.879085Z&quot;}}" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature contribution: compare individual feature q-values at 1% FDR</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>rescoring_cols <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> df_after.columns <span class="cf">if</span> c.startswith(<span class="st">'rescoring:'</span>)]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>feature_gains <span class="op">=</span> {}</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> rescoring_cols:</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    df_feat <span class="op">=</span> compute_qvalues(df_after.dropna(subset<span class="op">=</span>[col]), col, descending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    n_feat <span class="op">=</span> (<span class="op">~</span>df_feat[<span class="st">'is_decoy'</span>] <span class="op">&amp;</span> (df_feat[<span class="st">'_qval'</span>] <span class="op">&lt;=</span> <span class="fl">0.01</span>)).<span class="bu">sum</span>()</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    feature_gains[col.replace(<span class="st">'rescoring:'</span>, <span class="st">''</span>)] <span class="op">=</span> n_feat</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>feat_df <span class="op">=</span> pd.Series(feature_gains).sort_values(ascending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="bu">max</span>(<span class="dv">4</span>, <span class="bu">len</span>(feat_df) <span class="op">*</span> <span class="fl">0.3</span>)))</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>feat_df.plot.barh(ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'#1565C0'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ax.axvline(n_before, color<span class="op">=</span><span class="st">'#B71C1C'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="ss">f'Andromeda baseline (</span><span class="sc">{</span>n_before<span class="sc">:,}</span><span class="ss">)'</span>)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Target PSMs at 1 </span><span class="sc">% F</span><span class="st">DR (single feature)'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Individual feature contribution'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature contribution: mokapot linear SVM weights, averaged across CV folds</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Requires `write_weights: True` in the mokapot config (see Section 4)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>weights_path <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">"ms2rescore.mokapot.weights.tsv"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>weights_df <span class="op">=</span> pd.read_csv(weights_path, sep<span class="op">=</span><span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>weights_df.columns <span class="op">=</span> weights_df.columns.<span class="bu">str</span>.replace(<span class="st">"feature:"</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>coef_mean <span class="op">=</span> weights_df.mean().sort_values()</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>coef_std <span class="op">=</span> weights_df.std().reindex(coef_mean.index)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="bu">max</span>(<span class="dv">4</span>, <span class="bu">len</span>(coef_mean) <span class="op">*</span> <span class="fl">0.3</span>)))</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#B71C1C'</span> <span class="cf">if</span> v <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'#1565C0'</span> <span class="cf">for</span> v <span class="kw">in</span> coef_mean]</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>ax.barh(coef_mean.index, coef_mean.values, xerr<span class="op">=</span>coef_std.values, color<span class="op">=</span>colors, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Mokapot linear SVM weight (mean ± SD across folds)'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Feature contribution to the mokapot model'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ms2rescore_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ms2rescore_files/figure-html/cell-11-output-1.png" width="660" height="2496" class="figure-img"></p>
 </figure>
 </div>
 </div>
