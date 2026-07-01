@@ -27,7 +27,9 @@ In your GitHub repo settings: **Settings → Pages → Source → GitHub Actions
 ```
 _quarto.yml          # site config, navbar, theme
 index.qmd            # home page
-research.qmd         # research overview
+research/
+  index.qmd          # research overview
+  research.scss      # research page styles
 publications/
   index.qmd          # publications list (searchable, filterable by year)
   publications.scss  # publications page styles

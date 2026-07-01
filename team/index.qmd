@@ -239,14 +239,20 @@ toc: false
     sakina: {
       title: 'Sakina Bombaywala',
       role: 'Postdoctoral Researcher',
-      email: 'sakina.bombaywala@ugent.be'
+      email: 'sakina.bombaywala@ugent.be',
+      about: 'Sakina completed her Ph.D. in Bioinformatics from India in 2024. Her doctoral research focused on applying multi-omics approaches to understand microbiome interactions, with applications in wastewater management. Soon after, she joined the CompOmics lab, where her current work focuses on developing omics workflows for disease tracking and environmental surveillance. Outside work, she enjoys trying out different athletic sports.',
+      currentWork: 'Sakina works across whole-genome sequencing, metagenomics, RNA-seq, variant calling, and phylogenetic analysis. She develops scalable, reproducible bioinformatics solutions that support disease tracking and environmental surveillance. In addition to data analysis, she contributes to bioinformatics training for researchers, laboratory technicians, and clinicians within international collaborations.',
+      publications: [
+        { title: 'Meta-analysis of wastewater microbiome for antibiotic resistance profiling', url: 'https://doi.org/10.1016/j.mimet.2024.106953', venue: 'Journal of Microbiological Methods · 2024' },
+        { title: 'Project ODIN: advancing environmental genomic surveillance for public health across sub-Saharan Africa', url: 'https://doi.org/10.1016/j.lanmic.2026.101426', venue: 'The Lancet Microbe · 2026' }
+      ]
     },
     robbin: {
       title: 'Robbin Bouwmeester',
       role: 'Postdoctoral Researcher',
       email: 'robbin.bouwmeester@ugent.be',
-      about: 'Robbin obtained his Master\'s degree in Bioinformatics and Systems Biology at VU University Amsterdam. He joined the CompOmics group after applying for a PhD position within an Innovative Training Network (ITN). During his PhD he worked on the machine learning of lipid oxidation products and how they interact with proteins.',
-      currentWork: 'He is currently a postdoctoral researcher at CompOmics. His research spans deep learning and machine learning, retention time and liquid chromatography, benchmarking, and DIA data analysis, and includes industrial collaborations with Johnson & Johnson, Bruker, and Waters. Robbin is the main developer of DeepLC and iDeepLC, and has contributed to ProteoBench and CALLC. Outside work he is a maker at heart, with interests in 3D printing, crochet, and other creative pursuits.',
+      about: 'Robbin obtained his Master\'s degree in Bioinformatics and Systems Biology at VU University Amsterdam. He joined the CompOmics group after applying for a PhD position within an Innovative Training Network (ITN). During his PhD he worked on the machine learning of lipid oxidation products and how they interact with proteins. Outside work he enjoys working on creative projects like 3D printing and crochet.',
+      currentWork: 'Robbin is currently a postdoctoral researcher at CompOmics. He is an expert in applying machine learning and deep learning for peptide property prediction, specifically LC retention time prediction. His research further involves DIA data analysis and benchmarking. Lastly, he fosters several industrial collaborations with Johnson & Johnson, Bruker, and Waters. Robbin is the main developer of DeepLC, and has contributed to iDeepLC, ProteoBench and CALLC (for small molecules).',
       publications: [
         { title: 'DeepLC can predict retention times for peptides with as-yet unseen modifications', url: 'https://doi.org/10.1038/s41592-021-01301-5', venue: 'Nature Methods · 2021' },
         { title: 'Transfer learning in DeepLC improves LC retention time prediction across substantially different modifications and setups', url: 'https://doi.org/10.1038/s41467-026-68981-5', venue: 'Nature Communications · 2026' },
@@ -257,9 +263,9 @@ toc: false
       title: 'Tine Claeys',
       role: 'Postdoctoral Researcher',
       email: 'tine.claeys@ugent.be',
-      about: 'Tine obtained her Master\'s degree in Biomedical Sciences at Ghent University in 2020. She carried out her Master\'s thesis under supervision of Prof. Dr. Kris Gevaert, but found that wet-lab work was not for her. After taking up coding classes in her second Master\'s year, she was invited by Prof. Lennart Martens to do a PhD in CompOmics. During her PhD she worked on reprocessing public data for tissue proteome profiling and on metadata annotation.',
+      about: 'Tine obtained her Master\'s degree in Biomedical Sciences at Ghent University in 2020. She carried out her Master\'s thesis under supervision of Prof. Dr. Kris Gevaert, but after taking up coding classes in her second Master\'s year, she was invited by Prof. Lennart Martens to do a PhD in CompOmics. During her PhD she worked on reprocessing public data for tissue proteome profiling and on metadata annotation. Next to writing papers, Tine also writes music (and performs it). As for why the MLMarker logo is an octopus: Tine loves octopuses and the octopus is named Mark.',
       currentWork: 'She is now a postdoctoral researcher, supervised by Juan Antonio Vizcaíno (PRIDE) and Prof. Lennart Martens. Her research covers retroactive metadata annotation of public data in PRIDE and PSI-AI standards for sharing public data in an AI-ready way. She also works on contextualising public tissue data towards diagnostics, including biomarker identification with MLMarker. Tine is the main developer of lesSDRF and MLMarker, and has contributed to many other CompOmics tools.',
-      recognition: 'Tine has received a number of honours, including the EuPA Bioinformatics Award (2025), runner-up for the UGent thesis award (2024), finalist for the VIB Aurora prize (2026), and a Club des Jeunes FPS award (2022). Next to writing papers, Tine also writes music and performs it.',
+      recognition: 'Tine has received a number of honours, including the EuPA Bioinformatics Award (2025), runner-up for the UGent thesis award (2024), finalist for the VIB Aurora prize (2026), and a Club des Jeunes FPS award (2022).',
       publications: [
         { title: 'MLMarker: A machine learning framework for tissue inference and biomarker discovery', url: 'https://doi.org/10.1101/2025.06.10.658642', venue: 'bioRxiv · 2025' },
         { title: 'lesSDRF is more: maximizing the value of proteomics data through streamlined metadata annotation', url: 'https://doi.org/10.1038/s41467-023-42543-5', venue: 'Nature Communications · 2023' }
@@ -269,9 +275,9 @@ toc: false
       title: 'Arthur Declercq',
       role: 'Postdoctoral Researcher',
       email: 'arthur.declercq@ugent.be',
-      about: 'Arthur obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2021. During his studies, he took a machine learning course that sparked his interest, which led him to carry out his Master\'s thesis in CompOmics. During his PhD he worked on optimising the identification of immunopeptides with mass spectrometry, for which he developed MS²Rescore.',
-      currentWork: 'He is now a postdoctoral researcher, with his research focusing on binding affinity prediction and immunoinformatics. Aside from being the main developer of MS²Rescore, he has also contributed to MS²PIP, Mumble, psm_utils, and BAXERNA.',
-      recognition: 'Arthur has received a number of honours, including the Faculty of Medicine thesis prize (2026), the PhD Innovation Café award (VOKA UGent, 2023), a second place presentation award from the French Proteomics Society, and a finalist place for the VIB Aurora Nova Scientia prize. Outside research, Arthur enjoys photography, running, and science fiction books.',
+      about: 'Arthur obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2021. He carried out his master thesis at CompOmics after developing a keen interest in machine learning during his studies. He then continued pursuing a PhD in our group, working on optimization of immunopeptide identification with mass spectrometry, for which he developed MS²Rescore.',
+      currentWork: 'Arthur is now a postdoctoral researcher, focusing on binding affinity prediction and immunoinformatics. He is the main developer of MS²Rescore, and has contributed to MS²PIP, Mumble, psm_utils, and BAXERNA.',
+      recognition: 'He has received a number of honours, including the Faculty of Medicine thesis prize (2026), the PhD Innovation Café award (VOKA UGent, 2023), a second place presentation award from the French Proteomics Society, and a finalist place for the VIB Aurora Nova Scientia prize. Outside research, Arthur enjoys photography, running, and science fiction books. He also created his own website, which can be found at https://arthurdeclercq.bio/.',
       publications: [
         { title: 'MS²Rescore: Data-Driven Rescoring Dramatically Boosts Immunopeptide Identification Rates', url: 'https://doi.org/10.1016/j.mcpro.2022.100266', venue: 'Molecular & Cellular Proteomics · 2022' },
         { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' }
@@ -282,7 +288,15 @@ toc: false
       role: 'Postdoctoral Researcher',
       email: 'ralf.gabriels@ugent.be',
       about: 'Ralf obtained his Master\'s degree in Biomedical Sciences at Ghent University in 2017. In January 2018 he started his PhD under the supervision of Prof. Sven Degroeve and Prof. Lennart Martens, graduating as Doctor in Life Sciences in 2022.',
-      currentWork: 'He is now a postdoctoral researcher, focusing on machine learning methods in mass spectrometry-based proteomics, with an emphasis on peptide fragmentation prediction, identification rescoring, and post-translational modification analysis. He is the main developer of MS²PIP and has contributed to MS²Rescore and psm_utils. Ralf is also an elected representative of the European Bioinformatics Community for Mass Spectrometry (EuBIC-MS) and contributes to the HUPO Proteomics Standards Initiative (HUPO-PSI), where he recently became co-chair of the AI Readiness working group.'
+      currentWork: 'He is now a postdoctoral researcher, focusing on machine learning methods in mass spectrometry-based proteomics, with an emphasis on peptide fragmentation prediction, identification rescoring, and post-translational modification analysis. He is the main developer of MS²PIP and contributed to MS²Rescore and psm_utils. Ralf is also very active in community initiatives.',
+      recognition: 'He is an elected representative of the European Bioinformatics Community for Mass Spectrometry (EuBIC-MS) and contributes to the HUPO Proteomics Standards Initiative (HUPO-PSI), where he recently became co-chair of the AI Readiness working group.',
+      publications: [
+        { title: 'Updated MS²PIP web server supports cutting-edge proteomics applications', url: 'https://doi.org/10.1093/nar/gkad335', venue: 'Nucleic Acids Research · 2023' },
+        { title: 'MS²Rescore 3.0 Is a Modular, Flexible, and User-Friendly Platform to Boost Peptide Identifications, as Showcased with MS Amanda 3.0', url: 'https://doi.org/10.1021/acs.jproteome.3c00785', venue: 'Journal of Proteome Research · 2024' },
+        { title: 'MS²Rescore: Data-Driven Rescoring Dramatically Boosts Immunopeptide Identification Rates', url: 'https://doi.org/10.1016/j.mcpro.2022.100266', venue: 'Molecular & Cellular Proteomics · 2022' },
+        { title: 'psm_utils: A High-Level Python API for Parsing and Handling Peptide-Spectrum Matches and Proteomics Search Results', url: 'https://doi.org/10.1021/acs.jproteome.2c00609', venue: 'Journal of Proteome Research · 2023' },
+        { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' }
+      ]
     },
     alex: {
       title: 'Alexander Kensert',
@@ -293,8 +307,8 @@ toc: false
       title: 'Enrico Massignani',
       role: 'Postdoctoral Researcher',
       email: 'enrico.massignani@ugent.be',
-      about: 'Enrico obtained his Bachelor\'s degree in Industrial and Environmental Biotechnology at the University of Milan, and his Master\'s degree in Molecular Biotechnology and Bioinformatics at the same university in 2017. He went on to complete a PhD in Systems Medicine at the European School of Molecular Medicine in 2021. Prof. Lennart Martens served as his external advisor during his PhD. During his PhD he studied protein arginine methylation and developed software to analyse methyl-proteomics experiments.',
-      currentWork: 'He is now a postdoctoral researcher in CompOmics, where his core research examines the associations between post-translational modifications in order to understand PTM crosstalk and to identify proteoforms, in collaboration with Marie A. Brunet at the University of Sherbrooke (Quebec, Canada). In his spare time, Enrico plays Magic: The Gathering, reads manga, and watches anime.',
+      about: 'Enrico obtained his Bachelor\'s degree in Industrial and Environmental Biotechnology at the University of Milan. He earned his Master\'s degree in Molecular Biotechnology and Bioinformatics at the same university in 2017. He went on to complete a PhD in Systems Medicine at the European School of Molecular Medicine in 2021, where he studied protein arginine methylation and developed software to analyse methyl-proteomics experiments. Prof. Lennart Martens served as his external advisor during his PhD and later offered him a position in the group. In his spare time, Enrico plays Magic: The Gathering, reads manga, and watches anime.',
+      currentWork: 'Enrico is now a postdoctoral researcher in CompOmics, where his research examines the associations between post-translational modifications in order to understand PTM crosstalk and to identify proteoforms, in collaboration with Marie A. Brunet at the University of Sherbrooke (Quebec, Canada).',
       publications: [
         { title: 'ProMetheusDB: An In-Depth Analysis of the High-Quality Human Methyl-proteome', url: 'https://doi.org/10.1016/j.mcpro.2022.100243', venue: 'Molecular & Cellular Proteomics · 2022' },
         { title: 'hmSEEKER: Identification of hmSILAC Doublets in MaxQuant Output Data', url: 'https://doi.org/10.1002/pmic.201800300', venue: 'Proteomics · 2019' },
@@ -306,8 +320,8 @@ toc: false
       title: 'Pathmanaban Ramasamy',
       role: 'Postdoctoral Researcher',
       email: 'pathmanaban.ramasamy@ugent.be',
-      about: 'Pathmanaban completed his Bachelor\'s degree in Bioinformatics at Agricultural University, Coimbatore, India, and obtained his Master\'s degree in Bioinformatics at Saarland University and the Max Planck Institute for Informatics, Germany, in 2016. He then carried out a joint PhD between Ghent University and the Vrije Universiteit Brussel (VUB), which he completed in 2022. He joined the CompOmics group through an open position on the FoldMod FWO project, supervised by Prof. Wim Vranken and Prof. Lennart Martens. During his PhD he studied the effect of post-translational modifications on protein folding.',
-      currentWork: 'Pathmanaban is now a postdoctoral researcher. His core research focuses on contextualising PTMs and understanding the structure-function relationship, fold evolution, and spatial (re)localisation of proteins upon modification. He has contributed to the Scop3P, Scop3PTM, and Scop3P-toolkit resources. In his free time he enjoys landscape photography, travel, and badminton.',
+      about: 'Pathmanaban completed his Bachelor\'s degree in Bioinformatics at Agricultural University, Coimbatore, India, and obtained his Master\'s degree in Bioinformatics at Saarland University and the Max Planck Institute for Informatics, Germany, in 2016. He then carried out a joint PhD between Ghent University and the Vrije Universiteit Brussel (VUB), focusing on the effect of post-translational modifications on protein folding. He completed his PhD in 2022. In his free time Pathmanaban enjoys landscape photography, travel, and badminton.',
+      currentWork: 'Pathmanaban is now a postdoctoral researcher in the CompOmics group. His core research focuses on contextualising PTMs and understanding the structure-function relationship, fold evolution, and spatial (re)localisation of proteins upon modification. He has contributed to the Scop3P, Scop3PTM, and Scop3P-toolkit resources.',
       publications: [
         { title: 'Scop3P: A Comprehensive Resource of Human Phosphosites within Their Full Context', url: 'https://doi.org/10.1021/acs.jproteome.0c00306', venue: 'Journal of Proteome Research · 2020' },
         { title: 'PDBe-KB: collaboratively defining the biological context of structural data', url: 'https://doi.org/10.1093/nar/gkab988', venue: 'Nucleic Acids Research · 2022' },
@@ -318,9 +332,9 @@ toc: false
       title: 'Tim Van Den Bossche',
       role: 'Postdoctoral Researcher',
       email: 'tim.vandenbossche@ugent.be',
-      about: 'Tim first developed a strong interest in bioinformatics and data analysis as a student. After a graduate degree in Chemistry and Biochemistry (2013), he obtained his Bachelor\'s (2014) and Master\'s (2016) degrees in Biomedical Sciences, and later also completed a Master of Business Administration (MBA, 2022). His Master\'s thesis was carried out in the wet lab under supervision of Prof. Dr. Sven Eyckerman, but his preference for dry-lab data analysis led him to contact Prof. Lennart Martens, who offered him a PhD in the group, which he completed in 2022.',
-      currentWork: 'During his PhD he worked in the field of metaproteomics, on the development of tools for metaproteomics data analysis, and on tool benchmarking in collaboration with several labs, which led him to start the CAMPI study. He also founded the Metaproteomics Initiative. He is currently a postdoctoral researcher continuing these research lines. Tim has contributed to Unipept, Peptonizer2000, and several tools in the group of Prof. Dr. Bart Mesuere.',
-      recognition: 'Tim has received numerous honours, including the EuPA Vision and Commitment Award (2025), the EuPA Best Doctoral Thesis Award (2023), a finalist place in the HUPO 2023 PostDoc Competition, runner-up for the Best PhD Thesis Award at Ghent University (2023), and inclusion in the Journal of Proteome Research "Rising Stars in Proteomics and Metabolomics: 40 under 40" list (2021). Outside research, Tim likes to run, has a keen interest in policy and organisation, and enjoys going to the theatre.',
+      about: 'Tim obtained a graduate degree in Chemistry and Biochemistry (2013), followed by a Bachelor\'s (2014) and Master\'s (2016) in Biomedical Sciences, and later a Master of Business Administration (MBA, 2022). His Master\'s thesis was carried out in the wet lab under supervision of Prof. Dr. Sven Eyckerman, but his preference for dry-lab data analysis led him to contact Prof. Lennart Martens, who offered a PhD in the group. He completed his PhD in 2022. Outside research, Tim likes to run, has a keen interest in policy and organisation, and enjoys going to the theatre. During his PhD he worked in the field of metaproteomics, on the development of tools for metaproteomics data analysis, and on tool benchmarking in collaboration with several labs, which led him to start the CAMPI study. He also founded the Metaproteomics Initiative.',
+      currentWork: 'He is currently a postdoctoral researcher in CompOmics, continuing his research lines from his PhD. Tim has contributed to Unipept, Peptonizer2000, and several tools in the Ghent University group of Prof. Dr. Bart Mesuere.',
+      recognition: 'He has received numerous honours, including the EuPA Vision and Commitment Award (2025), the EuPA Best Doctoral Thesis Award (2023), a finalist place in the HUPO 2023 PostDoc Competition, runner-up for the Best PhD Thesis Award at Ghent University (2023), and inclusion in the Journal of Proteome Research "Rising Stars in Proteomics and Metabolomics: 40 under 40" list (2021).',
       publications: [
         { title: 'Critical Assessment of MetaProteome Investigation (CAMPI): a multi-laboratory comparison of established workflows', url: 'https://doi.org/10.1038/s41467-021-27542-8', venue: 'Nature Communications · 2021' },
         { title: 'The microbiologist\'s guide to metaproteomics', url: 'https://doi.org/10.1002/imt2.70031', venue: 'iMeta · 2025' },
@@ -338,16 +352,16 @@ toc: false
       title: 'Toon Callens',
       role: 'Predoctoral Researcher',
       email: 'toon.callens@ugent.be',
-      about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply spontaneously to Prof. Lennart Martens to pursue a PhD.',
-      currentWork: 'He is a predoctoral researcher with the De Preter group. During his PhD work, he has focused on a large citizen science project integrated into a mobile game, and on multi-omics tissue prediction. Next to that, he also serves as a teaching assistant for bioinformatics in the Biomedical Sciences programme.',
-      recognition: 'In 2024 Toon won the EuBIC best flash talk prize in Winterberg. Outside research, Toon used to be a semi-professional football player until both his knees gave out, so he now plays walking football.'
+      about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply to Prof. Lennart Martens to pursue a PhD in the CompOmics group. Outside research, Toon used to be a semi-professional football player until both his knees gave out, which led him to now play walking football.',
+      currentWork: 'He is a predoctoral researcher shared between CompOmics and the Ghent University De Preter group. During his PhD, he has worked on a large citizen science project integrated into a mobile game, and on multi-omics tissue prediction. Next to that, he also serves as a teaching assistant for bioinformatics in the Biomedical Sciences programme.',
+      recognition: 'In 2024 Toon won the EuBIC best flash talk prize in Winterberg.'
     },
     robbe: {
       title: 'Robbe Devreese',
       role: 'Predoctoral Researcher',
       email: 'robbe.devreese@ugent.be',
-      about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics and, having discovered that lab work was not for him, accepted an invitation from Robbin Bouwmeester and Prof. Lennart Martens to stay on for a PhD.',
-      currentWork: 'His PhD work focuses on improving bioinformatics workflows for ion mobility-enabled mass spectrometry and benchmarking, and more recently on venturing into MS imaging. He has contributed to IM2Deep, MS²Rescore, and ProteoBench. Outside the lab, Robbe enjoys going to concerts and the theatre.',
+      about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics, and, having discovered that lab work was not for him, accepted an invitation from Dr. Robbin Bouwmeester and Prof. Lennart Martens to stay on for a PhD. Outside of work, Robbe enjoys going to concerts and the theatre.',
+      currentWork: 'His PhD work focuses on benchmarking, MS imaging, and improving bioinformatics workflows for ion mobility-enabled mass spectrometry. He is the main developer of IM2Deep, and has contributed to MS²Rescore and ProteoBench.',
       publications: [
         { title: 'Collisional Cross-Section Prediction for Multiconformational Peptide Ions with IM2Deep', url: 'https://doi.org/10.1021/acs.analchem.5c01142', venue: 'Analytical Chemistry · 2025' },
         { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' },
@@ -358,9 +372,9 @@ toc: false
       title: 'Sander Heyndrickx',
       role: 'Predoctoral Researcher',
       email: 'sander.heyndrickx@ugent.be',
-      about: 'Sander obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2025. His interest in the computational side of biology was sparked during his studies, in part through a course on metabolomics taught by Prof. Lennart Martens and through his Master\'s thesis, which focused on using deep learning to predict post-translational modifications and on leveraging these predictions to filter the search space for search engines.',
-      currentWork: 'He is now a predoctoral researcher in the CompOmics group, where his PhD project centres on the development of data analysis tools for middle-down proteomics. He also works on omics foundation models. His research includes a collaboration with the University of Southern Denmark, with Prof. Ole Nørregaard Jensen, on middle-down proteomics.',
-      recognition: 'In 2026 he received the Flash Talk prize at EuBIC. Outside the lab, Sander is passionate about science and technology, and he is an avid sportsman who enjoys running, cycling, and hiking.',
+      about: 'Sander obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2025. His interest in the computational side of biology was sparked during his Master\'s thesis, which focused on using deep learning to predict post-translational modifications and on leveraging these predictions to filter the search space for search engines. Sander is passionate about science and technology, and during his free time he enjoys running, cycling, and hiking.',
+      currentWork: 'He is now a predoctoral researcher in the CompOmics group, where his work centres on the development of data analysis tools for middle-down proteomics, and on omics foundation models. His research includes collaboration with Prof. Ole Nørregaard Jensen at the University of Southern Denmark.',
+      recognition: 'In 2026 he received the Flash Talk prize at EuBIC Winter School in Harrachov.',
       publications: [
         { title: 'Hardware Software Synergy in Proteomics: Systematic Evaluation Across Mass Spectrometry Platforms, Search Engines, and Rescoring Methods', url: 'https://doi.org/10.26434/chemrxiv.15000466/v2', venue: 'ChemRxiv · 2026' }
       ]
@@ -369,15 +383,15 @@ toc: false
       title: 'Sude Güneş',
       role: 'Predoctoral Researcher',
       email: 'sude.gunes@ugent.be',
-      about: 'Sude obtained her Bachelor\'s degree in Bioengineering at the Izmir Institute of Technology, Türkiye, in 2022, and her Master\'s degree in Polymer Science and Engineering at the same institute in 2024. During her Master\'s she focused on investigating the effect of allosteric ligand binding using molecular dynamics simulations and on the prediction of allosteric and cryptic sites. Wanting to explore protein dynamics further, she applied for the joint PhD position on PTMs and protein dynamics.',
-      currentWork: 'She is a joint predoctoral researcher at Ghent University (CompOmics) and the Vrije Universiteit Brussel (Bio2Byte), where she works on post-translational modifications and protein dynamics. Outside the lab, Sude loves playing the piano and exploring new places.'
+      about: 'Sude obtained her Bachelor\'s degree in Bioengineering at the Izmir Institute of Technology, Türkiye, in 2022, and her Master\'s degree in Polymer Science and Engineering at the same institute in 2024. During her Master\'s she focused on investigating the effect of allosteric ligand binding using molecular dynamics simulations and on the prediction of allosteric and cryptic sites. Wanting to explore protein dynamics further, she applied for the joint PhD position on PTMs and protein dynamics. In her free time, Sude loves playing the piano and exploring new places.',
+      currentWork: 'Sude is currently a joint predoctoral researcher between CompOmics and Bio2Byte at Vrije Universiteit Brussel (VUB), where she works on post-translational modifications and protein dynamics.'
     },
     caro: {
       title: 'Caroline Jachmann',
       role: 'Predoctoral Researcher',
       email: 'caroline.jachmann@ugent.be',
-      about: 'Caroline obtained her Bachelor\'s degree in Computer Science at Heinrich Heine University Düsseldorf, and her Master\'s degree in Bioinformatics at Eberhard Karls University Tübingen in 2021. Her previous education and a three-month internship in the group helped pave the way to CompOmics.',
-      currentWork: 'She is a predoctoral researcher in the Marie Skłodowska-Curie PROHITS network. During her PhD she has worked on three projects: the visualisation of PTMs, a peptide atlas for Escherichia coli, and ProteoBench. Her core research concerns bacterial proteomics, community benchmarking, and visualisation, and she collaborates with the Integrative Transcriptomics group in Tübingen (Prof. Kay Nieselt). Caroline has contributed to ProteoBench, TIMS²Rescore, and PTMVision. Outside research she likes trying out new hobbies and plays the piano.',
+      about: 'Caroline obtained her Bachelor\'s degree in Computer Science at Heinrich Heine University Düsseldorf, Germany, and her Master\'s degree in Bioinformatics at Eberhard Karls University Tübingen in 2021. Her previous education and a three-month internship in the group helped pave the way to CompOmics. Outside research she likes trying out new hobbies and plays the piano.',
+      currentWork: 'Caroline is a predoctoral researcher in the Marie Skłodowska-Curie PROHITS network. During her PhD she has worked on three projects: the visualisation of PTMs, a peptide atlas for Escherichia coli, and ProteoBench. Her core research concerns bacterial proteomics, community benchmarking, and visualisation, and involves collaboration with the Integrative Transcriptomics group in Tübingen, led by Prof. Kay Nieselt. Caroline has contributed to ProteoBench, TIMS²Rescore, and PTMVision.',
       publications: [
         { title: 'PTMVision: An Interactive Visualization Webserver for Post-translational Modifications of Proteins', url: 'https://doi.org/10.1021/acs.jproteome.4c00679', venue: 'Journal of Proteome Research · 2025' },
         { title: 'The E. coli PeptideAtlas Build: Characterizing the Observed Pan-Proteome and Its Post-Translational Modifications', url: 'https://doi.org/10.1021/acs.jproteome.5c00902', venue: 'Journal of Proteome Research · 2026' },
@@ -388,8 +402,9 @@ toc: false
       title: 'Xuxa Malliet',
       role: 'Predoctoral Researcher',
       email: 'xuxa.malliet@ugent.be',
-      about: 'Xuxa obtained her Master\'s degree in Biomedical Sciences in 2025. She carried out her Master\'s thesis in the CompOmics group and continued the work in her PhD.',
-      currentWork: 'She is currently a predoctoral researcher whose research focuses on developing a computational framework for targeted mass spectrometry peptide selection and method optimisation. She also has experience in metaproteomics, where she regularly takes on side projects. Her work includes a collaboration with the LSMBO lab in Strasbourg. Outside research, Xuxa enjoys running, reading, gravel biking, and playing classical guitar.',
+      about: 'Xuxa obtained her Master\'s degree in Biomedical Sciences in 2025. She carried out her Master\'s thesis in the CompOmics group and continued the work in her PhD. Outside research, Xuxa enjoys running, reading, gravel biking, and playing classical guitar.',
+      currentWork: 'She is currently a predoctoral researcher focusing on targeted mass spectrometry peptide selection and method optimisation. She also has experience in metaproteomics, where she regularly takes on side projects. Her work includes a collaboration with the LSMBO group lab led by Dr. Christine Carapito in Strasbourg.',
+      recognition: 'In 2026, Xuxa\'s manuscript on applying MS²Rescore to metaproteomics received the best manuscript prize awarded by the Metaproteomics Initiative.',
       publications: [
         { title: 'The microbiologist\'s guide to metaproteomics', url: 'https://doi.org/10.1002/imt2.70031', venue: 'iMeta · 2025' },
         { title: 'Machine learning-based rescoring with MS²Rescore boosts peptide identification and taxonomic specificity in metaproteomics', url: 'https://doi.org/10.1101/2025.02.17.638783', venue: 'bioRxiv · 2025' }
@@ -399,11 +414,11 @@ toc: false
       title: 'Alireza Nameni',
       role: 'Predoctoral Researcher',
       email: 'alireza.nameni@ugent.be',
-      about: 'Alireza obtained his Bachelor\'s degree in Computer Engineering (Software) at IAUCTB in Tehran and his Master\'s degree in Artificial Intelligence Engineering at Kharazmi University, completed in 2020. He began a PhD in natural language processing at UPC in Barcelona before joining CompOmics in 2021, drawn by the opportunity to work on more tangible projects.',
+      about: 'Alireza obtained his Bachelor\'s degree in Computer Engineering (Software) at IAUCTB in Tehran and his Master\'s degree in Artificial Intelligence Engineering at Kharazmi University, completed in 2020. He began a PhD in natural language processing at UPC in Barcelona before joining CompOmics in 2021, drawn by the opportunity to work on more tangible projects. In his free time he enjoys making and playing games, reading, and calisthenics.',
       currentWork: 'He is now a predoctoral researcher in our group. During his PhD he has worked on improving the identification of modified peptides through retention time prediction using structural information, and on improving rescoring workflows. He has contributed to iDeepLC, DeepLC, and ProteoBench.',
-      recognition: 'Alireza\'s honours include a best poster prize at EuBIC, three finalist poster placements, and three Three-Minute-Thesis finalist placements at HUPO. In his free time he enjoys making and playing games, reading, and calisthenics.',
+      recognition: 'Alireza\'s honours include a best poster prize at EuBIC, three finalist poster placements, and three Three-Minute-Thesis finalist placements at HUPO.',
       publications: [
-        { title: 'iDeepLC: chemical structure information yields improved retention time prediction of peptides with unseen modifications', url: 'https://doi.org/10.1101/2025.10.31.685771', venue: 'bioRxiv · 2025' },
+        { title: 'iDeepLC: Chemical Structure Information Yields Improved Retention Time Prediction of Peptides with Unseen Modifications', url: 'https://doi.org/10.1021/acs.analchem.5c08017', venue: 'Analytical Chemistry · 2026' },
         { title: 'Transfer learning in DeepLC improves LC retention time prediction across substantially different modifications and setups', url: 'https://doi.org/10.1038/s41467-026-68981-5', venue: 'Nature Communications · 2026' }
       ]
     },
@@ -411,17 +426,17 @@ toc: false
       title: 'Harikrishnan Ramadasan',
       role: 'Predoctoral Researcher',
       email: 'harikrishnan.ramadasan@ugent.be',
-      about: 'Harikrishnan studied at the Indian Institute of Science Education and Research, where he completed an integrated Bachelor\'s and Master\'s degree with a major in physics in 2023. Drawn by a strong interest in AI-based methods, he applied directly for his current position in the group.',
-      currentWork: 'He is a predoctoral researcher in CompOmics, and is also involved in industrial projects with Johnson & Johnson. His PhD focuses on developing HAMLET, a publicly available agentic metadata extraction tool that enables downstream research, and on developing algorithms to generate new signal peptides for vaccine development as part of the BAXERNA consortium. He further also collaborates with NCEMS. Outside research, Harikrishnan enjoys boxing, running, and training.'
+      about: 'Harikrishnan studied at the Indian Institute of Science Education and Research, where he completed an integrated Bachelor\'s and Master\'s degree with a major in physics in 2023. Drawn by a strong interest in AI-based methods, he applied directly for his current position in the group. Outside research, Harikrishnan enjoys boxing, running, and strength training.',
+      currentWork: 'Harikrishnan is a predoctoral researcher in CompOmics, and is also involved in industrial projects with Johnson & Johnson. His PhD focuses on developing HAMLET, a publicly available agentic metadata extraction tool that enables downstream research, and on developing algorithms to generate new signal peptides for vaccine development as part of the BAXERNA consortium. He further also collaborates with NCEMS.'
     },
     sam: {
       title: 'Sam Van Puyenbroeck',
       role: 'Predoctoral Researcher',
       email: 'sam.vanpuyenbroeck@ugent.be',
-      about: 'Sam obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2023. He carried out his Master\'s thesis in CompOmics and wanted to continue with a PhD in the group.',
-      currentWork: 'He is now a predoctoral researcher whose core research concerns single-cell proteomics and statistics. He is involved in the Single Cell Initiative, ProteoBench, and PeptidOMS, and has contributed to MS²Rescore. Outside research, Sam loves ducks and triathlons.',
+      about: 'Sam obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2023. He carried out his Master\'s thesis in CompOmics and continued with a PhD in the group. Outside research, Sam loves ducks and triathlons.',
+      currentWork: 'Sam is now a predoctoral researcher focusing on single-cell proteomics and statistics. He is involved in the Single Cell Initiative, ProteoBench, and PeptidOMS, and has contributed to MS²Rescore.',
       publications: [
-        { title: 'Limitations of the refolding pipeline for de novo protein design', url: 'https://doi.org/10.1002/pro.70613', venue: 'Protein Science · 2026' },
+        { title: 'Limitations of de novo sequencing in resolving sequence ambiguity', url: 'https://doi.org/10.1101/2025.08.19.671052', venue: 'bioRxiv · 2025' },
         { title: 'ProteoBench: the community-curated platform for comparing proteomics data analysis workflows', url: 'https://doi.org/10.64898/2025.12.09.692895', venue: 'bioRxiv · 2025' }
       ]
     },
@@ -433,7 +448,9 @@ toc: false
     patricia: {
       title: 'Patricia Lefèvre',
       role: 'Group Secretary',
-      email: 'patricia.lefevre@ugent.be'
+      email: 'patricia.lefevre@ugent.be',
+      about: 'Patricia studied Business Administration and, before joining CompOmics, spent time working at the US Embassy in Brussels and living in New Jersey. She then spent fifteen years building quality and sustainability systems at a container company in Zeebrugge, before moving into academia. Outside work, she is an avid reader across every format available, with a particular fondness for fantasy. She also runs her own ceramics studio, and can usually be found near water on weekends: sailing as a child, and now aquafitness and stand-up paddleboarding whenever she gets the chance.',
+      currentWork: 'Patricia is Group Secretary for CompOmics, where she manages budgets, navigates administrative processes, and organises team events and seminars. While the rest of the group optimises algorithms, Patricia optimises everything around them, handling the logistics and bureaucracy so the researchers can focus on their science.'
     },
     natalia: {
       title: 'Natalia Tichshenko',
@@ -444,8 +461,8 @@ toc: false
       title: 'Kevin Velghe',
       role: 'Software Developer',
       email: 'kevin.velghe@ugent.be',
-      about: 'Kevin obtained his Bachelor\'s degree in Computer Science and his Master\'s degree in Mathematical Computer Science in 2016. He joined the group after applying to a vacancy on the cloud integration and industrialisation of ionbot.',
-      currentWork: 'He is a software developer in the CompOmics group and has contributed, at some point, to most of the group\'s tools. Outside work, Kevin makes bobbin lace.',
+      about: 'Kevin obtained his Bachelor\'s degree in Computer Science and his Master\'s degree in Mathematical Computer Science in 2016. He joined the group after applying to a vacancy on the cloud integration and industrialisation of ionbot. Outside work, Kevin enjoys making bobbin lace.',
+      currentWork: 'Kevin is a software developer in the CompOmics group and has contributed, at some point, to most of the group\'s tools.',
       publications: [
         { title: 'The E. coli PeptideAtlas Build: Characterizing the Observed Pan-Proteome and Its Post-Translational Modifications', url: 'https://doi.org/10.1021/acs.jproteome.5c00902', venue: 'Journal of Proteome Research · 2026' }
       ]
@@ -453,9 +470,9 @@ toc: false
     daria: {
       title: 'Daria Fijalkowska',
       role: 'Staff Scientist',
-      email: 'daria.fijalkowska@ugent.be',
-      about: 'Daria obtained her Bachelor\'s and Master\'s degrees in Biotechnology at the University of Wrocław, Poland, the latter in 2011, and completed her PhD in Health Sciences at Ghent University in 2016. She became a staff scientist specialising in data science, supporting different research groups within CMB, and is hosted in CompOmics.',
-      currentWork: 'Her core research covers multi-omics data integration, single-cell transcriptomics, genomics, and proteogenomics. She collaborates with research groups in CMB as well as with ExeVir, Sanofi/Ablynx, and miDiagnostics. Outside research, Daria enjoys playing role-playing games, stand-up comedy, and swimming.',
+      email: 'daria.fijalkowska@vib-ugent.be',
+      about: 'Daria obtained her Bachelor\'s and Master\'s degrees in Biotechnology at the University of Wrocław, Poland, the latter in 2011, and completed her PhD in Health Sciences at Ghent University in 2016. Outside research, Daria enjoys playing role-playing games, stand-up comedy, and swimming.',
+      currentWork: 'Daria is a staff scientist specialising in data science, supporting different research groups within VIB Center for Medical Biotechnology, and is hosted in CompOmics. Her research covers multi-omics data integration, single-cell transcriptomics, genomics, and proteogenomics. She collaborates with research groups in CMB as well as with ExeVir, Sanofi/Ablynx, and miDiagnostics.',
       publications: [
         { title: 'eIF1 modulates the recognition of suboptimal translation initiation sites and steers gene expression via uORFs', url: 'https://doi.org/10.1093/nar/gkx469', venue: 'Nucleic Acids Research · 2017' },
         { title: 'A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia', url: 'https://doi.org/10.1158/2159-8290.CD-22-0210', venue: 'Cancer Discovery · 2023' },
@@ -465,9 +482,9 @@ toc: false
     jasper: {
       title: 'Jasper Zuallaert',
       role: 'Staff Scientist',
-      email: 'jasper.zuallaert@ugent.be',
-      about: 'Jasper obtained his Bachelor\'s degree in Informatics at Ghent University and his Master\'s degree in Civil Engineering (Computer Science) at Ghent University in 2014. He went on to complete a PhD in Engineering (Computer Science) at Ghent University, based at the Global Campus in Korea. He met Prof. Dr. Nico Callewaert in South Korea, where, after explaining his research and starting to play around with his data, they began collaborating. When he finished his PhD, he took up a postdoc with Prof. Sven Degroeve and Prof. Dr. Nico Callewaert.',
-      currentWork: 'During his PhD and postdoc he worked on splice site prediction, transferring emerging deep learning architectures to biological use cases, and later moved on to protein sequences and secretability. He is now a VIB-CMB centre-wide staff scientist working on protein structure prediction and design, and beyond. Most of all, Jasper likes to be away from all computers, out in forests and mountains, with his GPS unit and cameras.',
+      email: 'jasper.zuallaert@vib-ugent.be>',
+      about: 'Jasper obtained his Bachelor\'s degree in Informatics at Ghent University and his Master\'s degree in Civil Engineering (Computer Science) at Ghent University in 2014. He went on to complete a PhD in Engineering (Computer Science) at Ghent University, based at the Global Campus in Korea. He met Prof. Dr. Nico Callewaert in South Korea, where, after explaining his research and starting to play around with his data, they began collaborating. When he finished his PhD, he took up a postdoc with Prof. Sven Degroeve and Prof. Dr. Nico Callewaert. During his PhD and postdoc he worked on splice site prediction, transferring emerging deep learning architectures to biological use cases, and later moved on to protein sequences and secretability. Most of all, Jasper likes to be away from all computers, out in forests and mountains, with his GPS unit and cameras.',
+      currentWork: 'Jasper is currently a VIB-CMB centre-wide staff scientist working on protein structure prediction and design, and beyond.',
       publications: [
         { title: 'Assessing the relation between protein phosphorylation, AlphaFold3 models, and conformational variability', url: 'https://doi.org/10.1002/pro.70376', venue: 'Protein Science · 2026' },
         { title: 'Ultrapotent SARS coronavirus-neutralizing single-domain antibodies that clamp the spike at its base', url: 'https://doi.org/10.1038/s41467-025-60250-1', venue: 'Nature Communications · 2025' }
