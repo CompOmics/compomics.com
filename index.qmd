@@ -236,7 +236,7 @@ include-in-header:
             <div class="nav-tile-title">Tools</div>
             <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
           </a>
-          <a href="publications.html" class="nav-tile">
+          <a href="publications/" class="nav-tile">
             <i class="bi bi-journal-text nav-tile-icon"></i>
             <div class="nav-tile-title">Publications</div>
             <div class="nav-tile-desc">Our research output and scientific papers</div>

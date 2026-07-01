@@ -29,7 +29,7 @@ jobs:
         run: pip install requests PyYAML nbconvert
 
       - name: Fetch publications
-        run: python scripts/fetch_publications.py
+        run: python publications/fetch_publications.py
 
       - name: Convert notebooks to HTML
         run: |
