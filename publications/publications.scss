@@ -1,0 +1,294 @@
+/*-- scss:rules --*/
+
+// Publications page — matches the tools/team header + toolbar language.
+// Loaded site-wide via _quarto.yml (same pattern as team/teams.scss, tools/tools.scss),
+// but every selector is scoped to .pub-* so nothing leaks to other pages.
+
+#title-block-header { display: none !important; }
+
+// ── Page header (mirrors .tools-head) ────────────────────────────────────────
+.pub-head {
+  margin: 0.5rem 0 2rem;
+}
+
+.pub-head-kicker {
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: 0.55rem;
+}
+
+.pub-head-title {
+  font-family: $font-family-heading;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  color: $ink;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+  padding: 0;
+  border: none;
+}
+
+.pub-head-sub {
+  font-family: $font-family-sans-serif;
+  font-size: 1.02rem;
+  color: $ink-soft;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin: 0;
+}
+
+// ── Toolbar: search + year chips ─────────────────────────────────────────────
+.pub-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.4rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid $line;
+}
+
+.pub-search {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(340px, 100%);
+}
+
+.pub-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $muted;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.pub-search-input {
+  width: 100%;
+  padding: 0.6rem 2.2rem 0.6rem 2.4rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.92rem;
+  color: $ink;
+  background: $cream-2;
+  border: 1px solid $line;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+  &::placeholder { color: $muted; }
+
+  &:focus {
+    outline: none;
+    background: $surface-hover;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(31, 95, 143, 0.12);
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+}
+
+.pub-search-clear {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: $muted;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.15s ease, background 0.15s ease;
+
+  &:hover { color: $ink; background: $cream-3; }
+}
+
+// person dropdown
+.pub-person {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.pub-person-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $muted;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.pub-person-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.6rem 2rem 0.6rem 2.3rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.88rem;
+  color: $ink;
+  background-color: $cream-2;
+  // caret
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888'%3E%3Cpath d='M4.5 6l3.5 3.5L11.5 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.85rem;
+  border: 1px solid $line;
+  border-radius: 2rem;
+  cursor: pointer;
+  max-width: 15rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+  &:hover { border-color: $primary; }
+
+  &:focus {
+    outline: none;
+    background-color: $surface-hover;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(31, 95, 143, 0.12);
+  }
+
+  option { color: initial; }
+}
+
+.pub-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pub-chip {
+  font-family: $font-family-monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.34rem 0.8rem;
+  border-radius: 2rem;
+  border: 1px solid $line;
+  background: $cream-2;
+  color: $ink-soft;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+
+  &:hover { border-color: $primary; color: $ink; }
+
+  &.is-active {
+    background: $primary;
+    border-color: $primary;
+    color: #fff;
+  }
+}
+
+.pub-count {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $muted;
+  margin-bottom: 1.6rem;
+}
+
+// ── Year blocks + entries ────────────────────────────────────────────────────
+.pub-year-block {
+  margin-bottom: 2.4rem;
+
+  &.is-hidden { display: none; }
+}
+
+.pub-year {
+  font-family: $font-family-heading;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $primary;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.6rem;
+  padding: 0 0 0.5rem;
+  border-bottom: 1px solid $line;
+}
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.5rem;
+  border-left: 2px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: $cream-2;
+    border-left-color: $primary;
+  }
+
+  &.is-hidden { display: none; }
+}
+
+.pub-title {
+  font-family: $font-family-heading;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: $ink;
+
+  a {
+    color: $ink;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover { color: $primary; text-decoration: underline; text-underline-offset: 2px; }
+  }
+}
+
+.pub-authors {
+  font-family: $font-family-sans-serif;
+  font-size: 0.86rem;
+  color: $muted;
+  line-height: 1.5;
+
+  strong { color: $ink-soft; font-weight: 700; }
+}
+
+.pub-meta {
+  font-family: $font-family-sans-serif;
+  font-size: 0.82rem;
+  color: $muted;
+}
+
+// ── Empty state ──────────────────────────────────────────────────────────────
+.pub-empty {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: $muted;
+
+  i { font-size: 2rem; opacity: 0.5; }
+
+  p {
+    margin: 0.8rem 0 0;
+    font-family: $font-family-sans-serif;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pub-toolbar { flex-direction: column; align-items: stretch; }
+  .pub-search { width: 100%; }
+}

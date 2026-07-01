@@ -1,0 +1,302 @@
+---
+title: "Publications"
+toc: false
+execute:
+  freeze: false
+  echo: false
+---
+
+```{=html}
+<header class="pub-head">
+  <div class="pub-head-kicker">Research output</div>
+  <h1 class="pub-head-title">Publications</h1>
+  <p class="pub-head-sub">Peer-reviewed papers and preprints from CompOmics group members. For a complete list, see our <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> page or individual <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID profiles</a>.</p>
+</header>
+```
+
+```{python}
+import html
+import json
+import os
+import re
+from pathlib import Path
+from IPython.display import HTML
+
+project_root = Path(os.environ.get("QUARTO_PROJECT_DIR") or Path.cwd())
+if not (project_root / "data" / "publications.json").exists():
+    # fallback: walk up from the working directory to find the project root
+    for cand in [Path.cwd(), *Path.cwd().parents]:
+        if (cand / "data" / "publications.json").exists():
+            project_root = cand
+            break
+pub_file = project_root / "data" / "publications.json"
+
+if not pub_file.exists():
+    display(HTML(
+        '<div class="callout callout-warning"><p>No publications data found. '
+        'Run <code>python publications/fetch_publications.py</code> to populate '
+        '<code>data/publications.json</code>, then re-render this page.</p></div>'
+    ))
+else:
+    publications = json.loads(pub_file.read_text(encoding="utf-8"))
+
+    # Build set of lowercase team member name strings from team profile titles.
+    # Used as fallback when CrossRef does not supply per-author ORCIDs.
+    def _load_group_names():
+        names = set()
+        team_dir = project_root / "team"
+        for path in team_dir.glob("*.qmd"):
+            if path.name == "index.qmd":
+                continue
+            text = path.read_text(encoding="utf-8")
+            m = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', text, re.MULTILINE)
+            if m:
+                names.add(m.group(1).strip().lower())
+        return names
+
+    # Current CompOmics members (keep in sync with team/index.qmd). Used both for
+    # author highlighting and for the "by person" filter dropdown.
+    MEMBERS = [
+        "Lennart Martens", "Sakina Bombaywala", "Robbin Bouwmeester", "Tine Claeys",
+        "Arthur Declercq", "Ralf Gabriels", "Alexander Kensert", "Enrico Massignani",
+        "Pathmanaban Ramasamy", "Tim Van Den Bossche", "Pieter Verschaffelt",
+        "Toon Callens", "Robbe Devreese", "Sander Heyndrickx", "Sude Güneş",
+        "Caroline Jachmann", "Xuxa Malliet", "Alireza Nameni", "Harikrishnan Ramadasan",
+        "Sam Van Puyenbroeck", "Lyudmila Kovalchuke", "Patricia Lefèvre",
+        "Natalia Tichshenko", "Kevin Velghe", "Daria Fijalkowska", "Jasper Zuallaert",
+    ]
+
+    # names for bold highlighting = team qmd titles (if any) ∪ the member list above
+    group_names = _load_group_names() | {m.lower() for m in MEMBERS}
+
+    _member_tokens = [(m, set(m.lower().split())) for m in MEMBERS]
+
+    def matched_members(authors):
+        """Return the member names that appear among a publication's authors."""
+        author_token_sets = [set(a.lower().split()) for a in authors]
+        hits = []
+        for name, mtok in _member_tokens:
+            if any(mtok.issubset(at) for at in author_token_sets):
+                hits.append(name)
+        return hits
+
+    def _is_group_member(author_name, author_orcid, group_orcids_set):
+        # Primary: ORCID match (requires re-running the fetch script)
+        if author_orcid and author_orcid in group_orcids_set:
+            return True
+        # Fallback: all tokens of a group member name must appear in the author name tokens
+        author_tokens = set(author_name.lower().split())
+        return any(set(gn.split()).issubset(author_tokens) for gn in group_names)
+
+    def format_authors(authors, author_orcids, group_orcids):
+        group_set = set(group_orcids or [])
+        orcids = author_orcids or [None] * len(authors)
+        labelled = []
+        for name, orcid in zip(authors, orcids):
+            safe = html.escape(name)
+            if _is_group_member(name, orcid, group_set):
+                labelled.append(f"<strong>{safe}</strong>")
+            else:
+                labelled.append(safe)
+        if len(labelled) <= 6:
+            return ", ".join(labelled)
+        return ", ".join(labelled[:6]) + " et al."
+
+    def format_location(pub):
+        parts = []
+        if pub.get("volume"):
+            loc = pub["volume"]
+            if pub.get("issue"):
+                loc += f"({pub['issue']})"
+            parts.append(loc)
+        if pub.get("pages"):
+            parts.append(pub["pages"])
+        return ":".join(parts)
+
+    by_year = {}
+    for pub in publications:
+        year = pub.get("year") or 0
+        by_year.setdefault(year, []).append(pub)
+
+    years_sorted = sorted(by_year.keys(), reverse=True)
+
+    lines = []
+
+    # ── Toolbar: search + year filter chips ──────────────────────────────────
+    lines.append('<div class="pub-toolbar">')
+    lines.append(
+        '<div class="pub-search">'
+        '<i class="bi bi-search pub-search-icon" aria-hidden="true"></i>'
+        '<input type="search" id="pub-search-input" class="pub-search-input" '
+        'placeholder="Search title, author, journal…" autocomplete="off" '
+        'spellcheck="false" aria-label="Search publications">'
+        '<button type="button" class="pub-search-clear" id="pub-search-clear" '
+        'aria-label="Clear search" hidden>&times;</button>'
+        '</div>'
+    )
+    # person dropdown (current members, alphabetical by surname)
+    lines.append('<div class="pub-person">')
+    lines.append('<i class="bi bi-person pub-person-icon" aria-hidden="true"></i>')
+    lines.append('<select id="pub-person-select" class="pub-person-select" aria-label="Filter by person">')
+    lines.append('<option value="">All people</option>')
+    for name in sorted(MEMBERS, key=lambda n: n.split()[-1].lower()):
+        val = html.escape(name.lower(), quote=True)
+        lines.append(f'<option value="{val}">{html.escape(name)}</option>')
+    lines.append('</select>')
+    lines.append('</div>')
+
+    # year chips — individual chips for >= 2016, everything older folded into "< 2016"
+    YEAR_CAP = 2016
+    lines.append('<div class="pub-chips" role="group" aria-label="Filter by year">')
+    lines.append('<button type="button" class="pub-chip is-active" data-year="all">All</button>')
+    has_pre_cap = False
+    for year in years_sorted:
+        if isinstance(year, int) and year >= YEAR_CAP:
+            lines.append(f'<button type="button" class="pub-chip" data-year="{year}">{year}</button>')
+        else:
+            has_pre_cap = True
+    if has_pre_cap:
+        lines.append(f'<button type="button" class="pub-chip" data-year="pre{YEAR_CAP}">&lt; {YEAR_CAP}</button>')
+    lines.append('</div>')
+    lines.append('</div>')
+
+    lines.append('<div class="pub-count" id="pub-count" aria-live="polite"></div>')
+
+    # ── Publication list, grouped by year ────────────────────────────────────
+    lines.append('<div class="pub-list-wrap" id="pub-list">')
+    for year in years_sorted:
+        yval = str(year) if year else "unknown"
+        ylabel = str(year) if year else "Unknown year"
+        lines.append(f'<section class="pub-year-block" data-year="{yval}">')
+        lines.append(f'<h2 class="pub-year">{ylabel}</h2>')
+        lines.append('<ol class="pub-list">')
+        for pub in by_year[year]:
+            title = pub.get("title", "Untitled")
+            doi = pub.get("doi", "")
+            journal = pub.get("journal", "")
+            authors_list = pub.get("authors", [])
+            authors_str = format_authors(
+                authors_list,
+                pub.get("author_orcids", []),
+                pub.get("group_orcids", []),
+            )
+            location = format_location(pub)
+
+            title_safe = html.escape(title)
+            title_html = (
+                f'<a href="https://doi.org/{html.escape(doi)}" target="_blank" rel="noopener noreferrer">{title_safe}</a>'
+                if doi else title_safe
+            )
+            journal_html = f"<em>{html.escape(journal)}</em>" if journal else ""
+            meta_parts = [p for p in [journal_html, location] if p]
+            meta_html = ", ".join(meta_parts) + "." if meta_parts else ""
+
+            # searchable haystack (plain text, attribute-escaped)
+            haystack = " ".join([title, " ".join(authors_list), journal, ylabel]).lower()
+            haystack = html.escape(haystack, quote=True)
+
+            # pipe-delimited member names for the person filter (with edge pipes)
+            hits = matched_members(authors_list)
+            members_attr = ("|" + "|".join(m.lower() for m in hits) + "|") if hits else ""
+            members_attr = html.escape(members_attr, quote=True)
+
+            lines.append(
+                f'<li class="pub-entry" data-year="{yval}" data-members="{members_attr}" data-search="{haystack}">'
+                f'<span class="pub-title">{title_html}</span>'
+                f'<span class="pub-authors">{authors_str}</span>'
+                + (f'<span class="pub-meta">{meta_html}</span>' if meta_html else "")
+                + "</li>"
+            )
+        lines.append("</ol>")
+        lines.append("</section>")
+    lines.append("</div>")
+
+    lines.append(
+        '<div class="pub-empty" id="pub-empty" hidden>'
+        '<i class="bi bi-search"></i><p>No publications match your search.</p>'
+        '</div>'
+    )
+
+    display(HTML("\n".join(lines)))
+```
+
+```{=html}
+<script>
+(function () {
+  const search = document.getElementById('pub-search-input');
+  const clear = document.getElementById('pub-search-clear');
+  const chips = Array.from(document.querySelectorAll('.pub-chip'));
+  const personSel = document.getElementById('pub-person-select');
+  const entries = Array.from(document.querySelectorAll('.pub-entry'));
+  const blocks = Array.from(document.querySelectorAll('.pub-year-block'));
+  const countEl = document.getElementById('pub-count');
+  const emptyEl = document.getElementById('pub-empty');
+  if (!search || !countEl) return;
+
+  let activeYear = 'all';
+  let activePerson = '';
+  let query = '';
+
+  function yearMatches(y) {
+    if (activeYear === 'all') return true;
+    if (activeYear.indexOf('pre') === 0) {
+      const cap = parseInt(activeYear.slice(3), 10);
+      const n = parseInt(y, 10);
+      return y === 'unknown' || (!isNaN(n) && n < cap);
+    }
+    return y === activeYear;
+  }
+
+  function apply() {
+    let visible = 0;
+    entries.forEach(function (e) {
+      const okYear = yearMatches(e.dataset.year);
+      const okQuery = !query || e.dataset.search.indexOf(query) !== -1;
+      const okPerson = !activePerson || (e.dataset.members || '').indexOf('|' + activePerson + '|') !== -1;
+      const show = okYear && okQuery && okPerson;
+      e.classList.toggle('is-hidden', !show);
+      if (show) visible += 1;
+    });
+    blocks.forEach(function (b) {
+      b.classList.toggle('is-hidden', !b.querySelector('.pub-entry:not(.is-hidden)'));
+    });
+    countEl.textContent = visible + (visible === 1 ? ' publication' : ' publications');
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      activeYear = chip.dataset.year;
+      apply();
+    });
+  });
+
+  if (personSel) {
+    personSel.addEventListener('change', function () {
+      activePerson = personSel.value;
+      apply();
+    });
+  }
+
+  search.addEventListener('input', function () {
+    query = search.value.trim().toLowerCase();
+    if (clear) clear.hidden = query === '';
+    apply();
+  });
+
+  if (clear) {
+    clear.addEventListener('click', function () {
+      search.value = '';
+      query = '';
+      clear.hidden = true;
+      search.focus();
+      apply();
+    });
+  }
+
+  apply();
+})();
+</script>
+```
