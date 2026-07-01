@@ -38,6 +38,15 @@ toc: false
   </div>
 </section>
 
+<section class="community-page">
+  <header class="tools-head community-head">
+    <div class="tools-head-kicker">Community</div>
+    <h2 class="tools-head-title">Community projects</h2>
+    <p class="tools-head-sub">Open, community-driven initiatives that CompOmics helps build and maintain, together with the wider proteomics community.</p>
+  </header>
+  <div class="community-grid" id="community-grid"></div>
+</section>
+
 <script>
 (function () {
   // ── Category metadata ───────────────────────────────────────────────────────
@@ -46,7 +55,8 @@ toc: false
     identification: { label: 'Identification' },
     support:        { label: 'Support' },
     biological:     { label: 'Interpretation' },
-    metaproteomics: { label: 'Metaproteomics' }
+    metaproteomics: { label: 'Metaproteomics' },
+    community:      { label: 'Community' }
   };
 
   // ── Tool data — add a new tool by appending an object here ───────────────────
@@ -226,6 +236,33 @@ toc: false
     }
   ];
 
+  // ── Community projects — shown in a separate 2-column grid below the tools ────
+  // Same fields as TOOLS (cat: 'community' for the accent/badge).
+  const COMMUNITY = [
+    {
+      name: 'ProteoBench', cat: 'community', icon: 'bi-balloon', logo: 'proteobench.png',
+      desc: 'Community-curated platform for comparing and benchmarking proteomics data analysis workflows.',
+      note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.',
+      links: {
+        github: 'https://github.com/Proteobench/ProteoBench',
+        web: 'https://proteobench.cubimed.rub.de/',
+        paper: 'https://doi.org/10.64898/2025.12.09.692895',
+      },
+      devs: ['robbin', 'robbe', 'caro', 'sam']
+    },
+    {
+      name: 'ProteomicsML', cat: 'community', icon: 'bi-journal-bookmark', logo: 'proteomicsml.svg',
+      desc: 'Open, community-driven datasets and tutorials for machine learning on proteomics data.',
+      note: 'Started at a 2022 <span class="tool-tile-note-hl">Lorentz Center</span> workshop.',
+      links: {
+        github: 'https://github.com/ProteomicsML/ProteomicsML',
+        web: 'https://www.proteomicsml.org/',
+        paper: 'https://doi.org/10.1021/acs.jproteome.2c00629',
+      },
+      devs: ['ralf', 'robbin']
+    }
+  ];
+
   // ── Link button rendering ────────────────────────────────────────────────
   const LINK_META = {
     github:   { icon: 'bi-github',            label: 'Code' },
@@ -276,6 +313,10 @@ toc: false
 
     html += '<h3 class="tool-tile-name">' + esc(tool.name) + '</h3>';
     html += '<p class="tool-tile-desc">' + esc(tool.desc) + '</p>';
+    // optional small note (HTML allowed — authored here, e.g. a community link)
+    if (tool.note) {
+      html += '<p class="tool-tile-note">' + tool.note + '</p>';
+    }
 
     // links — rendered in LINK_META key order (consistent everywhere; Paper then
     // Tutorial come last). Legacy `papers: [{url}]` maps to links.paper as a fallback.
@@ -316,6 +357,12 @@ toc: false
   // initial render
   TOOLS.forEach(function (tool, i) { grid.appendChild(buildCard(tool, i)); });
   const cards = Array.from(grid.children);
+
+  // community projects — separate static grid (not searched/filtered)
+  const communityGrid = document.getElementById('community-grid');
+  if (communityGrid) {
+    COMMUNITY.forEach(function (tool, i) { communityGrid.appendChild(buildCard(tool, i)); });
+  }
 
   // ── Filtering ──────────────────────────────────────────────────────────────
   let activeCat = 'all';

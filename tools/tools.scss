@@ -7,6 +7,7 @@ $cat-identification: #d6534a;  // red
 $cat-support:        #2f9e8b;  // teal
 $cat-biological:     #8a6fc0;  // violet
 $cat-metaproteomics: #c8912f;  // amber
+$cat-community:      #4f9d6b;  // green (community projects)
 
 /*-- scss:rules --*/
 
@@ -16,6 +17,7 @@ $cat-metaproteomics: #c8912f;  // amber
   --cat-support:        #{$cat-support};
   --cat-biological:     #{$cat-biological};
   --cat-metaproteomics: #{$cat-metaproteomics};
+  --cat-community:      #{$cat-community};
 }
 
 // ── Page header — kicker + title + intro (no banner) ─────────────────────────
@@ -191,6 +193,24 @@ $cat-metaproteomics: #c8912f;  // amber
   @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }  // drop to 2
 }
 
+// ── Community projects — separate section, 2-column grid ─────────────────────
+.community-page {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid $line;
+}
+
+.community-head { margin-bottom: 1.6rem; }
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: 0 0 2.5rem;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
 .tool-tile {
   --cat: #{$primary};
   display: flex;
@@ -297,8 +317,29 @@ $cat-metaproteomics: #c8912f;  // amber
   font-size: 0.86rem;
   color: $ink-soft;
   line-height: 1.6;
-  margin: 0 0 1rem;
-  flex: 1;
+  margin: 0 0 0.7rem;
+}
+
+// small note under the description (e.g. community affiliation)
+.tool-tile-note {
+  font-family: $font-family-sans-serif;
+  font-size: 0.76rem;
+  color: $muted;
+  line-height: 1.5;
+  margin: 0;
+
+  a {
+    color: var(--cat);
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  // non-link highlighted term in the category accent colour
+  .tool-tile-note-hl {
+    color: var(--cat);
+    font-weight: 600;
+  }
 }
 
 .tool-tile-foot {
