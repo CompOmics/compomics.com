@@ -5,110 +5,292 @@ toc: false
 execute:
   freeze: false
   echo: false
----
+include-in-header:
+  text: |
+    <link rel="stylesheet" href="assets/scroll-bg.css">
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scenes = Array.from(document.querySelectorAll('.cmp-scene'));
+      const frames = Array.from(document.querySelectorAll('#cmp-bg .cmp-frame'));
 
-::: {.grid .vision-section}
+      // Hero cursor "eraser": the logo + title are fully visible, and the
+      // circular area under the cursor fades to transparent (inverse spotlight).
+      const reveal = document.getElementById('cmp-hero-reveal');
+      const heroScene = document.querySelector('.cmp-scene-hero');
+      if (reveal && heroScene) {
+        const hideSpot = function () {
+          reveal.style.setProperty('--mx', '-600px');
+          reveal.style.setProperty('--my', '-600px');
+        };
+        heroScene.addEventListener('pointermove', function (event) {
+          const rect = reveal.getBoundingClientRect();
+          reveal.style.setProperty('--mx', (event.clientX - rect.left) + 'px');
+          reveal.style.setProperty('--my', (event.clientY - rect.top) + 'px');
+        });
+        heroScene.addEventListener('pointerleave', hideSpot);
+        hideSpot();
 
-::: {.g-col-12 .g-col-md-4 .vision-head}
-### Our Vision
-:::
+        // Double-click the logo: it springs to life, dashes right across the
+        // word, and the title is wiped away as it passes — revealing the photo
+        // behind — then it springs back and the text redraws.
+        const mark = reveal.querySelector('.cmp-hero-mark');
+        const title = reveal.querySelector('.cmp-hero-title');
+        let sweeping = false;
 
-::: {.g-col-12 .g-col-md-8 .vision-text}
-CompOmics pushes the boundaries of computational proteomics at Ghent University and VIB. We believe that unlocking the full potential of mass spectrometry data requires tight integration of algorithmic innovation, machine learning, and open data standards.
+        const easeInOut = function (t) {
+          return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        };
 
-Our **mission** is to develop open-source tools and community resources that make proteomics data analysis faster, more accurate, and accessible to researchers worldwide: from raw spectrum interpretation to FAIR-compliant data sharing.
+        const runSweep = function () {
+          if (sweeping || !mark || !title) { return; }
+          sweeping = true;
+          reveal.classList.add('is-sweeping');
 
-We are committed to open science: all our software, datasets, and workflows are publicly available and built to last.
-:::
+          const markRect = mark.getBoundingClientRect();
+          const titleRect = title.getBoundingClientRect();
+          // Logo travels from its spot to just past the end of the word.
+          const travel = (titleRect.right - markRect.left) + markRect.width * 0.15;
 
-:::
+          const T_wake = 340;   // spring-to-life wiggle, mostly in place
+          const T_go = 1150;    // dash across the word
+          const T_hold = 750;   // pause on the revealed photo
+          const T_back = 900;   // spring back, text redraws
+          const start = performance.now();
 
----
+          const frame = function (now) {
+            const t = now - start;
+            let p; // 0..1 sweep progress (logo position + wipe)
+            let done = false;
 
-```{python}
-import json, os
-from pathlib import Path
-from IPython.display import HTML
+            if (t < T_go) {
+              p = easeInOut(t / T_go);
+            } else if (t < T_go + T_hold) {
+              p = 1;
+            } else if (t < T_go + T_hold + T_back) {
+              p = 1 - easeInOut((t - T_go - T_hold) / T_back);
+            } else {
+              p = 0;
+              done = true;
+            }
 
-project_root = Path(os.environ.get("QUARTO_PROJECT_DIR", Path.cwd()))
-pub_file = project_root / "data" / "publications.json"
-pub_count = len(json.loads(pub_file.read_text(encoding="utf-8"))) if pub_file.exists() else "—"
+            // Wake-up: quick scale pop + rotate wiggle at the very start.
+            let scale = 1;
+            let rot = 0;
+            if (t < T_wake) {
+              const w = t / T_wake;
+              scale = 1 + 0.22 * Math.sin(Math.PI * w);
+              rot = 12 * Math.sin(Math.PI * 2 * w);
+            }
 
-display(HTML(f"""
-<div class="grid stats-row">
-  <a href="research.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">3</span>
-    <span class="stat-label">Research Lines</span>
-  </a>
-  <a href="publications.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">{pub_count}</span>
-    <span class="stat-label">Publications</span>
-  </a>
-  <a href="tools/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">22</span>
-    <span class="stat-label">Tools</span>
-  </a>
-  <a href="team/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
-    <span class="stat-number">27</span>
-    <span class="stat-label">Members</span>
-  </a>
-</div>
-"""))
-```
+            const dx = p * travel;
+            mark.style.transform = 'translateX(' + dx + 'px) rotate(' + rot + 'deg) scale(' + scale + ')';
 
+            // Wipe boundary = logo's right edge, in the title's own coordinates.
+            const boundary = (markRect.right + dx) - titleRect.left;
+            title.style.setProperty('--wipe', boundary + 'px');
+
+            if (done) {
+              mark.style.transform = '';
+              title.style.removeProperty('--wipe');
+              reveal.classList.remove('is-sweeping');
+              sweeping = false;
+            } else {
+              window.requestAnimationFrame(frame);
+            }
+          };
+
+          window.requestAnimationFrame(frame);
+        };
+
+        if (mark) {
+          mark.style.cursor = 'pointer';
+          mark.addEventListener('dblclick', runSweep);
+        }
+      }
+
+      if (!scenes.length || !frames.length) {
+        return;
+      }
+
+      let rafId = 0;
+
+      const clamp = function (value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      };
+
+      const blendStart = 0.82;
+      const blendSpan = 0.18;
+
+      const update = function () {
+        const viewportCenter = window.innerHeight * 0.48;
+        const sceneTops = scenes.map(function (scene) {
+          return scene.getBoundingClientRect().top + window.scrollY;
+        });
+
+        let activeIndex = 0;
+
+        for (let index = 0; index < sceneTops.length - 1; index += 1) {
+          if (window.scrollY + viewportCenter >= sceneTops[index]) {
+            activeIndex = index;
+          }
+        }
+
+        scenes.forEach(function (scene, sceneIndex) {
+          scene.classList.toggle('is-active', sceneIndex === activeIndex);
+        });
+
+        const currentTop = sceneTops[activeIndex];
+        const nextTop = sceneTops[Math.min(activeIndex + 1, sceneTops.length - 1)];
+        const span = Math.max(1, nextTop - currentTop);
+        const progress = clamp((window.scrollY + viewportCenter - currentTop) / span, 0, 1);
+        const blend = clamp((progress - blendStart) / blendSpan, 0, 1);
+        const blurAmount = blend > 0 && blend < 1 ? (Math.sin(Math.PI * blend) * 12) : 0;
+
+        frames.forEach(function (frame, frameIndex) {
+          let opacity = 0;
+
+          if (frameIndex === activeIndex) {
+            opacity = 1 - blend;
+          } else if (frameIndex === activeIndex + 1) {
+            opacity = blend;
+          }
+
+          frame.classList.toggle('is-active', opacity > 0.01);
+          frame.style.opacity = opacity.toFixed(4);
+          frame.style.filter = opacity > 0 && opacity < 1
+            ? 'blur(' + blurAmount.toFixed(2) + 'px) saturate(.9) contrast(1.06) brightness(.86)'
+            : 'none';
+          frame.style.transform = 'none';
+        });
+      };
+
+      const scheduleUpdate = function () {
+        window.cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(update);
+      };
+
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate);
+      scheduleUpdate();
+    });
+    </script>
 ---
 
 ```{=html}
-<div class="nav-tiles-row">
-  <a href="tools/" class="nav-tile">
-    <i class="bi bi-tools nav-tile-icon"></i>
-    <div class="nav-tile-title">Tools</div>
-    <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
-  </a>
-  <a href="team/" class="nav-tile">
-    <i class="bi bi-people-fill nav-tile-icon"></i>
-    <div class="nav-tile-title">Team</div>
-    <div class="nav-tile-desc">Meet our researchers and developers</div>
-  </a>
-  <a href="publications.html" class="nav-tile">
-    <i class="bi bi-journal-text nav-tile-icon"></i>
-    <div class="nav-tile-title">Publications</div>
-    <div class="nav-tile-desc">Our research output and scientific papers</div>
-  </a>
+<div id="cmp-bg" aria-hidden="true">
+  <img class="cmp-frame is-active" src="assets/frames/bg-1.jpg" srcset="assets/frames/bg-1-sm.jpg 900w, assets/frames/bg-1.jpg 1800w" sizes="100vw" alt="" loading="eager" fetchpriority="high" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-2.jpg" srcset="assets/frames/bg-2-sm.jpg 900w, assets/frames/bg-2.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-3.jpg" srcset="assets/frames/bg-3-sm.jpg 900w, assets/frames/bg-3.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-4.jpg" srcset="assets/frames/bg-4-sm.jpg 900w, assets/frames/bg-4.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
+  <img class="cmp-frame" src="assets/frames/bg-5.jpg" srcset="assets/frames/bg-5-sm.jpg 900w, assets/frames/bg-5.jpg 1800w" sizes="100vw" alt="" loading="eager" decoding="async">
 </div>
-```
 
----
-
-```{=html}
-<div class="location-section">
-  <div class="location-info">
-    <span class="location-eyebrow">Visit us</span>
-    <h2 class="location-title">Where to find us</h2>
-    <div class="location-group">Computational Omics and Systems Biology Group</div>
-    <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
-    VIB-UGent Center for Medical Biotechnology, VIB</p>
-
-    <div class="location-row">
-      <i class="bi bi-geo-alt location-row-icon"></i>
-      <div>Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</div>
+<div class="cmp-scenes">
+  <section class="cmp-scene cmp-scene-hero">
+    <div class="cmp-wrap">
+      <div class="cmp-hero-copy">
+        <div class="cmp-hero-titlerow" id="cmp-hero-reveal">
+          <img class="cmp-hero-mark" src="assets/images/favicon.png" alt="" aria-hidden="true">
+          <h1 class="cmp-hero-title">CompOmics</h1>
+        </div>
+        <p class="cmp-scrollcue">Scroll</p>
+      </div>
     </div>
-    <div class="location-row">
-      <i class="bi bi-envelope location-row-icon"></i>
-      <div><a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></div>
-    </div>
+  </section>
 
-    <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=Technologiepark+75,+9052+Zwijnaarde,+Belgium" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-signpost-2"></i> Get directions
-    </a>
-  </div>
-  <div class="location-map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
-      width="100%" height="100%" style="border:0;"
-      allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
+  <section class="cmp-scene cmp-scene-vision">
+    <div class="cmp-wrap">
+      <div class="cmp-vision-v2">
+        <div class="cmp-panel-kicker">Our vision</div>
+        <h2 class="cmp-vision-v2-headline">Computational proteomics,<br>open to all.</h2>
+        <p class="cmp-vision-v2-lead">We unlock the full potential of mass spectrometry data — making proteomics faster, more accurate, and accessible worldwide through open-source tools and community resources.</p>
+        <div class="cmp-vision-pillars">
+          <div class="cmp-pillar">
+            <i class="bi bi-lightning-charge cmp-pillar-icon"></i>
+            <div class="cmp-pillar-title">Algorithmic Innovation</div>
+            <p class="cmp-pillar-desc">Novel methods for spectrum interpretation, peptide identification, and large-scale protein quantification.</p>
+          </div>
+          <div class="cmp-pillar">
+            <i class="bi bi-layers cmp-pillar-icon"></i>
+            <div class="cmp-pillar-title">Machine Learning</div>
+            <p class="cmp-pillar-desc">AI-driven models for retention time and fragmentation prediction, trained on community-scale proteomics data.</p>
+          </div>
+          <div class="cmp-pillar">
+            <i class="bi bi-globe2 cmp-pillar-icon"></i>
+            <div class="cmp-pillar-title">Open Data Standards</div>
+            <p class="cmp-pillar-desc">FAIR-compliant sharing via PRIDE, ProteomeXchange, and community formats — all software and data built to last.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-tools">
+    <div class="cmp-wrap">
+      <div class="cmp-vision-v2">
+        <div class="cmp-panel-kicker">Explore our work</div>
+        <h2 class="cmp-vision-v2-headline">Tools and publications</h2>
+        <div class="nav-tiles-row cmp-tiles-row">
+          <a href="tools/" class="nav-tile">
+            <i class="bi bi-tools nav-tile-icon"></i>
+            <div class="nav-tile-title">Tools</div>
+            <div class="nav-tile-desc">Open-source software for proteomics data analysis</div>
+          </a>
+          <a href="publications.html" class="nav-tile">
+            <i class="bi bi-journal-text nav-tile-icon"></i>
+            <div class="nav-tile-title">Publications</div>
+            <div class="nav-tile-desc">Our research output and scientific papers</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-team">
+    <div class="cmp-wrap cmp-team-wrap">
+      <div class="cmp-team-copy">
+        <div class="cmp-panel-kicker">People</div>
+        <h2 class="cmp-h-light">Meet the team</h2>
+        <p class="cmp-sub-light">Researchers, developers, and support staff behind the CompOmics platform.</p>
+        <a href="team/" class="cmp-btn">Visit the team page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp-scene cmp-scene-location">
+    <div class="cmp-wrap cmp-location-wrap">
+      <div class="location-section">
+        <div class="location-info">
+          <span class="location-eyebrow">Visit us</span>
+          <h2 class="location-title">Where to find us</h2>
+          <div class="location-group">Computational Omics and Systems Biology Group</div>
+          <p class="location-affil">Department of Biomolecular Medicine, Ghent University<br>
+          VIB-UGent Center for Medical Biotechnology, VIB</p>
+
+          <div class="location-row">
+            <i class="bi bi-geo-alt location-row-icon"></i>
+            <div>Technologiepark 75<br>9052 Gent-Zwijnaarde, Belgium</div>
+          </div>
+          <div class="location-row">
+            <i class="bi bi-envelope location-row-icon"></i>
+            <div><a href="mailto:lennart.martens@UGent.be">lennart.martens@UGent.be</a></div>
+          </div>
+
+          <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=Technologiepark+75,+9052+Zwijnaarde,+Belgium" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-signpost-2"></i> Get directions
+          </a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.204!2d3.7105!3d51.0028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373d77b8d06cd%3A0x8f5c2b9d70bbdee4!2sTechnologiepark%2075%2C%209052%20Zwijnaarde!5e0!3m2!1snl!2sbe!4v1717939200000"
+            width="100%" height="100%" style="border:0;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+
 ```

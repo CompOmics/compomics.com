@@ -41,3 +41,21 @@ $navbar-hl:  $primary;
   background: url('/assets/images/CompOmics_neg.png') no-repeat left center;
   background-size: contain;
 }
+
+// Team expander — restore blue-black in dark mode (light mode uses deep navy)
+.team-detail-panel,
+.team-profile-expander {
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.98), rgba(21, 28, 39, 0.95));
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+
+  &::before {
+    background:
+      radial-gradient(circle at top right, rgba(90, 167, 218, 0.14), rgba(90, 167, 218, 0) 36%),
+      linear-gradient(135deg, rgba(10, 14, 20, 0.18), rgba(10, 14, 20, 0.64));
+  }
+}
+
+.team-profile-expander::after {
+  border-bottom-color: #0e1219;
+}

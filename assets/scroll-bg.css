@@ -1,0 +1,603 @@
+/* ============================================================
+   CompOmics landing — scroll-driven background scenes
+   Five fixed background frames cross-fade as the homepage scrolls.
+   ============================================================ */
+
+html { background: #0f1217; }
+body { background: transparent !important; }
+#quarto-content, main.content, #quarto-document-content,
+.page-columns, .column-page, .column-body, .content { background: transparent !important; }
+#title-block-header { display: none; }
+
+/* ------------------------------------------------------------
+   Landing-page navbar: transparent over the cinematic hero.
+   (This file only loads on the homepage, so other pages keep
+   their solid cream navbar.)
+   ------------------------------------------------------------ */
+/* Landing navbar: bare and transparent — no logo (the logo lives in the
+   hero now), no glass band. Just the links over the imagery, with a faint
+   top scrim so they stay legible. */
+.navbar {
+  background-color: transparent !important;
+  background-image: linear-gradient(to bottom, rgba(6,8,12,.5), rgba(6,8,12,0)) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* logo removed from the navbar on the landing page */
+.navbar-brand { display: none !important; }
+
+.navbar .nav-link {
+  color: rgba(255,255,255,.85) !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* toggles legible on dark */
+.navbar .quarto-color-scheme-toggle,
+.navbar-toggler { color: rgba(255,255,255,.85) !important; border-color: rgba(255,255,255,.28) !important; }
+
+/* ------------------------------------------------------------
+   Hero logo mark — the molecule, to the left of the title.
+   ------------------------------------------------------------ */
+.cmp-hero-titlerow {
+  display: flex;
+  align-items: center;
+  gap: clamp(.7rem, 1.8vw, 1.6rem);
+  width: fit-content;
+
+  /* Spotlight reveal: hidden by default; only the circular area under the
+     cursor (positioned via --mx/--my from JS) is shown. */
+  --mx: -600px;
+  --my: -600px;
+  --spot: 440px;
+  /* Inverse spotlight ("eraser"): the logo + title are fully visible at rest,
+     and the circular area under the cursor fades to transparent — erasing the
+     part you hover. Center is transparent, edges stay opaque. */
+  -webkit-mask-image: radial-gradient(circle var(--spot) at var(--mx) var(--my),
+    transparent 0%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.5) 52%, rgba(0,0,0,.8) 74%, #000 100%);
+  mask-image: radial-gradient(circle var(--spot) at var(--mx) var(--my),
+    transparent 0%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.5) 52%, rgba(0,0,0,.8) 74%, #000 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.cmp-hero-mark {
+  height: clamp(3rem, 8.5vw, 5.4rem);
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,.45));
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* ---- Double-click logo sweep: the logo dashes across the word and wipes
+   the title away, revealing the photo behind. Driven by --wipe from JS. ---- */
+.cmp-hero-titlerow.is-sweeping {
+  /* suspend the cursor eraser while the logo does its run */
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.cmp-hero-titlerow.is-sweeping .cmp-hero-mark {
+  position: relative;
+  z-index: 3; /* logo rides on top of the text it erases */
+}
+
+.cmp-hero-titlerow.is-sweeping .cmp-hero-title {
+  position: relative;
+  z-index: 2;
+  --wipe: -200px;
+  -webkit-mask-image: linear-gradient(to right,
+    transparent 0, transparent calc(var(--wipe) - 48px), #000 var(--wipe));
+  mask-image: linear-gradient(to right,
+    transparent 0, transparent calc(var(--wipe) - 48px), #000 var(--wipe));
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+  .cmp-hero-titlerow { gap: .6rem; }
+  .cmp-hero-mark { height: clamp(2.4rem, 11vw, 3.4rem); }
+}
+
+#cmp-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #0f1217;
+  pointer-events: none;
+}
+
+#cmp-bg::before,
+#cmp-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+#cmp-bg::before {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,.05), rgba(255,255,255,0) 38%),
+    linear-gradient(to bottom, rgba(6,8,12,.62) 0%, rgba(6,8,12,.28) 20%, rgba(6,8,12,.34) 58%, rgba(6,8,12,.84) 100%);
+}
+
+#cmp-bg::after {
+  background:
+    linear-gradient(135deg, rgba(31,95,143,.10), rgba(214,55,41,.04) 45%, rgba(0,0,0,0) 70%),
+    linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0) 52%);
+  mix-blend-mode: screen;
+  opacity: .82;
+}
+
+.cmp-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transform: none;
+  transition: opacity 1.15s ease, filter 1.15s ease;
+  filter: saturate(.9) contrast(1.06) brightness(.86);
+}
+
+.cmp-frame.is-active {
+  opacity: 1;
+}
+
+.cmp-scenes {
+  position: relative;
+  z-index: 1;
+}
+
+.cmp-scene {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(4rem, 10vh, 7rem) 0;
+  box-sizing: border-box;
+}
+
+.cmp-wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.1rem, 4vw, 3rem);
+}
+
+.cmp-hero-copy {
+  max-width: 760px;
+  padding: 2rem 0;
+}
+
+/* Lift the logo + title up out of the lower portion of the hero photo so
+   they don't sit over people's faces. */
+.cmp-scene-hero .cmp-hero-copy {
+  transform: translateY(-16vh);
+}
+
+@media (max-width: 720px) {
+  .cmp-scene-hero .cmp-hero-copy {
+    transform: translateY(-10vh);
+  }
+}
+
+.cmp-hero-kicker,
+.cmp-panel-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.84);
+  margin-bottom: .9rem;
+}
+
+.cmp-scenes h1 a,
+.cmp-scenes h2 a,
+.cmp-scenes h3 a { display: none !important; }
+
+.cmp-hero-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  line-height: .95;
+  font-size: clamp(4rem, 14vw, 9rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 3px 34px rgba(0,0,0,.55);
+}
+
+.cmp-hero-sub,
+.cmp-sub-light {
+  color: rgba(255,255,255,.92);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  max-width: 46ch;
+  text-shadow: 0 1px 16px rgba(0,0,0,.55);
+}
+
+.cmp-hero-sub {
+  margin: 1.2rem 0 0;
+}
+
+.cmp-scrollcue {
+  margin-top: 2.25rem;
+  color: #fefefe;
+  font-family: "JetBrains Mono", monospace;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.cmp-scrollcue::before { content: "↓ "; }
+
+.cmp-panel {
+  background: rgba(255,253,243,.90);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(230,225,208,.86);
+  border-radius: 1rem;
+  padding: clamp(1.6rem, 3.5vw, 2.8rem);
+  max-width: 760px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.40);
+}
+
+.cmp-panel h2,
+.cmp-h-light {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.cmp-panel h2 {
+  color: #14110d;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  margin-bottom: 1rem;
+}
+
+.cmp-panel p {
+  font-family: "Source Sans 3", sans-serif;
+  color: #2c2823;
+  line-height: 1.8;
+  margin: 0 0 1rem;
+}
+
+.cmp-panel p:last-child { margin-bottom: 0; }
+.cmp-panel p.lead {
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #14110d;
+}
+.cmp-panel strong { color: #14110d; font-weight: 700; }
+
+/* --- Vision section v2: open layout, headline on photo, pillar cards --- */
+.cmp-vision-v2 {
+  max-width: 960px;
+}
+
+.cmp-vision-v2 .cmp-panel-kicker {
+  color: rgba(255,255,255,.80);
+  margin-bottom: 1rem;
+}
+
+.cmp-vision-v2-headline {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.06;
+  color: #ffffff;
+  text-shadow: 0 3px 34px rgba(0,0,0,.55);
+  margin: 0 0 1.4rem;
+  border: none;
+  padding: 0;
+}
+
+.cmp-scene-tools .cmp-vision-v2-headline {
+  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.cmp-vision-v2-lead {
+  font-family: "Source Sans 3", sans-serif;
+  color: rgba(255,255,255,.88);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.72;
+  max-width: 60ch;
+  text-shadow: 0 1px 16px rgba(0,0,0,.55);
+  margin: 0 0 2.5rem;
+  border-left: 2px solid #1f5f8f;
+  padding-left: 1.1rem;
+}
+
+.cmp-vision-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.cmp-pillar {
+  background: rgba(18, 22, 28, .74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-top: 3px solid #1f5f8f;
+  border-radius: 0 0 .75rem .75rem;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 20px 56px rgba(0,0,0,.40);
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s ease, transform .5s ease, background .18s ease, border-color .18s ease;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .05s;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .18s;
+}
+
+.cmp-scene-vision.is-active .cmp-pillar:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .31s;
+}
+
+.cmp-pillar:hover {
+  background: rgba(28, 34, 42, .86);
+  border-top-color: #d63729;
+  border-color: rgba(255,255,255,.22);
+}
+
+.cmp-pillar-icon {
+  font-size: 1.5rem;
+  color: #5aa6da;
+  display: block;
+  margin-bottom: .85rem;
+}
+
+.cmp-pillar-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #ffffff;
+  margin-bottom: .5rem;
+  letter-spacing: -.01em;
+}
+
+.cmp-pillar-desc {
+  font-family: "Source Sans 3", sans-serif;
+  color: rgba(255,255,255,.72);
+  font-size: .88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .cmp-vision-pillars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.cmp-section-head {
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+.cmp-h-light {
+  color: #fff;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  text-shadow: 0 2px 26px rgba(0,0,0,.55);
+  margin-bottom: .55rem;
+}
+
+.cmp-sub-light {
+  margin: 0;
+}
+
+
+.cmp-tiles-row {
+  margin-top: 1rem;
+  gap: 1.25rem;
+}
+
+/* Dark frosted-glass cards — matched to the Vision panel so the landing
+   reads as one cohesive dark, cinematic piece (cream is the inner-page look). */
+.cmp-tiles-row .nav-tile {
+  background: rgba(18,22,28,.74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: rgba(255,255,255,.12);
+  min-height: 220px;
+  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s ease, transform .5s ease, background .18s ease, border-color .18s ease;
+}
+
+.cmp-scene-tools.is-active .cmp-tiles-row .nav-tile:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .05s;
+}
+
+.cmp-scene-tools.is-active .cmp-tiles-row .nav-tile:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .18s;
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-title {
+  color: #f5f3eb;
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-desc {
+  color: rgba(255,255,255,.80);
+}
+
+.cmp-tiles-row .nav-tile .nav-tile-icon {
+  color: #5aa6da;
+}
+
+.cmp-tiles-row .nav-tile:hover {
+  background: rgba(28,34,42,.82);
+  border-color: rgba(255,255,255,.24);
+}
+
+.cmp-tiles-row .nav-tile:hover .nav-tile-title {
+  color: #8ec6ee;
+}
+
+.cmp-team-wrap {
+  max-width: 900px;
+}
+
+.cmp-team-copy {
+  max-width: 560px;
+  padding: 2rem 0;
+}
+
+.cmp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.6rem;
+  padding: .85rem 1.5rem;
+  border-radius: 2rem;
+  background: #1f5f8f;
+  border: 1px solid #1f5f8f;
+  color: #fff;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 34px rgba(0,0,0,.28);
+  transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.cmp-btn:hover {
+  background: #184c73;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(0,0,0,.32);
+}
+
+.cmp-location-wrap {
+  max-width: 1080px;
+}
+
+.cmp-location-wrap .location-section {
+  margin: 0;
+  background: rgba(18, 22, 28, .74);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+}
+
+.cmp-location-wrap .location-eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  color: rgba(255,255,255,.80);
+  letter-spacing: .18em;
+}
+
+.cmp-location-wrap .location-title {
+  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-bottom: none;
+}
+
+.cmp-location-wrap .location-group {
+  color: rgba(255,255,255,.90);
+}
+
+.cmp-location-wrap .location-affil {
+  color: rgba(255,255,255,.60);
+}
+
+.cmp-location-wrap .location-row {
+  color: rgba(255,255,255,.78);
+}
+
+.cmp-location-wrap .location-row a {
+  color: rgba(255,255,255,.78);
+}
+
+.cmp-location-wrap .location-row a:hover {
+  color: #5aa6da;
+}
+
+.cmp-location-wrap .location-row-icon {
+  color: #5aa6da;
+}
+
+.cmp-location-wrap .location-directions {
+  font-family: "JetBrains Mono", monospace;
+  border-color: #d63729;
+  color: #d63729;
+  background: transparent;
+  transition: background .18s ease, color .18s ease;
+}
+
+.cmp-location-wrap .location-directions:hover {
+  background: #d63729;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cmp-location-wrap .location-map iframe {
+  filter: grayscale(18%) contrast(0.98);
+}
+
+@media (max-width: 720px) {
+  .cmp-scene {
+    padding: 3.25rem 0;
+  }
+
+  .cmp-hero-title {
+    font-size: clamp(3rem, 18vw, 5rem);
+  }
+
+  .cmp-hero-copy {
+    max-width: 100%;
+  }
+
+  .cmp-tiles-row .nav-tile {
+    min-height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-frame {
+    transition: none;
+    transform: none;
+  }
+
+  .cmp-pillar,
+  .cmp-tiles-row .nav-tile {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
