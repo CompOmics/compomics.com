@@ -6,3 +6,5 @@ _site/
 /tutorials/notebooks/data/
 
 /.quarto/
+
+**/*.quarto_ipynb
