@@ -1,6 +1,6 @@
 
 .quarto/
-**/*.quarto_ipynb
+**/*.quarto_ipynb*
 _site/
 /.quarto/tutorials/notebooks/data/
 /tutorials/notebooks/data/
