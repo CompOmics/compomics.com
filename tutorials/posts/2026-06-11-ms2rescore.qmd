@@ -1,0 +1,22 @@
+---
+title: "PSM Rescoring with MS²Rescore"
+date: 2026-06-11
+description: "Download a real HeLa LC-MS/MS dataset and rescore MaxQuant PSMs using MS2PIP fragment ion predictions, DeepLC retention time predictions, and mokapot — gaining +16 % identifications at 1 % FDR."
+categories: [proteomics, rescoring, python, ms2rescore, ms2pip, deeplc, mokapot]
+---
+
+Database search engines assign each spectrum a score based on mass accuracy and matched fragment ions, but leave orthogonal information unused. **MS²Rescore** adds features from predictive models — fragment ion intensities (MS2PIP), retention time (DeepLC), and basic search-engine metadata — and re-ranks PSMs with a semi-supervised SVM (mokapot).
+
+This tutorial downloads a real 7-minute HeLa gradient run (MaxQuant search, ~111 MB of input data), runs the full MS²Rescore pipeline, and shows the improvement in identifications at 1 % FDR.
+
+The source notebook is available in the [CompOmics website repository](https://github.com/compomics/compomics.github.io/tree/main/tutorials/notebooks).
+
+```{=html}
+<iframe
+  src="../notebooks/ms2rescore.html"
+  width="100%"
+  height="1200px"
+  style="border: 1px solid #e6e1d0; border-radius: 0.5rem; display: block;"
+  title="PSM Rescoring with MS²Rescore">
+</iframe>
+```
