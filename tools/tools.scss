@@ -1,0 +1,466 @@
+/*-- scss:defaults --*/
+
+// Category accent colours (mid-tone: legible on both cream and charcoal).
+// Used as solid badge backgrounds and thin tile accents on the tools page.
+$cat-prediction:     #3a86c8;  // blue
+$cat-identification: #d6534a;  // red
+$cat-support:        #2f9e8b;  // teal
+$cat-biological:     #8a6fc0;  // violet
+$cat-metaproteomics: #c8912f;  // amber
+$cat-community:      #4f9d6b;  // green (community projects)
+
+/*-- scss:rules --*/
+
+:root {
+  --cat-prediction:     #{$cat-prediction};
+  --cat-identification: #{$cat-identification};
+  --cat-support:        #{$cat-support};
+  --cat-biological:     #{$cat-biological};
+  --cat-metaproteomics: #{$cat-metaproteomics};
+  --cat-community:      #{$cat-community};
+}
+
+// ── Page header — kicker + title + intro (no banner) ─────────────────────────
+.tools-head {
+  margin: 0.5rem 0 2rem;
+}
+
+.tools-head-kicker {
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: 0.55rem;
+}
+
+.tools-head-title {
+  font-family: $font-family-heading;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  color: $ink;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+  padding: 0;
+  border: none;
+}
+
+.tools-head-sub {
+  font-family: $font-family-sans-serif;
+  font-size: 1.02rem;
+  color: $ink-soft;
+  line-height: 1.65;
+  max-width: 60ch;
+  margin: 0;
+}
+
+// ── Toolbar: search field + category chips ───────────────────────────────────
+.tools-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.4rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid $line;
+}
+
+.tools-search {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(340px, 100%);
+}
+
+.tools-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $muted;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.tools-search-input {
+  width: 100%;
+  padding: 0.6rem 2.2rem 0.6rem 2.4rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.92rem;
+  color: $ink;
+  background: $cream-2;
+  border: 1px solid $line;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+  &::placeholder { color: $muted; }
+
+  &:focus {
+    outline: none;
+    background: $surface-hover;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(31, 95, 143, 0.12);
+  }
+
+  // hide native search clear (we render our own)
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+}
+
+.tools-search-clear {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: $muted;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.15s ease, background 0.15s ease;
+
+  &:hover { color: $ink; background: $cream-3; }
+}
+
+.tools-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tools-chip {
+  --cat: #{$primary};
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  border: 1px solid $line;
+  background: $cream-2;
+  color: $ink-soft;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+
+  // little category dot
+  &[data-cat]:not([data-cat="all"])::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--cat);
+    margin-right: 0.45rem;
+    vertical-align: middle;
+    transform: translateY(-1px);
+  }
+
+  &:hover { border-color: var(--cat); color: $ink; }
+
+  &.is-active {
+    background: var(--cat);
+    border-color: var(--cat);
+    color: #fff;
+
+    &::before { background: rgba(255, 255, 255, 0.85); }
+  }
+}
+
+.tools-count {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $muted;
+  margin-bottom: 1.4rem;
+}
+
+// ── Grid of compact tiles ────────────────────────────────────────────────────
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  // 3 per row on wide screens
+  gap: 1.1rem;
+  margin: 0 0 2.5rem;
+
+  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }  // drop to 2
+}
+
+// ── Community projects — separate section, 2-column grid ─────────────────────
+.community-page {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid $line;
+}
+
+.community-head { margin-bottom: 1.6rem; }
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: 0 0 2.5rem;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+.tool-tile {
+  --cat: #{$primary};
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.4rem 1.1rem;
+  // $cream-3 sits a step above the page background in both themes, so cards
+  // stay clearly separated (in dark mode $cream-2 was nearly the page colour)
+  background: $cream-3;
+  border: 1px solid $line;
+  border-top: 3px solid var(--cat);
+  border-radius: 0.2rem 0.2rem 0.6rem 0.6rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+
+  // staggered entrance
+  animation: tool-tile-in 0.5s ease both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+
+  &:hover {
+    transform: translateY(-4px);
+    background: $surface-hover;
+    border-color: $line;
+    border-top-color: var(--cat);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+  }
+
+  &.is-hidden { display: none; }
+}
+
+@keyframes tool-tile-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-tile { animation: none; }
+}
+
+.tool-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+// Icon slot — holds either a Bootstrap icon or a tool logo image.
+.tool-tile-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--cat);
+  background: color-mix(in srgb, var(--cat) 12%, transparent);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  // when a logo image is present, drop the tinted chip and let the mark breathe
+  &.has-logo {
+    background: transparent;
+    border-radius: 0.4rem;
+  }
+
+  // hide the fallback Bootstrap icon while a logo is showing; if the logo
+  // image fails to load, JS strips .has-logo and the icon reappears
+  &.has-logo i { display: none; }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.tool-tile-cat {
+  font-family: $font-family-sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--cat);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+}
+
+.tool-tile-name {
+  font-family: $font-family-heading;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: $ink;
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: none;
+  line-height: 1.2;
+}
+
+.tool-tile-desc {
+  font-family: $font-family-sans-serif;
+  font-size: 0.86rem;
+  color: $ink-soft;
+  line-height: 1.6;
+  margin: 0 0 0.7rem;
+}
+
+// small note under the description (e.g. community affiliation)
+.tool-tile-note {
+  font-family: $font-family-sans-serif;
+  font-size: 0.76rem;
+  color: $muted;
+  line-height: 1.5;
+  margin: 0;
+
+  a {
+    color: var(--cat);
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  // non-link highlighted term in the category accent colour
+  .tool-tile-note-hl {
+    color: var(--cat);
+    font-weight: 600;
+  }
+}
+
+.tool-tile-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid $line-soft;
+}
+
+.tool-tile-devs {
+  display: flex;
+  flex-shrink: 0;
+  align-self: flex-start;  // avatars hug the left, don't stretch
+}
+
+.tool-tile-dev {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid $cream-2;
+  background: $cream-3;
+
+  &:not(:first-child) { margin-left: -8px; }
+
+  .tool-tile:hover & { border-color: $surface-hover; }
+}
+
+// Always two badges per row (extra ones wrap to a new row of two)
+.tool-tile-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.tool-tile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.6rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  border: 1px solid $line;
+  color: $ink-soft;
+  text-decoration: none;
+  background: $cream;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  i { font-size: 0.78rem; }
+
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.tool-tile-link-paper:hover {
+  background: $secondary;
+  border-color: $secondary;
+  color: #fff;
+}
+
+// Tutorial badge — filled category colour so it stands out from plain links
+.tool-tile-link-tutorial {
+  background: var(--cat);
+  border-color: var(--cat);
+  color: #fff;
+
+  &:hover {
+    background: color-mix(in srgb, var(--cat) 82%, #000);
+    border-color: color-mix(in srgb, var(--cat) 82%, #000);
+    color: #fff;
+  }
+}
+
+// "Coming soon" pill — non-interactive, sits in the links row
+.tool-tile-soon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.65rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 2rem;
+  border: 1px dashed var(--cat);
+  color: var(--cat);
+  background: color-mix(in srgb, var(--cat) 10%, transparent);
+  white-space: nowrap;
+
+  i { font-size: 0.76rem; }
+}
+
+// ── Empty state ──────────────────────────────────────────────────────────────
+.tools-empty {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: $muted;
+
+  i { font-size: 2rem; opacity: 0.5; }
+
+  p {
+    margin: 0.8rem 0 0;
+    font-family: $font-family-sans-serif;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tools-toolbar { flex-direction: column; align-items: stretch; }
+  .tools-search { width: 100%; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
