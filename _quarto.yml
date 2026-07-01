@@ -10,6 +10,9 @@ project:
     - assets/frames/
     # used by the dark-mode logo swap in CSS (not referenced from any .qmd)
     - assets/images/CompOmics_neg.png
+    # tool logos are referenced from JS (built at runtime), so Quarto's static
+    # analysis can't detect them — copy the whole folder explicitly
+    - assets/images/tools/
 
 website:
   title: "CompOmics"
@@ -47,8 +50,8 @@ website:
 format:
   html:
     theme:
-      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss]
-      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss]
+      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss, tools/tools.scss]
+      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss, tools/tools.scss]
     toc: true
     toc-depth: 2
     code-fold: false
