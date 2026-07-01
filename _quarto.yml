@@ -23,7 +23,7 @@ website:
     title: false
     right:
       - text: "Research"
-        href: research.qmd
+        href: research/index.qmd
       - text: "Tools"
         href: tools/index.qmd
       - text: "Team"
@@ -47,8 +47,8 @@ website:
 format:
   html:
     theme:
-      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss]
-      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss]
+      light: [flatly, assets/compomics-light.scss, assets/compomics.scss, team/teams.scss, research/research.scss]
+      dark: [darkly, assets/compomics-dark.scss, assets/compomics.scss, team/teams.scss, research/research.scss]
     toc: true
     toc-depth: 2
     code-fold: false

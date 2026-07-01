@@ -27,8 +27,10 @@ In your GitHub repo settings: **Settings → Pages → Source → GitHub Actions
 ```
 _quarto.yml          # site config, navbar, theme
 index.qmd            # home page
-research.qmd         # research overview
 publications.qmd     # publications list
+research/
+  index.qmd          # research overview
+  research.scss      # research page styles
 tools/
   index.qmd          # tools listing (auto-generated)
   example-tool.qmd   # one file per tool
