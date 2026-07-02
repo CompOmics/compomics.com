@@ -216,6 +216,15 @@ toc: false
       links: { github: 'https://github.com/compomics' },
       devs: ['enrico']
     },
+    {
+      name: 'E. coli PeptideAtlas Build', cat: 'biological', icon: 'bi-virus', logo: 'bacterium.png',
+      desc:'Characterizing the observed Eschericia coli pan-proteome and its post-translational modifications.',
+      links: {
+        web: 'https://peptideatlas.org/builds/ecoli/',
+        paper: 'https://doi.org/10.1021/acs.jproteome.5c00902'
+        },
+        devs: ['caro']
+    },
 
     // ── Metaproteomics ─────────────────────────────────────────────────────
     {
@@ -264,7 +273,7 @@ toc: false
     {
       name: 'Rusteomics', cat: 'community', icon: 'bi-gear-wide-connected', logo: 'rusteomics.png',
       desc: 'Community effort building fast, reliable Rust libraries and tooling for mass spectrometry proteomics.',
-      note: 'A <span class="tool-tile-note-hl">EuBIC-MS</span> community initiative.',
+      note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.',
       links: {
         web: 'https://rusteomics.eubic-ms.org/',
       },
@@ -273,9 +282,11 @@ toc: false
     {
       name: 'mzPeak', cat: 'community', icon: 'bi-layer-forward', logo: 'mzpeak.png',
       desc: 'A scalable, interoperable, and future-ready mass spectrometry data format.',
-      note: 'A <span class="tool-tile-note-hl">HUPO-PSI</span> community initiative.',
+      note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.',
       links: {
+        github: 'https://github.com/HUPO-PSI/mzPeak',
         web: 'https://www.mzpeak.org/',
+        paper: 'https://doi.org/10.1021/acs.jproteome.5c00435',
       },
       devs: ['tim','ralf']
     }
