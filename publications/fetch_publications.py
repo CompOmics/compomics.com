@@ -24,6 +24,7 @@ TEAM_DIR = Path(__file__).parent.parent / "team"
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "publications.json"
 
 ORCID_API = "https://pub.orcid.org/v3.0/{orcid}/works"
+ORCID_PERSON_API = "https://pub.orcid.org/v3.0/{orcid}/person"
 CROSSREF_API = "https://api.crossref.org/works/{doi}"
 CROSSREF_HEADERS = {
     "User-Agent": "CompOmics-website/1.0 (mailto:lennart.martens@UGent.be)"
@@ -63,6 +64,18 @@ def fetch_dois_for_orcid(orcid: str) -> list[str]:
                     dois.append(doi)
                 break
     return dois
+
+
+def fetch_orcid_name(orcid: str) -> str:
+    """Fetch the display name associated with an ORCID iD."""
+    url = ORCID_PERSON_API.format(orcid=orcid)
+    resp = requests.get(url, headers={"Accept": "application/json"}, timeout=20)
+    resp.raise_for_status()
+    data = resp.json()
+    name = data.get("name") or {}
+    given = (name.get("given-names") or {}).get("value", "")
+    family = (name.get("family-name") or {}).get("value", "")
+    return f"{given} {family}".strip()
 
 
 def normalize_orcid(raw: str) -> str:
@@ -115,6 +128,46 @@ def fetch_crossref_metadata(doi: str) -> dict | None:
         "issue": msg.get("issue", ""),
         "pages": msg.get("page", ""),
     }
+
+NAME_SIMILARITY_THRESHOLD = 0.7
+
+# CrossRef author metadata is sometimes truncated or omits collaborator-style
+# bylines (e.g. HUPO working group credits), which would otherwise cause
+# validate_group_orcids() to falsely drop a genuine group co-authorship.
+# Pairs below were manually confirmed against PubMed/publisher pages, and are
+# trusted even though the CrossRef author list doesn't show the match.
+MANUALLY_VERIFIED_ORCID_DOIS = {
+    ("0000-0003-4277-658X", "10.1002/pmic.201190020"),  # Quality Control in Proteomics
+    ("0000-0003-4277-658X", "10.1038/nmeth.1333"),  # HUPO test sample study (collaborator credit)
+    ("0000-0003-4277-658X", "10.1093/nar/gkj138"),  # PRIDE (CrossRef only lists first author)
+}
+
+
+def _name_similarity(a: str, b: str) -> float:
+    return SequenceMatcher(None, a.lower().strip(), b.lower().strip()).ratio()
+
+
+def validate_group_orcids(meta: dict, candidate_orcids: set[str], orcid_names: dict[str, str]) -> list[str]:
+    """Keep only ORCIDs of members who genuinely appear in the paper's author list.
+
+    An ORCID's presence in a member's ORCID "works" record is not proof they
+    authored the paper: ORCID entries can be added by automated sources (e.g.
+    Europe PMC) and can be wrong. Cross-check against the paper's real authors
+    (from CrossRef) either by matching author_orcids directly or by fuzzy name match.
+    """
+    author_orcids = set(meta.get("author_orcids") or [])
+    authors = meta.get("authors") or []
+    doi = meta.get("doi", "")
+    valid = []
+    for orcid in candidate_orcids:
+        if orcid in author_orcids or (orcid, doi) in MANUALLY_VERIFIED_ORCID_DOIS:
+            valid.append(orcid)
+            continue
+        name = orcid_names.get(orcid, "")
+        if name and any(_name_similarity(name, author) >= NAME_SIMILARITY_THRESHOLD for author in authors):
+            valid.append(orcid)
+    return sorted(valid)
+
 
 SIMILARITY_THRESHOLD = 0.9
 
@@ -181,6 +234,15 @@ def main():
             print(f"  Error: {exc}")
         time.sleep(0.2)
 
+    print("Fetching member names for authorship validation...")
+    orcid_names = {}
+    for orcid in orcids:
+        try:
+            orcid_names[orcid] = fetch_orcid_name(orcid)
+        except Exception as exc:
+            print(f"  Error fetching name for {orcid}: {exc}")
+        time.sleep(0.2)
+
     all_dois = sorted(doi_to_orcids)
     print(f"\n{len(all_dois)} unique DOI(s) to resolve via CrossRef...")
     publications = []
@@ -188,7 +250,12 @@ def main():
         print(f"  [{i}/{len(all_dois)}] {doi}")
         meta = fetch_crossref_metadata(doi)
         if meta and meta.get("title") and meta.get("year"):
-            meta["group_orcids"] = sorted(doi_to_orcids[doi])
+            group_orcids = validate_group_orcids(meta, doi_to_orcids[doi], orcid_names)
+            if not group_orcids:
+                print(f"    Skipping: no candidate ORCID matches actual authors ({meta['title']!r})")
+                time.sleep(0.1)
+                continue
+            meta["group_orcids"] = group_orcids
             publications.append(meta)
         time.sleep(0.1)
 

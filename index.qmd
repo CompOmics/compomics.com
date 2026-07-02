@@ -215,7 +215,7 @@ include-in-header:
     <div class="cmp-wrap">
       <div class="cmp-vision-v2">
         <div class="cmp-panel-kicker">Explore our work</div>
-        <h2 class="cmp-vision-v2-headline">Tools and publications</h2>
+        <h2 class="cmp-vision-v2-headline">Tools, publications and tutorials</h2>
         <div class="nav-tiles-row cmp-tiles-row">
           <a href="tools/" class="nav-tile">
             <i class="bi bi-tools nav-tile-icon"></i>
@@ -226,6 +226,11 @@ include-in-header:
             <i class="bi bi-journal-text nav-tile-icon"></i>
             <div class="nav-tile-title">Publications</div>
             <div class="nav-tile-desc">Our research output and scientific papers</div>
+          </a>
+          <a href="tutorials/" class="nav-tile">
+            <i class="bi bi-file-code nav-tile-icon"></i>
+            <div class="nav-tile-title">Tutorials</div>
+            <div class="nav-tile-desc">Step-by-step guides and walkthroughs for using our tools</div>
           </a>
         </div>
       </div>

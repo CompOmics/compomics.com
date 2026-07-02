@@ -7534,24 +7534,6 @@
     ]
   },
   {
-    "doi": "10.1038/498170b",
-    "title": "In praise of open research measures",
-    "authors": [
-      "Eugene Kolker"
-    ],
-    "author_orcids": [
-      null
-    ],
-    "journal": "Nature",
-    "year": 2013,
-    "volume": "498",
-    "issue": "7453",
-    "pages": "170-170",
-    "group_orcids": [
-      "0000-0003-4277-658X"
-    ]
-  },
-  {
     "doi": "10.1093/bioinformatics/btt544",
     "title": "MS2PIP: a tool for MS/MS peak intensity prediction",
     "authors": [
@@ -7749,24 +7731,6 @@
     "pages": "5065-5071",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.5897/ajb11.4195",
-    "title": "Additional insights into the adaptation of cotton plants under abiotic stresses by in silico analysis of conserved miRNAs in cotton expressed sequence tag database (dbEST)",
-    "authors": [
-      "Boopathi N. Manikanda"
-    ],
-    "author_orcids": [
-      null
-    ],
-    "journal": "AFRICAN JOURNAL OF BIOTECHNOLOGY",
-    "year": 2012,
-    "volume": "11",
-    "issue": "76",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4039-5230"
     ]
   },
   {
