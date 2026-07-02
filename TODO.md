@@ -1,7 +1,7 @@
 
 # To Do
 
-- [] Add tutorials button to landing page (Robbe)
+- [x] Add tutorials button to landing page (Robbe)
 - [] Extend research vision text, remove tool names (Arthur)
 - [] Add Ralf to Rusteomics (Robbe)
 - [] Add MZPEAK to community projects (Robbe)
