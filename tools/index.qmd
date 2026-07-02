@@ -269,6 +269,15 @@ toc: false
         web: 'https://rusteomics.eubic-ms.org/',
       },
       devs: ['kevin', 'ralf']
+    },
+    {
+      name: 'mzPeak', cat: 'community', icon: 'bi-layer-forward', logo: 'mzpeak.png',
+      desc: 'A scalable, interoperable, and future-ready mass spectrometry data format.',
+      note: 'A <span class="tool-tile-note-hl">HUPO-PSI</span> community initiative.',
+      links: {
+        web: 'https://www.mzpeak.org/',
+      },
+      devs: ['tim','ralf']
     }
   ];
 
