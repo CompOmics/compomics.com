@@ -1,4 +1,14 @@
 
+.quarto/
+**/*.quarto_ipynb*
+_site/
+/.quarto/tutorials/notebooks/data/
+/tutorials/notebooks/data/
+
+/.quarto/
+
+**/*.quarto_ipynb
+
 .venv/
 .quarto/
 **/*.quarto_ipynb
