@@ -89,6 +89,7 @@ toc: false
         // bioconda: 'https://bioconda.github.io/recipes/deeplc/README.html',
         web: 'https://iomics.ugent.be/deeplc/',
         paper: 'https://doi.org/10.1038/s41592-021-01301-5',
+        tutorial: '../tutorials/posts/2026-06-10-peptide-predictor.html'
       },
       devs: ['robbin', 'ralf']
     },
@@ -98,6 +99,7 @@ toc: false
       links: {
         github: 'https://github.com/compomics/im2deep',
         paper: 'https://doi.org/10.1021/acs.analchem.5c01142',
+        tutorial: '../tutorials/posts/2026-06-10-peptide-predictor.html'
       },
       devs: ['robbe']
     },
@@ -121,6 +123,7 @@ toc: false
       links: {
         github: 'https://github.com/compomics/ms2rescore',
         paper: 'https://doi.org/10.1016/j.mcpro.2022.100266',
+        tutorial: '../tutorials/posts/2026-06-11-ms2rescore.qmd'
       },
       devs: ['ralf', 'arthur', 'robbin', 'robbe']
     },
