@@ -2,7 +2,7 @@
 # To Do
 
 - [x] Add tutorials button to landing page (Robbe)
-- [] Extend research vision text, remove tool names (Arthur)
+- [x] Extend research vision text, remove tool names (Arthur)
 - [] Add Ralf to Rusteomics (Robbe)
 - [] Add MZPEAK to community projects (Robbe)
 - [] Add E. coli atlas to tools or community projects (ask Caro) (Robbe)
