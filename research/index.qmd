@@ -10,54 +10,119 @@ toc: false
   <h1 class="research-header-title">Research</h1>
   <p class="research-header-sub">CompOmics develops computational methods and software across the full proteomics workflow, from predicting peptide behaviour to making public data reusable at scale.</p>
   <p class="research-header-text">Mass spectrometry can now measure proteins at a depth and speed that outpaces our ability to interpret the data it produces. Our group works to close that gap: we build open-source tools, machine learning models, and data standards that make each step of the proteomics workflow faster, more accurate, and more reproducible, and we keep the methods and the data open to the whole community.</p>
+
+  <!-- Signature: the five research lines drawn as a five-channel mass spectrum.
+       Peaks are evenly spaced at 10/30/50/70/90% so the clickable labels below
+       align exactly under them via a five-column grid. -->
+  <figure class="research-spectrum">
+    <svg viewBox="0 0 960 224" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <line class="spec-base" x1="24" y1="180" x2="936" y2="180" />
+
+      <!-- faint minor peaks: spectrum texture, never animated -->
+      <g class="spec-minor">
+        <rect x="60"  y="158" width="3" height="22" /><rect x="205" y="166" width="3" height="14" />
+        <rect x="250" y="150" width="3" height="30" /><rect x="378" y="162" width="3" height="18" />
+        <rect x="412" y="170" width="3" height="10" /><rect x="540" y="154" width="3" height="26" />
+        <rect x="566" y="168" width="3" height="12" /><rect x="720" y="164" width="3" height="16" />
+        <rect x="762" y="152" width="3" height="28" /><rect x="884" y="166" width="3" height="14" />
+        <rect x="912" y="160" width="3" height="20" />
+      </g>
+
+      <!-- five accent peaks, one per research line -->
+      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="91"  y="64" width="10" height="116" rx="3" /><text x="96"  y="206">01</text></g>
+      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="283" y="34" width="10" height="146" rx="3" /><text x="288" y="206">02</text></g>
+      <g class="spec-peak" style="--i:2; color:#2f8f6f"><rect x="475" y="96" width="10" height="84"  rx="3" /><text x="480" y="206">03</text></g>
+      <g class="spec-peak" style="--i:3; color:#b0792a"><rect x="667" y="52" width="10" height="128" rx="3" /><text x="672" y="206">04</text></g>
+      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="859" y="82" width="10" height="98"  rx="3" /><text x="864" y="206">05</text></g>
+    </svg>
+    <nav class="research-spectrum-nav" aria-label="Research lines">
+      <a class="rs-line" style="--accent:#1f5f8f; --i:0" href="#analyte-prediction">Analyte prediction</a>
+      <a class="rs-line" style="--accent:#c5392b; --i:1" href="#identification">Identification</a>
+      <a class="rs-line" style="--accent:#2f8f6f; --i:2" href="#metaproteomics">Metaproteomics</a>
+      <a class="rs-line" style="--accent:#b0792a; --i:3" href="#fair-data-principles">FAIR data principles</a>
+      <a class="rs-line" style="--accent:#6a4c93; --i:4" href="#reprocessing">Reprocessing</a>
+    </nav>
+  </figure>
 </header>
 
 <div class="research-sections">
 
-  <section class="research-section" style="--accent:#1f5f8f">
+  <section class="research-section" id="analyte-prediction" style="--accent:#1f5f8f">
     <div class="research-section-top">
+      <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <span class="research-num">01</span>
-      <span class="research-icon"><i class="bi bi-graph-up-arrow"></i></span>
     </div>
     <h2 class="research-section-title">Analyte prediction</h2>
     <p class="research-section-desc">Deep learning models that predict how a peptide behaves in the mass spectrometer, from fragment ion intensities to retention time and ion mobility. Turning a sequence into its expected signal underpins spectral library generation, targeted method design, and identification rescoring.</p>
   </section>
 
-  <section class="research-section" style="--accent:#c5392b">
+  <section class="research-section" id="identification" style="--accent:#c5392b">
     <div class="research-section-top">
+      <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <span class="research-num">02</span>
-      <span class="research-icon"><i class="bi bi-fingerprint"></i></span>
     </div>
     <h2 class="research-section-title">Identification</h2>
     <p class="research-section-desc">Search engine post-processing and data-driven rescoring that increase confident peptide and protein identification in both DDA and DIA workflows, recovering signal that a first-pass search leaves unused.</p>
   </section>
 
-  <section class="research-section" style="--accent:#2f8f6f">
+  <section class="research-section" id="metaproteomics" style="--accent:#2f8f6f">
     <div class="research-section-top">
+      <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <span class="research-num">03</span>
-      <span class="research-icon"><i class="bi bi-diagram-3"></i></span>
     </div>
     <h2 class="research-section-title">Metaproteomics</h2>
     <p class="research-section-desc">Taxonomic and functional interpretation of complex microbial communities measured by mass spectrometry, with confidence estimates that hold up across thousands of species.</p>
   </section>
 
-  <section class="research-section" style="--accent:#b0792a">
+  <section class="research-section" id="fair-data-principles" style="--accent:#b0792a">
     <div class="research-section-top">
+      <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <span class="research-num">04</span>
-      <span class="research-icon"><i class="bi bi-database-check"></i></span>
     </div>
     <h2 class="research-section-title">FAIR data principles</h2>
     <p class="research-section-desc">Metadata annotation and community standards that make proteomics data findable, accessible, interoperable, and reusable, and ready for machine learning. Well-described data is what makes large-scale reuse possible in the first place.</p>
   </section>
 
-  <section class="research-section" style="--accent:#6a4c93">
+  <section class="research-section" id="reprocessing" style="--accent:#6a4c93">
     <div class="research-section-top">
+      <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <span class="research-num">05</span>
-      <span class="research-icon"><i class="bi bi-arrow-repeat"></i></span>
     </div>
     <h2 class="research-section-title">Reprocessing</h2>
     <p class="research-section-desc">Large-scale orthogonal reanalysis of public proteomics data for tissue profiling, post-translational modification mapping, and biomarker discovery, extracting new biology from data that has already been collected.</p>
   </section>
 
 </div>
+
+<script>
+  // Draw each section's peak up as it scrolls into view. Purely decorative,
+  // so a reduced-motion preference just renders the final state immediately.
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // spectrum labels scroll to their section (smooth unless reduced-motion)
+    document.querySelectorAll('.research-spectrum-nav a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.getElementById(a.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+      });
+    });
+
+    var sections = document.querySelectorAll('.research-sections .research-section');
+    if (!sections.length) return;
+    if (reduce || !('IntersectionObserver' in window)) {
+      sections.forEach(function (s) { s.classList.add('is-revealed'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-revealed'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
+</script>
 ```
