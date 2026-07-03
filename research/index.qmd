@@ -8,8 +8,8 @@ toc: false
 <header class="research-header">
   <div class="research-header-kicker">What we do</div>
   <h1 class="research-header-title">Research</h1>
-  <p class="research-header-sub">CompOmics develops computational methods and software across the full proteomics workflow, from predicting peptide behaviour to making public data reusable at scale.</p>
-  <p class="research-header-text">Mass spectrometry can now measure proteins at a depth and speed that outpaces our ability to interpret the data it produces. Our group works to close that gap: we build open-source tools, machine learning models, and data standards that make each step of the proteomics workflow faster, more accurate, and more reproducible, and we keep the methods and the data open to the whole community.</p>
+  <p class="research-header-sub">We are a team of 26 enthusiastic computational biologists, bioinformaticians, and software developers who build methods and tools across the proteomics workflow. Our work spans peptide property prediction, mass spectrometry data analysis, data management, metadata standardization, and the large-scale reuse of public proteomics data.</p>
+  <p class="research-header-text">Modern <strong>mass spectrometry</strong> can measure proteins with a unseen depth and throughput that increasingly exceeds our ability to interpret the resulting data. CompOmics works to close this gap. We develop open-source software, machine learning models, web resources, and community-oriented data standards that make proteomics data analysis <strong>faster</strong>, more <strong>accurate</strong>, and more <strong>reproducible</strong>. By keeping our tools and data resources openly available, we aim to support transparent, reusable, and scalable proteomics research for the wider community.</p>
 
   <!-- Signature: the five research lines drawn as a five-channel mass spectrum.
        Peaks are evenly spaced at 10/30/50/70/90% so the clickable labels below
@@ -58,7 +58,7 @@ toc: false
       <span class="research-num">01</span>
     </div>
     <h2 class="research-section-title">Analyte prediction</h2>
-    <p class="research-section-desc">Deep learning models that predict how a peptide behaves in the mass spectrometer, from fragment ion intensities to retention time and ion mobility. Turning a sequence into its expected signal underpins spectral library generation, targeted method design, and identification rescoring.</p>
+    <p class="research-section-desc">Proteomics becomes more powerful when we can predict what a peptide should look like before it is measured. We develop machine learning models that translate peptide sequences into expected mass spectrometry behaviour, including fragment ion intensities, retention time, and ion mobility. Tools such as MS²PIP, DeepLC, and IM2Deep make these predicted signals available for practical analysis workflows. This work supports spectral library generation, targeted method design, and identification rescoring, but its broader aim is more fundamental: to make peptide behaviour computationally explicit, testable, and reusable across instruments, datasets, and experimental designs.</p>
   </section>
 
   <section class="research-section" id="identification" style="--accent:#c5392b">
@@ -67,7 +67,7 @@ toc: false
       <span class="research-num">02</span>
     </div>
     <h2 class="research-section-title">Identification</h2>
-    <p class="research-section-desc">Search engine post-processing and data-driven rescoring that increase confident peptide and protein identification in both DDA and DIA workflows, recovering signal that a first-pass search leaves unused.</p>
+    <p class="research-section-desc">Peptide and protein identification is not only a database search problem; it is an ambiguity problem. A first-pass search engine proposes candidate matches, but much of the information in the data remains underused. We develop post-processing and data-driven rescoring approaches that combine search engine scores with predicted peptide behaviour, spectrum evidence, retention time, and ion mobility information. Through tools such as MS²Rescore/TIMS²Rescore combined with SearchGUI & PeptideShaker, we aim to increase confident identifications in DDA and DIA workflows while keeping false discovery control central. Our goal is to recover reliable signal without compromising statistical confidence.</p>
   </section>
 
   <section class="research-section" id="metaproteomics" style="--accent:#2f8f6f">
@@ -76,7 +76,7 @@ toc: false
       <span class="research-num">03</span>
     </div>
     <h2 class="research-section-title">Metaproteomics</h2>
-    <p class="research-section-desc">Taxonomic and functional interpretation of complex microbial communities measured by mass spectrometry, with confidence estimates that hold up across thousands of species.</p>
+    <p class="research-section-desc">Metaproteomics asks which organisms are present in a microbial community, what they are doing, and how they are doing it and importantly how confidently this can be inferred from peptide evidence. This is difficult because many peptides are shared across related taxa, while many functions are distributed across complex and unevenly characterized microbial proteomes. We develop methods for taxonomic and functional interpretation that explicitly account for this ambiguity rather than hiding it. Tools such as Unipept and peptonizer 2000 help translate peptide-level evidence into interpretable community profiles. We want to make metaproteomics scalable, transparent, and statistically grounded, from small microbiome studies to analyses spanning thousands of species.</p>
   </section>
 
   <section class="research-section" id="fair-data-principles" style="--accent:#b0792a">
@@ -85,7 +85,7 @@ toc: false
       <span class="research-num">04</span>
     </div>
     <h2 class="research-section-title">FAIR data principles</h2>
-    <p class="research-section-desc">Metadata annotation and community standards that make proteomics data findable, accessible, interoperable, and reusable, and ready for machine learning. Well-described data is what makes large-scale reuse possible in the first place.</p>
+    <p class="research-section-desc">Public proteomics data only becomes scientifically reusable when it is described in a way that both people and machines can understand. We therefore work on metadata annotation, data standards, and community-facing tools that make proteomics data findable, accessible, interoperable, and reusable. Resources such as lesSDRF and annotation workflows around public repositories help turn deposited datasets into structured research objects that can be searched, compared, reprocessed, and used for machine learning. We want to move proteomics from data availability to data usability, where public datasets can support new questions beyond the study for which they were originally generated.</p>
   </section>
 
   <section class="research-section" id="reprocessing" style="--accent:#6a4c93">
@@ -94,7 +94,7 @@ toc: false
       <span class="research-num">05</span>
     </div>
     <h2 class="research-section-title">Reprocessing</h2>
-    <p class="research-section-desc">Large-scale orthogonal reanalysis of public proteomics data for tissue profiling, post-translational modification mapping, and biomarker discovery, extracting new biology from data that has already been collected.</p>
+    <p class="research-section-desc">Reprocessing brings our research lines together: peptide-property prediction improves how we model analyte behaviour, identification and rescoring software recover confident evidence from complex spectra, and FAIR annotation makes public datasets comparable at scale. We combine these developments to revisit existing proteomics data with new computational questions, extracting biological information that was not accessible in the original analysis. This includes large-scale tissue profiling, biomarker discovery, and the systematic recovery of previously missed post-translational modifications, as illustrated by Scop3PTM. Our aim is to make public proteomics data scientifically active beyond deposition, turning the vast amount of data that already exists into a continuing source of new biological insight.</p>
   </section>
 
 </div>
