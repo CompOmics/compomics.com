@@ -211,6 +211,11 @@ toc: false
       </button>
     </div>
   </div>
+
+  <div class="team-network-cta">
+    <p class="network-intro">Beyond the current team, CompOmics is part of a wider network of affiliated members, close collaborators, and former colleagues.</p>
+    <a href="network.html" class="network-btn"><i class="bi bi-people" aria-hidden="true"></i> Alumni &amp; collaborators</a>
+  </div>
 </section>
 
 <script>

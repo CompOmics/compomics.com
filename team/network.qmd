@@ -1,0 +1,127 @@
+---
+title: "Alumni & Collaborators"
+description: "Affiliated members, close collaborators, and the alumni and former colleagues of the CompOmics group at Ghent University and VIB."
+toc: false
+---
+
+```{=html}
+<div class="page-hero-band">
+  <img class="page-hero-img" src="../assets/frames/bg-2.jpg" alt="">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-kicker">People</div>
+    <h1 class="page-hero-title">Alumni &amp; Collaborators</h1>
+    <p class="page-hero-sub">The affiliated members, close collaborators, and former colleagues who have shaped CompOmics over the years.</p>
+  </div>
+</div>
+<script>
+(function () {
+  function alignHero() {
+    var ref = document.querySelector('.team-section-title');
+    var content = document.querySelector('.page-hero-content');
+    var band = document.querySelector('.page-hero-band');
+    if (!ref || !content || !band) return;
+    var offset = ref.getBoundingClientRect().left - band.getBoundingClientRect().left;
+    content.style.paddingLeft = Math.max(16, offset) + 'px';
+  }
+  document.addEventListener('DOMContentLoaded', alignHero);
+  window.addEventListener('resize', alignHero);
+})();
+</script>
+```
+
+```{=html}
+<section class="team-shell">
+  <div class="team-shell-intro">
+
+  <h3 class="team-section-title">Affiliated Members</h3>
+  <div class="network-chips network-chips-wide">
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Christophe Vanderaa</span>
+      <span class="network-chip-meta">Clement group, UGent, Belgium</span>
+    </div>
+  </div>
+
+  <h3 class="team-section-title">Close Collaborators</h3>
+  <div class="network-chips network-chips-wide">
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Harald Barsnes</span>
+      <span class="network-chip-meta">University of Bergen, Norway</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Marie Brunet</span>
+      <span class="network-chip-meta">Université de Sherbrooke, Canada</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Christine Carapito</span>
+      <span class="network-chip-meta">Université de Strasbourg, France</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Lieven Clement</span>
+      <span class="network-chip-meta">UGent, Belgium</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Maarten Dhaenens</span>
+      <span class="network-chip-meta">UGent, Belgium</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Bart Mesuere</span>
+      <span class="network-chip-meta">UGent, Belgium</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Thilo Muth</span>
+      <span class="network-chip-meta">Robert Koch Institute, Berlin, Germany</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Magnus Palmblad</span>
+      <span class="network-chip-meta">LUMC, The Netherlands</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Marc Vaudel</span>
+      <span class="network-chip-meta">University of Bergen, Norway</span>
+    </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Dr. Wim Vranken</span>
+      <span class="network-chip-meta">VUB, Belgium</span>
+    </div>
+  </div>
+
+  <h3 class="team-section-title">Alumni &amp; Former Colleagues</h3>
+  <div class="network-chips">
+    <span class="network-chip"><span class="network-chip-name">Dr. Andrea Argentini</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Niklaas Colaert</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Sven Degroeve</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Nina Demeulemeester</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Joe Foster</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Giulia Gonnelli</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Surya Gupta</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Kenny Helsens</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Tanja Holstein</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Paola Masuzzo</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Sami Naji</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Elvis Ndah</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Gwendolien Sergeant</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Ana Silvia C. Silva</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Elien Vandermarliere</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Kenneth Verheggen</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Tessa Vermeire</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Pieter-Jan Volders</span></span>
+    <span class="network-chip"><span class="network-chip-name">Dr. Şule Yılmaz</span></span>
+    <span class="network-chip"><span class="network-chip-name">Genet Abay Shiferaw</span></span>
+    <span class="network-chip"><span class="network-chip-name">Iain Buchanan</span></span>
+    <span class="network-chip"><span class="network-chip-name">Nicolas Housset</span></span>
+    <span class="network-chip"><span class="network-chip-name">Niels Hulstaert</span></span>
+    <span class="network-chip"><span class="network-chip-name">Pieter Kelchtermans</span></span>
+    <span class="network-chip"><span class="network-chip-name">Davy Maddelein</span></span>
+    <span class="network-chip"><span class="network-chip-name">Jonas Segaert</span></span>
+    <span class="network-chip"><span class="network-chip-name">Adriaan Sticker</span></span>
+    <span class="network-chip"><span class="network-chip-name">Demet Turan</span></span>
+  </div>
+
+  <div class="team-network-cta">
+    <a href="index.html" class="network-btn network-btn-ghost"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to the team</a>
+  </div>
+
+  </div>
+</section>
+```
