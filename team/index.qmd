@@ -211,6 +211,11 @@ toc: false
       </button>
     </div>
   </div>
+
+  <div class="team-network-cta">
+    <p class="network-intro">Beyond the current team, CompOmics is part of a wider network of affiliated members, close collaborators, and former colleagues.</p>
+    <a href="network.html" class="network-btn"><i class="bi bi-people" aria-hidden="true"></i> Alumni &amp; collaborators</a>
+  </div>
 </section>
 
 <script>
@@ -301,7 +306,15 @@ toc: false
     alex: {
       title: 'Alexander Kensert',
       role: 'Postdoctoral Researcher',
-      email: 'alexander.kensert@ugent.be'
+      email: 'alexander.kensert@ugent.be',
+      about: 'Alexander obtained his Master\'s degree in Pharmaceutical Modelling from Uppsala University in 2018. He then moved to Leuven to pursue a PhD in Pharmaceutical and Engineering Sciences under the joint supervision of Prof. Deirdre Cabooter (KU Leuven) and Prof. Gert Desmet (Vrije Universiteit Brussel), focusing on deep learning applications in chromatography. After completing his PhD in 2022, he continued as a postdoctoral researcher with Prof. Cabooter to further expand on this work. In 2023, Alexander joined VIB-UGent as a postdoctoral researcher under Prof. Lennart Martens, where he currently develops deep learning applications for proteomics and chromatography.',
+      currentWork: 'Alexander\'s research primarily focuses on two key projects: (1) developing graph neural network (GNN) models to predict the chromatographic retention time of peptides; (2) building GNN-powered software solutions in collaboration with Johnson & Johnson to improve method development and optimization in chromatography. To streamline the development and implementation of these GNN models, Alexander is creating MolCraft, an open-source Python package designed to simplify the training, evaluation, and inference of GNNs in chemistry-related projects.',
+      publications: [
+        { title: 'Transfer Learning with Deep Convolutional Neural Networks for Classifying Cellular Morphological Changes', url: 'https://doi.org/10.1177/2472555218818756', venue: 'SLAS Discovery · 2019' },
+        { title: 'Graph Convolutional Networks for Improved Prediction and Interpretability of Chromatographic Retention Data', url: 'https://doi.org/10.1021/acs.analchem.1c02988', venue: 'Analytical Chemistry · 2021' },
+        { title: 'A hands-on tutorial on quantitative structure-activity relationships using fully expressive graph neural networks', url: 'https://doi.org/10.1016/j.aca.2024.343046', venue: 'Analytica Chimica Acta · 2024' },
+        { title: 'Deep reinforcement learning for the direct optimization of gradient separations in liquid chromatography', url: 'https://doi.org/10.1016/j.chroma.2024.464768', venue: 'Journal of Chromatography A · 2024' }
+      ]
     },
     enrico: {
       title: 'Enrico Massignani',
