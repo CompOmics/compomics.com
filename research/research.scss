@@ -1,5 +1,11 @@
 /*-- scss:rules --*/
 
+// smooth in-page scrolling for the spectrum labels (and any anchor jump);
+// disabled automatically when the visitor prefers reduced motion
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 // ── Research landing header (kept in line with the other page headers) ─────────
 .research-header {
   max-width: 1120px;
@@ -35,8 +41,6 @@
   text-align: justify;
   hyphens: auto;
 }
-// expanded "about us" vision copy below the sub — greyed, smaller, aligned to
-// the header sub so it stays within the same column
 .research-header-text {
   color: $muted;
   font-family: $font-family-sans-serif;
@@ -205,7 +209,7 @@
 
 .research-section-desc {
   font-family: $font-family-sans-serif;
-  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  font-size: clamp(1.0rem, 1.5vw, 1.3rem);
   line-height: 1.72;
   color: $ink-soft;
   margin: 0;

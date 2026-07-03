@@ -98,18 +98,9 @@ toc: false
   // Draw each section's peak up as it scrolls into view. Purely decorative,
   // so a reduced-motion preference just renders the final state immediately.
   (function () {
+    // Smooth scrolling for the spectrum labels is handled in CSS via
+    // `html { scroll-behavior: smooth }`, so native #anchor navigation is enough.
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // spectrum labels scroll to their section (smooth unless reduced-motion)
-    document.querySelectorAll('.research-spectrum-nav a[href^="#"]').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var target = document.getElementById(a.getAttribute('href').slice(1));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
-      });
-    });
 
     var sections = document.querySelectorAll('.research-sections .research-section');
     if (!sections.length) return;
