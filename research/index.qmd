@@ -9,67 +9,55 @@ toc: false
   <div class="research-header-kicker">What we do</div>
   <h1 class="research-header-title">Research</h1>
   <p class="research-header-sub">CompOmics develops computational methods and software across the full proteomics workflow, from predicting peptide behaviour to making public data reusable at scale.</p>
+  <p class="research-header-text">Mass spectrometry can now measure proteins at a depth and speed that outpaces our ability to interpret the data it produces. Our group works to close that gap: we build open-source tools, machine learning models, and data standards that make each step of the proteomics workflow faster, more accurate, and more reproducible, and we keep the methods and the data open to the whole community.</p>
 </header>
 
-<div class="research-grid">
+<div class="research-sections">
 
-  <article class="research-card" style="--accent:#1f5f8f">
-    <div class="research-num">01</div>
-    <span class="research-icon"><i class="bi bi-graph-up-arrow"></i></span>
-    <div class="research-card-title">Analyte prediction</div>
-    <p class="research-card-desc">Deep learning models that predict how peptides behave in the mass spectrometer, from fragmentation intensities to retention time and ion mobility.</p>
-    <div class="research-tags">
-      <span class="research-tag">DeepLC</span>
-      <span class="research-tag">MS²PIP</span>
-      <span class="research-tag">IM2Deep</span>
-      <span class="research-tag">IM2Fly</span>
+  <section class="research-section" style="--accent:#1f5f8f">
+    <div class="research-section-top">
+      <span class="research-num">01</span>
+      <span class="research-icon"><i class="bi bi-graph-up-arrow"></i></span>
     </div>
-  </article>
+    <h2 class="research-section-title">Analyte prediction</h2>
+    <p class="research-section-desc">Deep learning models that predict how a peptide behaves in the mass spectrometer, from fragment ion intensities to retention time and ion mobility. Turning a sequence into its expected signal underpins spectral library generation, targeted method design, and identification rescoring.</p>
+  </section>
 
-  <article class="research-card" style="--accent:#c5392b">
-    <div class="research-num">02</div>
-    <span class="research-icon"><i class="bi bi-fingerprint"></i></span>
-    <div class="research-card-title">Identification</div>
-    <p class="research-card-desc">Search engine post-processing and data-driven rescoring that push confident peptide and protein identification in both DDA and DIA workflows.</p>
-    <div class="research-tags">
-      <span class="research-tag">MS²Rescore</span>
-      <span class="research-tag">TIMS²Rescore</span>
-      <span class="research-tag">Mumble</span>
+  <section class="research-section" style="--accent:#c5392b">
+    <div class="research-section-top">
+      <span class="research-num">02</span>
+      <span class="research-icon"><i class="bi bi-fingerprint"></i></span>
     </div>
-  </article>
+    <h2 class="research-section-title">Identification</h2>
+    <p class="research-section-desc">Search engine post-processing and data-driven rescoring that increase confident peptide and protein identification in both DDA and DIA workflows, recovering signal that a first-pass search leaves unused.</p>
+  </section>
 
-  <article class="research-card" style="--accent:#2f8f6f">
-    <div class="research-num">03</div>
-    <span class="research-icon"><i class="bi bi-diagram-3"></i></span>
-    <div class="research-card-title">Metaproteomics</div>
-    <p class="research-card-desc">Taxonomic and functional interpretation of complex microbial communities measured by mass spectrometry.</p>
-    <div class="research-tags">
-      <span class="research-tag">Unipept</span>
-      <span class="research-tag">Peptonizer</span>
+  <section class="research-section" style="--accent:#2f8f6f">
+    <div class="research-section-top">
+      <span class="research-num">03</span>
+      <span class="research-icon"><i class="bi bi-diagram-3"></i></span>
     </div>
-  </article>
+    <h2 class="research-section-title">Metaproteomics</h2>
+    <p class="research-section-desc">Taxonomic and functional interpretation of complex microbial communities measured by mass spectrometry, with confidence estimates that hold up across thousands of species.</p>
+  </section>
 
-  <article class="research-card" style="--accent:#b0792a">
-    <div class="research-num">04</div>
-    <span class="research-icon"><i class="bi bi-database-check"></i></span>
-    <div class="research-card-title">FAIR data principles</div>
-    <p class="research-card-desc">Metadata annotation and community standards that make proteomics data findable, accessible, interoperable, and reusable, and ready for machine learning.</p>
-    <div class="research-tags">
-      <span class="research-tag">lesSDRF</span>
+  <section class="research-section" style="--accent:#b0792a">
+    <div class="research-section-top">
+      <span class="research-num">04</span>
+      <span class="research-icon"><i class="bi bi-database-check"></i></span>
     </div>
-  </article>
+    <h2 class="research-section-title">FAIR data principles</h2>
+    <p class="research-section-desc">Metadata annotation and community standards that make proteomics data findable, accessible, interoperable, and reusable, and ready for machine learning. Well-described data is what makes large-scale reuse possible in the first place.</p>
+  </section>
 
-  <article class="research-card" style="--accent:#6a4c93">
-    <div class="research-num">05</div>
-    <span class="research-icon"><i class="bi bi-arrow-repeat"></i></span>
-    <div class="research-card-title">Reprocessing</div>
-    <p class="research-card-desc">Large-scale orthogonal reanalysis of public proteomics data for tissue profiling, PTM mapping, and biomarker discovery.</p>
-    <div class="research-tags">
-      <span class="research-tag">MLMarker</span>
-      <span class="research-tag">ModPA</span>
-      <span class="research-tag">Scop3P</span>
+  <section class="research-section" style="--accent:#6a4c93">
+    <div class="research-section-top">
+      <span class="research-num">05</span>
+      <span class="research-icon"><i class="bi bi-arrow-repeat"></i></span>
     </div>
-  </article>
+    <h2 class="research-section-title">Reprocessing</h2>
+    <p class="research-section-desc">Large-scale orthogonal reanalysis of public proteomics data for tissue profiling, post-translational modification mapping, and biomarker discovery, extracting new biology from data that has already been collected.</p>
+  </section>
 
 </div>
 ```
