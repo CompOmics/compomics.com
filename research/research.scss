@@ -6,12 +6,56 @@
   html { scroll-behavior: smooth; }
 }
 
-// ── Research landing header (kept in line with the other page headers) ─────────
+// ── Research landing: intro + spectrum fill the first screen, first section
+//    sits just below the fold. min-height (not height) so it grows on short
+//    viewports instead of clipping. svh with a vh fallback for mobile bars. ──
 .research-header {
+  position: relative;
   max-width: 1120px;
-  margin: 1.5rem auto 2.5rem;
-  padding: 0 1.5rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  min-height: calc(100vh - 3.75rem);   // fallback
+  min-height: calc(100svh - 3.75rem);  // ~navbar height
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: safe center; // never clip the top when content is taller
+
+  // short viewports: trim the spectrum and padding so intro + spectrum still fit
+  @media (max-height: 780px) {
+    padding-bottom: 3rem;
+    .research-spectrum { margin-top: 1.6rem; }
+    .research-spectrum svg { max-height: 200px; }
+  }
 }
+
+// discreet cue that there is more below the landing
+.research-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  color: $muted;
+  text-decoration: none;
+  font-family: $font-family-monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: color .15s ease;
+
+  i {
+    font-size: 1.1rem;
+    animation: research-cue-bob 1.8s ease-in-out infinite;
+  }
+  &:hover,
+  &:focus-visible { color: $primary; }
+}
+@keyframes research-cue-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 .research-header-kicker {
   font-family: $font-family-monospace;
   font-size: .78rem;
@@ -24,7 +68,7 @@
 .research-header-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
   line-height: 1;
   letter-spacing: -0.02em;
   color: $ink;
@@ -32,20 +76,22 @@
   padding: 0;
   border: none;
 }
+// lead paragraph: one step above body
 .research-header-sub {
   color: $ink-soft;
-  font-size: clamp(1.02rem, 1.9vw, 1.22rem);
-  line-height: 1.7;
+  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
   margin: .95rem 0 0;
   max-width: 42rem;
   text-align: justify;
   hyphens: auto;
 }
+// body copy: shares one size across the whole page (see .research-section-desc)
 .research-header-text {
   color: $muted;
   font-family: $font-family-sans-serif;
-  font-size: clamp(.9rem, 1.4vw, 1rem);
-  line-height: 1.65;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
   margin: 1.1rem 0 0;
   max-width: 42rem;
   text-align: justify;
@@ -61,7 +107,7 @@
     display: block;
     width: 100%;
     height: auto;
-    max-height: 224px;
+    max-height: 300px;
     overflow: visible;
   }
 
@@ -193,27 +239,29 @@
     transform: scaleY(1);
     opacity: 1;
   }
+  .research-scroll-cue i { animation: none; }
 }
 
 .research-section-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(1.9rem, 4vw, 2.7rem);
-  line-height: 1.05;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: $ink;
-  margin: 0 0 1rem;
+  margin: 0 0 .8rem;
   padding: 0;
   border: none;
 }
 
+// body copy: identical size to .research-header-text so all prose matches
 .research-section-desc {
   font-family: $font-family-sans-serif;
-  font-size: clamp(1.0rem, 1.5vw, 1.3rem);
-  line-height: 1.72;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
   color: $ink-soft;
   margin: 0;
-  max-width: 68ch;
+  max-width: 42rem; // same reading measure as the header paragraphs
   text-align: justify;
   hyphens: auto;
 }

@@ -43,6 +43,11 @@ toc: false
       <a class="rs-line" style="--accent:#6a4c93; --i:4" href="#reprocessing">Reprocessing</a>
     </nav>
   </figure>
+
+  <a class="research-scroll-cue" href="#analyte-prediction" aria-label="Scroll to the research lines">
+    <span>Explore</span>
+    <i class="bi bi-chevron-down" aria-hidden="true"></i>
+  </a>
 </header>
 
 <div class="research-sections">
