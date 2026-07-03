@@ -2,7 +2,7 @@
 # To Do
 
 - [x] Add tutorials button to landing page (Robbe)
-- [] Extend research vision text, remove tool names (Arthur)
+- [x] Extend research vision text, remove tool names (Arthur)
 - [x] Add Ralf to Rusteomics (Robbe)
 - [x] Add MZPEAK to community projects (Robbe)
 - [x] Add E. coli atlas to tools or community projects (ask Caro) (Robbe)
@@ -14,3 +14,4 @@
 - [x] Update tutorial links with tools (Robbe)
 - [] Maybe change jupyter notebook color? (Robbe)
 - [] Website deployment issue to have a python environment (Arthur)
+- [] Unify the overall view of each separate part of the website. 

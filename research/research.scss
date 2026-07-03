@@ -1,11 +1,61 @@
 /*-- scss:rules --*/
 
-// ── Research landing ─────────────────────────────────────────────────────────
-.research-header {
-  max-width: 1120px;
-  margin: 1.5rem auto 2.5rem;
-  padding: 0 1.5rem;
+// smooth in-page scrolling for the spectrum labels (and any anchor jump);
+// disabled automatically when the visitor prefers reduced motion
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
+
+// ── Research landing: intro + spectrum fill the first screen, first section
+//    sits just below the fold. min-height (not height) so it grows on short
+//    viewports instead of clipping. svh with a vh fallback for mobile bars. ──
+.research-header {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  min-height: calc(100vh - 3.75rem);   // fallback
+  min-height: calc(100svh - 3.75rem);  // ~navbar height
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: safe center; // never clip the top when content is taller
+
+  // short viewports: trim the spectrum and padding so intro + spectrum still fit
+  @media (max-height: 780px) {
+    padding-bottom: 3rem;
+    .research-spectrum { margin-top: 1.6rem; }
+    .research-spectrum svg { max-height: 200px; }
+  }
+}
+
+// discreet cue that there is more below the landing
+.research-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  color: $muted;
+  text-decoration: none;
+  font-family: $font-family-monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: color .15s ease;
+
+  i {
+    font-size: 1.1rem;
+    animation: research-cue-bob 1.8s ease-in-out infinite;
+  }
+  &:hover,
+  &:focus-visible { color: $primary; }
+}
+@keyframes research-cue-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 .research-header-kicker {
   font-family: $font-family-monospace;
   font-size: .78rem;
@@ -18,7 +68,7 @@
 .research-header-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
   line-height: 1;
   letter-spacing: -0.02em;
   color: $ink;
@@ -26,115 +76,192 @@
   padding: 0;
   border: none;
 }
+// lead paragraph: one step above body
 .research-header-sub {
   color: $ink-soft;
-  font-size: clamp(.98rem, 1.8vw, 1.15rem);
-  margin: .85rem 0 0;
+  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  margin: .95rem 0 0;
+  max-width: 42rem;
+  text-align: justify;
+  hyphens: auto;
+}
+// body copy: shares one size across the whole page (see .research-section-desc)
+.research-header-text {
+  color: $muted;
+  font-family: $font-family-sans-serif;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+  margin: 1.1rem 0 0;
+  max-width: 42rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
-.research-grid {
-  // stay within the same column as the title, no full-bleed breakout
-  max-width: 1120px;
-  margin: 0 auto 2rem;
-  padding: 0 1.5rem;
+// ── Signature: five research lines drawn as a five-channel mass spectrum ───────
+.research-spectrum {
+  margin: 2.4rem 0 0;
+  padding: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow: visible;
+  }
+
+  .spec-base { stroke: $line; stroke-width: 1; }
+  .spec-minor rect { fill: $line; }
+
+  // each accent peak grows up from the baseline on load, staggered by --i
+  .spec-peak {
+    rect {
+      fill: currentColor;
+      transform-box: fill-box;
+      transform-origin: bottom;
+      transform: scaleY(0);
+      animation: research-peak-rise .7s cubic-bezier(.2, .8, .25, 1) forwards;
+      animation-delay: calc(.12s * var(--i) + .1s);
+    }
+    text {
+      fill: currentColor;
+      font-family: $font-family-monospace;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-anchor: middle;
+      opacity: 0;
+      animation: research-peak-label .5s ease forwards;
+      animation-delay: calc(.12s * var(--i) + .45s);
+    }
+  }
+}
+
+// clickable line titles under each peak, aligned to the peaks via a 5-col grid
+.research-spectrum-nav {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .4rem;
+  margin-top: .55rem;
+}
+.rs-line {
+  color: var(--accent);
+  font-family: $font-family-sans-serif;
+  font-size: clamp(.68rem, 1.5vw, .84rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 .2rem;
+  opacity: 0;
+  animation: research-peak-label .5s ease forwards;
+  animation-delay: calc(.12s * var(--i) + .5s);
+  transition: color .15s ease;
+
+  &:hover,
+  &:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 }
 
-.research-card {
+@keyframes research-peak-rise  { to { transform: scaleY(1); } }
+@keyframes research-peak-label { to { opacity: 1; } }
+
+// ── Research sections: left-aligned, per-section accent peak, hairline between ─
+.research-sections {
+  max-width: 820px;
+  margin: 3rem auto 3.5rem;
+  padding: 0 1.5rem;
+}
+
+.research-section {
   --accent: #{$primary};
-  position: relative;
+  padding: 3.25rem 0;
+  scroll-margin-top: 5.5rem; // clear the fixed navbar when jumped to from a label
+
+  // horizontal divider between sections (not before the first one)
+  & + .research-section {
+    border-top: 1px solid $line;
+  }
+
+  @media (max-width: 620px) { padding: 2.5rem 0; }
+}
+
+// accent peak + number: this section's mark on the spectrum, left-aligned
+.research-section-top {
   display: flex;
-  flex-direction: column;
-  padding: 2rem 1.9rem 1.7rem;
-  min-height: 270px;
-  // $cream-3 sits a step above the page background in both themes, so cards
-  // stay clearly separated (in dark mode $cream-2 was nearly the page colour)
-  background: $cream-3;
-  border: 1px solid $line;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  align-items: flex-end;
+  gap: .7rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
 }
 
-// top accent bar, wipes in on hover
-.research-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .22s ease;
+.research-peak {
+  display: inline-flex;
+
+  svg {
+    display: block;
+    width: 30px;
+    height: 56px;
+    overflow: visible;
+  }
+
+  .peak-base { stroke: $line; stroke-width: 1; }
+  .peak-bar {
+    fill: currentColor;
+    transform-box: fill-box;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform .7s cubic-bezier(.2, .8, .25, 1);
+  }
 }
 
-.research-card:hover {
-  transform: translateY(-4px);
-  background: $surface-hover;
-  border-color: color-mix(in srgb, var(--accent) 45%, $line);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .10);
-}
-.research-card:hover::before { transform: scaleX(1); }
+// peak draws up once the section scrolls into view (class added by inline JS)
+.research-section.is-revealed .peak-bar { transform: scaleY(1); }
 
 .research-num {
   font-family: $font-family-monospace;
-  font-size: .82rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .1em;
-  color: color-mix(in srgb, var(--accent) 60%, transparent);
-  margin-bottom: 1rem;
-}
-
-.research-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 13px;
-  margin-bottom: 1.1rem;
-  font-size: 1.55rem;
+  letter-spacing: .14em;
   color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 11%, transparent);
+  line-height: 1;
+  padding-bottom: .1rem;
 }
 
-.research-card-title {
+// respect reduced-motion: render peaks at full height, no animation
+@media (prefers-reduced-motion: reduce) {
+  .research-spectrum .spec-peak rect,
+  .research-spectrum .spec-peak text,
+  .rs-line,
+  .research-peak .peak-bar {
+    animation: none;
+    transition: none;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  .research-scroll-cue i { animation: none; }
+}
+
+.research-section-title {
   font-family: $font-family-heading;
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   color: $ink;
-  margin: 0 0 .55rem;
+  margin: 0 0 .8rem;
   padding: 0;
   border: none;
 }
 
-.research-card-desc {
+// body copy: identical size to .research-header-text so all prose matches
+.research-section-desc {
   font-family: $font-family-sans-serif;
-  font-size: .95rem;
-  line-height: 1.6;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
   color: $ink-soft;
-  margin: 0 0 1.3rem;
-}
-
-.research-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-  margin-top: auto;
-}
-
-.research-tag {
-  font-family: $font-family-monospace;
-  font-size: .72rem;
-  font-weight: 400;
-  letter-spacing: .01em;
-  padding: .26rem .6rem;
-  border-radius: 999px;
-  color: $ink-soft;
-  background: $cream-2;
-  border: 1px solid $line;
+  margin: 0;
+  max-width: 42rem; // same reading measure as the header paragraphs
+  text-align: justify;
+  hyphens: auto;
 }
