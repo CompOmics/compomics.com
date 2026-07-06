@@ -1,10 +1,18 @@
 ---
 title: "Tutorials"
 description: "Hands-on tutorials for CompOmics proteomics tools and workflows."
+toc: false
 listing:
   contents: "posts/*.qmd"
   type: default
-  fields: [date, title, description, categories]
-  categories: true
+  fields: [date, title, description]
   sort: "date desc"
 ---
+
+```{=html}
+<header class="tut-head">
+  <div class="tut-head-kicker">Learn</div>
+  <h1 class="tut-head-title">Tutorials</h1>
+  <p class="tut-head-sub">Hands-on, step-by-step guides and walkthroughs for CompOmics proteomics tools and workflows. Each tutorial pairs practical examples with the underlying methods.</p>
+</header>
+```
