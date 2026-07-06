@@ -26,7 +26,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install Python dependencies
-        run: pip install requests PyYAML nbconvert
+        run: pip install requests PyYAML nbconvert jupyter ipykernel
+
+      - name: Register Jupyter kernel
+        run: python -m ipykernel install --user --name python3
 
       - name: Fetch publications
         run: python publications/fetch_publications.py
