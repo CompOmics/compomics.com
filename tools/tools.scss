@@ -11,6 +11,10 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 /*-- scss:rules --*/
 
+// hide Quarto's default title block — the page renders its own .tools-head
+// (matches publications/tutorials/team, so the header sits at the same height)
+#title-block-header { display: none !important; }
+
 :root {
   --cat-prediction:     #{$cat-prediction};
   --cat-identification: #{$cat-identification};
