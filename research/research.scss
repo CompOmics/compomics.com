@@ -16,14 +16,17 @@
   // no horizontal padding: sit flush with the Quarto content column so the
   // left/right edges line up with the tools/publications/tutorials headers.
   // (mobile gutters still come from the column itself)
-  padding: 1.5rem 0 4rem;
+  // 0.5rem top matches the .tools-head/.pub-head/.tut-head margin so the title
+  // starts at the same height as the other pages (not lower)
+  padding: 0.5rem 0 4rem;
   // subtract navbar + room for the scroll cue so the cue never clips the fold
   min-height: calc(100vh - 6rem);   // fallback
   min-height: calc(100svh - 6rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-content: safe center; // never clip the top when content is taller
+  // top-align the content so the header sits at the same height as the listing
+  // pages regardless of viewport height; the EXPLORE cue stays pinned at bottom
+  justify-content: flex-start;
 
   // short viewports (incl. common 768–800px laptops): trim the spectrum and
   // padding so intro + spectrum + the EXPLORE cue still fit above the fold
