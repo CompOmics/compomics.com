@@ -105,6 +105,7 @@
 
 // ── Signature: five research lines drawn as a five-channel mass spectrum ───────
 .research-spectrum {
+  max-width: 42rem;
   margin: 2.4rem 0 0;
   padding: 0;
 
@@ -114,7 +115,6 @@
     height: auto;
     max-height: 300px;
     overflow: visible;
-    align-self: center;
   }
 
   .spec-base { stroke: $line; stroke-width: 1; }
