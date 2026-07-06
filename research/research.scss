@@ -13,16 +13,24 @@
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 4rem;
-  min-height: calc(100vh - 3.75rem);   // fallback
-  min-height: calc(100svh - 3.75rem);  // ~navbar height
+  // no horizontal padding: sit flush with the Quarto content column so the
+  // left/right edges line up with the tools/publications/tutorials headers.
+  // (mobile gutters still come from the column itself)
+  // 0.5rem top matches the .tools-head/.pub-head/.tut-head margin so the title
+  // starts at the same height as the other pages (not lower)
+  padding: 0.5rem 0 4rem;
+  // subtract navbar + room for the scroll cue so the cue never clips the fold
+  min-height: calc(100vh - 6rem);   // fallback
+  min-height: calc(100svh - 6rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-content: safe center; // never clip the top when content is taller
+  // top-align the content so the header sits at the same height as the listing
+  // pages regardless of viewport height; the EXPLORE cue stays pinned at bottom
+  justify-content: flex-start;
 
-  // short viewports: trim the spectrum and padding so intro + spectrum still fit
-  @media (max-height: 780px) {
+  // short viewports (incl. common 768–800px laptops): trim the spectrum and
+  // padding so intro + spectrum + the EXPLORE cue still fit above the fold
+  @media (max-height: 860px) {
     padding-bottom: 3rem;
     .research-spectrum { margin-top: 1.6rem; }
     .research-spectrum svg { max-height: 200px; }
@@ -100,6 +108,7 @@
 
 // ── Signature: five research lines drawn as a five-channel mass spectrum ───────
 .research-spectrum {
+  max-width: 42rem;
   margin: 2.4rem 0 0;
   padding: 0;
 
@@ -170,7 +179,7 @@
 .research-sections {
   max-width: 820px;
   margin: 3rem auto 3.5rem;
-  padding: 0 1.5rem;
+  padding: 0; // align with the content column edge (gutters from the column)
 }
 
 .research-section {

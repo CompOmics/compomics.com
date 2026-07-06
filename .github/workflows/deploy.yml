@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # rebuild every Monday at 06:00 UTC to refresh publications
+    # - cron: "0 6 * * 1"
+    # rebuild on the 1st of every month at 06:00 UTC to refresh publications
+    - cron: "0 6 1 * *"
 
 permissions:
   contents: read
@@ -26,7 +31,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install Python dependencies
-        run: pip install requests PyYAML nbconvert
+        run: pip install requests PyYAML nbconvert jupyter ipykernel
+
+      - name: Register Jupyter kernel
+        run: python -m ipykernel install --user --name python3
 
       - name: Fetch publications
         run: python publications/fetch_publications.py

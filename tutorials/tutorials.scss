@@ -1,0 +1,43 @@
+/*-- scss:rules --*/
+
+// Tutorials page — matches the tools/publications/team header language.
+// Loaded site-wide via _quarto.yml (same pattern as publications/publications.scss),
+// but every selector is scoped to .tut-* so nothing leaks to other pages.
+
+#title-block-header { display: none !important; }
+
+// ── Page header (mirrors .pub-head / .tools-head) ────────────────────────────
+.tut-head {
+  margin: 0.5rem 0 2rem;
+}
+
+.tut-head-kicker {
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: 0.55rem;
+}
+
+.tut-head-title {
+  font-family: $font-family-heading;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  color: $ink;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+  padding: 0;
+  border: none;
+}
+
+.tut-head-sub {
+  font-family: $font-family-sans-serif;
+  font-size: 1.02rem;
+  color: $ink-soft;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin: 0;
+}

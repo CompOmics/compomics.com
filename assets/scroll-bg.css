@@ -443,6 +443,12 @@ body { background: transparent !important; }
   transition-delay: .18s;
 }
 
+.cmp-scene-tools.is-active .cmp-tiles-row .nav-tile:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .31s;
+}
+
 .cmp-tiles-row .nav-tile .nav-tile-title {
   color: #f5f3eb;
 }
