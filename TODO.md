@@ -12,6 +12,13 @@
 - [x] Former collaborators and alumni (Xuxa)
 - [x] Check colorscheme linkedin embedding (Robbe)
 - [x] Update tutorial links with tools (Robbe)
-- [] Maybe change jupyter notebook color? (Robbe)
+- [x] Maybe change jupyter notebook color? (Robbe)
 - [x] Website deployment issue to have a python environment (Arthur)
 - [x] Unify the overall view of each separate part of the website. 
+
+## Deploy to www.compomics.com (after site checked)
+- [] Add root `CNAME` file containing `www.compomics.com` + list it under project resources in `_quarto.yml`
+- [] Set `site-url: https://www.compomics.com` in `_quarto.yml`
+- [] GitHub repo Settings → Pages: set custom domain `www.compomics.com`, then enable Enforce HTTPS
+- [] DNS at registrar: `www` CNAME → `compomics.github.io`; apex `compomics.com` → GitHub Pages A records (185.199.108-111.153)
+- [] Flip DNS last (cuts over from old site, no fast rollback)
