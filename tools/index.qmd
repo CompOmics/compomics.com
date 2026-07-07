@@ -220,8 +220,17 @@ toc: false
       devs: ['enrico']
     },
     {
+      name: 'PTMVision', cat: 'biological', icon: 'bi-eye', logo: 'ptmvision.png',
+      desc: 'Interactive web platform for exploratory visual analysis of post-translational modifications from mass spectrometry data.',
+      links: {
+        web: 'https://ptmvision-tuevis.cs.uni-tuebingen.de/',
+        paper: 'https://doi.org/10.1021/acs.jproteome.4c00679',
+      },
+      devs: ['caro']
+    },
+    {
       name: 'E. coli PeptideAtlas Build', cat: 'biological', icon: 'bi-virus', logo: 'bacterium.png',
-      desc:'Characterizing the observed Eschericia coli pan-proteome and its post-translational modifications.',
+      desc:'Characterizing the observed Escherichia coli pan-proteome and its post-translational modifications.',
       links: {
         web: 'https://peptideatlas.org/builds/ecoli/',
         paper: 'https://doi.org/10.1021/acs.jproteome.5c00902'
