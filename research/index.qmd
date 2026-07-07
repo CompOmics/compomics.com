@@ -16,24 +16,32 @@ toc: false
        align exactly under them via a five-column grid. -->
   <figure class="research-spectrum">
     <svg viewBox="0 0 960 224" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-      <line class="spec-base" x1="24" y1="180" x2="936" y2="180" />
+      <!-- axes: intensity (y) vs m/z (x), so the motif reads as a mass spectrum -->
+      <line class="spec-axis" x1="24" y1="16" x2="24" y2="180" />
+      <polygon class="spec-axis-arrow" points="24,12 20,20 28,20" />
+      <line class="spec-base" x1="24" y1="180" x2="940" y2="180" />
+      <polygon class="spec-axis-arrow" points="944,180 936,176 936,184" />
+      <text class="spec-axis-label" x="486" y="210" text-anchor="middle">m/z</text>
+      <text class="spec-axis-label" x="13" y="98" text-anchor="middle" transform="rotate(-90 13 98)">Intensity</text>
 
-      <!-- faint minor peaks: spectrum texture, never animated -->
+      <!-- faint minor peaks: chaotic spectrum texture (never animated). Greyed
+           out, so some can out-tower the accent peaks without stealing focus. -->
       <g class="spec-minor">
-        <rect x="60"  y="158" width="3" height="22" /><rect x="205" y="166" width="3" height="14" />
-        <rect x="250" y="150" width="3" height="30" /><rect x="378" y="162" width="3" height="18" />
-        <rect x="412" y="170" width="3" height="10" /><rect x="540" y="154" width="3" height="26" />
-        <rect x="566" y="168" width="3" height="12" /><rect x="720" y="164" width="3" height="16" />
-        <rect x="762" y="152" width="3" height="28" /><rect x="884" y="166" width="3" height="14" />
-        <rect x="912" y="160" width="3" height="20" />
+        <rect x="28" y="171" width="2" height="9" /><rect x="36" y="140" width="3" height="40" /><rect x="43" y="174" width="2" height="6" /><rect x="55" y="156" width="3" height="24" /><rect x="62" y="170" width="2" height="10" /><rect x="72" y="110" width="3" height="70" /><rect x="80" y="175" width="2" height="5" />
+        <rect x="104" y="168" width="2" height="12" /><rect x="112" y="125" width="3" height="55" /><rect x="120" y="173" width="2" height="7" /><rect x="129" y="164" width="2" height="16" /><rect x="138" y="85" width="3" height="95" /><rect x="147" y="174" width="2" height="6" /><rect x="156" y="167" width="2" height="13" /><rect x="166" y="160" width="3" height="20" /><rect x="176" y="171" width="2" height="9" /><rect x="186" y="45" width="3" height="135" /><rect x="196" y="173" width="2" height="7" /><rect x="206" y="163" width="2" height="17" /><rect x="217" y="169" width="2" height="11" /><rect x="228" y="174" width="2" height="6" /><rect x="240" y="132" width="3" height="48" /><rect x="251" y="171" width="2" height="9" /><rect x="262" y="166" width="2" height="14" /><rect x="273" y="173" width="2" height="7" />
+        <rect x="298" y="167" width="2" height="13" /><rect x="308" y="120" width="3" height="60" /><rect x="318" y="172" width="2" height="8" /><rect x="329" y="164" width="2" height="16" /><rect x="339" y="35" width="3" height="145" /><rect x="350" y="173" width="2" height="7" /><rect x="360" y="168" width="2" height="12" /><rect x="371" y="150" width="3" height="30" /><rect x="382" y="174" width="2" height="6" /><rect x="393" y="165" width="2" height="15" /><rect x="404" y="142" width="3" height="38" /><rect x="415" y="171" width="2" height="9" /><rect x="427" y="163" width="2" height="17" /><rect x="438" y="173" width="2" height="7" /><rect x="450" y="160" width="3" height="20" /><rect x="461" y="170" width="2" height="10" />
+        <rect x="490" y="168" width="2" height="12" /><rect x="501" y="100" width="3" height="80" /><rect x="512" y="172" width="2" height="8" /><rect x="524" y="161" width="2" height="19" /><rect x="535" y="70" width="3" height="110" /><rect x="546" y="173" width="2" height="7" /><rect x="557" y="166" width="2" height="14" /><rect x="569" y="171" width="2" height="9" /><rect x="581" y="128" width="3" height="52" /><rect x="592" y="169" width="2" height="11" /><rect x="604" y="164" width="2" height="16" /><rect x="616" y="173" width="2" height="7" /><rect x="629" y="40" width="3" height="140" /><rect x="641" y="171" width="2" height="9" /><rect x="653" y="165" width="2" height="15" />
+        <rect x="682" y="170" width="2" height="10" /><rect x="693" y="136" width="3" height="44" /><rect x="704" y="30" width="3" height="150" /><rect x="715" y="173" width="2" height="7" /><rect x="727" y="167" width="2" height="13" /><rect x="739" y="162" width="2" height="18" /><rect x="751" y="114" width="3" height="66" /><rect x="763" y="169" width="2" height="11" /><rect x="776" y="164" width="2" height="16" /><rect x="788" y="173" width="2" height="7" /><rect x="801" y="145" width="3" height="35" /><rect x="813" y="171" width="2" height="9" /><rect x="826" y="90" width="3" height="90" /><rect x="838" y="166" width="2" height="14" /><rect x="851" y="173" width="2" height="7" />
+        <rect x="874" y="169" width="2" height="11" /><rect x="885" y="122" width="3" height="58" /><rect x="897" y="165" width="2" height="15" /><rect x="909" y="50" width="3" height="130" /><rect x="920" y="173" width="2" height="7" /><rect x="931" y="167" width="2" height="13" />
       </g>
 
-      <!-- five accent peaks, one per research line -->
-      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="91"  y="64" width="10" height="116" rx="3" /><text x="96"  y="206">01</text></g>
-      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="283" y="34" width="10" height="146" rx="3" /><text x="288" y="206">02</text></g>
-      <g class="spec-peak" style="--i:2; color:#2f8f6f"><rect x="475" y="96" width="10" height="84"  rx="3" /><text x="480" y="206">03</text></g>
-      <g class="spec-peak" style="--i:3; color:#b0792a"><rect x="667" y="52" width="10" height="128" rx="3" /><text x="672" y="206">04</text></g>
-      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="859" y="82" width="10" height="98"  rx="3" /><text x="864" y="206">05</text></g>
+      <!-- five accent peaks, one per research line (labelled by the nav below).
+           All the same height: they mark the lines, they are not the tallest. -->
+      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="91"  y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="283" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:2; color:#2f8f6f"><rect x="475" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:3; color:#b0792a"><rect x="667" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="859" y="50" width="10" height="130" rx="3" /></g>
     </svg>
     <nav class="research-spectrum-nav" aria-label="Research lines">
       <a class="rs-line" style="--accent:#1f5f8f; --i:0" href="#analyte-prediction">Analyte prediction</a>

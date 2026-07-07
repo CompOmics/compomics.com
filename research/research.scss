@@ -121,6 +121,17 @@
   .spec-base { stroke: $line; stroke-width: 1; }
   .spec-minor rect { fill: $line; }
 
+  // axes: intensity (y) vs m/z (x), so the motif reads as a mass spectrum
+  .spec-axis { stroke: $line; stroke-width: 1; }
+  .spec-axis-arrow { fill: $line; }
+  .spec-axis-label {
+    fill: $muted;
+    font-family: $font-family-monospace;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .08em;
+  }
+
   // each accent peak grows up from the baseline on load, staggered by --i
   .spec-peak {
     rect {
