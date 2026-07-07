@@ -373,8 +373,9 @@ toc: false
       title: 'Robbe Devreese',
       role: 'Predoctoral Researcher',
       email: 'robbe.devreese@ugent.be',
-      about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics, and, having discovered that lab work was not for him, accepted an invitation from Dr. Robbin Bouwmeester and Prof. Lennart Martens to stay on for a PhD. Outside of work, Robbe enjoys going to concerts and the theatre.',
+      about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics, where he investigated the oxidation landscape using open modification searches and, having discovered his love for data science (and his dislike for the wet lab), accepted an invitation from Dr. Robbin Bouwmeester and Prof. Lennart Martens to perform a PhD in the group. Outside of work, Robbe enjoys going to concerts and the theatre, and watching football.',
       currentWork: 'His PhD work focuses on benchmarking, MS imaging, and improving bioinformatics workflows for ion mobility-enabled mass spectrometry. He is the main developer of IM2Deep, and has contributed to MS²Rescore and ProteoBench.',
+      recognition: 'Robbe was a finalist for the Three-Minute-Thesis competition at HUPO 2024 and has been awarded an EMBO Scientific Exchange Grant.', 
       publications: [
         { title: 'Collisional Cross-Section Prediction for Multiconformational Peptide Ions with IM2Deep', url: 'https://doi.org/10.1021/acs.analchem.5c01142', venue: 'Analytical Chemistry · 2025' },
         { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' },
