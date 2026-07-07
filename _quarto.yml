@@ -40,8 +40,6 @@ website:
         href: publications/index.qmd
       - text: "Tutorials"
         href: tutorials/index.qmd
-      - text: "News"
-        href: news/index.qmd
       - icon: github
         href: https://github.com/compomics
         aria-label: GitHub

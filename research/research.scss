@@ -188,7 +188,7 @@
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  width: 7rem;
+  white-space: nowrap;   // keep each label on one line (e.g. "FAIR data principles")
   color: var(--accent);
   font-family: $font-family-sans-serif;
   font-size: clamp(.68rem, 1.5vw, .84rem);
