@@ -345,7 +345,7 @@ toc: false
       title: 'Tim Van Den Bossche',
       role: 'Postdoctoral Researcher',
       email: 'tim.vandenbossche@ugent.be',
-      about: 'Tim obtained a graduate degree in Chemistry and Biochemistry (2013), followed by a Bachelor\'s (2014) and Master\'s (2016) in Biomedical Sciences, and later a Master of Business Administration (MBA, 2022). His Master\'s thesis was carried out in the wet lab under supervision of Prof. Dr. Sven Eyckerman, but his preference for dry-lab data analysis led him to contact Prof. Lennart Martens, who offered a PhD in the group. He completed his PhD in 2022. During his PhD he worked in the field of metaproteomics, on the development of tools for metaproteomics data analysis, and on tool benchmarking in collaboration with several labs, which led him to start the CAMPI study. He also founded the Metaproteomics Initiative. Outside research, Tim likes to run, has a keen interest in policy and organisation, and enjoys going to the theatre.',
+      about: 'Tim obtained a graduate degree in Chemistry and Biochemistry (2013), followed by a Bachelor\'s (2014) and Master\'s (2016) in Biomedical Sciences, and later a Master of Business Administration (MBA, 2022). After his graduate\'s thesis and Master\'s thesis in the wet lab, he wanted to specialize in dry-lab data analysis which led him to contact Prof. Lennart Martens, who offered him a PhD in the group. He completed his PhD in 2022. During his PhD he worked in the field of metaproteomics, on the development of tools for metaproteomics data analysis, and on tool benchmarking in collaboration with several labs, which led him to start the CAMPI study. He also founded the Metaproteomics Initiative. Outside research, Tim likes to run, has a keen interest in policy and organisation, and enjoys going to the theatre.',
       currentWork: 'He is currently a postdoctoral researcher in CompOmics, continuing his research lines from his PhD. Tim has contributed to Unipept, Peptonizer2000, and several tools in the Ghent University group of Prof. Dr. Bart Mesuere.',
       recognition: 'He has received numerous honours, including the EuPA Vision and Commitment Award (2025), the EuPA Best Doctoral Thesis Award (2023), a finalist place in the HUPO 2023 PostDoc Competition, runner-up for the Best PhD Thesis Award at Ghent University (2023), and inclusion in the Journal of Proteome Research "Rising Stars in Proteomics and Metabolomics: 40 under 40" list (2021).',
       publications: [
@@ -394,7 +394,7 @@ toc: false
       ]
     },
     sude: {
-      title: 'Sude Güneş',
+      title: 'Sude Gunes',
       role: 'Predoctoral Researcher',
       email: 'sude.gunes@ugent.be',
       about: 'Sude obtained her Bachelor\'s degree in Bioengineering at the Izmir Institute of Technology, Türkiye, in 2022, and her Master\'s degree in Polymer Science and Engineering at the same institute in 2024. During her Master\'s she focused on investigating the effect of allosteric ligand binding using molecular dynamics simulations and on the prediction of allosteric and cryptic sites. Wanting to explore protein dynamics further, she applied for the joint PhD position on PTMs and protein dynamics. In her free time, Sude loves playing the piano and exploring new places.',
