@@ -20,4 +20,4 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render site
-        run: quarto render
+        run: quarto render --no-execute
