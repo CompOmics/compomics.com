@@ -94,6 +94,15 @@ toc: false
       devs: ['robbin', 'ralf']
     },
     {
+      name: 'iDeepLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'ideeplc.png',
+      desc: 'Retention-time prediction from peptide chemical structure (SMILES), generalising to modifications unseen during training.',
+      links: {
+        github: 'https://github.com/compomics/iDeepLC',
+        paper: 'https://doi.org/10.1021/acs.analchem.5c08017',
+      },
+      devs: ['alireza', 'robbin']
+    },
+    {
       name: 'IM2Deep', cat: 'prediction', icon: 'bi-wind', logo: 'im2deep.svg',
       desc: 'Predicts collisional cross-section (CCS) values for peptides, including modified, and multiple conformations.',
       links: {
