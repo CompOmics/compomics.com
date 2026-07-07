@@ -84,6 +84,10 @@ toc: false
       <span class="network-chip-name">Dr. Wim Vranken</span>
       <span class="network-chip-meta">VUB, Belgium</span>
     </div>
+    <div class="network-chip">
+      <span class="network-chip-name">Ben Binke</span>
+      <span class="network-chip-meta">UGent, Belgium</span>
+    </div>
   </div>
 
   <h3 class="team-section-title">Alumni &amp; Former Colleagues</h3>
