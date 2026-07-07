@@ -177,9 +177,18 @@ body { background: transparent !important; }
 }
 
 /* Lift the logo + title up out of the lower portion of the hero photo so
-   they don't sit over people's faces. */
+   they don't sit over people's faces. Also centered horizontally. */
 .cmp-scene-hero .cmp-hero-copy {
   transform: translateY(-16vh);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Center the logo + title row (fit-content) within the hero. */
+.cmp-scene-hero .cmp-hero-titlerow {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 720px) {
