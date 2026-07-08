@@ -245,7 +245,7 @@ toc: false
       title: 'Sakina Bombaywala',
       role: 'Postdoctoral Researcher',
       email: 'sakina.bombaywala@ugent.be',
-      about: 'Sakina completed her Ph.D. in Bioinformatics from India in 2024. Her doctoral research focused on applying multi-omics approaches to understand microbiome interactions, with applications in wastewater management. Soon after, she joined the CompOmics lab, where her current work focuses on developing omics workflows for disease tracking and environmental surveillance. Outside work, she enjoys trying out different athletic sports.',
+      about: 'Sakina obtained her PhD at the National Environmental Engineering Research Institute in India (Academy of Scientific and Innovative Research). Her doctoral research focused on applying multi-omics approaches to understand microbiome interactions, with applications in wastewater management. Soon after, she joined the CompOmics lab, where her current work focuses on developing omics workflows for disease tracking and environmental surveillance. Outside work, she enjoys trying out different athletic sports.',
       currentWork: 'Sakina works across whole-genome sequencing, metagenomics, RNA-seq, variant calling, and phylogenetic analysis. She develops scalable, reproducible bioinformatics solutions that support disease tracking and environmental surveillance. In addition to data analysis, she contributes to bioinformatics training for researchers, laboratory technicians, and clinicians within international collaborations.',
       publications: [
         { title: 'Meta-analysis of wastewater microbiome for antibiotic resistance profiling', url: 'https://doi.org/10.1016/j.mimet.2024.106953', venue: 'Journal of Microbiological Methods · 2024' },
