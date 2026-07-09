@@ -310,6 +310,15 @@ toc: false
         paper: 'https://doi.org/10.1021/acs.jproteome.5c00435',
       },
       devs: ['tim','ralf']
+    },
+    {
+      name: 'PSI-AI', cat: 'community', icon: 'bi-filetype-ai',
+      desc: 'Working group making proteomics data AI-ready and standardizing the use of AI in data analysis workflows.',
+      note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.',
+      links: {
+        web: 'https://psi-ai.org/',
+      },
+      devs: ['ralf', 'tine', 'hari']
     }
   ];
 
