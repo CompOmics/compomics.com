@@ -285,6 +285,8 @@ toc: false
       recognition: 'Arthur\'s work has been recognized with the Faculty of Medicine thesis prize (2026), the PhD Innovation Café award (VOKA UGent, 2023), a second place presentation award from the French Proteomics Society, and recently, a finalist place for the VIB Aureus Nova Scientia prize.',
       publications: [
         { title: 'MS²Rescore: Data-Driven Rescoring Dramatically Boosts Immunopeptide Identification Rates', url: 'https://doi.org/10.1016/j.mcpro.2022.100266', venue: 'Molecular & Cellular Proteomics · 2022' },
+        { title: 'Updated MS²PIP web server supports cutting-edge proteomics applications', url: 'https://doi.org/10.1093/nar/gkad335', venue: 'Nucleic Acids Research · 2023' },
+        { title: 'Thunder-DDA-PASEF enables high-coverage immunopeptidomics and is boosted by MS2Rescore with MS2PIP timsTOF fragmentation prediction model', url: 'https://doi.org/10.1038/s41467-024-46380-y', venue: 'Nature Communications · 2024' },
         { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' }
       ]
     },
@@ -469,7 +471,10 @@ toc: false
     natalia: {
       title: 'Natalia Tichshenko',
       role: 'Software Developer',
-      email: 'natalia.tichshenko@ugent.be'
+      email: 'natalia.tichshenko@ugent.be',
+      about: 'Natalia is a bioinformatician by training, from the University of Montreal, Montreal, Canada. After her Bachelor\'s, she worked as a software engineer in industry across different areas, including government and consulting. Joining CompOmics was a return to her roots — working in a research field where she helps scientists with various development needs, mostly focused on visualizations, database management, and web application development. Outside of work, she\'s kept busy by her two wonderfully active children, and enjoys knitting, reading, and learning to play tennis.',
+      currentWork: 'Her main projects include Scop3P, Scop3PTM, and TabloidProteome, along with the development of visualization components for various projects within the group and for projects with external collaborators.',
+      publications: [ { title: 'Scop3P: A Comprehensive Resource of Human Phosphosites within Their Full Context', url: 'https://doi.org/10.1021/acs.jproteome.5c00902', venue: 'Journal of Proteome Research · 2020' } ]
     },
     kevin: {
       title: 'Kevin Velghe',
@@ -496,14 +501,14 @@ toc: false
     jasper: {
       title: 'Jasper Zuallaert',
       role: 'Staff Scientist',
-      email: 'jasper.zuallaert@vib-ugent.be>',
+      email: 'jasper.zuallaert@vib-ugent.be',
       about: 'Jasper obtained his Bachelor\'s degree in Informatics at Ghent University and his Master\'s degree in Civil Engineering (Computer Science) at Ghent University in 2014. He went on to complete a PhD in Engineering (Computer Science) at Ghent University, based at the Global Campus in Korea. He met Prof. Dr. Nico Callewaert in South Korea, where the seed for a fruitful collaboration was first planted. After finishing his PhD, he joined VIB-CMB for a postdoc with Prof. Sven Degroeve and Prof. Dr. Nico Callewaert. During his PhD and postdoc he worked on DNA sequence pattern recognition with deep learning (splice site and translation initiation site prediction), later moving on to protein sequences and structure. Remarkably, in his free time Jasper actually likes to be as far away as possible from all computers (except for maybe his GPS unit and cameras), out in the forests and mountains.',
       currentWork: 'Jasper is currently a VIB-CMB centre-wide staff scientist working on protein structure prediction and design, and beyond.',
       publications: [
         { title: 'Assessing the relation between protein phosphorylation, AlphaFold3 models, and conformational variability', url: 'https://doi.org/10.1002/pro.70376', venue: 'Protein Science · 2026' },
         { title: 'Ultrapotent SARS coronavirus-neutralizing single-domain antibodies that clamp the spike at its base', url: 'https://doi.org/10.1038/s41467-025-60250-1', venue: 'Nature Communications · 2025' },
-        { title:'Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit', url: 'https://doi.org/10.1038/s41467-021-26720-y', venue: 'Nature Communications · 2021' }
-        { title:'SpliceRover: interpretable convolutional neural networks for improved splice site prediction', url: 'https://doi.org/10.1093/bioinformatics/bty497', venue: 'Bioinformatics · 2018' }
+        { title:'Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit', url: 'https://doi.org/10.1038/s41467-021-26720-y', venue: 'Nature Communications · 2021' },
+        { title:'SpliceRover: interpretable convolutional neural networks for improved splice site prediction', url: 'https://doi.org/10.1093/bioinformatics/bty497', venue: 'Bioinformatics · 2018' },
       ]
     }
   };

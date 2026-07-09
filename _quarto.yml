@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  # Guard: fail the build loudly if the team page's inline memberData has a JS
+  # syntax error or a card with no data entry (both silently break card clicks).
+  pre-render:
+    - scripts/check-team-data.js
   render:
     - "**/*.qmd"
     - "**/*.md"

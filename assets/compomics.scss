@@ -474,6 +474,12 @@ blockquote {
 
 .team-profile-expander {
   grid-column: 1 / -1;
+  // hug the content instead of stretching across all grid columns, which left
+  // a large empty band of panel background to the right of the text.
+  // fit-content (not a fixed max-width) keeps left/right padding symmetric.
+  justify-self: start;
+  width: fit-content;
+  max-width: min(50rem, 100%);
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   display: grid;
@@ -488,7 +494,8 @@ blockquote {
     content: "";
     position: absolute;
     top: -8px;
-    left: var(--notch-x, 50%);
+    // clamp so the pointer stays inside the (now width-capped) panel
+    left: clamp(24px, var(--notch-x, 50%), calc(100% - 24px));
     transform: translateX(-50%);
     width: 0;
     height: 0;
