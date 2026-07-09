@@ -203,6 +203,7 @@ toc: false
       desc: 'Comprehensive resource of human phosphosites mapped within their full structural context.',
       links: {
         github: 'https://github.com/compomics',
+        web: 'https://iomics.ugent.be/scop3p/',
         paper: 'https://doi.org/10.1021/acs.jproteome.0c00306',
       },
       devs: ['pathmanaban', 'natalia']
@@ -210,7 +211,10 @@ toc: false
     {
       name: 'Scop3PTM', cat: 'biological', icon: 'bi-diagram-3-fill', logo: 'scop3ptm.png',
       desc: 'Maps post-translational modifications onto protein structures for contextual, structure-aware analysis.',
-      links: { github: 'https://github.com/compomics' },
+      links: {
+        github: 'https://github.com/compomics',
+        web: 'https://iomics.ugent.be/scop3ptm',
+      },
       devs: ['pathmanaban', 'natalia']
     },
     {
@@ -218,6 +222,7 @@ toc: false
       desc: 'Machine-learning framework for tissue inference and biomarker discovery from proteomes.',
       links: {
         github: 'https://github.com/compomics',
+        web: 'https://mlmarker.streamlit.app/',
         paper: 'https://doi.org/10.1101/2025.06.10.658642',
       },
       devs: ['tine']
