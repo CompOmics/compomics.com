@@ -8,7 +8,7 @@ toc: false
 <header class="research-header">
   <div class="research-header-kicker">What we do</div>
   <h1 class="research-header-title">Research</h1>
-  <p class="research-header-sub">We are a team of 26 computational biologists, bioinformaticians, and software developers who build methods and tools across the proteomics workflow. Our work spans peptide property prediction, mass spectrometry data analysis, data management, metadata standardization, and the large-scale reuse of public proteomics data.</p>
+  <p class="research-header-sub">We are a team of 26 enthousiastic computational biologists, bioinformaticians, and software developers who build methods and tools across the proteomics workflow. Our work spans peptide property prediction, mass spectrometry data analysis, data management, metadata standardization, and the large-scale reuse of public proteomics data.</p>
   <p class="research-header-text">Modern <strong>mass spectrometry</strong> measures proteins at a depth and throughput that keeps growing faster than our ability to interpret the resulting data. CompOmics works on that interpretation problem. We develop open-source software, machine learning models, web resources, and data standards that make proteomics data analysis <strong>faster</strong> and more <strong>reproducible</strong>. We keep our tools and data resources openly available so that other groups can build on them directly instead of starting from scratch.</p>
 
   <!-- Signature: the five research lines drawn as a five-channel mass spectrum.
