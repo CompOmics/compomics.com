@@ -322,9 +322,10 @@
   background:
     linear-gradient(to bottom,
       rgba(6,8,12,.55) 0%,
-      rgba(6,8,12,.22) 55%,
+      rgba(6,8,12,.22) 30%,
+      rgba(6,8,12,.34) 65%,
       var(--bs-body-bg) 100%),
-    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 60%);
+    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 80%);
 }
 
 
@@ -335,7 +336,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1.5rem clamp(1.8rem, 4.5vh, 3rem);
+  padding: 0 2.5rem clamp(1.8rem, 4.5vh, 3rem);
+  justify-content: center;
 }
 
 .page-hero-kicker {
