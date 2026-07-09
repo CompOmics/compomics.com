@@ -367,7 +367,7 @@ toc: false
       title: 'Toon Callens',
       role: 'Predoctoral Researcher',
       email: 'toon.callens@ugent.be',
-      about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply to Prof. Lennart Martens to pursue a PhD in the CompOmics group. Outside research, Toon used to be a semi-professional football player until both his knees gave out, which led him to now play walking football.',
+      about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply to Prof. Lennart Martens to pursue a PhD in the CompOmics group. Outside research, Toon has a passion for soccer and even used to be a semi-professional soccer player until injuries prevented him from continuing. To still enjoy his passion for the sport, he now plays walking football.',
       currentWork: 'He is a predoctoral researcher shared between CompOmics and the Ghent University De Preter group. During his PhD, he has worked on a large citizen science project integrated into a mobile game, and on multi-omics tissue prediction. Next to that, he also serves as a teaching assistant for bioinformatics in the Biomedical Sciences programme.',
       recognition: 'In 2024 Toon won the EuBIC best flash talk prize in Winterberg.'
     },
@@ -442,8 +442,8 @@ toc: false
       title: 'Harikrishnan Ramadasan',
       role: 'Predoctoral Researcher',
       email: 'harikrishnan.ramadasan@ugent.be',
-      about: 'Harikrishnan studied at the Indian Institute of Science Education and Research, where he completed an integrated Bachelor\'s and Master\'s degree with a major in physics in 2023. Drawn by a strong interest in AI-based methods, he applied directly for his current position in the group. Outside research, Harikrishnan enjoys boxing, running, and strength training.',
-      currentWork: 'Harikrishnan is a predoctoral researcher in CompOmics, and is also involved in industrial projects with Johnson & Johnson. His PhD focuses on developing HAMLET, a publicly available agentic metadata extraction tool that enables downstream research, and on developing algorithms to generate new signal peptides for vaccine development as part of the BAXERNA consortium. He further also collaborates with NCEMS.'
+      about: 'Harikrishnan studied at the Indian Institute of Science Education and Research, where he completed an integrated Bachelor\'s and Master\'s degree with a major in physics in 2023. Drawn by a strong interest in AI-based methods, he applied directly for his current position in the CompOmics group. Outside research, Harikrishnan enjoys boxing, running, and strength training.',
+      currentWork: 'Harikrishnan focuses on developing HAMLET, a publicly available agentic metadata extraction tool that enables downstream research, on developing algorithms to generate new signal peptides for vaccine development as part of the BAXERNA consortium and on industrial projects with Johnson & Johnson. He further also collaborates with NCEMS.'
     },
     sam: {
       title: 'Sam Van Puyenbroeck',
