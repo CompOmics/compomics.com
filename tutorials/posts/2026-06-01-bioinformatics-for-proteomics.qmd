@@ -1,120 +1,260 @@
 ---
-title: "Bioinformatics for Proteomics (classic course)"
+title: "Bioinformatics for Proteomics"
 date: 2026-06-01
 description: "The original hands-on CompOmics course on mass spectrometry-based proteomics data analysis: identification, functional analysis, data sharing, and quantification. Slides and exercise resources included. A modernised version is in preparation."
 categories: [proteomics, course, identification, quantification, data-sharing, searchgui, peptideshaker]
 ---
 
-This is the classic **Bioinformatics for Proteomics** course, a hands-on introduction to mass spectrometry-based proteomics data analysis. It is organised into four modules covering peptide and protein identification, functional analysis, data sharing through public repositories, and quantification.
+```{=html}
+<div class="bfp">
 
-::: {.callout-note}
-This page preserves the original course materials. Some tools, formats, and versions reflect the state of the field when the course was written and are now partly outdated (for example, PRIDE XML has been superseded by mzIdentML and mzTab). A modernised version is in preparation. Materials are shared under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). If you use them, please cite [Vaudel et al. (2014), PMID 24678044](https://www.ncbi.nlm.nih.gov/pubmed/24678044).
-:::
+  <p class="bfp-lead">The classic <strong>Bioinformatics for Proteomics</strong> course: a hands-on walk through a full mass spectrometry data-analysis pipeline, from a raw spectrum file to a shared, quantified result. Work through the four modules in order, or jump to the step you need.</p>
 
-**General resources**
+  <div class="bfp-note">
+    <i class="bi bi-clock-history" aria-hidden="true"></i>
+    <div>
+      <p><strong>Archived materials.</strong> This page preserves the original course. Some tools, formats, and versions reflect the field as it was when the course was written and are now partly outdated (for example, PRIDE XML has been superseded by mzIdentML and mzTab). A modernised version is in preparation.</p>
+      <p class="bfp-note-meta">Shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 licence</a>. Please cite <a href="https://www.ncbi.nlm.nih.gov/pubmed/24678044">Vaudel et al. (2014)</a>.</p>
+    </div>
+  </div>
 
-- [Questions and answers document](https://drive.google.com/file/d/0B4sW8rLWPbRyV1ZnaVZoaHktWlE/view?usp=sharing&resourcekey=0-nv0BLwLDq5qO-6YOgK49Ag)
-- [Feedback form](https://docs.google.com/forms/d/1BQfRAZ1L4Szn_vsMaICiYyu84sKjXU8xQXFmwXg_oOI/viewform)
+  <div class="bfp-general">
+    <span class="bfp-general-label">Course-wide</span>
+    <div class="bfp-links">
+      <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyV1ZnaVZoaHktWlE/view?usp=sharing&resourcekey=0-nv0BLwLDq5qO-6YOgK49Ag"><i class="bi bi-chat-square-text" aria-hidden="true"></i>Questions &amp; answers</a>
+      <a class="bfp-link" href="https://docs.google.com/forms/d/1BQfRAZ1L4Szn_vsMaICiYyu84sKjXU8xQXFmwXg_oOI/viewform"><i class="bi bi-ui-checks" aria-hidden="true"></i>Feedback form</a>
+    </div>
+  </div>
 
-## 1. Identification
+  <!-- ── Module 1 ─────────────────────────────────────────────────────────── -->
+  <section class="bfp-module">
+    <header class="bfp-module-head">
+      <span class="bfp-module-num">1</span>
+      <div class="bfp-module-heading">
+        <span class="bfp-eyebrow">Module</span>
+        <h2 class="bfp-module-title">Identification</h2>
+        <p class="bfp-module-desc">The full path from a raw file to validated peptides and proteins: format conversion, spectrum processing, database preparation, peptide-spectrum matching, inference, validation, PTM analysis, and de novo sequencing.</p>
+      </div>
+    </header>
+    <ol class="bfp-steps">
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.1</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Database generation</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyUGxQdmw3cGNUSTQ/view?usp=sharing&resourcekey=0-VIMx1s6vmKRwMOBkOlS6Ng"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.2</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Peak list generation</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyYTJBZVZkZFFuSUE/view?usp=sharing&resourcekey=0-lctIbpXK4PN2uxwK7g13HQ"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1xhfAreX_PJzKscyLAuMfqYEJNZFkeAfP/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://proteowizard.sourceforge.net/"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>ProteoWizard</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.3</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Peptide to spectrum matching</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyaDBXMDVXOWVaUkk/view?usp=sharing&resourcekey=0-4jJ7-2kjLBDci1eBytMO1A"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1q-1Wc865DZK8YQwGAXclTLFy8rBov2NJ/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/searchgui.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>SearchGUI</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.4</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Browsing identification results</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyUm5tdFRObTJSaEE/view?usp=sharing&resourcekey=0-NgNbCuD5h8MAoJy79cJk7w"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1cfatBwiQkchnKKsBvAfQ0BvfhgMBHnhA/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/peptide-shaker.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>PeptideShaker</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.5</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Peptide and protein validation</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyUU9ycjFScmlaZjA/view?usp=sharing&resourcekey=0-LLHCRH0CUf9Xzx7BlITSPQ"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/peptide-shaker.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>PeptideShaker</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.6</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">PTM analysis</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRybHZXeVBvNXB1Tkk/view?usp=sharing&resourcekey=0-C4_nR2G5vhwRpESsONlFMQ"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1j-6zj_g5jZFT8ywrYYsN8zuS4x4lXMYS/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/peptide-shaker.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>PeptideShaker</a>
+            <a class="bfp-link bfp-link--tool" href="https://genesis.ugent.be/maven2/eu/isas/peptideshaker/PeptideShaker/3.0.11/PeptideShaker-3.0.11.zip"><i class="bi bi-box-seam" aria-hidden="true"></i>Download 3.0.11</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">1.7</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">De novo peptide identification</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRySWhqTGUtS1hVRGs/view?usp=sharing&resourcekey=0-Hplewb7eyWoIgCK5kzKvfw"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1L0Se_afHDL0G8AbAq9KOJQrr-aQX9gUn/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/denovogui.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>DeNovoGUI</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
 
-Complete workflow for peptide and protein identification from mass spectrometry data: raw data conversion, spectrum processing, database preparation, peptide-spectrum matching, peptide and protein inference, validation, PTM analysis, and de novo sequencing.
+  <!-- ── Module 2 ─────────────────────────────────────────────────────────── -->
+  <section class="bfp-module">
+    <header class="bfp-module-head">
+      <span class="bfp-module-num">2</span>
+      <div class="bfp-module-heading">
+        <span class="bfp-eyebrow">Module</span>
+        <h2 class="bfp-module-title">Functional analysis</h2>
+        <p class="bfp-module-desc">Turning an identification list into biology: retrieving protein information, pathway analysis, 3D structure visualisation, and Gene Ontology annotation.</p>
+      </div>
+    </header>
+    <div class="bfp-loose">
+      <div class="bfp-links">
+        <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRybzZKMHJxR04tVkU/view?usp=sharing&resourcekey=0--IhNfNOJsvEHBAEhGPzX0A"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+        <a class="bfp-link" href="https://drive.google.com/file/d/12V_5RpVdpXODrLxPR2eT89LJvcZF34r5/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+      </div>
+    </div>
+  </section>
 
-**1.1 Database generation**
+  <!-- ── Module 3 ─────────────────────────────────────────────────────────── -->
+  <section class="bfp-module">
+    <header class="bfp-module-head">
+      <span class="bfp-module-num">3</span>
+      <div class="bfp-module-heading">
+        <span class="bfp-eyebrow">Module</span>
+        <h2 class="bfp-module-title">Data sharing</h2>
+        <p class="bfp-module-desc">Submitting and reusing data through community repositories: converting results to standard formats, submitting to PRIDE and ProteomeXchange, browsing published datasets, and reprocessing.</p>
+      </div>
+    </header>
+    <div class="bfp-note bfp-note--inline">
+      <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+      <div>
+        <p>These course notes use <strong>PRIDE XML</strong>, now deprecated. Current submissions use <a href="https://www.psidev.info/mzidentml">mzIdentML</a> and <a href="https://www.psidev.info/mztab">mzTab</a>; the submission workflow through PRIDE and ProteomeXchange is otherwise unchanged.</p>
+      </div>
+    </div>
+    <ol class="bfp-steps">
+      <li class="bfp-step">
+        <span class="bfp-step-num">3.0</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Introduction</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyb3BHYWtud2tCTkE/view?usp=sharing&resourcekey=0-LKTuwWEKerk6fh62BXTonA"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">3.1</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Submit</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyeW80cHptYnhxSmc/view?usp=sharing&resourcekey=0-twqVpJPMU2_Z19tHpf9QGQ"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1AxIcN_uP7UONJFYrserKxma6tOPO-kk5/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">3.2</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Browse</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRydkxfTEJJSDNDeG8/view?usp=sharing&resourcekey=0-fnyQy8iK8H4BC5JOwP-JJw"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1ncT57QBr6Z4vMSRHFsgPLAA1S04S4f1L/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">3.3</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Reprocess</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRydjFLSHR2UUZXbWM/view?usp=sharing&resourcekey=0-RA3FRAGW1f3LDlxmiulJZQ"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="bfp-related">
+      <span class="bfp-related-label">Repositories &amp; tools</span>
+      <div class="bfp-links">
+        <a class="bfp-link bfp-link--tool" href="http://www.proteomexchange.org/"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>ProteomeXchange</a>
+        <a class="bfp-link bfp-link--tool" href="http://www.ebi.ac.uk/pride"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>PRIDE</a>
+        <a class="bfp-link bfp-link--tool" href="https://github.com/PRIDE-Toolsuite/pride-inspector"><i class="bi bi-github" aria-hidden="true"></i>PRIDE Inspector</a>
+      </div>
+    </div>
+  </section>
 
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyUGxQdmw3cGNUSTQ/view?usp=sharing&resourcekey=0-VIMx1s6vmKRwMOBkOlS6Ng)
+  <!-- ── Module 4 ─────────────────────────────────────────────────────────── -->
+  <section class="bfp-module">
+    <header class="bfp-module-head">
+      <span class="bfp-module-num">4</span>
+      <div class="bfp-module-heading">
+        <span class="bfp-eyebrow">Module</span>
+        <h2 class="bfp-module-title">Quantification</h2>
+        <p class="bfp-module-desc">Estimating protein abundance across several orders of magnitude, covering the main quantification strategies and their trade-offs.</p>
+      </div>
+    </header>
+    <ol class="bfp-steps">
+      <li class="bfp-step">
+        <span class="bfp-step-num">4.0</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Introduction</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyRkw3dzRaRWkzSGc/view?usp=sharing&resourcekey=0-LuG7ussiMG8NsPcwJfY-xw"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">4.1</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Spectrum counting</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyYXJLTDZxd3IyTTA/view?usp=sharing&resourcekey=0-m-E3assyzNcxDq6J2BO5Dw"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/peptide-shaker.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>PeptideShaker</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">4.2</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Reporter ions</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4sW8rLWPbRyZ3RBZHBpcm5jWnc/view?usp=sharing&resourcekey=0-SfjWCN2oh3tlKauVAh-Hgg"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1ld991SYLJJZisOdQEaSCsTtop-_oKywO/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/searchgui.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>SearchGUI</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/peptide-shaker.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>PeptideShaker</a>
+            <a class="bfp-link bfp-link--tool" href="http://compomics.github.io/projects/reporter.html"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>Reporter</a>
+          </div>
+        </div>
+      </li>
+      <li class="bfp-step">
+        <span class="bfp-step-num">4.5</span>
+        <div class="bfp-step-body">
+          <h3 class="bfp-step-title">Statistical analysis</h3>
+          <div class="bfp-links">
+            <a class="bfp-link" href="https://drive.google.com/file/d/0B4hBxjyTLNhiM0xaR3Q2MklHdUk/view?usp=sharing&resourcekey=0-2Xj8wosJgwTAojqsPIhLIg"><i class="bi bi-file-earmark-slides" aria-hidden="true"></i>Course notes</a>
+            <a class="bfp-link" href="https://drive.google.com/file/d/1KUTY4mMVd74YrNrpIjlf8kAYr8crTTzu/view?usp=sharing"><i class="bi bi-download" aria-hidden="true"></i>Exercise data</a>
+            <a class="bfp-link bfp-link--tool" href="http://coxdocs.org/doku.php?id=perseus:start"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i>Perseus</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
 
-**1.2 Peak list generation**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyYTJBZVZkZFFuSUE/view?usp=sharing&resourcekey=0-lctIbpXK4PN2uxwK7g13HQ)
-- [Exercise resources](https://drive.google.com/file/d/1xhfAreX_PJzKscyLAuMfqYEJNZFkeAfP/view?usp=sharing)
-- Tool: [ProteoWizard](http://proteowizard.sourceforge.net/)
-
-**1.3 Peptide to spectrum matching**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyaDBXMDVXOWVaUkk/view?usp=sharing&resourcekey=0-4jJ7-2kjLBDci1eBytMO1A)
-- [Exercise resources](https://drive.google.com/file/d/1q-1Wc865DZK8YQwGAXclTLFy8rBov2NJ/view?usp=sharing)
-- Tool: [SearchGUI](http://compomics.github.io/projects/searchgui.html)
-
-**1.4 Browsing identification results**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyUm5tdFRObTJSaEE/view?usp=sharing&resourcekey=0-NgNbCuD5h8MAoJy79cJk7w)
-- [Exercise resources](https://drive.google.com/file/d/1cfatBwiQkchnKKsBvAfQ0BvfhgMBHnhA/view?usp=sharing)
-- Tool: [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html)
-
-**1.5 Peptide and protein validation**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyUU9ycjFScmlaZjA/view?usp=sharing&resourcekey=0-LLHCRH0CUf9Xzx7BlITSPQ)
-- Tool: [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html)
-
-**1.6 PTM analysis**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRybHZXeVBvNXB1Tkk/view?usp=sharing&resourcekey=0-C4_nR2G5vhwRpESsONlFMQ)
-- [Exercise resources](https://drive.google.com/file/d/1j-6zj_g5jZFT8ywrYYsN8zuS4x4lXMYS/view?usp=sharing)
-- Tool: [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html) ([download 3.0.11](https://genesis.ugent.be/maven2/eu/isas/peptideshaker/PeptideShaker/3.0.11/PeptideShaker-3.0.11.zip))
-
-**1.7 De novo peptide identification**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRySWhqTGUtS1hVRGs/view?usp=sharing&resourcekey=0-Hplewb7eyWoIgCK5kzKvfw)
-- [Exercise resources](https://drive.google.com/file/d/1L0Se_afHDL0G8AbAq9KOJQrr-aQX9gUn/view?usp=sharing)
-- Tool: [DeNovoGUI](http://compomics.github.io/projects/denovogui.html)
-
-## 2. Functional analysis
-
-Extracting biological meaning from identification results: retrieving additional protein information, pathway analysis, 3D structure visualisation, and Gene Ontology annotation.
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRybzZKMHJxR04tVkU/view?usp=sharing&resourcekey=0--IhNfNOJsvEHBAEhGPzX0A)
-- [Exercise resources](https://drive.google.com/file/d/12V_5RpVdpXODrLxPR2eT89LJvcZF34r5/view?usp=sharing)
-
-## 3. Data sharing
-
-Submission and reuse of proteomics data through community repositories: converting results to standard formats, submitting to PRIDE and ProteomeXchange, browsing published datasets, and reprocessing existing data.
-
-::: {.callout-note}
-The slides in this module refer to PRIDE XML, which has since been deprecated. Current submissions use [mzIdentML](https://www.psidev.info/mzidentml) and [mzTab](https://www.psidev.info/mztab); the overall submission workflow through PRIDE and ProteomeXchange is otherwise unchanged.
-:::
-
-**3.0 Introduction**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyb3BHYWtud2tCTkE/view?usp=sharing&resourcekey=0-LKTuwWEKerk6fh62BXTonA)
-
-**3.1 Submit**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyeW80cHptYnhxSmc/view?usp=sharing&resourcekey=0-twqVpJPMU2_Z19tHpf9QGQ)
-- [Exercise resources](https://drive.google.com/file/d/1AxIcN_uP7UONJFYrserKxma6tOPO-kk5/view?usp=sharing)
-
-**3.2 Browse**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRydkxfTEJJSDNDeG8/view?usp=sharing&resourcekey=0-fnyQy8iK8H4BC5JOwP-JJw)
-- [Exercise resources](https://drive.google.com/file/d/1ncT57QBr6Z4vMSRHFsgPLAA1S04S4f1L/view?usp=sharing)
-
-**3.3 Reprocess**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRydjFLSHR2UUZXbWM/view?usp=sharing&resourcekey=0-RA3FRAGW1f3LDlxmiulJZQ)
-
-**Repositories and tools:** [ProteomeXchange](http://www.proteomexchange.org/), [PRIDE](http://www.ebi.ac.uk/pride), [PRIDE Inspector](https://github.com/PRIDE-Toolsuite/pride-inspector)
-
-## 4. Quantification
-
-Protein abundance estimation across several orders of magnitude in concentration, covering the main quantification strategies and their trade-offs.
-
-**4.0 Introduction**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyRkw3dzRaRWkzSGc/view?usp=sharing&resourcekey=0-LuG7ussiMG8NsPcwJfY-xw)
-
-**4.1 Spectrum counting**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyYXJLTDZxd3IyTTA/view?usp=sharing&resourcekey=0-m-E3assyzNcxDq6J2BO5Dw)
-- Tool: [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html)
-
-**4.2 Reporter ions**
-
-- [Slides](https://drive.google.com/file/d/0B4sW8rLWPbRyZ3RBZHBpcm5jWnc/view?usp=sharing&resourcekey=0-SfjWCN2oh3tlKauVAh-Hgg)
-- [Exercise resources](https://drive.google.com/file/d/1ld991SYLJJZisOdQEaSCsTtop-_oKywO/view?usp=sharing)
-- Tools: [SearchGUI](http://compomics.github.io/projects/searchgui.html), [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html), [Reporter](http://compomics.github.io/projects/reporter.html)
-
-**4.5 Statistical analysis**
-
-- [Slides](https://drive.google.com/file/d/0B4hBxjyTLNhiM0xaR3Q2MklHdUk/view?usp=sharing&resourcekey=0-2Xj8wosJgwTAojqsPIhLIg)
-- [Exercise resources](https://drive.google.com/file/d/1KUTY4mMVd74YrNrpIjlf8kAYr8crTTzu/view?usp=sharing)
-- Tool: [Perseus](http://coxdocs.org/doku.php?id=perseus:start)
+</div>
+```
