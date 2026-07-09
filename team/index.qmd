@@ -459,7 +459,14 @@ toc: false
     lyuda: {
       title: 'Lyudmila Kovalchuke',
       role: 'Project Manager',
-      email: 'lyudmila.kovalchuke@ugent.be'
+      email: 'lyudmila.kovalchuke@ugent.be',
+      about: 'Lyudmila studied at Columbia University in New York, where she first carried out research in synthetic organic chemistry before moving into the biological sciences. She completed her PhD in Columbia\'s Department of Biological Sciences, studying the molecular mechanisms of Parkinson\'s disease, in particular how cellular stress drives degradation of the E3 ubiquitin ligase parkin. She later moved from the bench into research project management.',
+      currentWork: 'Lyudmila is Project Manager at the VIB-UGent Center for Medical Biotechnology, where she coordinates BAXERNA 2.0, a Horizon Europe consortium developing mRNA vaccines against bacterial infections. She manages the consortium\'s partners, timelines, and reporting, and also contributes to the immunopeptidomics and bacterial epitope-discovery work that underpins the vaccine effort.',
+      publications: [
+        { title: 'Maximizing Immunopeptidomics-Based Bacterial Epitope Discovery by Multiple Search Engines and Rescoring', url: 'https://doi.org/10.1021/acs.jproteome.4c00864', venue: 'Journal of Proteome Research · 2025' },
+        { title: 'Stress-induced phospho-ubiquitin formation causes parkin degradation', url: 'https://doi.org/10.1038/s41598-019-47952-5', venue: 'Scientific Reports · 2019' },
+        { title: 'Nucleophilic acyl substitution via aromatic cation activation of carboxylic acids', url: 'https://doi.org/10.1021/ja101292a', venue: 'Journal of the American Chemical Society · 2010' }
+      ]
     },
     patricia: {
       title: 'Patricia Lefèvre',
@@ -490,8 +497,8 @@ toc: false
       title: 'Daria Fijalkowska',
       role: 'Staff Scientist',
       email: 'daria.fijalkowska@vib-ugent.be',
-      about: 'Daria obtained her Bachelor\'s and Master\'s degrees in Biotechnology at the University of Wrocław, Poland, the latter in 2011, and completed her PhD in Health Sciences at Ghent University in 2016. Outside research, Daria enjoys playing role-playing games, stand-up comedy, and swimming.',
-      currentWork: 'Daria is a staff scientist specialising in data science, supporting different research groups within VIB Center for Medical Biotechnology, and is hosted in CompOmics. Her research covers multi-omics data integration, single-cell transcriptomics, genomics, and proteogenomics. She collaborates with research groups in CMB as well as with ExeVir, Sanofi/Ablynx, and miDiagnostics.',
+      about: 'Daria obtained her Bachelor\'s and Master\'s degrees in Biotechnology at the University of Wrocław, Poland in 2011, and completed her PhD in Health Sciences at Ghent University in 2016. Outside research, Daria enjoys playing role-playing games, stand-up comedy, and swimming.',
+      currentWork: 'Daria is a staff scientist specialising in data science; she supports different research groups within VIB Center for Medical Biotechnology, and can frequently be found working with in the CompOmics office. Her research covers multi-omics data integration, single-cell transcriptomics, genomics, and proteogenomics. She collaborates with research groups in CMB as well as with ExeVir, Sanofi/Ablynx, and miDiagnostics.',
       publications: [
         { title: 'eIF1 modulates the recognition of suboptimal translation initiation sites and steers gene expression via uORFs', url: 'https://doi.org/10.1093/nar/gkx469', venue: 'Nucleic Acids Research · 2017' },
         { title: 'A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia', url: 'https://doi.org/10.1158/2159-8290.CD-22-0210', venue: 'Cancer Discovery · 2023' },

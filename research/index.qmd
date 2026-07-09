@@ -57,7 +57,7 @@ toc: false
       <a class="rs-line" style="--accent:#1f5f8f; --i:0; left:13.0%" href="#analyte-prediction">Analyte prediction</a>
       <a class="rs-line" style="--accent:#c5392b; --i:1; left:28.8%" href="#identification">Identification</a>
       <a class="rs-line" style="--accent:#2f8f6f; --i:2; left:46.9%" href="#metaproteomics">Metaproteomics</a>
-      <a class="rs-line" style="--accent:#b0792a; --i:3; left:67.3%" href="#fair-data-principles">FAIR data principles</a>
+      <a class="rs-line" style="--accent:#b0792a; --i:3; left:67.3%" href="#fair-ai-ready-data">FAIR &amp; AI-ready data</a>
       <a class="rs-line" style="--accent:#6a4c93; --i:4; left:91.5%" href="#reprocessing">Reprocessing</a>
     </nav>
   </figure>
@@ -94,12 +94,12 @@ toc: false
     <p class="research-section-desc">Metaproteomics asks which organisms are present in a microbial community, what they are doing, and how they are doing it and importantly how confidently this can be inferred from peptide evidence. This is difficult because many peptides are shared across related taxa, while many functions are distributed across complex and unevenly characterized microbial proteomes. We develop methods for taxonomic and functional interpretation that explicitly account for this ambiguity rather than hiding it. Tools such as Unipept and peptonizer 2000 help translate peptide-level evidence into interpretable community profiles. We want to make metaproteomics scalable, transparent, and statistically grounded, from small microbiome studies to analyses spanning thousands of species.</p>
   </section>
 
-  <section class="research-section" id="fair-data-principles" style="--accent:#b0792a">
+  <section class="research-section" id="fair-ai-ready-data" style="--accent:#b0792a">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <h2 class="research-section-title">FAIR data principles</h2>
+      <h2 class="research-section-title">FAIR &amp; AI-ready data</h2>
     </div>
-    <p class="research-section-desc">Public proteomics data only becomes scientifically reusable when it is described in a way that both people and machines can understand. We therefore work on metadata annotation, data standards, and community-facing tools that make proteomics data findable, accessible, interoperable, and reusable. Resources such as lesSDRF and annotation workflows around public repositories help turn deposited datasets into structured research objects that can be searched, compared, reprocessed, and used for machine learning. We want to move proteomics from data availability to data usability, where public datasets can support new questions beyond the study for which they were originally generated.</p>
+    <p class="research-section-desc">Public proteomics data only becomes scientifically reusable when it is described in a way that both people and machines can understand. We therefore work on metadata annotation, data standards, and community-facing tools that make proteomics data findable, accessible, interoperable, and reusable, and, increasingly, AI-ready. This is a community effort: through PSI-AI we help shape metadata standards for AI use, through ProteomicsML we curate machine-learning-ready benchmark datasets and teach others to apply AI to proteomics, and through projects such as mzPeak and rusteomics we build fast, open tooling that eases data parsing and reuse at scale. Resources such as lesSDRF and annotation workflows around public repositories help turn deposited datasets into structured research objects that can be searched, compared, reprocessed, and used to train machine learning models. We want to move proteomics from data availability to data usability, where public datasets can support new questions, and new AI models, beyond the study for which they were originally generated.</p>
   </section>
 
   <section class="research-section" id="reprocessing" style="--accent:#6a4c93">
