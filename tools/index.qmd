@@ -94,6 +94,33 @@ toc: false
       devs: ['robbin', 'ralf']
     },
     {
+      name: 'iDeepLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'ideeplc.png',
+      desc: 'Retention-time prediction from peptide chemical structure (SMILES), generalising to modifications unseen during training.',
+      links: {
+        github: 'https://github.com/compomics/iDeepLC',
+        paper: 'https://doi.org/10.1021/acs.analchem.5c08017',
+      },
+      devs: ['alireza', 'robbin']
+    },
+    {
+      name: 'CALLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'callc.png',
+      desc: 'Generalized calibration that maps retention-time predictions between different liquid chromatography setups, avoiding setup-specific models.',
+      links: {
+        github: 'https://github.com/CompOmics/CALLC',
+        paper: 'https://doi.org/10.1021/acs.analchem.0c00233',
+      },
+      devs: ['robbin']
+    },
+    {
+      name: 'peptide-GNN', cat: 'prediction', icon: 'bi-diagram-3', comingSoon: true,
+      desc: 'Graph neural network for interpretable peptide retention-time prediction.',
+      links: {
+        github: 'https://github.com/CompOmics/peptide-gnn',
+        paper: 'https://doi.org/10.64898/2026.05.18.725893',
+      },
+      devs: ['robbin', 'alex']
+    },
+    {
       name: 'IM2Deep', cat: 'prediction', icon: 'bi-wind', logo: 'im2deep.svg',
       desc: 'Predicts collisional cross-section (CCS) values for peptides, including modified, and multiple conformations.',
       links: {
@@ -194,6 +221,7 @@ toc: false
       desc: 'Comprehensive resource of human phosphosites mapped within their full structural context.',
       links: {
         github: 'https://github.com/compomics',
+        web: 'https://iomics.ugent.be/scop3p/',
         paper: 'https://doi.org/10.1021/acs.jproteome.0c00306',
       },
       devs: ['pathmanaban', 'natalia']
@@ -201,7 +229,10 @@ toc: false
     {
       name: 'Scop3PTM', cat: 'biological', icon: 'bi-diagram-3-fill', logo: 'scop3ptm.png',
       desc: 'Maps post-translational modifications onto protein structures for contextual, structure-aware analysis.',
-      links: { github: 'https://github.com/compomics' },
+      links: {
+        github: 'https://github.com/compomics',
+        web: 'https://iomics.ugent.be/scop3ptm',
+      },
       devs: ['pathmanaban', 'natalia']
     },
     {
@@ -209,6 +240,7 @@ toc: false
       desc: 'Machine-learning framework for tissue inference and biomarker discovery from proteomes.',
       links: {
         github: 'https://github.com/compomics',
+        web: 'https://mlmarker.streamlit.app/',
         paper: 'https://doi.org/10.1101/2025.06.10.658642',
       },
       devs: ['tine']
@@ -220,8 +252,17 @@ toc: false
       devs: ['enrico']
     },
     {
+      name: 'PTMVision', cat: 'biological', icon: 'bi-eye', logo: 'ptmvision.png',
+      desc: 'Interactive web platform for exploratory visual analysis of post-translational modifications from mass spectrometry data.',
+      links: {
+        web: 'https://ptmvision-tuevis.cs.uni-tuebingen.de/',
+        paper: 'https://doi.org/10.1021/acs.jproteome.4c00679',
+      },
+      devs: ['caro']
+    },
+    {
       name: 'E. coli PeptideAtlas Build', cat: 'biological', icon: 'bi-virus', logo: 'bacterium.png',
-      desc:'Characterizing the observed Eschericia coli pan-proteome and its post-translational modifications.',
+      desc:'Characterizing the observed Escherichia coli pan-proteome and its post-translational modifications.',
       links: {
         web: 'https://peptideatlas.org/builds/ecoli/',
         paper: 'https://doi.org/10.1021/acs.jproteome.5c00902'
@@ -292,6 +333,15 @@ toc: false
         paper: 'https://doi.org/10.1021/acs.jproteome.5c00435',
       },
       devs: ['tim','ralf']
+    },
+    {
+      name: 'PSI-AI', cat: 'community', icon: 'bi-filetype-ai',
+      desc: 'Working group making proteomics data AI-ready and standardizing the use of AI in data analysis workflows.',
+      note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.',
+      links: {
+        web: 'https://psi-ai.org/',
+      },
+      devs: ['ralf', 'tine', 'hari']
     }
   ];
 
@@ -370,12 +420,15 @@ toc: false
     }
 
     html += '<div class="tool-tile-foot">';
-    // devs (own row, above the links)
+    // devs (own row, above the links) — each avatar links to that person's team entry
     if (tool.devs && tool.devs.length) {
-      html += '<div class="tool-tile-devs" title="' + esc(tool.devs.join(', ')) + '">';
+      html += '<div class="tool-tile-devs">';
       tool.devs.slice(0, 4).forEach(function (key) {
-        html += '<img class="tool-tile-dev" src="../assets/images/' + esc(key) + '.jpg" alt="" '
-          + 'onerror="this.style.display=\'none\'">';
+        const devName = key.charAt(0).toUpperCase() + key.slice(1);
+        html += '<a class="tool-tile-dev-link" href="../team/index.html#member-' + esc(key) + '" title="' + esc(devName) + '">'
+          + '<img class="tool-tile-dev" src="../assets/images/' + esc(key) + '.jpg" alt="' + esc(devName) + '" '
+          + 'onerror="this.closest(\'.tool-tile-dev-link\').style.display=\'none\'">'
+          + '</a>';
       });
       html += '</div>';
     }

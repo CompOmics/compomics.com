@@ -362,7 +362,29 @@ $cat-community:      #4f9d6b;  // green (community projects)
   align-self: flex-start;  // avatars hug the left, don't stretch
 }
 
+.tool-tile-dev-link {
+  display: block;
+  line-height: 0;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+
+  &:not(:first-child) { margin-left: -8px; }
+
+  // lift above overlapping siblings on hover/focus so the whole avatar is visible
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    z-index: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
 .tool-tile-dev {
+  display: block;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -370,8 +392,6 @@ $cat-community:      #4f9d6b;  // green (community projects)
   object-position: center top;
   border: 2px solid $cream-2;
   background: $cream-3;
-
-  &:not(:first-child) { margin-left: -8px; }
 
   .tool-tile:hover & { border-color: $surface-hover; }
 }

@@ -9,38 +9,56 @@ toc: false
   <div class="research-header-kicker">What we do</div>
   <h1 class="research-header-title">Research</h1>
   <p class="research-header-sub">We are a team of 26 enthusiastic computational biologists, bioinformaticians, and software developers who build methods and tools across the proteomics workflow. Our work spans peptide property prediction, mass spectrometry data analysis, data management, metadata standardization, and the large-scale reuse of public proteomics data.</p>
-  <p class="research-header-text">Modern <strong>mass spectrometry</strong> can measure proteins with a unseen depth and throughput that increasingly exceeds our ability to interpret the resulting data. CompOmics works to close this gap. We develop open-source software, machine learning models, web resources, and community-oriented data standards that make proteomics data analysis <strong>faster</strong>, more <strong>accurate</strong>, and more <strong>reproducible</strong>. By keeping our tools and data resources openly available, we aim to support transparent, reusable, and scalable proteomics research for the wider community.</p>
+  <p class="research-header-text">Modern <strong>mass spectrometry</strong> measures proteins at a depth and throughput that keeps growing faster than our ability to interpret the resulting data. CompOmics works on that interpretation problem. We develop open-source software, machine learning models, web resources, and data standards that make proteomics data analysis <strong>faster</strong> and more <strong>reproducible</strong>. We keep our tools and data resources openly available so that other groups can build on them directly instead of starting from scratch.</p>
 
   <!-- Signature: the five research lines drawn as a five-channel mass spectrum.
        Peaks are evenly spaced at 10/30/50/70/90% so the clickable labels below
        align exactly under them via a five-column grid. -->
   <figure class="research-spectrum">
     <svg viewBox="0 0 960 224" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-      <line class="spec-base" x1="24" y1="180" x2="936" y2="180" />
+      <!-- axes: intensity (y) vs m/z (x), so the motif reads as a mass spectrum -->
+      <line class="spec-axis" x1="24" y1="16" x2="24" y2="180" />
+      <polygon class="spec-axis-arrow" points="24,12 20,20 28,20" />
+      <line class="spec-base" x1="24" y1="180" x2="940" y2="180" />
+      <polygon class="spec-axis-arrow" points="944,180 936,176 936,184" />
+      <text class="spec-axis-label" x="486" y="210" text-anchor="middle">m/z</text>
+      <text class="spec-axis-label" x="13" y="98" text-anchor="middle" transform="rotate(-90 13 98)">Intensity</text>
 
-      <!-- faint minor peaks: spectrum texture, never animated -->
+      <!-- faint minor peaks: chaotic spectrum texture (never animated). Greyed
+           out, so some can out-tower the accent peaks without stealing focus. -->
       <g class="spec-minor">
-        <rect x="60"  y="158" width="3" height="22" /><rect x="205" y="166" width="3" height="14" />
-        <rect x="250" y="150" width="3" height="30" /><rect x="378" y="162" width="3" height="18" />
-        <rect x="412" y="170" width="3" height="10" /><rect x="540" y="154" width="3" height="26" />
-        <rect x="566" y="168" width="3" height="12" /><rect x="720" y="164" width="3" height="16" />
-        <rect x="762" y="152" width="3" height="28" /><rect x="884" y="166" width="3" height="14" />
-        <rect x="912" y="160" width="3" height="20" />
+        <rect x="28" y="171" width="2" height="9" /><rect x="36" y="140" width="3" height="40" /><rect x="43" y="174" width="2" height="6" /><rect x="55" y="156" width="3" height="24" /><rect x="62" y="170" width="2" height="10" /><rect x="72" y="110" width="3" height="70" /><rect x="80" y="175" width="2" height="5" />
+        <rect x="104" y="168" width="2" height="12" /><rect x="112" y="125" width="3" height="55" /><rect x="120" y="173" width="2" height="7" /><rect x="129" y="164" width="2" height="16" /><rect x="138" y="85" width="3" height="95" /><rect x="147" y="174" width="2" height="6" /><rect x="156" y="167" width="2" height="13" /><rect x="166" y="160" width="3" height="20" /><rect x="176" y="171" width="2" height="9" /><rect x="186" y="45" width="3" height="135" /><rect x="196" y="173" width="2" height="7" /><rect x="206" y="163" width="2" height="17" /><rect x="217" y="169" width="2" height="11" /><rect x="228" y="174" width="2" height="6" /><rect x="240" y="132" width="3" height="48" /><rect x="251" y="171" width="2" height="9" /><rect x="262" y="166" width="2" height="14" /><rect x="273" y="173" width="2" height="7" />
+        <rect x="298" y="167" width="2" height="13" /><rect x="308" y="120" width="3" height="60" /><rect x="318" y="172" width="2" height="8" /><rect x="329" y="164" width="2" height="16" /><rect x="339" y="35" width="3" height="145" /><rect x="350" y="173" width="2" height="7" /><rect x="360" y="168" width="2" height="12" /><rect x="371" y="150" width="3" height="30" /><rect x="382" y="174" width="2" height="6" /><rect x="393" y="165" width="2" height="15" /><rect x="404" y="142" width="3" height="38" /><rect x="415" y="171" width="2" height="9" /><rect x="427" y="163" width="2" height="17" /><rect x="438" y="173" width="2" height="7" /><rect x="450" y="160" width="3" height="20" /><rect x="461" y="170" width="2" height="10" />
+        <rect x="490" y="168" width="2" height="12" /><rect x="501" y="100" width="3" height="80" /><rect x="512" y="172" width="2" height="8" /><rect x="524" y="161" width="2" height="19" /><rect x="535" y="70" width="3" height="110" /><rect x="546" y="173" width="2" height="7" /><rect x="557" y="166" width="2" height="14" /><rect x="569" y="171" width="2" height="9" /><rect x="581" y="128" width="3" height="52" /><rect x="592" y="169" width="2" height="11" /><rect x="604" y="164" width="2" height="16" /><rect x="616" y="173" width="2" height="7" /><rect x="629" y="40" width="3" height="140" /><rect x="641" y="171" width="2" height="9" /><rect x="653" y="165" width="2" height="15" />
+        <rect x="682" y="170" width="2" height="10" /><rect x="693" y="136" width="3" height="44" /><rect x="704" y="30" width="3" height="150" /><rect x="715" y="173" width="2" height="7" /><rect x="727" y="167" width="2" height="13" /><rect x="739" y="162" width="2" height="18" /><rect x="751" y="114" width="3" height="66" /><rect x="763" y="169" width="2" height="11" /><rect x="776" y="164" width="2" height="16" /><rect x="788" y="173" width="2" height="7" /><rect x="801" y="145" width="3" height="35" /><rect x="813" y="171" width="2" height="9" /><rect x="826" y="90" width="3" height="90" /><rect x="838" y="166" width="2" height="14" /><rect x="851" y="173" width="2" height="7" />
+        <rect x="874" y="169" width="2" height="11" /><rect x="885" y="122" width="3" height="58" /><rect x="897" y="165" width="2" height="15" /><rect x="909" y="50" width="3" height="130" /><rect x="920" y="173" width="2" height="7" /><rect x="931" y="167" width="2" height="13" />
       </g>
 
-      <!-- five accent peaks, one per research line -->
-      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="91"  y="64" width="10" height="116" rx="3" /><text x="96"  y="206">01</text></g>
-      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="283" y="34" width="10" height="146" rx="3" /><text x="288" y="206">02</text></g>
-      <g class="spec-peak" style="--i:2; color:#2f8f6f"><rect x="475" y="96" width="10" height="84"  rx="3" /><text x="480" y="206">03</text></g>
-      <g class="spec-peak" style="--i:3; color:#b0792a"><rect x="667" y="52" width="10" height="128" rx="3" /><text x="672" y="206">04</text></g>
-      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="859" y="82" width="10" height="98"  rx="3" /><text x="864" y="206">05</text></g>
+      <!-- five accent peaks, one per research line (labelled by the nav below).
+           The line initials spell the peptide AIMFR, so the peaks sit at the
+           m/z of its b-ion ladder (b1..b4 + precursor). Same height for all. -->
+      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="120" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="271" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:2; color:#2f8f6f"><rect x="445" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:3; color:#b0792a"><rect x="641" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="873" y="50" width="10" height="130" rx="3" /></g>
+
+      <!-- residue ladder: double-headed arrows between successive b-ions; each
+           gap is one residue mass, so the arrows spell A·I·M·F·R across the peaks -->
+      <g class="spec-annot">
+        <line x1="139" y1="37" x2="262" y2="37" /><polygon points="125,37 133,34 133,40" /><polygon points="276,37 268,34 268,40" /><text class="spec-annot-res" x="200" y="30">I</text><text class="spec-annot-mz" x="200" y="47">113.08</text>
+        <line x1="290" y1="37" x2="436" y2="37" /><polygon points="276,37 284,34 284,40" /><polygon points="450,37 442,34 442,40" /><text class="spec-annot-res" x="363" y="30">M</text><text class="spec-annot-mz" x="363" y="47">131.04</text>
+        <line x1="464" y1="37" x2="632" y2="37" /><polygon points="450,37 458,34 458,40" /><polygon points="646,37 638,34 638,40" /><text class="spec-annot-res" x="548" y="30">F</text><text class="spec-annot-mz" x="548" y="47">147.07</text>
+        <line x1="660" y1="37" x2="864" y2="37" /><polygon points="646,37 654,34 654,40" /><polygon points="878,37 870,34 870,40" /><text class="spec-annot-res" x="762" y="30">R</text><text class="spec-annot-mz" x="762" y="47">156.10</text>
+      </g>
     </svg>
     <nav class="research-spectrum-nav" aria-label="Research lines">
-      <a class="rs-line" style="--accent:#1f5f8f; --i:0" href="#analyte-prediction">Analyte prediction</a>
-      <a class="rs-line" style="--accent:#c5392b; --i:1" href="#identification">Identification</a>
-      <a class="rs-line" style="--accent:#2f8f6f; --i:2" href="#metaproteomics">Metaproteomics</a>
-      <a class="rs-line" style="--accent:#b0792a; --i:3" href="#fair-data-principles">FAIR data principles</a>
-      <a class="rs-line" style="--accent:#6a4c93; --i:4" href="#reprocessing">Reprocessing</a>
+      <a class="rs-line" style="--accent:#1f5f8f; --i:0; left:13.0%" href="#analyte-prediction">Analyte prediction</a>
+      <a class="rs-line" style="--accent:#c5392b; --i:1; left:28.8%" href="#identification">Identification</a>
+      <a class="rs-line" style="--accent:#2f8f6f; --i:2; left:46.9%" href="#metaproteomics">Metaproteomics</a>
+      <a class="rs-line" style="--accent:#b0792a; --i:3; left:67.3%" href="#fair-ai-ready-data">FAIR &amp; AI-ready data</a>
+      <a class="rs-line" style="--accent:#6a4c93; --i:4; left:91.5%" href="#reprocessing">Reprocessing</a>
     </nav>
   </figure>
 
@@ -55,46 +73,41 @@ toc: false
   <section class="research-section" id="analyte-prediction" style="--accent:#1f5f8f">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <span class="research-num">01</span>
+      <h2 class="research-section-title">Analyte prediction</h2>
     </div>
-    <h2 class="research-section-title">Analyte prediction</h2>
-    <p class="research-section-desc">Proteomics becomes more powerful when we can predict what a peptide should look like before it is measured. We develop machine learning models that translate peptide sequences into expected mass spectrometry behaviour, including fragment ion intensities, retention time, and ion mobility. Tools such as MS²PIP, DeepLC, and IM2Deep make these predicted signals available for practical analysis workflows. This work supports spectral library generation, targeted method design, and identification rescoring, but its broader aim is more fundamental: to make peptide behaviour computationally explicit, testable, and reusable across instruments, datasets, and experimental designs.</p>
+    <p class="research-section-desc">Proteomics becomes more powerful when we can predict what a peptide should look like before it is measured. We build machine learning models that translate a peptide sequence into its expected behaviour in a mass spectrometer: fragment ion intensities, retention time, and ion mobility. Tools such as MS²PIP, DeepLC, and IM2Deep make these predictions available for everyday analysis workflows, supporting spectral library generation, targeted method design, and identification rescoring. The underlying aim is to make peptide behaviour something we can calculate and test directly, rather than only observe after the fact.</p>
   </section>
 
   <section class="research-section" id="identification" style="--accent:#c5392b">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <span class="research-num">02</span>
+      <h2 class="research-section-title">Identification</h2>
     </div>
-    <h2 class="research-section-title">Identification</h2>
-    <p class="research-section-desc">Peptide and protein identification is not only a database search problem; it is an ambiguity problem. A first-pass search engine proposes candidate matches, but much of the information in the data remains underused. We develop post-processing and data-driven rescoring approaches that combine search engine scores with predicted peptide behaviour, spectrum evidence, retention time, and ion mobility information. Through tools such as MS²Rescore/TIMS²Rescore combined with SearchGUI & PeptideShaker, we aim to increase confident identifications in DDA and DIA workflows while keeping false discovery control central. Our goal is to recover reliable signal without compromising statistical confidence.</p>
+    <p class="research-section-desc">Peptide and protein identification is usually treated as a database search problem, but much of the real difficulty is ambiguity. A first-pass search engine proposes candidate matches, yet a lot of the information already present in the data goes unused. We develop post-processing and data-driven rescoring methods that combine search engine scores with predicted peptide behaviour, spectrum evidence, retention time, and ion mobility. Tools such as MS²Rescore/TIMS²Rescore, used together with SearchGUI and PeptideShaker, increase the number of confident identifications in DDA and DIA workflows without loosening false discovery control. The point is to recover signal that is already there, not to relax the statistics.</p>
   </section>
 
   <section class="research-section" id="metaproteomics" style="--accent:#2f8f6f">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <span class="research-num">03</span>
+      <h2 class="research-section-title">Metaproteomics</h2>
     </div>
-    <h2 class="research-section-title">Metaproteomics</h2>
-    <p class="research-section-desc">Metaproteomics asks which organisms are present in a microbial community, what they are doing, and how they are doing it and importantly how confidently this can be inferred from peptide evidence. This is difficult because many peptides are shared across related taxa, while many functions are distributed across complex and unevenly characterized microbial proteomes. We develop methods for taxonomic and functional interpretation that explicitly account for this ambiguity rather than hiding it. Tools such as Unipept and peptonizer 2000 help translate peptide-level evidence into interpretable community profiles. We want to make metaproteomics scalable, transparent, and statistically grounded, from small microbiome studies to analyses spanning thousands of species.</p>
+    <p class="research-section-desc">Metaproteomics asks which organisms are present in a microbial community and what they are doing, and, just as important, how confidently any of that can be inferred from peptide evidence. That last part is hard: many peptides are shared across related taxa, and many functions are spread across microbial proteomes that are only partly characterized. We build methods for taxonomic and functional interpretation that account for this ambiguity instead of glossing over it. Tools such as Unipept and Peptonizer2000 turn peptide-level evidence into community profiles that are actually interpretable. The goal is to keep metaproteomics statistically grounded at any scale, from a single microbiome study to analyses covering thousands of species.</p>
   </section>
 
-  <section class="research-section" id="fair-data-principles" style="--accent:#b0792a">
+  <section class="research-section" id="fair-ai-ready-data" style="--accent:#b0792a">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <span class="research-num">04</span>
+      <h2 class="research-section-title">FAIR &amp; AI-ready data</h2>
     </div>
-    <h2 class="research-section-title">FAIR data principles</h2>
-    <p class="research-section-desc">Public proteomics data only becomes scientifically reusable when it is described in a way that both people and machines can understand. We therefore work on metadata annotation, data standards, and community-facing tools that make proteomics data findable, accessible, interoperable, and reusable. Resources such as lesSDRF and annotation workflows around public repositories help turn deposited datasets into structured research objects that can be searched, compared, reprocessed, and used for machine learning. We want to move proteomics from data availability to data usability, where public datasets can support new questions beyond the study for which they were originally generated.</p>
+    <p class="research-section-desc">Public proteomics data only becomes reusable, by people or by machines, when it is well described. We work on metadata annotation, data standards, and community tools that make proteomics data findable, accessible, interoperable, and reusable, and increasingly, ready to train AI models directly. This is a community effort rather than something we do alone. Through PSI-AI we help shape metadata standards for AI use. ProteomicsML gives us a place to curate machine-learning-ready benchmark datasets and teach others how to apply AI to proteomics, and projects such as mzPeak and rusteomics give us fast, open tooling that makes parsing and reusing mass spectrometry data less painful. Resources such as lesSDRF and annotation workflows around public repositories turn deposited datasets into structured objects that can be searched, compared, reprocessed, and used to train models. The underlying goal is to move proteomics data from merely available to actually usable, for new scientific questions and new AI models, beyond the study that originally produced it.</p>
   </section>
 
   <section class="research-section" id="reprocessing" style="--accent:#6a4c93">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
-      <span class="research-num">05</span>
+      <h2 class="research-section-title">Reprocessing</h2>
     </div>
-    <h2 class="research-section-title">Reprocessing</h2>
-    <p class="research-section-desc">Reprocessing brings our research lines together: peptide-property prediction improves how we model analyte behaviour, identification and rescoring software recover confident evidence from complex spectra, and FAIR annotation makes public datasets comparable at scale. We combine these developments to revisit existing proteomics data with new computational questions, extracting biological information that was not accessible in the original analysis. This includes large-scale tissue profiling, biomarker discovery, and the systematic recovery of previously missed post-translational modifications, as illustrated by Scop3PTM. Our aim is to make public proteomics data scientifically active beyond deposition, turning the vast amount of data that already exists into a continuing source of new biological insight.</p>
+    <p class="research-section-desc">Reprocessing pulls our other research lines together. Peptide-property prediction improves how we model analyte behaviour, identification and rescoring software recovers confident evidence from complex spectra, and FAIR/AI-ready annotation makes public datasets comparable at scale. We use these pieces together to revisit existing proteomics data with new computational questions and pull out biological information the original analysis did not capture. Recent examples include large-scale tissue profiling, biomarker discovery, and the systematic recovery of post-translational modifications that were missed the first time, as in Scop3PTM. The aim is to keep public proteomics data scientifically active after deposition, so that data already collected can keep producing new findings, not just the ones from its original study.</p>
   </section>
 
 </div>

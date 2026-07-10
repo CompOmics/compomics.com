@@ -41,3 +41,217 @@
   max-width: 62ch;
   margin: 0;
 }
+
+// ── "Bioinformatics for Proteomics" course page ──────────────────────────────
+// A numbered lab-manual layout: each module is a chapter, each step hangs off a
+// left rail (the workflow is a real sequence, so the numbering carries meaning).
+// Resources are type-coded chips — blue for materials, red for external tools.
+// Scoped under .bfp so nothing leaks to other posts.
+.bfp {
+  --bfp-rail: 3rem;      // width of the number column
+  --bfp-gap: 1.4rem;     // rail-to-content gap
+  max-width: 46rem;
+
+  .bfp-lead {
+    font-family: $font-family-sans-serif;
+    font-size: 1.16rem;
+    line-height: 1.6;
+    color: $ink;
+    max-width: 40rem;
+    margin: 0.25rem 0 1.6rem;
+  }
+
+  // ── Notes (archived banner + inline deprecation) ──────────────────────────
+  .bfp-note {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.9rem 1.1rem;
+    background: $cream-2;
+    border: 1px solid $line;
+    border-left: 3px solid $primary;
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin: 1.5rem 0;
+
+    > i {
+      flex-shrink: 0;
+      color: $primary;
+      font-size: 1.15rem;
+      margin-top: 0.1rem;
+    }
+
+    p {
+      margin: 0;
+      font-family: $font-family-sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: $ink-soft;
+    }
+    p + p { margin-top: 0.4rem; }
+    strong { color: $ink; font-weight: 700; }
+
+    .bfp-note-meta { color: $muted; font-size: 0.85rem; }
+  }
+
+  .bfp-note--inline {
+    border-left-color: $secondary;
+    margin: 0 0 1.5rem;
+    > i { color: $secondary; }
+  }
+
+  // ── Course-wide / related resource rows ───────────────────────────────────
+  .bfp-general { margin: 1.5rem 0 2rem; }
+  .bfp-related { margin-top: 1.3rem; padding-left: calc(var(--bfp-rail) + var(--bfp-gap)); }
+  .bfp-loose   { padding-left: calc(var(--bfp-rail) + var(--bfp-gap)); }
+
+  .bfp-general-label,
+  .bfp-related-label {
+    display: block;
+    font-family: $font-family-monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: $muted;
+    margin-bottom: 0.55rem;
+  }
+
+  // ── Module (chapter) ──────────────────────────────────────────────────────
+  .bfp-module { margin-top: 3.2rem; }
+
+  .bfp-module-head {
+    display: grid;
+    grid-template-columns: var(--bfp-rail) 1fr;
+    column-gap: var(--bfp-gap);
+    align-items: start;
+    margin-bottom: 1.3rem;
+  }
+
+  .bfp-module-num {
+    font-family: $font-family-heading;
+    font-weight: 800;
+    font-size: 2.3rem;
+    line-height: 1;
+    color: $primary;
+    text-align: right;
+    letter-spacing: -0.02em;
+  }
+
+  .bfp-eyebrow {
+    display: block;
+    font-family: $font-family-monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: $muted;
+    margin-bottom: 0.25rem;
+  }
+
+  .bfp-module-title {
+    font-family: $font-family-heading;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: $ink;
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+    padding: 0;
+    border: none;
+  }
+
+  .bfp-module-desc {
+    font-family: $font-family-sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: $ink-soft;
+    margin: 0;
+    max-width: 38rem;
+  }
+
+  // ── Steps hanging off the rail ────────────────────────────────────────────
+  .bfp-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bfp-step {
+    display: grid;
+    grid-template-columns: var(--bfp-rail) 1fr;
+    column-gap: var(--bfp-gap);
+  }
+
+  .bfp-step-num {
+    font-family: $font-family-monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $primary;
+    text-align: right;
+    padding-top: 0.15rem;
+  }
+
+  .bfp-step-body {
+    border-left: 2px solid darken($line, 22%);   // stacked borders form the continuous rail
+    padding: 0 0 1.35rem var(--bfp-gap);
+  }
+  .bfp-step:last-child .bfp-step-body { padding-bottom: 0.35rem; }
+
+  .bfp-step-title {
+    font-family: $font-family-heading;
+    font-size: 1.04rem;
+    font-weight: 700;
+    color: $ink;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border: none;
+  }
+
+  // ── Resource chips ────────────────────────────────────────────────────────
+  .bfp-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .bfp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    font-family: $font-family-sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: $ink-soft;
+    background: $cream-2;
+    border: 1px solid $line;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+
+    i { font-size: 0.9rem; color: $primary; }
+
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      background: $surface-hover;
+      text-decoration: none;
+    }
+  }
+
+  // external software gets the red accent, so tools read differently from materials
+  .bfp-link--tool {
+    i { color: $secondary; }
+    &:hover { border-color: $secondary; color: $secondary; }
+  }
+
+  // ── Narrow screens: shrink the rail, keep the spine ───────────────────────
+  @media (max-width: 560px) {
+    --bfp-rail: 2.2rem;
+    --bfp-gap: 0.9rem;
+
+    .bfp-module-num { font-size: 1.9rem; }
+    .bfp-module-title { font-size: 1.45rem; }
+    .bfp-step-num { font-size: 0.82rem; }
+  }
+}

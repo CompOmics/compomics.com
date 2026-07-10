@@ -32,8 +32,7 @@
   // padding so intro + spectrum + the EXPLORE cue still fit above the fold
   @media (max-height: 860px) {
     padding-bottom: 3rem;
-    .research-spectrum { margin-top: 2.8rem; }
-    .research-spectrum svg { max-height: 340px; }
+    .research-spectrum { margin-top: 1.5rem; }
   }
 }
 
@@ -106,20 +105,52 @@
 
 // ── Signature: five research lines drawn as a five-channel mass spectrum ───────
 .research-spectrum {
-  max-width: 68rem;        // wider = larger (viewBox is short, so width governs size)
-  margin: 4.5rem auto 0;   // always centered, nudged lower in the header
+  --spectrum-w: min(80vw, 700px);
+  width: var(--spectrum-w);
+  max-width: none;
+  margin: 3.0rem auto 0;   // auto margins centre it (even when wider than column)
   padding: 0;
 
   svg {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 440px;
+    aspect-ratio: 960 / 224;   // fixes height to the width; never collapses
     overflow: visible;
   }
 
   .spec-base { stroke: $line; stroke-width: 1; }
   .spec-minor rect { fill: $line; }
+
+  // axes: intensity (y) vs m/z (x), so the motif reads as a mass spectrum
+  .spec-axis { stroke: $line; stroke-width: 1; }
+  .spec-axis-arrow { fill: $line; }
+  .spec-axis-label {
+    fill: $muted;
+    font-family: $font-family-monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+  }
+
+  // residue ladder annotation (difference arrows between successive b-ions)
+  .spec-annot {
+    line { stroke: $ink-soft; stroke-width: 1; }
+    polygon { fill: $ink-soft; }
+  }
+  .spec-annot-res {
+    fill: $ink;
+    font-family: $font-family-monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-anchor: middle;
+  }
+  .spec-annot-mz {
+    fill: $muted;
+    font-family: $font-family-monospace;
+    font-size: 9px;
+    text-anchor: middle;
+  }
 
   // each accent peak grows up from the baseline on load, staggered by --i
   .spec-peak {
@@ -145,14 +176,19 @@
   }
 }
 
-// clickable line titles under each peak, aligned to the peaks via a 5-col grid
+// clickable line titles, each pinned under its peak (peaks sit at b-ion m/z, so
+// they are unevenly spaced — positioned via the inline `left` per label). On
+// narrow screens this would crowd, so below 640px it falls back to an even grid.
 .research-spectrum-nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: .4rem;
-  margin-top: .55rem;
+  position: relative;
+  height: 3rem;
+  margin-top: .6rem;
 }
 .rs-line {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;   // keep each label on one line (e.g. "FAIR data principles")
   color: var(--accent);
   font-family: $font-family-sans-serif;
   font-size: clamp(.68rem, 1.5vw, .84rem);
@@ -160,7 +196,6 @@
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  padding: 0 .2rem;
   opacity: 0;
   animation: research-peak-label .5s ease forwards;
   animation-delay: calc(.12s * var(--i) + .5s);
@@ -168,6 +203,17 @@
 
   &:hover,
   &:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+}
+
+@media (max-width: 640px) {
+  .research-spectrum-nav {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .4rem;
+    height: auto;
+  }
+  .rs-line { position: static; transform: none; width: auto; }
 }
 
 @keyframes research-peak-rise  { to { transform: scaleY(1); } }
@@ -193,12 +239,13 @@
   @media (max-width: 620px) { padding: 2.5rem 0; }
 }
 
-// accent peak + number: this section's mark on the spectrum, left-aligned
+// accent peak + title on one line: the coloured bar marks the section, sitting
+// just before the heading (no number)
 .research-section-top {
   display: flex;
   align-items: flex-end;
   gap: .7rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: .9rem;
   color: var(--accent);
 }
 
@@ -225,16 +272,6 @@
 // peak draws up once the section scrolls into view (class added by inline JS)
 .research-section.is-revealed .peak-bar { transform: scaleY(1); }
 
-.research-num {
-  font-family: $font-family-monospace;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  color: var(--accent);
-  line-height: 1;
-  padding-bottom: .1rem;
-}
-
 // respect reduced-motion: render peaks at full height, no animation
 @media (prefers-reduced-motion: reduce) {
   .research-spectrum .spec-peak rect,
@@ -256,7 +293,7 @@
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: $ink;
-  margin: 0 0 .8rem;
+  margin: 0;
   padding: 0;
   border: none;
 }

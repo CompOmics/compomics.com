@@ -2,10 +2,296 @@
 
 #title-block-header { display: none !important; }
 
+// ── Team grid + cards + profile expander ─────────────────────────────────────
+// All team-page card styling lives here (moved out of assets/compomics.scss) so
+// the two stylesheets can't fight over the same selectors.
 .team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2.2rem 1.4rem;
+  margin: 2.5rem 0;
+
   @media (min-width: 860px) {
     grid-template-columns: repeat(5, 1fr);
   }
+}
+
+.team-card-wrap { display: contents; }
+
+.team-grid-selectors { margin-bottom: 1.75rem; }
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease;
+
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+    color: inherit;
+
+    .team-photo {
+      filter: grayscale(0%);
+      border-color: $primary;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 0 0 3px rgba(31, 95, 143, 0.12);
+    }
+    .team-name { color: $primary; }
+  }
+
+  &.is-selected {
+    .team-photo {
+      filter: grayscale(0%);
+      border-color: $primary;
+      box-shadow: 0 0 0 4px rgba(31, 95, 143, 0.08);
+    }
+    .team-name { color: $primary; }
+  }
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid $line;
+  box-shadow: none;
+  margin-bottom: 0.75rem;
+  display: block;
+  transition: filter 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  filter: grayscale(12%);
+
+  &:hover { filter: grayscale(0%); }
+}
+
+.team-name {
+  font-family: $font-family-heading;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: $ink;
+  margin-bottom: 0.1rem;
+  line-height: 1.3;
+  height: calc(1.02rem * 1.3 * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-role {
+  font-family: $font-family-sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $muted;
+  line-height: 1.35;
+}
+
+.team-section-title {
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $muted;
+  margin: 3rem 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $line;
+}
+
+.team-shell-intro {
+  max-width: none;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0.35rem 0 0;
+    color: $muted;
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+}
+
+// Shared dark panel look
+.team-detail-panel,
+.team-profile-expander {
+  position: relative;
+  margin-top: 2rem;
+  padding: clamp(1.6rem, 3.5vw, 2.8rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(90, 167, 218, 0.20);
+  background: linear-gradient(135deg, #0d1f38, #142d50);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(90, 167, 218, 0.08);
+
+  &[hidden] { display: none; }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(90, 167, 218, 0.22), rgba(90, 167, 218, 0) 42%),
+      linear-gradient(135deg, rgba(10, 20, 40, 0.20), rgba(10, 20, 40, 0.55));
+    pointer-events: none;
+  }
+}
+
+// The expander spans the whole row so its width is identical for every member
+// and the pointer notch can sit under any card in the row. Content fills the
+// full width (justified) so there is no empty band of background on the right.
+.team-profile-expander {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 1.15rem;
+  color: #f6f2ea;
+
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: var(--notch-x, 50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #0d1f38;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+.team-detail-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.15rem;
+  color: #f6f2ea;
+}
+
+.team-detail-header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.team-detail-eyebrow {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.team-detail-header h3 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff;
+  line-height: 1.08;
+}
+
+.team-detail-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.team-detail-section {
+  padding-top: 0.35rem;
+
+  h4 {
+    margin: 0 0 0.35rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: $font-family-heading;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 0.98rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+.team-pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.team-pub-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(90, 167, 218, 0.28);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+
+  &::after {
+    content: "↗";
+    font-size: 0.7rem;
+    color: rgba(90, 167, 218, 0.55);
+    align-self: center;
+    margin-left: auto;   // push the arrow to the right edge of the full-width row
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+
+  &:hover {
+    border-color: rgba(90, 167, 218, 0.65);
+    background: rgba(90, 167, 218, 0.12);
+    box-shadow: 0 0 12px rgba(90, 167, 218, 0.18);
+    text-decoration: none;
+
+    &::after {
+      color: rgba(90, 167, 218, 0.95);
+      transform: translate(1px, -1px);
+    }
+  }
+}
+
+.team-pub-title {
+  font-family: $font-family-heading;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.3;
+}
+
+.team-pub-venue {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(90, 167, 218, 0.85);
+  white-space: nowrap;
 }
 
 .page-hero-band {
@@ -36,9 +322,10 @@
   background:
     linear-gradient(to bottom,
       rgba(6,8,12,.55) 0%,
-      rgba(6,8,12,.22) 55%,
+      rgba(6,8,12,.22) 30%,
+      rgba(6,8,12,.34) 65%,
       var(--bs-body-bg) 100%),
-    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 60%);
+    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 80%);
 }
 
 
@@ -49,7 +336,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1.5rem clamp(1.8rem, 4.5vh, 3rem);
+  padding: 0 2.5rem clamp(1.8rem, 4.5vh, 3rem);
+  justify-content: center;
 }
 
 .page-hero-kicker {
