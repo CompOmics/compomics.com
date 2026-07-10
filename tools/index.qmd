@@ -370,12 +370,15 @@ toc: false
     }
 
     html += '<div class="tool-tile-foot">';
-    // devs (own row, above the links)
+    // devs (own row, above the links) — each avatar links to that person's team entry
     if (tool.devs && tool.devs.length) {
-      html += '<div class="tool-tile-devs" title="' + esc(tool.devs.join(', ')) + '">';
+      html += '<div class="tool-tile-devs">';
       tool.devs.slice(0, 4).forEach(function (key) {
-        html += '<img class="tool-tile-dev" src="../assets/images/' + esc(key) + '.jpg" alt="" '
-          + 'onerror="this.style.display=\'none\'">';
+        const devName = key.charAt(0).toUpperCase() + key.slice(1);
+        html += '<a class="tool-tile-dev-link" href="../team/index.html#member-' + esc(key) + '" title="' + esc(devName) + '">'
+          + '<img class="tool-tile-dev" src="../assets/images/' + esc(key) + '.jpg" alt="' + esc(devName) + '" '
+          + 'onerror="this.closest(\'.tool-tile-dev-link\').style.display=\'none\'">'
+          + '</a>';
       });
       html += '</div>';
     }

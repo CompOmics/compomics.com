@@ -223,6 +223,13 @@ toc: false
   const cards = Array.from(document.querySelectorAll('.team-card[data-member]'));
   if (!cards.length) return;
 
+  // give each card's wrapper a stable id so other pages can deep-link to a
+  // person's profile via e.g. href="team/index.html#member-arthur"
+  cards.forEach(function (card) {
+    const wrap = card.closest('.team-card-wrap');
+    if (wrap) wrap.id = 'member-' + card.dataset.member;
+  });
+
   let activeCard = null;
 
   const memberData = {
@@ -624,6 +631,22 @@ toc: false
       openExpander(card, grid);
     });
   });
+
+  // open a member's profile automatically when linked to via #member-<key>
+  // (e.g. from a tool's dev avatar on the tools page)
+  function openFromHash() {
+    const match = window.location.hash.match(/^#member-(.+)$/);
+    if (!match) return;
+    const card = cards.find(function (c) { return c.dataset.member === match[1]; });
+    if (!card || activeCard === card) return;
+    card.click();
+    requestAnimationFrame(function () {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
 })();
 </script>
 ```
