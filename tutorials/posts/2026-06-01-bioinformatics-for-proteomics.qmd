@@ -3,6 +3,8 @@ title: "Bioinformatics for Proteomics"
 date: 2026-06-01
 description: "The original hands-on CompOmics course on mass spectrometry-based proteomics data analysis: identification, functional analysis, data sharing, and quantification. Slides and exercise resources included. A modernised version is in preparation."
 categories: [proteomics, course, identification, quantification, data-sharing, searchgui, peptideshaker]
+aliases:
+  - /bioinformatics-for-proteomics/
 ---
 
 ```{=html}
