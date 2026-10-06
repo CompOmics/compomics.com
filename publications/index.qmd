@@ -58,13 +58,30 @@ else:
     # Current CompOmics members (keep in sync with team/index.qmd). Used both for
     # author highlighting and for the "by person" filter dropdown.
     MEMBERS = [
-        "Lennart Martens", "Sakina Bombaywala", "Robbin Bouwmeester", "Tine Claeys",
-        "Arthur Declercq", "Ralf Gabriels", "Alexander Kensert", "Enrico Massignani",
-        "Pathmanaban Ramasamy", "Tim Van Den Bossche", "Pieter Verschaffelt",
-        "Toon Callens", "Robbe Devreese", "Sander Heyndrickx", "Sude Güneş",
-        "Caroline Jachmann", "Xuxa Malliet", "Alireza Nameni", "Harikrishnan Ramadasan",
-        "Sam Van Puyenbroeck", "Lyudmila Kovalchuke", "Patricia Lefèvre",
-        "Natalia Tichshenko", "Kevin Velghe", "Daria Fijalkowska", "Jasper Zuallaert",
+        "Lennart Martens",
+        "Robbin Bouwmeester",
+        "Tine Claeys",
+        "Arthur Declercq",
+        "Ralf Gabriels",
+        "Alexander Kensert",
+        "Enrico Massignani",
+        "Pathmanaban Ramasamy",
+        "Tim Van Den Bossche",
+        "Toon Callens",
+        "Robbe Devreese",
+        "Sander Heyndrickx",
+        "Sude Güneş",
+        "Caroline Jachmann",
+        "Xuxa Malliet",
+        "Alireza Nameni",
+        "Harikrishnan Ramadasan",
+        "Sam Van Puyenbroeck",
+        "Lyudmila Kovalchuke",
+        "Patricia Lefèvre",
+        "Natalia Tichshenko",
+        "Kevin Velghe",
+        "Daria Fijalkowska",
+        "Jasper Zuallaert",
     ]
 
     # names for bold highlighting = team qmd titles (if any) ∪ the member list above
