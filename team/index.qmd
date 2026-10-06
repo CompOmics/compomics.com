@@ -151,6 +151,12 @@ toc: false
         <div class="team-name">Sam van Puyenbroeck</div>
       </button>
     </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="tijl">
+        <img src="../assets/images/tijl.jpg" class="team-photo" alt="Tijl Verween">
+        <div class="team-name">Tijl Verween</div>
+      </button>
+    </div>
   </div>
 
   <h3 class="team-section-title">Support Staff</h3>
@@ -511,6 +517,13 @@ toc: false
         { title:'Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit', url: 'https://doi.org/10.1038/s41467-021-26720-y', venue: 'Nature Communications · 2021' },
         { title:'SpliceRover: interpretable convolutional neural networks for improved splice site prediction', url: 'https://doi.org/10.1093/bioinformatics/bty497', venue: 'Bioinformatics · 2018' },
       ]
+    },
+    tijl: {
+      title: 'Tijl Verween',
+      role: 'Predoctoral Researcher',
+      email: 'tijl.verween@ugent.be',
+      about: 'Tijl obtained his Master\'s degree in Biochemistry and Biotechnology, with a major in Bioinformatics and Systems Biology, from Ghent University in 2026. He carried out his Master\'s thesis in the CompOmics group and continued in the same group as a PhD student. Outside research, he enjoys learning to play different musical instruments.',
+      currentWork: 'Tijl\'s PhD research focuses on immunopeptidomics. He studies how data-independent acquisition (DIA) can be applied in this field and improves the computational workflows involved, from acquisition method optimization to data analysis.'
     }
   };
 

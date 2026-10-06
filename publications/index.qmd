@@ -33,11 +33,13 @@ if not (project_root / "data" / "publications.json").exists():
 pub_file = project_root / "data" / "publications.json"
 
 if not pub_file.exists():
-    display(HTML(
-        '<div class="callout callout-warning"><p>No publications data found. '
-        'Run <code>python publications/fetch_publications.py</code> to populate '
-        '<code>data/publications.json</code>, then re-render this page.</p></div>'
-    ))
+    display(
+        HTML(
+            '<div class="callout callout-warning"><p>No publications data found. '
+            "Run <code>python publications/fetch_publications.py</code> to populate "
+            "<code>data/publications.json</code>, then re-render this page.</p></div>"
+        )
+    )
 else:
     publications = json.loads(pub_file.read_text(encoding="utf-8"))
 
@@ -76,6 +78,7 @@ else:
         "Alireza Nameni",
         "Harikrishnan Ramadasan",
         "Sam Van Puyenbroeck",
+        "Tijl Verween",
         "Lyudmila Kovalchuke",
         "Patricia Lefèvre",
         "Natalia Tichshenko",
@@ -142,18 +145,25 @@ else:
 
     # Preprint detection — by DOI prefix or journal/server name.
     PREPRINT_DOI_PREFIXES = (
-        "10.1101",    # bioRxiv / medRxiv (Cold Spring Harbor)
-        "10.26434",   # ChemRxiv
-        "10.21203",   # Research Square
-        "10.20944",   # Preprints.org
-        "10.31219",   # OSF Preprints
-        "10.31234",   # PsyArXiv
-        "10.48550",   # arXiv
-        "10.64898",   # bioRxiv (newer prefix)
+        "10.1101",  # bioRxiv / medRxiv (Cold Spring Harbor)
+        "10.26434",  # ChemRxiv
+        "10.21203",  # Research Square
+        "10.20944",  # Preprints.org
+        "10.31219",  # OSF Preprints
+        "10.31234",  # PsyArXiv
+        "10.48550",  # arXiv
+        "10.64898",  # bioRxiv (newer prefix)
     )
     PREPRINT_JOURNAL_HINTS = (
-        "biorxiv", "medrxiv", "chemrxiv", "arxiv", "research square",
-        "preprints.org", "ssrn", "osf", "preprint",
+        "biorxiv",
+        "medrxiv",
+        "chemrxiv",
+        "arxiv",
+        "research square",
+        "preprints.org",
+        "ssrn",
+        "osf",
+        "preprint",
     )
 
     def is_preprint(doi, journal):
@@ -168,7 +178,9 @@ else:
         parts = [authors_txt] if authors_txt else []
         parts.append(f"({year})." if year else "")
         parts.append(f"{title}.")
-        venue = journal + ((" " + location) if location else "") if journal else location
+        venue = (
+            journal + ((" " + location) if location else "") if journal else location
+        )
         if venue:
             parts.append(f"{venue}.")
         if doi:
@@ -194,45 +206,63 @@ else:
         'spellcheck="false" aria-label="Search publications">'
         '<button type="button" class="pub-search-clear" id="pub-search-clear" '
         'aria-label="Clear search" hidden>&times;</button>'
-        '</div>'
+        "</div>"
     )
     # person dropdown (current members, alphabetical by surname)
     lines.append('<div class="pub-person">')
     lines.append('<i class="bi bi-person pub-person-icon" aria-hidden="true"></i>')
-    lines.append('<select id="pub-person-select" class="pub-person-select" aria-label="Filter by person">')
+    lines.append(
+        '<select id="pub-person-select" class="pub-person-select" aria-label="Filter by person">'
+    )
     lines.append('<option value="">All people</option>')
     for name in sorted(MEMBERS, key=lambda n: n.split()[-1].lower()):
         val = html.escape(name.lower(), quote=True)
         lines.append(f'<option value="{val}">{html.escape(name)}</option>')
-    lines.append('</select>')
-    lines.append('</div>')
+    lines.append("</select>")
+    lines.append("</div>")
 
     # type chips — peer-reviewed vs preprint
-    lines.append('<div class="pub-chips pub-type-chips" id="pub-type-chips" role="group" aria-label="Filter by type">')
-    lines.append('<button type="button" class="pub-chip is-active" data-type="all">All</button>')
-    lines.append('<button type="button" class="pub-chip" data-type="published">Peer-reviewed</button>')
-    lines.append('<button type="button" class="pub-chip" data-type="preprint">Preprint</button>')
-    lines.append('</div>')
+    lines.append(
+        '<div class="pub-chips pub-type-chips" id="pub-type-chips" role="group" aria-label="Filter by type">'
+    )
+    lines.append(
+        '<button type="button" class="pub-chip is-active" data-type="all">All</button>'
+    )
+    lines.append(
+        '<button type="button" class="pub-chip" data-type="published">Peer-reviewed</button>'
+    )
+    lines.append(
+        '<button type="button" class="pub-chip" data-type="preprint">Preprint</button>'
+    )
+    lines.append("</div>")
 
     # year chips — individual chips for >= 2016, everything older folded into "< 2016"
     YEAR_CAP = 2016
-    lines.append('<div class="pub-chips" id="pub-year-chips" role="group" aria-label="Filter by year">')
-    lines.append('<button type="button" class="pub-chip is-active" data-year="all">All</button>')
+    lines.append(
+        '<div class="pub-chips" id="pub-year-chips" role="group" aria-label="Filter by year">'
+    )
+    lines.append(
+        '<button type="button" class="pub-chip is-active" data-year="all">All</button>'
+    )
     has_pre_cap = False
     for year in years_sorted:
         if isinstance(year, int) and year >= YEAR_CAP:
-            lines.append(f'<button type="button" class="pub-chip" data-year="{year}">{year}</button>')
+            lines.append(
+                f'<button type="button" class="pub-chip" data-year="{year}">{year}</button>'
+            )
         else:
             has_pre_cap = True
     if has_pre_cap:
-        lines.append(f'<button type="button" class="pub-chip" data-year="pre{YEAR_CAP}">&lt; {YEAR_CAP}</button>')
-    lines.append('</div>')
-    lines.append('</div>')
+        lines.append(
+            f'<button type="button" class="pub-chip" data-year="pre{YEAR_CAP}">&lt; {YEAR_CAP}</button>'
+        )
+    lines.append("</div>")
+    lines.append("</div>")
 
     lines.append('<div class="pub-countbar">')
     lines.append('<div class="pub-count" id="pub-count" aria-live="polite"></div>')
     lines.append('<div class="pub-active" id="pub-active" hidden></div>')
-    lines.append('</div>')
+    lines.append("</div>")
 
     # ── Publication list, grouped by year ────────────────────────────────────
     lines.append('<div class="pub-list-wrap" id="pub-list">')
@@ -257,30 +287,46 @@ else:
             title_safe = html.escape(title)
             title_html = (
                 f'<a href="https://doi.org/{html.escape(doi)}" target="_blank" rel="noopener noreferrer">{title_safe}</a>'
-                if doi else title_safe
+                if doi
+                else title_safe
             )
 
             preprint = is_preprint(doi, journal)
 
             # venue pill: journal + location (volume(issue):pages)
-            venue_txt = journal + ((", " + location) if (journal and location) else (location or "")) if (journal or location) else ""
+            venue_txt = (
+                journal
+                + ((", " + location) if (journal and location) else (location or ""))
+                if (journal or location)
+                else ""
+            )
             venue_html = (
-                f'<span class="pub-venue">{html.escape(venue_txt)}</span>' if venue_txt else ""
+                f'<span class="pub-venue">{html.escape(venue_txt)}</span>'
+                if venue_txt
+                else ""
             )
             badge_html = (
-                '<span class="pub-badge pub-badge-preprint">Preprint</span>' if preprint else ""
+                '<span class="pub-badge pub-badge-preprint">Preprint</span>'
+                if preprint
+                else ""
             )
 
             # searchable haystack (plain text, attribute-escaped)
-            haystack = " ".join([title, " ".join(authors_list), journal, ylabel]).lower()
+            haystack = " ".join(
+                [title, " ".join(authors_list), journal, ylabel]
+            ).lower()
             haystack = html.escape(haystack, quote=True)
 
             # pipe-delimited member names for the person filter (with edge pipes)
             hits = matched_members(authors_list)
-            members_attr = ("|" + "|".join(m.lower() for m in hits) + "|") if hits else ""
+            members_attr = (
+                ("|" + "|".join(m.lower() for m in hits) + "|") if hits else ""
+            )
             members_attr = html.escape(members_attr, quote=True)
 
-            citation = build_citation(authors_list, ylabel if year else "", title, journal, location, doi)
+            citation = build_citation(
+                authors_list, ylabel if year else "", title, journal, location, doi
+            )
             cite_attr = html.escape(citation, quote=True)
             type_attr = "preprint" if preprint else "published"
 
@@ -297,9 +343,9 @@ else:
                 f'<span class="pub-title">{title_html}</span>'
                 f'<span class="pub-authors">{authors_str}</span>'
                 f'<div class="pub-tags">{badge_html}{venue_html}</div>'
-                f'</div>'
-                f'{cite_btn}'
-                f'</li>'
+                f"</div>"
+                f"{cite_btn}"
+                f"</li>"
             )
         lines.append("</ol>")
         lines.append("</section>")
@@ -308,7 +354,7 @@ else:
     lines.append(
         '<div class="pub-empty" id="pub-empty" hidden>'
         '<i class="bi bi-search"></i><p>No publications match your search.</p>'
-        '</div>'
+        "</div>"
     )
 
     display(HTML("\n".join(lines)))
