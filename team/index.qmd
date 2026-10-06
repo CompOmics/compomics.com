@@ -45,13 +45,6 @@ toc: false
   </div>
 
   <h3 class="team-section-title">Postdoctoral Researchers</h3>
-  <div class="team-grid team-grid-selectors">
-    <div class="team-card-wrap">
-      <button type="button" class="team-card" data-member="sakina">
-        <img src="../assets/images/sakina.jpg" class="team-photo" alt="Sakina Bombaywala">
-        <div class="team-name">Sakina Bombaywala</div>
-      </button>
-    </div>
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="robbin">
         <img src="../assets/images/robbin.jpg" class="team-photo" alt="Robbin Bouwmeester">
@@ -98,12 +91,6 @@ toc: false
       <button type="button" class="team-card" data-member="tim">
         <img src="../assets/images/tim.jpg" class="team-photo" alt="Tim Van Den Bossche">
         <div class="team-name">Tim Van Den Bossche</div>
-      </button>
-    </div>
-    <div class="team-card-wrap">
-      <button type="button" class="team-card" data-member="pieter">
-        <img src="../assets/images/pieter.jpg" class="team-photo" alt="Pieter Verschaffelt">
-        <div class="team-name">Pieter Verschaffelt</div>
       </button>
     </div>
   </div>
@@ -162,6 +149,12 @@ toc: false
       <button type="button" class="team-card" data-member="sam">
         <img src="../assets/images/sam.jpg" class="team-photo" alt="Sam van Puyenbroeck">
         <div class="team-name">Sam van Puyenbroeck</div>
+      </button>
+    </div>
+    <div class="team-card-wrap">
+      <button type="button" class="team-card" data-member="tijl">
+        <img src="../assets/images/tijl.jpg" class="team-photo" alt="Tijl Verween">
+        <div class="team-name">Tijl Verween</div>
       </button>
     </div>
   </div>
@@ -376,7 +369,7 @@ toc: false
       email: 'toon.callens@ugent.be',
       about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply to Prof. Lennart Martens to pursue a PhD in the CompOmics group. Outside research, Toon has a passion for soccer and even used to be a semi-professional soccer player until injuries prevented him from continuing. To still enjoy his passion for the sport, he now plays walking football.',
       currentWork: 'He is a predoctoral researcher shared between CompOmics and the Ghent University De Preter group. During his PhD, he has worked on a large citizen science project integrated into a mobile game, and on multi-omics tissue prediction. Next to that, he also serves as a teaching assistant for bioinformatics in the Biomedical Sciences programme.',
-      recognition: 'In 2024 Toon won the EuBIC best flash talk prize in Winterberg.'
+      recognition: 'In 2024 Toon won the EuBIC-MS best flash talk prize in Winterberg.'
     },
     robbe: {
       title: 'Robbe Devreese',
@@ -384,7 +377,7 @@ toc: false
       email: 'robbe.devreese@ugent.be',
       about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics, where he investigated the oxidation landscape using open modification searches and, having discovered his love for data science (and his dislike for the wet lab), accepted an invitation from Dr. Robbin Bouwmeester and Prof. Lennart Martens to perform a PhD in the group. Outside of work, Robbe enjoys going to concerts and the theatre, and watching football.',
       currentWork: 'His PhD work focuses on benchmarking, MS imaging, and improving bioinformatics workflows for ion mobility-enabled mass spectrometry. He is the main developer of IM2Deep, and has contributed to MS²Rescore and ProteoBench.',
-      recognition: 'Robbe was a finalist for the Three-Minute-Thesis competition at HUPO 2024 and has been awarded an EMBO Scientific Exchange Grant.', 
+      recognition: 'Robbe was a finalist for the Three-Minute-Thesis competition at HUPO 2024 and has been awarded an EMBO Scientific Exchange Grant.',
       publications: [
         { title: 'Collisional Cross-Section Prediction for Multiconformational Peptide Ions with IM2Deep', url: 'https://doi.org/10.1021/acs.analchem.5c01142', venue: 'Analytical Chemistry · 2025' },
         { title: 'TIMS²Rescore: A DDA-PASEF-Optimized Data-Driven Rescoring Pipeline Based on MS²Rescore', url: 'https://doi.org/10.1021/acs.jproteome.4c00609', venue: 'Journal of Proteome Research · 2025' },
@@ -524,6 +517,13 @@ toc: false
         { title:'Massively parallel interrogation of protein fragment secretability using SECRiFY reveals features influencing secretory system transit', url: 'https://doi.org/10.1038/s41467-021-26720-y', venue: 'Nature Communications · 2021' },
         { title:'SpliceRover: interpretable convolutional neural networks for improved splice site prediction', url: 'https://doi.org/10.1093/bioinformatics/bty497', venue: 'Bioinformatics · 2018' },
       ]
+    },
+    tijl: {
+      title: 'Tijl Verween',
+      role: 'Predoctoral Researcher',
+      email: 'tijl.verween@ugent.be',
+      about: 'Tijl obtained his Master\'s degree in Biochemistry and Biotechnology, with a major in Bioinformatics and Systems Biology, from Ghent University in 2026. He carried out his Master\'s thesis in the CompOmics group and continued in the same group as a PhD student. Outside research, he enjoys learning to play different musical instruments.',
+      currentWork: 'Tijl\'s PhD research focuses on immunopeptidomics. He studies how data-independent acquisition (DIA) can be applied in this field and improves the computational workflows involved, from acquisition method optimization to data analysis.'
     }
   };
 
