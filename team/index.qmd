@@ -45,6 +45,7 @@ toc: false
   </div>
 
   <h3 class="team-section-title">Postdoctoral Researchers</h3>
+  <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="robbin">
         <img src="../assets/images/robbin.jpg" class="team-photo" alt="Robbin Bouwmeester">
