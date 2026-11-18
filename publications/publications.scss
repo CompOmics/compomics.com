@@ -13,7 +13,7 @@
 
 .pub-head-kicker {
   font-family: $font-family-monospace;
-  font-size: 0.78rem;
+  font-size: $fs-xs;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -24,7 +24,7 @@
 .pub-head-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-size: $fs-display;
   color: $ink;
   line-height: 1.02;
   letter-spacing: -0.02em;
@@ -35,7 +35,7 @@
 
 .pub-head-sub {
   font-family: $font-family-sans-serif;
-  font-size: 1.02rem;
+  font-size: $fs-md;
   color: $ink-soft;
   line-height: 1.65;
   max-width: 62ch;
@@ -73,7 +73,7 @@
   width: 100%;
   padding: 0.6rem 2.2rem 0.6rem 2.4rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.92rem;
+  font-size: $fs-sm;
   color: $ink;
   background: $cream-2;
   border: 1px solid $line;
@@ -138,7 +138,7 @@
   -webkit-appearance: none;
   padding: 0.6rem 2rem 0.6rem 2.3rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.88rem;
+  font-size: $fs-sm;
   color: $ink;
   background-color: $cream-2;
   // caret
@@ -172,7 +172,7 @@
 
 .pub-chip {
   font-family: $font-family-monospace;
-  font-size: 0.76rem;
+  font-size: $fs-xs;
   font-weight: 600;
   letter-spacing: 0.02em;
   padding: 0.34rem 0.8rem;
@@ -202,7 +202,7 @@
 
 .pub-count {
   font-family: $font-family-monospace;
-  font-size: 0.72rem;
+  font-size: $fs-xs;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $muted;
@@ -224,7 +224,7 @@
   gap: 0.3rem;
   padding: 0.22rem 0.35rem 0.22rem 0.7rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   font-weight: 600;
   color: #fff;
   background: $primary;
@@ -239,7 +239,7 @@
 
 .pub-active-clear {
   font-family: $font-family-sans-serif;
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   font-weight: 600;
   color: $muted;
   background: none;
@@ -261,7 +261,7 @@
 // year section divider
 .pub-year {
   font-family: $font-family-heading;
-  font-size: 1.4rem;
+  font-size: $fs-lg;
   font-weight: 800;
   color: $ink;
   letter-spacing: -0.01em;
@@ -315,7 +315,7 @@
 
 .pub-title {
   font-family: $font-family-heading;
-  font-size: 1.02rem;
+  font-size: $fs-base;
   font-weight: 600;
   line-height: 1.35;
   color: $ink;
@@ -331,7 +331,7 @@
 
 .pub-authors {
   font-family: $font-family-sans-serif;
-  font-size: 0.86rem;
+  font-size: $fs-sm;
   color: $muted;
   line-height: 1.5;
 
@@ -343,7 +343,7 @@
   margin-left: 0.35rem;
   padding: 0;
   font-family: $font-family-sans-serif;
-  font-size: 0.78rem;
+  font-size: $fs-xs;
   font-weight: 600;
   color: $primary;
   background: none;
@@ -365,7 +365,7 @@
 
 .pub-badge {
   font-family: $font-family-sans-serif;
-  font-size: 0.64rem;
+  font-size: $fs-xs;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -381,7 +381,7 @@
 
 .pub-venue {
   font-family: $font-family-sans-serif;
-  font-size: 0.76rem;
+  font-size: $fs-xs;
   color: $muted;
   padding: 0.16rem 0.6rem;
   border: 1px solid $line;
@@ -433,7 +433,7 @@
   p {
     margin: 0.8rem 0 0;
     font-family: $font-family-sans-serif;
-    font-size: 0.95rem;
+    font-size: $fs-base;
   }
 }
 

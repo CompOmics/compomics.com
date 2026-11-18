@@ -31,7 +31,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tools-head-kicker {
   font-family: $font-family-monospace;
-  font-size: 0.78rem;
+  font-size: $fs-xs;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 .tools-head-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-size: $fs-display;
   color: $ink;
   line-height: 1.02;
   letter-spacing: -0.02em;
@@ -53,7 +53,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tools-head-sub {
   font-family: $font-family-sans-serif;
-  font-size: 1.02rem;
+  font-size: $fs-md;
   color: $ink-soft;
   line-height: 1.65;
   max-width: 60ch;
@@ -91,7 +91,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   width: 100%;
   padding: 0.6rem 2.2rem 0.6rem 2.4rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.92rem;
+  font-size: $fs-sm;
   color: $ink;
   background: $cream-2;
   border: 1px solid $line;
@@ -143,7 +143,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 .tools-chip {
   --cat: #{$primary};
   font-family: $font-family-sans-serif;
-  font-size: 0.78rem;
+  font-size: $fs-xs;
   font-weight: 600;
   letter-spacing: 0.01em;
   padding: 0.4rem 0.9rem;
@@ -180,7 +180,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tools-count {
   font-family: $font-family-monospace;
-  font-size: 0.72rem;
+  font-size: $fs-xs;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $muted;
@@ -294,7 +294,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tool-tile-cat {
   font-family: $font-family-sans-serif;
-  font-size: 0.62rem;
+  font-size: $fs-xs;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -307,7 +307,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tool-tile-name {
   font-family: $font-family-heading;
-  font-size: 1.22rem;
+  font-size: $fs-md;
   font-weight: 700;
   color: $ink;
   margin: 0 0 0.4rem;
@@ -318,7 +318,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
 .tool-tile-desc {
   font-family: $font-family-sans-serif;
-  font-size: 0.86rem;
+  font-size: $fs-sm;
   color: $ink-soft;
   line-height: 1.6;
   margin: 0 0 0.7rem;
@@ -327,7 +327,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 // small note under the description (e.g. community affiliation)
 .tool-tile-note {
   font-family: $font-family-sans-serif;
-  font-size: 0.76rem;
+  font-size: $fs-xs;
   color: $muted;
   line-height: 1.5;
   margin: 0;
@@ -410,7 +410,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   gap: 0.3rem;
   padding: 0.22rem 0.6rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.72rem;
+  font-size: $fs-xs;
   font-weight: 500;
   border-radius: 2rem;
   border: 1px solid $line;
@@ -456,7 +456,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   gap: 0.3rem;
   padding: 0.22rem 0.65rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.72rem;
+  font-size: $fs-xs;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: 2rem;
@@ -479,7 +479,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   p {
     margin: 0.8rem 0 0;
     font-family: $font-family-sans-serif;
-    font-size: 0.95rem;
+    font-size: $fs-base;
   }
 }
 

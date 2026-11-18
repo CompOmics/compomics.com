@@ -13,7 +13,7 @@
 
 .tut-head-kicker {
   font-family: $font-family-monospace;
-  font-size: 0.78rem;
+  font-size: $fs-xs;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -24,7 +24,7 @@
 .tut-head-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-size: $fs-display;
   color: $ink;
   line-height: 1.02;
   letter-spacing: -0.02em;
@@ -35,7 +35,7 @@
 
 .tut-head-sub {
   font-family: $font-family-sans-serif;
-  font-size: 1.02rem;
+  font-size: $fs-md;
   color: $ink-soft;
   line-height: 1.65;
   max-width: 62ch;
@@ -54,7 +54,7 @@
 
   .bfp-lead {
     font-family: $font-family-sans-serif;
-    font-size: 1.16rem;
+    font-size: $fs-md;
     line-height: 1.6;
     color: $ink;
     max-width: 40rem;
@@ -82,14 +82,14 @@
     p {
       margin: 0;
       font-family: $font-family-sans-serif;
-      font-size: 0.93rem;
+      font-size: $fs-sm;
       line-height: 1.6;
       color: $ink-soft;
     }
     p + p { margin-top: 0.4rem; }
     strong { color: $ink; font-weight: 700; }
 
-    .bfp-note-meta { color: $muted; font-size: 0.85rem; }
+    .bfp-note-meta { color: $muted; font-size: $fs-sm; }
   }
 
   .bfp-note--inline {
@@ -107,7 +107,7 @@
   .bfp-related-label {
     display: block;
     font-family: $font-family-monospace;
-    font-size: 0.68rem;
+    font-size: $fs-xs;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -129,7 +129,7 @@
   .bfp-module-num {
     font-family: $font-family-heading;
     font-weight: 800;
-    font-size: 2.3rem;
+    font-size: $fs-xl;
     line-height: 1;
     color: $primary;
     text-align: right;
@@ -139,7 +139,7 @@
   .bfp-eyebrow {
     display: block;
     font-family: $font-family-monospace;
-    font-size: 0.68rem;
+    font-size: $fs-xs;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -149,7 +149,7 @@
 
   .bfp-module-title {
     font-family: $font-family-heading;
-    font-size: 1.7rem;
+    font-size: $fs-xl;
     font-weight: 800;
     color: $ink;
     line-height: 1.1;
@@ -160,7 +160,7 @@
 
   .bfp-module-desc {
     font-family: $font-family-sans-serif;
-    font-size: 0.96rem;
+    font-size: $fs-base;
     line-height: 1.6;
     color: $ink-soft;
     margin: 0;
@@ -182,7 +182,7 @@
 
   .bfp-step-num {
     font-family: $font-family-monospace;
-    font-size: 0.9rem;
+    font-size: $fs-sm;
     font-weight: 700;
     color: $primary;
     text-align: right;
@@ -197,7 +197,7 @@
 
   .bfp-step-title {
     font-family: $font-family-heading;
-    font-size: 1.04rem;
+    font-size: $fs-base;
     font-weight: 700;
     color: $ink;
     line-height: 1.25;
@@ -219,7 +219,7 @@
     gap: 0.4rem;
     padding: 0.3rem 0.7rem;
     font-family: $font-family-sans-serif;
-    font-size: 0.8rem;
+    font-size: $fs-xs;
     font-weight: 600;
     line-height: 1;
     color: $ink-soft;
@@ -250,8 +250,8 @@
     --bfp-rail: 2.2rem;
     --bfp-gap: 0.9rem;
 
-    .bfp-module-num { font-size: 1.9rem; }
-    .bfp-module-title { font-size: 1.45rem; }
-    .bfp-step-num { font-size: 0.82rem; }
+    .bfp-module-num { font-size: $fs-xl; }
+    .bfp-module-title { font-size: $fs-lg; }
+    .bfp-step-num { font-size: $fs-sm; }
   }
 }
