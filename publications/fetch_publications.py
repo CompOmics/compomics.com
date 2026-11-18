@@ -1,7 +1,7 @@
 """
 Fetch publications for CompOmics group members from ORCID and enrich via CrossRef.
 
-Dependencies: requests, PyYAML
+Dependencies: requests
 Usage: python publications/fetch_publications.py
 Output: data/publications.json
 
@@ -18,7 +18,6 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 import requests
-import yaml
 
 TEAM_DIR = Path(__file__).parent.parent / "team"
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "publications.json"
@@ -31,23 +30,13 @@ CROSSREF_HEADERS = {
 }
 
 
+ORCID_FIELD = re.compile(r"""\borcid:\s*['"](\d{4}-\d{4}-\d{4}-\d{3}[\dX])['"]""")
+
+
 def read_orcid_ids() -> list[str]:
-    orcids = []
-    for path in TEAM_DIR.glob("*.qmd"):
-        if path.name == "index.qmd":
-            continue
-        text = path.read_text(encoding="utf-8")
-        match = re.match(r"^---\n(.*?\n)---", text, re.DOTALL)
-        if not match:
-            continue
-        fm = yaml.safe_load(match.group(1))
-        orcid = (fm or {}).get("orcid", "")
-        if orcid:
-            orcid = orcid.strip().rstrip("/")
-            orcid = orcid.split("orcid.org/")[-1]
-            if orcid:
-                orcids.append(orcid)
-    return orcids
+    """Read the `orcid:` fields of the `memberData` entries in team/index.qmd."""
+    text = (TEAM_DIR / "index.qmd").read_text(encoding="utf-8")
+    return list(dict.fromkeys(ORCID_FIELD.findall(text)))
 
 
 def fetch_dois_for_orcid(orcid: str) -> list[str]:
@@ -59,9 +48,10 @@ def fetch_dois_for_orcid(orcid: str) -> list[str]:
     for group in data.get("group", []):
         for ext_id in group.get("external-ids", {}).get("external-id", []):
             if ext_id.get("external-id-type") == "doi":
-                doi = ext_id.get("external-id-value", "").strip().lower()
-                if doi:
-                    dois.append(doi)
+                # some ORCID records hold stray text before the DOI, e.g. "34\n10.1186/..."
+                tokens = ext_id.get("external-id-value", "").split()
+                if tokens:
+                    dois.append(tokens[-1].lower())
                 break
     return dois
 
@@ -217,8 +207,7 @@ def deduplicate(publications: list[dict]) -> list[dict]:
 def main():
     orcids = read_orcid_ids()
     if not orcids:
-        print('No ORCID IDs found. Add orcid: "xxxx-xxxx-xxxx-xxxx" to team/*.qmd files.')
-        return
+        raise SystemExit("No ORCID IDs found. Add orcid: 'xxxx-xxxx-xxxx-xxxx' to the memberData entries in team/index.qmd.")
 
     print(f"Found {len(orcids)} ORCID ID(s): {', '.join(orcids)}")
 

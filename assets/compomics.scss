@@ -6,7 +6,16 @@ $font-family-heading:    "Bricolage Grotesque", system-ui, sans-serif;
 $font-family-monospace:  "JetBrains Mono", monospace;
 $headings-font-family:   $font-family-heading;
 $headings-font-weight:   700;
-$font-size-root: 14px;
+$font-size-root: 16px;
+
+// Type scale: use these tokens for every text font-size on the site
+$fs-xs:      0.75rem;                     // 12px: badges, counts, chips, eyebrows, meta
+$fs-sm:      0.875rem;                    // 14px: secondary text, descriptions, inputs
+$fs-base:    1rem;                        // 16px: body text, navbar links, item titles
+$fs-md:      1.25rem;                     // 20px: lead paragraphs, card titles, hero subtitles
+$fs-lg:      1.5rem;                      // 24px: h3
+$fs-xl:      1.75rem;                     // 28px: h2, section titles, large numbers
+$fs-display: clamp(2.5rem, 5vw, 3.5rem);  // 40-56px: page titles
 
 // Colour tokens ($ink, $cream, $line, $primary, $surface-hover, $icon-bg …)
 // are defined per-theme in compomics-light.scss / compomics-dark.scss
@@ -19,8 +28,8 @@ $font-size-root: 14px;
 body {
   background: $cream;
   color: $ink-soft;
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: $fs-base;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -43,13 +52,13 @@ h1, h2, h3, h4, h5 {
 }
 
 h1.title, header#title-block-header h1 {
-  font-size: 2.5rem;
+  font-size: $fs-display;
   margin-bottom: 0.4rem;
   letter-spacing: -0.015em;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: $fs-xl;
   margin-top: 3rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid $line;
@@ -57,7 +66,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: $fs-lg;
   margin-top: 2rem;
   color: $ink;
 }
@@ -99,7 +108,7 @@ hr {
 .nav-link {
   font-family: $font-family-sans-serif;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: $fs-sm;
   letter-spacing: 0.005em;
   color: $ink-soft !important;
   transition: color 0.15s ease;
@@ -110,6 +119,8 @@ hr {
   }
 }
 
+.navbar .nav-link { font-size: $fs-base; }
+
 .navbar-brand-title { display: none; }
 
 // ── Footer ───────────────────────────────────────────────────────────────────
@@ -118,7 +129,7 @@ hr {
   background: $cream-2;
   color: $muted;
   font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
+  font-size: $fs-sm;
 }
 
 // ── Code blocks ──────────────────────────────────────────────────────────────
@@ -139,7 +150,7 @@ code { color: $ink; }
 .vision-head {
   h3 {
     font-family: $font-family-heading;
-    font-size: 2.1rem;
+    font-size: $fs-xl;
     font-weight: 700;
     color: $ink;
     line-height: 1.15;
@@ -159,14 +170,14 @@ code { color: $ink; }
     text-align: left;
     hyphens: none;
     color: $ink-soft;
-    font-size: 1.06rem;
+    font-size: $fs-base;
     line-height: 1.85;
   }
 
   // lead paragraph
   p:first-child {
     font-family: $font-family-sans-serif;
-    font-size: 1.18rem;
+    font-size: $fs-md;
     font-weight: 400;
     line-height: 1.6;
     color: $ink;
@@ -201,7 +212,7 @@ code { color: $ink; }
   .stat-number {
     display: block;
     font-family: $font-family-heading;
-    font-size: 2.9rem;
+    font-size: $fs-xl;
     font-weight: 800;
     color: $ink;
     line-height: 1;
@@ -213,7 +224,7 @@ code { color: $ink; }
     display: block;
     margin-top: 0.55rem;
     font-family: $font-family-sans-serif;
-    font-size: 0.72rem;
+    font-size: $fs-xs;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.11em;
@@ -292,7 +303,7 @@ a.stat-tile-link {
 
   .nav-tile-title {
     font-family: $font-family-heading;
-    font-size: 1.35rem;
+    font-size: $fs-md;
     font-weight: 700;
     margin-bottom: 0.4rem;
     color: $ink;
@@ -301,7 +312,7 @@ a.stat-tile-link {
 
   .nav-tile-desc {
     font-family: $font-family-sans-serif;
-    font-size: 0.88rem;
+    font-size: $fs-sm;
     color: $muted;
     text-align: left;
     line-height: 1.55;
@@ -322,7 +333,7 @@ blockquote {
   border-left: 2px solid $primary;
   color: $ink-soft;
   font-family: $font-family-sans-serif;
-  font-size: 0.95rem;
+  font-size: $fs-base;
   background: $cream-2;
   padding: 0.9rem 1.2rem;
   border-radius: 0 0.4rem 0.4rem 0;
@@ -356,7 +367,7 @@ blockquote {
 
   .location-eyebrow {
     font-family: $font-family-sans-serif;
-    font-size: 0.72rem;
+    font-size: $fs-xs;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -366,7 +377,7 @@ blockquote {
 
   .location-title {
     font-family: $font-family-heading;
-    font-size: 1.7rem;
+    font-size: $fs-xl;
     font-weight: 700;
     color: $ink;
     margin: 0 0 1.3rem;
@@ -379,7 +390,7 @@ blockquote {
 
   .location-group {
     font-family: $font-family-sans-serif;
-    font-size: 0.98rem;
+    font-size: $fs-base;
     font-weight: 600;
     color: $ink;
     margin-bottom: 0.3rem;
@@ -387,7 +398,7 @@ blockquote {
 
   .location-affil {
     font-family: $font-family-sans-serif;
-    font-size: 0.88rem;
+    font-size: $fs-sm;
     color: $muted;
     margin-bottom: 1.5rem;
     line-height: 1.6;
@@ -399,7 +410,7 @@ blockquote {
   align-items: flex-start;
   gap: 0.7rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.92rem;
+  font-size: $fs-sm;
   color: $ink-soft;
   line-height: 1.55;
   margin-bottom: 1rem;
@@ -423,7 +434,7 @@ blockquote {
   margin-top: auto;
   padding: 0.5rem 1.1rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
+  font-size: $fs-sm;
   font-weight: 500;
   border: 1px solid $primary;
   border-radius: 2rem;

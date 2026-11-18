@@ -49,7 +49,7 @@
   color: $muted;
   text-decoration: none;
   font-family: $font-family-monospace;
-  font-size: .68rem;
+  font-size: $fs-xs;
   font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -65,7 +65,7 @@
 @keyframes research-cue-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 .research-header-kicker {
   font-family: $font-family-monospace;
-  font-size: .78rem;
+  font-size: $fs-xs;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@
 .research-header-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+  font-size: $fs-display;
   line-height: 1;
   letter-spacing: -0.02em;
   color: $ink;
@@ -86,7 +86,7 @@
 // lead paragraph: one step above body
 .research-header-sub {
   color: $ink-soft;
-  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
+  font-size: $fs-md;
   line-height: 1.6;
   margin: .95rem 0 0;
   text-align: justify;
@@ -96,7 +96,7 @@
 .research-header-text {
   color: $muted;
   font-family: $font-family-sans-serif;
-  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  font-size: $fs-base;
   line-height: 1.7;
   margin: 1.1rem 0 0;
   text-align: justify;
@@ -289,7 +289,7 @@
 .research-section-title {
   font-family: $font-family-heading;
   font-weight: 800;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: $fs-xl;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: $ink;
@@ -301,7 +301,7 @@
 // body copy: identical size to .research-header-text so all prose matches
 .research-section-desc {
   font-family: $font-family-sans-serif;
-  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  font-size: $fs-base;
   line-height: 1.7;
   color: $ink-soft;
   margin: 0;

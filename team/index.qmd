@@ -229,6 +229,7 @@ toc: false
   const memberData = {
     lennart: {
       title: 'Lennart Martens',
+      orcid: '0000-0003-4277-658X',
       role: 'Group Leader',
       email: 'lennart.martens@ugent.be',
       about: 'Lennart is Senior Full Professor of Systems Biology at Ghent University and Group Leader of the CompOmics group. He is also a Director of Research at CNRS-Université de Strasbourg in France. He has been working in mass spectrometry-related bioinformatics since his Master\'s degree. After a few years as a software developer and framework architect in industry, he returned to Ghent University to pursue a PhD in proteomics informatics, creating PRIDE at EMBL-EBI in 2003. After his PhD he rejoined EMBL-EBI as head of the PRIDE group.',
@@ -244,6 +245,7 @@ toc: false
     },
     sakina: {
       title: 'Sakina Bombaywala',
+      orcid: '0000-0001-5630-6269',
       role: 'Postdoctoral Researcher',
       email: 'sakina.bombaywala@ugent.be',
       about: 'Sakina obtained her PhD at the National Environmental Engineering Research Institute in India (Academy of Scientific and Innovative Research). Her doctoral research focused on applying multi-omics approaches to understand microbiome interactions, with applications in wastewater management. Soon after, she joined the CompOmics lab, where her current work focuses on developing omics workflows for disease tracking and environmental surveillance. Outside work, she enjoys trying out different athletic sports.',
@@ -255,6 +257,7 @@ toc: false
     },
     robbin: {
       title: 'Robbin Bouwmeester',
+      orcid: '0000-0001-6807-7029',
       role: 'Postdoctoral Researcher',
       email: 'robbin.bouwmeester@ugent.be',
       about: 'Robbin obtained his Master\'s degree in Bioinformatics and Systems Biology at VU University Amsterdam. He joined the CompOmics group after applying for a PhD position within an Innovative Training Network (ITN). During his PhD he worked on the machine learning of lipid oxidation products and how they interact with proteins. Outside work he enjoys working on creative projects like 3D printing and crochet.',
@@ -267,6 +270,7 @@ toc: false
     },
     tine: {
       title: 'Tine Claeys',
+      orcid: '0000-0001-9408-488X',
       role: 'Postdoctoral Researcher',
       email: 'tine.claeys@ugent.be',
       about: 'Tine obtained her Master\'s degree in Biomedical Sciences at Ghent University in 2020. She carried out her Master\'s thesis under supervision of Prof. Dr. Kris Gevaert, but after taking up coding classes in her second Master\'s year, she was invited by Prof. Lennart Martens to do a PhD in CompOmics. During her PhD she worked on reprocessing public data for tissue proteome profiling and on metadata annotation. Next to writing papers, Tine also writes music (and performs it). As for why the MLMarker logo is an octopus: Tine loves octopuses and the octopus is named Mark.',
@@ -279,6 +283,7 @@ toc: false
     },
     arthur: {
       title: 'Arthur Declercq',
+      orcid: '0000-0002-9376-1399',
       role: 'Postdoctoral Researcher',
       email: 'arthur.declercq@ugent.be',
       about: 'Arthur\'s interest in immunology began in 2018 during an Honours Programme in life sciences, where he studied varicella zoster virus in an immunology lab. Alongside this, he developed a keen interest in machine learning over the course of his studies, and he brought the two together in his master thesis at CompOmics. He obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2021, and continued in the group with a PhD on optimizing immunopeptide identification with mass spectrometry. For this work he developed MS²Rescore, reflecting his enthusiasm for building tools that the wider community can use. Outside research, Arthur enjoys photography, running, and science fiction books. More about Arthur can be found at <a href="https://arthurdeclercq.bio/" target="_blank" rel="noopener">arthurdeclercq.bio</a>.',
@@ -293,6 +298,7 @@ toc: false
     },
     ralf: {
       title: 'Ralf Gabriels',
+      orcid: '0000-0002-1679-1711',
       role: 'Postdoctoral Researcher',
       email: 'ralf.gabriels@ugent.be',
       about: 'Ralf is an FWO Senior Postdoctoral Research Fellow working at the intersection of proteomics, bioinformatics, and machine learning. He holds a PhD in Life Sciences from Ghent University (2022), where he developed machine learning methods for peptide identification and fragmentation prediction in mass spectrometry-based proteomics. He is the developer of several widely used open-source tools, including MS²PIP, MS²Rescore, and psm_utils, and is an active contributor to open science and community data standards in the field.',
@@ -308,6 +314,7 @@ toc: false
     },
     alex: {
       title: 'Alexander Kensert',
+      orcid: '0000-0002-5295-010X',
       role: 'Postdoctoral Researcher',
       email: 'alexander.kensert@ugent.be',
       about: 'Alexander obtained his Master\'s degree in Pharmaceutical Modelling from Uppsala University in 2018. He then moved to Leuven to pursue a PhD in Pharmaceutical and Engineering Sciences under the joint supervision of Prof. Deirdre Cabooter (KU Leuven) and Prof. Gert Desmet (Vrije Universiteit Brussel), focusing on deep learning applications in chromatography. After completing his PhD in 2022, he continued as a postdoctoral researcher with Prof. Cabooter to further expand on this work. In 2023, Alexander joined VIB-UGent as a postdoctoral researcher under Prof. Lennart Martens, where he currently develops deep learning applications for proteomics and chromatography.',
@@ -321,6 +328,7 @@ toc: false
     },
     enrico: {
       title: 'Enrico Massignani',
+      orcid: '0000-0002-4328-0538',
       role: 'Postdoctoral Researcher',
       email: 'enrico.massignani@ugent.be',
       about: 'Enrico obtained his Bachelor\'s degree in Industrial and Environmental Biotechnology at the University of Milan. He earned his Master\'s degree in Molecular Biotechnology and Bioinformatics at the same university in 2017. He went on to complete a PhD in Systems Medicine at the European School of Molecular Medicine in 2021, where he studied protein arginine methylation and developed software to analyse methyl-proteomics experiments. Prof. Lennart Martens served as his external advisor during his PhD and later offered him a position in the group. In his spare time, Enrico plays Magic: The Gathering, reads manga, and watches anime.',
@@ -334,6 +342,7 @@ toc: false
     },
     pathmanaban: {
       title: 'Pathmanaban Ramasamy',
+      orcid: '0000-0003-4039-5230',
       role: 'Postdoctoral Researcher',
       email: 'pathmanaban.ramasamy@ugent.be',
       about: 'Pathmanaban completed his Bachelor\'s degree in Bioinformatics at Agricultural University, Coimbatore, India, and obtained his Master\'s degree in Bioinformatics at Saarland University and the Max Planck Institute for Informatics, Germany, in 2016. He then carried out a joint PhD between Ghent University and the Vrije Universiteit Brussel (VUB), focusing on the effect of post-translational modifications on protein folding. He completed his PhD in 2022. In his free time Pathmanaban enjoys landscape photography, travel, and badminton.',
@@ -346,6 +355,7 @@ toc: false
     },
     tim: {
       title: 'Tim Van Den Bossche',
+      orcid: '0000-0002-5916-2587',
       role: 'Postdoctoral Researcher',
       email: 'tim.vandenbossche@ugent.be',
       about: 'Tim obtained a graduate degree in Chemistry and Biochemistry (2013), followed by a Bachelor\'s (2014) and Master\'s (2016) in Biomedical Sciences, and later a Master of Business Administration (MBA, 2022). After his graduate\'s thesis and Master\'s thesis in the wet lab, he wanted to specialize in dry-lab data analysis which led him to contact Prof. Lennart Martens, who offered him a PhD in the group. He completed his PhD in 2022. During his PhD he worked in the field of metaproteomics, on the development of tools for metaproteomics data analysis, and on tool benchmarking in collaboration with several labs, which led him to start the CAMPI study. He also founded the Metaproteomics Initiative. Outside research, Tim likes to run, has a keen interest in policy and organisation, and enjoys going to the theatre.',
@@ -361,11 +371,13 @@ toc: false
     },
     pieter: {
       title: 'Pieter Verschaffelt',
+      orcid: '0000-0002-6675-1048',
       role: 'Postdoctoral Researcher',
       email: 'pieter.verschaffelt@ugent.be'
     },
     toon: {
       title: 'Toon Callens',
+      orcid: '0000-0002-4586-9477',
       role: 'Predoctoral Researcher',
       email: 'toon.callens@ugent.be',
       about: 'Toon obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2019. His interest in the informatics courses within his programme led him to apply to Prof. Lennart Martens to pursue a PhD in the CompOmics group. Outside research, Toon has a passion for soccer and even used to be a semi-professional soccer player until injuries prevented him from continuing. To still enjoy his passion for the sport, he now plays walking football.',
@@ -374,6 +386,7 @@ toc: false
     },
     robbe: {
       title: 'Robbe Devreese',
+      orcid: '0000-0002-3432-1502',
       role: 'Predoctoral Researcher',
       email: 'robbe.devreese@ugent.be',
       about: 'Robbe obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, in 2023. He carried out his Master\'s thesis in CompOmics, where he investigated the oxidation landscape using open modification searches and, having discovered his love for data science (and his dislike for the wet lab), accepted an invitation from Dr. Robbin Bouwmeester and Prof. Lennart Martens to perform a PhD in the group. Outside of work, Robbe enjoys going to concerts and the theatre, and watching football.',
@@ -387,6 +400,7 @@ toc: false
     },
     sander: {
       title: 'Sander Heyndrickx',
+      orcid: '0009-0004-1818-8619',
       role: 'Predoctoral Researcher',
       email: 'sander.heyndrickx@ugent.be',
       about: 'Sander obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2025. His interest in the computational side of biology was sparked during his Master\'s thesis, which focused on using deep learning to predict post-translational modifications and on leveraging these predictions to filter the search space for search engines. Sander is passionate about science and technology, and during his free time he enjoys running, cycling, and hiking.',
@@ -398,6 +412,7 @@ toc: false
     },
     sude: {
       title: 'Sude Gunes',
+      orcid: '0009-0008-8343-4221',
       role: 'Predoctoral Researcher',
       email: 'sude.gunes@ugent.be',
       about: 'Sude obtained her Bachelor\'s degree in Bioengineering at the Izmir Institute of Technology, Türkiye, in 2022, and her Master\'s degree in Polymer Science and Engineering at the same institute in 2024. During her Master\'s she focused on investigating the effect of allosteric ligand binding using molecular dynamics simulations and on the prediction of allosteric and cryptic sites. Wanting to explore protein dynamics further, she applied for the joint PhD position on PTMs and protein dynamics. In her free time, Sude loves playing the piano and exploring new places.',
@@ -405,6 +420,7 @@ toc: false
     },
     caro: {
       title: 'Caroline Jachmann',
+      orcid: '0009-0000-4679-7295',
       role: 'Predoctoral Researcher',
       email: 'caroline.jachmann@ugent.be',
       about: 'Caroline obtained her Bachelor\'s degree in Computer Science at Heinrich Heine University Düsseldorf, Germany, and her Master\'s degree in Bioinformatics at Eberhard Karls University Tübingen in 2021. Her previous education and a three-month internship in the group helped pave the way to CompOmics. Outside research she likes trying out new hobbies and plays the piano.',
@@ -417,6 +433,7 @@ toc: false
     },
     xuxa: {
       title: 'Xuxa Malliet',
+      orcid: '0009-0000-9420-2655',
       role: 'Predoctoral Researcher',
       email: 'xuxa.malliet@ugent.be',
       about: 'Xuxa obtained her Master\'s degree in Biomedical Sciences in 2025. She carried out her Master\'s thesis in the CompOmics group and continued the work in her PhD. Outside research, Xuxa enjoys running, reading, gravel biking, and playing classical guitar.',
@@ -429,6 +446,7 @@ toc: false
     },
     alireza: {
       title: 'Alireza Nameni',
+      orcid: '0000-0002-7471-9195',
       role: 'Predoctoral Researcher',
       email: 'alireza.nameni@ugent.be',
       about: 'Alireza obtained his Bachelor\'s degree in Computer Engineering (Software) at IAUCTB in Tehran and his Master\'s degree in Artificial Intelligence Engineering at Kharazmi University, completed in 2020. He began a PhD in natural language processing at UPC in Barcelona before joining CompOmics in 2021, drawn by the opportunity to work on more tangible projects. In his free time he enjoys making and playing games, reading, and calisthenics.',
@@ -441,6 +459,7 @@ toc: false
     },
     hari: {
       title: 'Harikrishnan Ramadasan',
+      orcid: '0000-0003-1473-1595',
       role: 'Predoctoral Researcher',
       email: 'harikrishnan.ramadasan@ugent.be',
       about: 'Harikrishnan studied at the Indian Institute of Science Education and Research, where he completed an integrated Bachelor\'s and Master\'s degree with a major in physics in 2023. Drawn by a strong interest in AI-based methods, he applied directly for his current position in the CompOmics group. Outside research, Harikrishnan enjoys boxing, running, and strength training.',
@@ -448,6 +467,7 @@ toc: false
     },
     sam: {
       title: 'Sam Van Puyenbroeck',
+      orcid: '0009-0001-5281-6891',
       role: 'Predoctoral Researcher',
       email: 'sam.vanpuyenbroeck@ugent.be',
       about: 'Sam obtained his Master\'s degree in Biomedical Sciences, with a major in Systems Biology, at Ghent University in 2023. He carried out his Master\'s thesis in CompOmics and continued with a PhD in the group. Outside research, Sam loves ducks and triathlons.',
@@ -459,6 +479,7 @@ toc: false
     },
     lyuda: {
       title: 'Lyudmila Kovalchuke',
+      orcid: '0009-0009-8207-353X',
       role: 'Project Manager',
       email: 'lyudmila.kovalchuke@ugent.be',
       about: 'Lyudmila studied at Columbia University in New York, where she first carried out research in synthetic organic chemistry before moving into the biological sciences. She completed her PhD in Columbia\'s Department of Biological Sciences, studying the molecular mechanisms of Parkinson\'s disease, in particular how cellular stress drives degradation of the E3 ubiquitin ligase parkin. She later moved from the bench into research project management.',
@@ -478,6 +499,7 @@ toc: false
     },
     natalia: {
       title: 'Natalia Tichshenko',
+      orcid: '0000-0001-7914-0759',
       role: 'Software Developer',
       email: 'natalia.tichshenko@ugent.be',
       about: 'Natalia is a bioinformatician by training, from the University of Montreal, Montreal, Canada. After her Bachelor\'s, she worked as a software engineer in industry across different areas, including government and consulting. Joining CompOmics was a return to her roots — working in a research field where she helps scientists with various development needs, mostly focused on visualizations, database management, and web application development. Outside of work, she\'s kept busy by her two wonderfully active children, and enjoys knitting, reading, and learning to play tennis.',
@@ -486,6 +508,7 @@ toc: false
     },
     kevin: {
       title: 'Kevin Velghe',
+      orcid: '0000-0002-9968-6043',
       role: 'Software Developer',
       email: 'kevin.velghe@ugent.be',
       about: 'Kevin obtained his Bachelor\'s degree in Computer Science and his Master\'s degree in Mathematical Computer Science in 2016. He joined the group after applying to a vacancy on the cloud integration and industrialisation of ionbot. Outside work, Kevin enjoys making bobbin lace.',
@@ -496,6 +519,7 @@ toc: false
     },
     daria: {
       title: 'Daria Fijalkowska',
+      orcid: '0000-0002-2084-146X',
       role: 'Staff Scientist',
       email: 'daria.fijalkowska@vib-ugent.be',
       about: 'Daria obtained her Bachelor\'s and Master\'s degrees in Biotechnology at the University of Wrocław, Poland in 2011, and completed her PhD in Health Sciences at Ghent University in 2016. Outside research, Daria enjoys playing role-playing games, stand-up comedy, and swimming.',
@@ -508,6 +532,7 @@ toc: false
     },
     jasper: {
       title: 'Jasper Zuallaert',
+      orcid: '0000-0003-1491-4914',
       role: 'Staff Scientist',
       email: 'jasper.zuallaert@vib-ugent.be',
       about: 'Jasper obtained his Bachelor\'s degree in Informatics at Ghent University and his Master\'s degree in Civil Engineering (Computer Science) at Ghent University in 2014. He went on to complete a PhD in Engineering (Computer Science) at Ghent University, based at the Global Campus in Korea. He met Prof. Dr. Nico Callewaert in South Korea, where the seed for a fruitful collaboration was first planted. After finishing his PhD, he joined VIB-CMB for a postdoc with Prof. Sven Degroeve and Prof. Dr. Nico Callewaert. During his PhD and postdoc he worked on DNA sequence pattern recognition with deep learning (splice site and translation initiation site prediction), later moving on to protein sequences and structure. Remarkably, in his free time Jasper actually likes to be as far away as possible from all computers (except for maybe his GPS unit and cameras), out in the forests and mountains.',
@@ -521,6 +546,7 @@ toc: false
     },
     tijl: {
       title: 'Tijl Verween',
+      orcid: '0009-0009-8631-2104',
       role: 'Predoctoral Researcher',
       email: 'tijl.verween@ugent.be',
       about: 'Tijl obtained his Master\'s degree in Biochemistry and Biotechnology, with a major in Bioinformatics and Systems Biology, from Ghent University in 2026. He carried out his Master\'s thesis in the CompOmics group and continued in the same group as a PhD student. Outside research, he enjoys learning to play different musical instruments.',

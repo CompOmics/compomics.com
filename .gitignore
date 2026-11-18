@@ -1,16 +1,30 @@
-
+# Quarto
 .quarto/
-**/*.quarto_ipynb*
 _site/
-/.quarto/tutorials/notebooks/data/
+**/*.quarto_ipynb*
+/.luarc.json
+
+# Tutorial data
 /tutorials/notebooks/data/
 
-/.quarto/
-
-**/*.quarto_ipynb
-
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
 .venv/
-.quarto/
-**/*.quarto_ipynb
-_site/
-/.quarto/
+venv/
+.env
+
+# Node
+node_modules/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

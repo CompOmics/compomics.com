@@ -1,26 +1,167 @@
 [
   {
+    "doi": "10.64898/2026.06.09.730932",
+    "title": "Amino acid repeat mosaics shape protein functional landscape",
+    "authors": [
+      "Anjali Kumari Singh",
+      "Anurag Babu",
+      "Adhithya Subramanian Gopalakrishnan",
+      "Nagashree Rachote",
+      "Vaidehi Sharma",
+      "Sourav Ganguli",
+      "Keertana Sai Kappagantula",
+      "Harikrishnan Ramadasan",
+      "Palak Shukla",
+      "Arunkumar Dhayalan",
+      "Pavithra L Chavali",
+      "Sreenivas Chavali"
+    ],
+    "author_orcids": [
+      "0000-0002-0444-7913",
+      "0009-0002-3700-768X",
+      "0009-0005-3320-3650",
+      "0009-0008-2986-6365",
+      "0000-0002-0214-5436",
+      "0000-0002-4773-6205",
+      "0000-0002-2948-733X",
+      "0000-0003-1473-1595",
+      null,
+      "0000-0003-2588-9865",
+      "0000-0002-7525-5230",
+      "0000-0001-8307-1645"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0003-1473-1595"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.07.13.738155",
+    "title": "Defining Quality Control Standards for Single-Cell Proteomics by Inter-Laboratory Benchmarking",
+    "authors": [
+      "Sam van Puyenbroeck",
+      "Tine Claeys",
+      "Anjali Seth",
+      "Jeewan Babu Rijal",
+      "Charline Keller",
+      "Lavender Lin",
+      "Rupert Mayer",
+      "Manuel Matzinger",
+      "Isaac Han",
+      "Pedro Aragón Fernández",
+      "Valdemaras Petrosius",
+      "Benjamin Furtwängler",
+      "Brian Boyle",
+      "Keith Rivera",
+      "Guilhem Tourniaire",
+      "Florian A. Rosenberger",
+      "Lennart Martens",
+      "Steven A. Carr",
+      "Zhen Dong",
+      "Ákos Végvári",
+      "Christine Carapito",
+      "Ryan Kelly",
+      "Karl Mechtler",
+      "Bogdan Budnik",
+      "Erwin M. Schoof",
+      "Claudia Ctortecka"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0009-0001-5281-6891"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.08.17.745157",
+    "title": "Discovery of non-canonical proteins through modification-aware proteogenomics",
+    "authors": [
+      "Valeriia Vasylieva",
+      "Enrico Massignani",
+      "Tine Claeys",
+      "Francis Bourassa",
+      "Sébastien Leblanc",
+      "Ihor Arefiev",
+      "Lennart Martens",
+      "Marie A Brunet"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      "0000-0001-9408-488X",
+      null,
+      null,
+      null,
+      "0000-0003-4277-658X",
+      "0000-0001-5973-3522"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0001-9408-488X",
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
     "doi": "10.64898/2026.02.24.707692",
-    "title": "Evaluation of Protein Reference Database Reduction and Its Impact on Peptide-Centric Metaproteomics",
+    "title": "Effects of UniProtKB restructuring and taxonomic database restrictions on downstream Unipept peptide-centric profiling",
     "authors": [
       "Tibo Vande Moortele",
-      "Simon Vande Vyver",
+      "Simon Van de Vyver",
       "Ben-Björn Binke",
       "Tim Van Den Bossche",
-      "Peter Dawyndt",
       "Lennart Martens",
-      "Bart Mesuere",
-      "Pieter Verschaffelt"
+      "Peter Dawyndt",
+      "Pieter Verschaffelt",
+      "Bart Mesuere"
     ],
     "author_orcids": [
       "0000-0002-7813-934X",
       "0009-0009-7810-2174",
       "0009-0006-0186-5040",
       "0000-0002-5916-2587",
-      "0000-0002-1623-9070",
       "0000-0003-4277-658X",
-      "0000-0003-0610-3441",
-      "0000-0002-6675-1048"
+      "0000-0002-1623-9070",
+      "0000-0002-6675-1048",
+      "0000-0003-0610-3441"
     ],
     "journal": "",
     "year": 2026,
@@ -34,37 +175,23 @@
     ]
   },
   {
-    "doi": "10.26434/chemrxiv.15000466/v1",
-    "title": "Hardware Software Synergy in Proteomics: Systematic Evaluation Across Mass Spectrometry Platforms, Search Engines, and Rescoring Methods",
+    "doi": "10.64898/2026.07.10.737772",
+    "title": "Evaluating the use of non-linear models in data-driven rescoring of peptide-spectrum matches",
     "authors": [
-      "Sander Heyndrickx",
-      "Robbin Bouwmeester",
+      "Alireza Nameni",
       "Arthur Declercq",
-      "Robbe Devreese",
-      "Magnus Palmblad",
-      "Wout Bittremieux",
-      "Tess AV Afanasyeva",
-      "Joel Lapin",
-      "Arzu Tugce Guler",
-      "Pierre-Olivier Schmit",
-      "Christine Carapito",
+      "Ralf Gabriels",
+      "Sven Degroeve",
       "Lennart Martens",
-      "Ralf Gabriels"
+      "Robbin Bouwmeester"
     ],
     "author_orcids": [
-      "0009-0004-1818-8619",
-      "0000-0001-6807-7029",
+      "0000-0002-7471-9195",
       "0000-0002-9376-1399",
-      "0000-0002-3432-1502",
-      "0000-0002-5865-8994",
-      "0000-0002-3105-1359",
-      "0000-0003-3962-0779",
-      "0009-0009-5013-238X",
-      "0000-0002-6043-7824",
-      "0000-0003-2269-2389",
-      "0000-0002-0079-319X",
+      "0000-0002-1679-1711",
+      "0000-0001-8349-3370",
       "0000-0003-4277-658X",
-      "0000-0002-1679-1711"
+      "0000-0001-6807-7029"
     ],
     "journal": "",
     "year": 2026,
@@ -73,9 +200,49 @@
     "pages": "",
     "group_orcids": [
       "0000-0001-6807-7029",
-      "0000-0002-3432-1502",
+      "0000-0002-7471-9195",
       "0000-0002-9376-1399",
-      "0009-0004-1818-8619"
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.11.03.761330",
+    "title": "Finely tuned DDA-PASEF-based immunopeptidomics workflow enhances HLA class I coverage",
+    "authors": [
+      "Jeewan Babu Rijal",
+      "Aurélie Hirschler",
+      "Arthur Declercq",
+      "Margot Sommer",
+      "Charline Keller",
+      "Arnaud Jung",
+      "Alexandre Burel",
+      "Luc-Matthieu Fornecker",
+      "Delphine Rolland",
+      "Ralf Gabriels",
+      "Lennart Martens",
+      "Christine Carapito"
+    ],
+    "author_orcids": [
+      "0009-0009-6839-9947",
+      "0000-0001-5066-6263",
+      "0000-0002-9376-1399",
+      null,
+      "0009-0004-5010-5000",
+      "0009-0001-4072-2927",
+      "0000-0002-1379-7560",
+      "0000-0002-1866-971X",
+      "0000-0002-7801-6534",
+      "0000-0002-1679-1711",
+      "0000-0003-4277-658X",
+      "0000-0002-0079-319X"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-9376-1399"
     ]
   },
   {
@@ -126,6 +293,212 @@
     "pages": "13134-13143",
     "group_orcids": [
       "0000-0003-4039-5230"
+    ]
+  },
+  {
+    "doi": "10.1038/s41467-026-75138-x",
+    "title": "InstaNovo-P: a de novo peptide sequencing model for phosphoproteomics",
+    "authors": [
+      "Jesper Lauridsen",
+      "Vahap Canbay",
+      "Rachel Catzel",
+      "Pathmanaban Ramasamy",
+      "Amandla Mabona",
+      "Kevin Eloff",
+      "Paul Fullwood",
+      "Jennifer Ferguson",
+      "Annekatrine Kirketerp-Møller",
+      "Ida Sofie Goldschmidt",
+      "Tine Claeys",
+      "Sam van Puyenbroeck",
+      "Nicolas Lopez Carranza",
+      "Erwin M. Schoof",
+      "Lennart Martens",
+      "Jeroen Van Goey",
+      "Chiara Francavilla",
+      "Timothy Patrick Jenkins",
+      "Konstantinos Kalogeropoulos"
+    ],
+    "author_orcids": [
+      "0009-0008-9296-2392",
+      "0000-0002-5218-2315",
+      "0000-0002-2983-9833",
+      "0000-0003-4039-5230",
+      "0009-0009-7514-677X",
+      "0000-0003-1355-8743",
+      null,
+      null,
+      "0009-0008-3738-1034",
+      "0009-0005-1325-7969",
+      "0000-0001-9408-488X",
+      null,
+      "0000-0003-2235-5753",
+      "0000-0002-3117-7832",
+      "0000-0003-4277-658X",
+      "0000-0003-4480-5567",
+      "0000-0003-1775-3386",
+      "0000-0003-2979-5663",
+      "0000-0003-3907-9281"
+    ],
+    "journal": "Nature Communications",
+    "year": 2026,
+    "volume": "17",
+    "issue": "1",
+    "pages": "",
+    "group_orcids": [
+      "0000-0003-4039-5230"
+    ]
+  },
+  {
+    "doi": "10.1021/acs.jproteome.6c00295",
+    "title": "Instrument–Software\nSynergy in Proteomics:\nSystematic Evaluation across Mass Spectrometry Platforms, Search Engines,\nand Rescoring Methods",
+    "authors": [
+      "Sander Heyndrickx",
+      "Robbin Bouwmeester",
+      "Arthur Declercq",
+      "Robbe Devreese",
+      "Magnus Palmblad",
+      "Wout Bittremieux",
+      "Tess AV Afanasyeva",
+      "Joel Lapin",
+      "Arzu Tugce Guler",
+      "Pierre-Olivier Schmit",
+      "Christine Carapito",
+      "Lennart Martens",
+      "Ralf Gabriels"
+    ],
+    "author_orcids": [
+      "0009-0004-1818-8619",
+      "0000-0001-6807-7029",
+      "0000-0002-9376-1399",
+      "0000-0002-3432-1502",
+      "0000-0002-5865-8994",
+      "0000-0002-3105-1359",
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-0079-319X",
+      "0000-0003-4277-658X",
+      "0000-0002-1679-1711"
+    ],
+    "journal": "Journal of Proteome Research",
+    "year": 2026,
+    "volume": "25",
+    "issue": "8",
+    "pages": "4251-4261",
+    "group_orcids": [
+      "0000-0001-6807-7029",
+      "0000-0002-3432-1502",
+      "0000-0002-9376-1399",
+      "0009-0004-1818-8619"
+    ]
+  },
+  {
+    "doi": "10.1038/s41467-026-77539-4",
+    "title": "Integrating multi-omics technologies to decipher microbiome functions",
+    "authors": [
+      "Tim Van Den Bossche",
+      "Eunice Adeline Lazau",
+      "Velma T. E. Aho",
+      "J. Alfredo Blakeley-Ruiz",
+      "Maximilian Wolf",
+      "Benoit Josef Kunath",
+      "Luis E. Valentin-Alvarado",
+      "Patrick Hellwig",
+      "Pieter Verschaffelt",
+      "Andrew T. Rajczewski",
+      "Jannie. G. E. Henderickx",
+      "Tomi Suomi",
+      "Feng Xian",
+      "Shruti Shah",
+      "Lennart Martens",
+      "Dirk Benndorf",
+      "Samir R. Damare",
+      "Bastiaan Willem Haak",
+      "Sven-Bastiaan Haange",
+      "Paul D. Piehowski",
+      "Anne Kupczok",
+      "Daniel Figeys",
+      "Bart Mesuere",
+      "Magnus Palmblad",
+      "Robert L. Hettich",
+      "Laura L. Elo",
+      "Juan Antonio Vizcaíno",
+      "Neha Garg",
+      "Zhong Wang",
+      "Muzaffer Arıkan",
+      "Lee Ann McCue",
+      "Timothy J. Griffin",
+      "Laure-Alix Clerbaux",
+      "Robert Heyer",
+      "Marnix H. Medema",
+      "Sabine Matallana-Surget",
+      "David Gomez-Varela",
+      "Thilo Muth",
+      "Bree Tillett",
+      "Jean Armengaud",
+      "Robert D. Finn",
+      "Paul Wilmes",
+      "J. Gregory Caporaso",
+      "Lucia Grenga",
+      "Pratik Dilip Jagtap"
+    ],
+    "author_orcids": [
+      "0000-0002-5916-2587",
+      null,
+      "0000-0003-2916-7018",
+      "0000-0001-7638-5849",
+      "0000-0002-8770-8399",
+      "0000-0002-3356-8562",
+      "0000-0001-7988-8556",
+      "0000-0003-3280-9042",
+      "0000-0002-6675-1048",
+      null,
+      "0000-0001-6533-0324",
+      "0000-0003-3639-979X",
+      "0000-0002-8345-0108",
+      null,
+      "0000-0003-4277-658X",
+      null,
+      null,
+      "0000-0002-3903-5441",
+      "0000-0003-2952-1152",
+      "0000-0001-5108-2227",
+      "0000-0001-5237-1899",
+      "0000-0002-5373-7546",
+      "0000-0003-0610-3441",
+      "0000-0002-5865-8994",
+      "0000-0001-7708-786X",
+      "0000-0001-5648-4532",
+      "0000-0002-3905-4335",
+      "0000-0002-2760-7123",
+      "0000-0002-6307-0458",
+      "0000-0001-5162-2000",
+      "0000-0003-4456-517X",
+      "0000-0001-6801-2559",
+      null,
+      null,
+      "0000-0002-2191-2821",
+      null,
+      "0000-0003-2502-9419",
+      "0000-0001-8304-2684",
+      "0000-0002-0159-6649",
+      "0000-0003-1589-445X",
+      "0000-0001-8626-2148",
+      "0000-0002-6478-2924",
+      "0000-0002-8865-1670",
+      "0000-0001-5560-1717",
+      "0000-0003-0984-0973"
+    ],
+    "journal": "Nature Communications",
+    "year": 2026,
+    "volume": "17",
+    "issue": "1",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-5916-2587",
+      "0000-0002-6675-1048"
     ]
   },
   {
@@ -189,6 +562,45 @@
     ]
   },
   {
+    "doi": "10.1038/s41592-026-03301-9",
+    "title": "Limitations of de novo peptide sequencing in resolving sequence ambiguity",
+    "authors": [
+      "Sam van Puyenbroeck",
+      "Denis Beslic",
+      "Tomi Suomi",
+      "Tanja Holstein",
+      "Thilo Muth",
+      "Laura L. Elo",
+      "Lennart Martens",
+      "Robbin Bouwmeester",
+      "Tim Van Den Bossche",
+      "Tine Claeys"
+    ],
+    "author_orcids": [
+      "0009-0001-5281-6891",
+      "0000-0001-6346-7896",
+      "0000-0003-3639-979X",
+      null,
+      "0000-0001-8304-2684",
+      "0000-0001-5648-4532",
+      "0000-0003-4277-658X",
+      "0000-0001-6807-7029",
+      "0000-0002-5916-2587",
+      "0000-0001-9408-488X"
+    ],
+    "journal": "Nature Methods",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0001-6807-7029",
+      "0000-0001-9408-488X",
+      "0000-0002-5916-2587",
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
     "doi": "10.64898/2026.01.20.700550",
     "title": "MoDPA: Inferring Modification-dependent Protein Associations from Uniformly Reprocessed Mass Spectrometry",
     "authors": [
@@ -213,6 +625,35 @@
       "0000-0002-4328-0538",
       "0000-0002-9968-6043",
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.08.25.747021",
+    "title": "OmicsFM brings proteomics into the foundation model era",
+    "authors": [
+      "Sander Heyndrickx",
+      "Ralf Gabriels",
+      "Harikrishnan Ramadasan",
+      "Lennart Martens",
+      "Tine Claeys"
+    ],
+    "author_orcids": [
+      "0009-0004-1818-8619",
+      "0000-0002-1679-1711",
+      "0000-0003-1473-1595",
+      "0000-0003-4277-658X",
+      "0000-0001-9408-488X"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0001-9408-488X",
+      "0000-0003-1473-1595",
+      "0000-0003-4277-658X",
+      "0009-0004-1818-8619"
     ]
   },
   {
@@ -251,6 +692,101 @@
       "0000-0002-5295-010X",
       "0000-0002-7471-9195",
       "0000-0002-9376-1399",
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.07.03.736340",
+    "title": "Scop3P in 2026: an expanded proteomics-informed resource contextualizing phosphorylation sites through sequence, structure, mutation, and experimental provenance",
+    "authors": [
+      "Pathmanaban Ramasamy",
+      "Natalia Tichshenko",
+      "Adrián Díaz",
+      "Kevin Velghe",
+      "Enrico Massignani",
+      "Wim F. Vranken",
+      "Lennart Martens"
+    ],
+    "author_orcids": [
+      "0000-0003-4039-5230",
+      "0000-0001-7914-0759",
+      "0000-0003-0165-1318",
+      "0000-0002-9968-6043",
+      "0000-0002-4328-0538",
+      "0000-0001-7470-4324",
+      "0000-0003-4277-658X"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0001-7914-0759",
+      "0000-0002-4328-0538",
+      "0000-0002-9968-6043",
+      "0000-0003-4039-5230",
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.64898/2026.08.04.742789",
+    "title": "Scop3P-Toolkit: executable structure-aware workflows linking PTMs, peptides, and mutations to protein function",
+    "authors": [
+      "Adrián Díaz",
+      "Natalia Tichshenko",
+      "Boris Depoortere",
+      "Rafael Andrade Buono",
+      "Paul De Geest",
+      "Wim F. Vranken",
+      "Lennart Martens",
+      "Pathmanaban Ramasamy"
+    ],
+    "author_orcids": [
+      "0000-0003-0165-1318",
+      "0000-0001-7914-0759",
+      "0009-0002-2539-116X",
+      "0000-0002-6675-3836",
+      "0000-0002-8940-4946",
+      "0000-0001-7470-4324",
+      "0000-0003-4277-658X",
+      "0000-0003-4039-5230"
+    ],
+    "journal": "",
+    "year": 2026,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0001-7914-0759",
+      "0000-0003-4039-5230",
+      "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1002/fsn3.72179",
+    "title": "Temporal and Functional Profiling of the Microbiome of High and Low Nitrogen Content Barley Seed in Silo Storage",
+    "authors": [
+      "Kalonji A. Tshisekedi",
+      "Tim Van Den Bossche",
+      "Lennart Martens",
+      "Pieter De Maayer",
+      "Angela Botes"
+    ],
+    "author_orcids": [
+      "0000-0002-0518-1643",
+      "0000-0002-5916-2587",
+      "0000-0003-4277-658X",
+      "0000-0001-8550-642X",
+      "0000-0003-1245-2525"
+    ],
+    "journal": "Food Science &amp; Nutrition",
+    "year": 2026,
+    "volume": "14",
+    "issue": "8",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-5916-2587",
       "0000-0003-4277-658X"
     ]
   },
@@ -431,13 +967,46 @@
     ],
     "journal": "Analytical Chemistry",
     "year": 2026,
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "volume": "98",
+    "issue": "24",
+    "pages": "17707-17717",
     "group_orcids": [
       "0000-0002-3432-1502",
       "0000-0002-7471-9195",
       "0000-0002-9376-1399"
+    ]
+  },
+  {
+    "doi": "10.1021/acs.analchem.6c01740",
+    "title": "narrowPASEF:\nA Sample-Aware diaPASEF Method Optimization\nStrategy Improving Differential Proteomics Performance on Low-Abundance\nProteins",
+    "authors": [
+      "Jeewan Babu Rijal",
+      "Imane Charmarke Askar",
+      "Aurélie Hirschler",
+      "Arthur Declercq",
+      "Lennart Martens",
+      "Christine Schaeffer-Reiss",
+      "Dominique Bagnard",
+      "Christine Carapito"
+    ],
+    "author_orcids": [
+      "0009-0009-6839-9947",
+      null,
+      "0000-0001-5066-6263",
+      "0000-0002-9376-1399",
+      "0000-0003-4277-658X",
+      null,
+      null,
+      null
+    ],
+    "journal": "Analytical Chemistry",
+    "year": 2026,
+    "volume": "98",
+    "issue": "34",
+    "pages": "24843-24854",
+    "group_orcids": [
+      "0000-0002-9376-1399",
+      "0000-0003-4277-658X"
     ]
   },
   {
@@ -461,8 +1030,8 @@
     ],
     "journal": "Nature Communications",
     "year": 2026,
-    "volume": "",
-    "issue": "",
+    "volume": "17",
+    "issue": "1",
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
@@ -767,6 +1336,90 @@
     ]
   },
   {
+    "doi": "10.1101/2025.02.19.639069",
+    "title": "Detection of human unannotated microproteins by mass spectrometry-based proteomics: a community assessment",
+    "authors": [
+      "Aaron Wacholder",
+      "Eric W. Deutsch",
+      "Leron W. Kok",
+      "Jip T. van Dinter",
+      "Jiwon Lee",
+      "James C. Wright",
+      "Sebastien Leblanc",
+      "Ayodya H Jayatissa",
+      "Kevin Jiang",
+      "Ihor Arefiev",
+      "Kevin Cao",
+      "Francis Bourassa",
+      "Felix-Antoine Trifiro",
+      "Michal Bassani-Sternberg",
+      "Pavel V. Baranov",
+      "Annelies Bogaert",
+      "Sonia Chothani",
+      "Ivo Fierro-Monti",
+      "Daria Fijalkowska",
+      "Kris Gevaert",
+      "Norbert Hubner",
+      "Jonathan M. Mudge",
+      "Jorge Ruiz-Orera",
+      "Jana Schulz",
+      "Juan Antonio Vizcaíno",
+      "John R Prensner",
+      "Marie A. Brunet",
+      "Thomas F. Martinez",
+      "Sarah A. Slavoff",
+      "Xavier Roucou",
+      "Jyoti S. Choudhary",
+      "Sebastiaan van Heesch",
+      "Robert L. Moritz",
+      "Anne-Ruxandra Carvunis"
+    ],
+    "author_orcids": [
+      "0000-0001-8739-0029",
+      "0000-0001-8732-0928",
+      "0009-0008-0841-2313",
+      "0000-0002-3749-1531",
+      null,
+      null,
+      "0000-0003-2599-6716",
+      "0009-0002-7063-6365",
+      null,
+      "0009-0008-3812-8495",
+      null,
+      "0009-0001-9012-7245",
+      "0009-0003-5912-6812",
+      "0000-0002-1934-954X",
+      "0000-0001-9017-0270",
+      "0000-0002-4467-4299",
+      "0000-0002-1010-7069",
+      null,
+      null,
+      "0000-0002-4237-0283",
+      null,
+      "0000-0003-4789-7495",
+      "0000-0002-8317-0034",
+      null,
+      "0000-0002-3905-4335",
+      "0000-0002-7024-636X",
+      "0000-0001-5973-3522",
+      "0000-0002-4011-8164",
+      "0000-0002-4443-2070",
+      "0000-0001-9370-5584",
+      "0000-0003-0881-5477",
+      "0000-0001-9593-1980",
+      "0000-0002-3216-9447",
+      "0000-0002-6474-6413"
+    ],
+    "journal": "",
+    "year": 2025,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1101/2025.03.11.642564",
     "title": "Development of a General Purpose Targeted LC-MS Method for Accurate Quantification of the SARS-CoV-2 Spike Protein Expression",
     "authors": [
@@ -994,61 +1647,6 @@
     "pages": "714",
     "group_orcids": [
       "0000-0002-5916-2587"
-    ]
-  },
-  {
-    "doi": "10.1101/2025.05.14.654049",
-    "title": "InstaNovo-P: A de novo peptide sequencing model for phosphoproteomics",
-    "authors": [
-      "Jesper Lauridsen",
-      "Pathmanaban Ramasamy",
-      "Rachel Catzel",
-      "Vahap Canbay",
-      "Amandla Mabona",
-      "Kevin Eloff",
-      "Paul Fullwood",
-      "Jennifer Ferguson",
-      "Annekatrine Kirketerp-Møller",
-      "Ida Sofie Goldschmidt",
-      "Tine Claeys",
-      "Sam van Puyenbroeck",
-      "Nicolas Lopez Carranza",
-      "Erwin M. Schoof",
-      "Lennart Martens",
-      "Jeroen Van Goey",
-      "Chiara Francavilla",
-      "Timothy Patrick Jenkins",
-      "Konstantinos Kalogeropoulos"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0003-4039-5230",
-      "0000-0002-2983-9833",
-      "0000-0002-5218-2315",
-      "0009-0009-7514-677X",
-      "0000-0003-1355-8743",
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-9408-488X",
-      null,
-      "0000-0003-2235-5753",
-      "0000-0002-3117-7832",
-      "0000-0003-4277-658X",
-      "0000-0003-4480-5567",
-      "0000-0003-1775-3386",
-      "0000-0003-2979-5663",
-      "0000-0003-3907-9281"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-4039-5230",
-      "0009-0001-5281-6891"
     ]
   },
   {
@@ -1292,6 +1890,40 @@
     ]
   },
   {
+    "doi": "10.1016/j.biopha.2025.118656",
+    "title": "Modeling of glucocorticoid resistance in multiple myeloma reveals mechanisms and markers of glucocorticoid resistance",
+    "authors": [
+      "Bert Luyckx",
+      "Mélanie Derollez",
+      "Eleni Staessens",
+      "Annick Verhee",
+      "Daria Fijalkowska",
+      "Pieter Van Vlierberghe",
+      "Steven Goossens",
+      "Dorien Clarisse",
+      "Karolien De Bosscher"
+    ],
+    "author_orcids": [
+      "0000-0002-9015-0314",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0001-5059-9718"
+    ],
+    "journal": "Biomedicine &amp; Pharmacotherapy",
+    "year": 2025,
+    "volume": "192",
+    "issue": "",
+    "pages": "118656",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1101/2025.10.01.679754",
     "title": "Molecular attributes of intrinsically disordered regions in secretomes influence fungal pathogenesis",
     "authors": [
@@ -1401,6 +2033,50 @@
     "pages": "2222-2234",
     "group_orcids": [
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1016/j.metabol.2024.156128",
+    "title": "PPARα-ERRα crosstalk mitigates metabolic dysfunction-associated steatotic liver disease progression",
+    "authors": [
+      "Milton Boaheng Antwi",
+      "Sander Lefere",
+      "Dorien Clarisse",
+      "Lisa Koorneef",
+      "Anneleen Heldens",
+      "Louis Onghena",
+      "Kylian Decroix",
+      "Daria Fijalkowska",
+      "Jonathan Thommis",
+      "Madeleine Hellemans",
+      "Anne Hoorens",
+      "Anja Geerts",
+      "Lindsey Devisscher",
+      "Karolien De Bosscher"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "journal": "Metabolism",
+    "year": 2025,
+    "volume": "164",
+    "issue": "",
+    "pages": "156128",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -1618,12 +2294,49 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-3432-1502",
-      "0009-0000-4679-7295"
+      "0009-0000-4679-7295",
+      "0009-0001-5281-6891"
+    ]
+  },
+  {
+    "doi": "10.1038/s41467-025-60232-3",
+    "title": "Single-domain antibodies directed against hemagglutinin and neuraminidase protect against influenza B viruses",
+    "authors": [
+      "Arne Matthys",
+      "Jan Felix",
+      "Joao Paulo Portela Catani",
+      "Kenny Roose",
+      "Wim Nerinckx",
+      "Benthe Van Buyten",
+      "Daria Fijalkowska",
+      "Nico Callewaert",
+      "Savvas N. Savvides",
+      "Xavier Saelens"
+    ],
+    "author_orcids": [
+      "0000-0002-0568-3133",
+      "0000-0002-8436-9467",
+      "0000-0002-4866-3933",
+      "0000-0002-5270-4603",
+      null,
+      "0009-0002-7742-2642",
+      "0000-0002-2084-146X",
+      "0000-0003-2069-6917",
+      null,
+      "0000-0002-3861-6965"
+    ],
+    "journal": "Nature Communications",
+    "year": 2025,
+    "volume": "16",
+    "issue": "1",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
     "doi": "10.1021/acs.jproteome.4c00609",
-    "title": "TIMS<sup>2</sup>Rescore: A Data Dependent Acquisition-Parallel Accumulation and Serial Fragmentation-Optimized Data-Driven Rescoring Pipeline Based on MS<sup>2</sup>Rescore",
+    "title": "TIMS\n                    <sup>2</sup>\n                    Rescore: A Data Dependent Acquisition-Parallel Accumulation and Serial Fragmentation-Optimized Data-Driven Rescoring Pipeline Based on MS\n                    <sup>2</sup>\n                    Rescore",
     "authors": [
       "Arthur Declercq",
       "Robbe Devreese",
@@ -1780,6 +2493,90 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-5916-2587"
+    ]
+  },
+  {
+    "doi": "10.1038/s41467-025-60250-1",
+    "title": "Ultrapotent SARS coronavirus-neutralizing single-domain antibodies that clamp the spike at its base",
+    "authors": [
+      "Sieglinde De Cae",
+      "Inge Van Molle",
+      "Loes van Schie",
+      "Sophie R. Shoemaker",
+      "Julie Deckers",
+      "Nincy Debeuf",
+      "Sahine Lameire",
+      "Wim Nerinckx",
+      "Kenny Roose",
+      "Daria Fijalkowska",
+      "Simon Devos",
+      "Anne-Sophie De Smet",
+      "Jackeline Cecilia Zavala Marchan",
+      "Toon Venneman",
+      "Koen Sedeyn",
+      "Lejla Mujanovic",
+      "Marlies Ballegeer",
+      "Manon Vanheerswynghels",
+      "Caroline De Wolf",
+      "Hans Demol",
+      "Jasper Zuallaert",
+      "Pieter Vanhaverbeke",
+      "Gholamreza Hassanzadeh Ghassabeh",
+      "Chiara Lonigro",
+      "Viki Bockstal",
+      "Manuela Rinaldi",
+      "Rana Abdelnabi",
+      "Johan Neyts",
+      "Susan Marqusee",
+      "Bart N. Lambrecht",
+      "Nico Callewaert",
+      "Han Remaut",
+      "Xavier Saelens",
+      "Bert Schepens"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      "0000-0003-2588-9750",
+      "0000-0002-5278-2361",
+      null,
+      "0000-0002-4754-4772",
+      null,
+      null,
+      "0000-0002-5270-4603",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-1303-1629",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-9523-7929",
+      null,
+      null,
+      "0000-0001-9771-7312",
+      "0000-0002-0033-7514",
+      "0000-0001-7648-2163",
+      null,
+      "0000-0003-2069-6917",
+      "0000-0002-9775-4102",
+      "0000-0002-3861-6965",
+      "0000-0002-2028-1984"
+    ],
+    "journal": "Nature Communications",
+    "year": 2025,
+    "volume": "16",
+    "issue": "1",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -2057,6 +2854,56 @@
     ]
   },
   {
+    "doi": "10.1016/j.molmet.2024.101938",
+    "title": "Crosstalk interactions between transcription factors ERRα and PPARα assist PPARα-mediated gene expression",
+    "authors": [
+      "Sofie J. Desmet",
+      "Jonathan Thommis",
+      "Tineke Vanderhaeghen",
+      "Edmee M.F. Vandenboorn",
+      "Dorien Clarisse",
+      "Yunkun Li",
+      "Steven Timmermans",
+      "Daria Fijalkowska",
+      "Dariusz Ratman",
+      "Evelien Van Hamme",
+      "Lode De Cauwer",
+      "Bart Staels",
+      "Luc Brunsveld",
+      "Frank Peelman",
+      "Claude Libert",
+      "Jan Tavernier",
+      "Karolien De Bosscher"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0001-5059-9718"
+    ],
+    "journal": "Molecular Metabolism",
+    "year": 2024,
+    "volume": "84",
+    "issue": "",
+    "pages": "101938",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1016/j.chroma.2024.464768",
     "title": "Deep reinforcement learning for the direct optimization of gradient separations in liquid chromatography",
     "authors": [
@@ -2152,6 +2999,72 @@
     ]
   },
   {
+    "doi": "10.1016/j.ebiom.2023.104960",
+    "title": "Integrating artificial intelligence-based epitope prediction in a SARS-CoV-2 antibody discovery pipeline: caution is warranted",
+    "authors": [
+      "Delphine Diana Acar",
+      "Wojciech Witkowski",
+      "Magdalena Wejda",
+      "Ruifang Wei",
+      "Tim Desmet",
+      "Bert Schepens",
+      "Sieglinde De Cae",
+      "Koen Sedeyn",
+      "Hannah Eeckhaut",
+      "Daria Fijalkowska",
+      "Kenny Roose",
+      "Sandrine Vanmarcke",
+      "Anne Poupon",
+      "Dirk Jochmans",
+      "Xin Zhang",
+      "Rana Abdelnabi",
+      "Caroline S. Foo",
+      "Birgit Weynand",
+      "Dirk Reiter",
+      "Nico Callewaert",
+      "Han Remaut",
+      "Johan Neyts",
+      "Xavier Saelens",
+      "Sarah Gerlo",
+      "Linos Vandekerckhove"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      "0000-0001-8325-7271",
+      null,
+      null,
+      null,
+      "0000-0003-1519-3653",
+      null,
+      null,
+      "0000-0002-0955-7556",
+      null,
+      null,
+      "0000-0001-8520-1060",
+      "0000-0001-9771-7312",
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-9775-4102",
+      "0000-0002-0033-7514",
+      null,
+      null,
+      null
+    ],
+    "journal": "eBioMedicine",
+    "year": 2024,
+    "volume": "100",
+    "issue": "",
+    "pages": "104960",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1002/pmic.202300144",
     "title": "Intensity and retention time prediction improves the rescoring of protein‐nucleic acid cross‐links",
     "authors": [
@@ -2187,6 +3100,46 @@
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1016/j.crmeth.2024.100818",
+    "title": "Leveraging a self-cleaving peptide for tailored control in proximity labeling proteomics",
+    "authors": [
+      "Louis Delhaye",
+      "George D. Moschonas",
+      "Daria Fijalkowska",
+      "Annick Verhee",
+      "Delphine De Sutter",
+      "Tessa Van de Steene",
+      "Margaux De Meyer",
+      "Hanna Grzesik",
+      "Laura Van Moortel",
+      "Karolien De Bosscher",
+      "Thomas Jacobs",
+      "Sven Eyckerman"
+    ],
+    "author_orcids": [
+      "0000-0001-8876-7385",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0001-7525-0096"
+    ],
+    "journal": "Cell Reports Methods",
+    "year": 2024,
+    "volume": "4",
+    "issue": "7",
+    "pages": "100818",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -2289,6 +3242,66 @@
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1038/s41564-023-01574-w",
+    "title": "OPENPichia: licence-free Komagataella phaffii chassis strains and toolkit for protein expression",
+    "authors": [
+      "Katrien Claes",
+      "Dries Van Herpe",
+      "Robin Vanluchene",
+      "Charlotte Roels",
+      "Berre Van Moer",
+      "Elise Wyseure",
+      "Kristof Vandewalle",
+      "Hannah Eeckhaut",
+      "Semiramis Yilmaz",
+      "Sandrine Vanmarcke",
+      "Erhan Çıtak",
+      "Daria Fijalkowska",
+      "Hendrik Grootaert",
+      "Chiara Lonigro",
+      "Leander Meuris",
+      "Gitte Michielsen",
+      "Justine Naessens",
+      "Loes van Schie",
+      "Riet De Rycke",
+      "Michiel De Bruyne",
+      "Peter Borghgraef",
+      "Nico Callewaert"
+    ],
+    "author_orcids": [
+      "0000-0001-5622-057X",
+      "0000-0003-2842-4385",
+      null,
+      "0000-0001-9659-5106",
+      "0000-0002-6315-3755",
+      null,
+      null,
+      "0000-0003-1519-3653",
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-1411-8195",
+      null,
+      "0000-0001-8940-3022",
+      null,
+      "0000-0002-7093-0372",
+      "0000-0003-2588-9750",
+      null,
+      null,
+      null,
+      "0000-0003-2069-6917"
+    ],
+    "journal": "Nature Microbiology",
+    "year": 2024,
+    "volume": "9",
+    "issue": "3",
+    "pages": "864-876",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -2476,6 +3489,62 @@
     ]
   },
   {
+    "doi": "10.1101/2024.12.10.627724",
+    "title": "The antigenic landscape of N1 neuraminidase in human influenza A virus strains isolated between 2009 and 2020",
+    "authors": [
+      "João Paulo Portela Catani",
+      "Anouk Smet",
+      "Tine Ysenbaert",
+      "Daria Fijalkowska",
+      "Laura Amelinck",
+      "Yvonne Chan",
+      "Dan Tadmor",
+      "Philip Davidson",
+      "Satyajit Ray",
+      "Eric Camire",
+      "Liqun Han",
+      "Jianxin Zhang",
+      "Guadalupe Cortés",
+      "Katherine Roebke",
+      "Bianca Baum",
+      "John Hamberger",
+      "Maryann Giel-Moloney",
+      "Raul Gomila",
+      "Xavier Saelens",
+      "Thorsten U. Vogel"
+    ],
+    "author_orcids": [
+      "0000-0002-4866-3933",
+      null,
+      null,
+      "0000-0002-2084-146X",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-3861-6965",
+      "0000-0002-0371-8048"
+    ],
+    "journal": "",
+    "year": 2024,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.26434/chemrxiv-2024-jg1mq",
     "title": "Unraveling Microbial Effectors: Metaproteomics in the One Health Framework",
     "authors": [
@@ -2531,6 +3600,70 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-5916-2587"
+    ]
+  },
+  {
+    "doi": "10.1101/2024.03.04.580093",
+    "title": "Yeast-based production platform for potent and stable heavy chain-only antibodies",
+    "authors": [
+      "Chiara Lonigro",
+      "Hannah Eeckhaut",
+      "Royan Alipour Symakani",
+      "Kenny Roose",
+      "Bert Schepens",
+      "Koen Sedeyn",
+      "Anne-Sophie De Smet",
+      "Jackeline Cecilia Zavala Marchan",
+      "Pieter Vanhaverbeke",
+      "Sandrine Vanmarcke",
+      "Katrien Claes",
+      "Sieglinde De Cae",
+      "Hans Demol",
+      "Simon Devos",
+      "Daria Fijalkowska",
+      "Wim Nerinckx",
+      "Iebe Rossey",
+      "Wannes Weyts",
+      "Rana Abdelnabi",
+      "Dirk Jochmans",
+      "Johan Neyts",
+      "Xavier Saelens",
+      "Loes van Schie",
+      "Nico Callewaert"
+    ],
+    "author_orcids": [
+      "0000-0002-9523-7929",
+      "0000-0003-1519-3653",
+      "0000-0002-0108-7959",
+      "0000-0002-5270-4603",
+      "0000-0002-2028-1984",
+      "0000-0002-1303-1629",
+      "0009-0007-8307-3457",
+      "0000-0002-8996-8741",
+      "0000-0002-3459-6434",
+      "0000-0002-0955-7556",
+      "0000-0001-5622-057X",
+      "0000-0002-9153-4926",
+      "0000-0001-7595-0148",
+      "0000-0002-0623-433X",
+      "0000-0002-2084-146X",
+      "0000-0002-6563-8342",
+      "0000-0002-0795-972X",
+      "0000-0002-8275-7853",
+      "0000-0001-9771-7312",
+      "0000-0002-9265-6028",
+      "0000-0002-0033-7514",
+      "0000-0003-0686-0311",
+      "0000-0003-2588-9750",
+      "0000-0003-2069-6917"
+    ],
+    "journal": "",
+    "year": 2024,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -2597,6 +3730,86 @@
     ]
   },
   {
+    "doi": "10.1007/s00018-023-04900-x",
+    "title": "Crosstalk between glucocorticoid and mineralocorticoid receptors boosts glucocorticoid-induced killing of multiple myeloma cells",
+    "authors": [
+      "Dorien Clarisse",
+      "Stefan Prekovic",
+      "Philip Vlummens",
+      "Eleni Staessens",
+      "Karlien Van Wesemael",
+      "Jonathan Thommis",
+      "Daria Fijalkowska",
+      "Guillaume Acke",
+      "Wilbert Zwart",
+      "Ilse M. Beck",
+      "Fritz Offner",
+      "Karolien De Bosscher"
+    ],
+    "author_orcids": [
+      "0000-0002-2580-2291",
+      "0000-0002-7051-9321",
+      "0000-0001-8275-2887",
+      "0000-0001-6810-5069",
+      null,
+      "0000-0001-7221-9317",
+      "0000-0002-2084-146X",
+      "0000-0001-6613-5707",
+      "0000-0002-9823-7289",
+      "0000-0002-1927-5480",
+      "0000-0003-4690-3603",
+      "0000-0001-5059-9718"
+    ],
+    "journal": "Cellular and Molecular Life Sciences",
+    "year": 2023,
+    "volume": "80",
+    "issue": "9",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
+    "doi": "10.1101/2023.05.10.540157",
+    "title": "Crosstalk between the glucocorticoid and mineralocorticoid receptor boosts glucocorticoid-induced killing of multiple myeloma cells",
+    "authors": [
+      "Dorien Clarisse",
+      "Stefan Prekovic",
+      "Philip Vlummens",
+      "Eleni Staessens",
+      "Karlien Van Wesemael",
+      "Jonathan Thommis",
+      "Daria Fijalkowska",
+      "Guillaume Acke",
+      "Wilbert Zwart",
+      "Ilse M. Beck",
+      "Fritz Offner",
+      "Karolien De Bosscher"
+    ],
+    "author_orcids": [
+      "0000-0002-2580-2291",
+      "0000-0002-7051-9321",
+      "0000-0001-8275-2887",
+      "0000-0001-6810-5069",
+      null,
+      "0000-0001-7221-9317",
+      "0000-0002-2084-146X",
+      "0000-0001-6613-5707",
+      "0000-0002-9823-7289",
+      "0000-0002-1927-5480",
+      "0000-0003-4690-3603",
+      "0000-0001-5059-9718"
+    ],
+    "journal": "",
+    "year": 2023,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1093/bioinformatics/btad486",
     "title": "Ionmob: a Python package for prediction of peptide collisional cross-section values",
     "authors": [
@@ -2660,6 +3873,44 @@
       "0000-0001-6807-7029",
       "0000-0001-9408-488X",
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.26508/lsa.202301972",
+    "title": "N-terminal proteoforms may engage in different protein complexes",
+    "authors": [
+      "Annelies Bogaert",
+      "Daria Fijalkowska",
+      "An Staes",
+      "Tessa Van de Steene",
+      "Marnik Vuylsteke",
+      "Charlotte Stadler",
+      "Sven Eyckerman",
+      "Kerstin Spirohn",
+      "Tong Hao",
+      "Michael A Calderwood",
+      "Kris Gevaert"
+    ],
+    "author_orcids": [
+      "0000-0002-4467-4299",
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-6781-1938",
+      "0000-0001-7525-0096",
+      null,
+      null,
+      null,
+      "0000-0002-4237-0283"
+    ],
+    "journal": "Life Science Alliance",
+    "year": 2023,
+    "volume": "6",
+    "issue": "8",
+    "pages": "e202301972",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -2791,6 +4042,142 @@
     ]
   },
   {
+    "doi": "10.1158/2159-8290.22541986",
+    "title": "Supplementary Figures S1-S9 from A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
+    "authors": [
+      "Fengbiao Zhou",
+      "Nesrine Aroua",
+      "Yi Liu",
+      "Christian Rohde",
+      "Jingdong Cheng",
+      "Anna-Katharina Wirth",
+      "Daria Fijalkowska",
+      "Stefanie Göllner",
+      "Michelle Lotze",
+      "Haiyang Yun",
+      "Xiaobing Yu",
+      "Caroline Pabst",
+      "Tim Sauer",
+      "Thomas Oellerich",
+      "Hubert Serve",
+      "Christoph Röllig",
+      "Martin Bornhäuser",
+      "Christian Thiede",
+      "Claudia Baldus",
+      "Michaela Frye",
+      "Simon Raffel",
+      "Jeroen Krijgsveld",
+      "Irmela Jeremias",
+      "Roland Beckmann",
+      "Andreas Trumpp",
+      "Carsten Müller-Tidow"
+    ],
+    "author_orcids": [
+      "0000-0002-9221-1096",
+      "0000-0002-0600-7954",
+      "0000-0002-4961-2660",
+      "0000-0001-6778-5971",
+      "0000-0003-4442-377X",
+      "0000-0002-0138-8583",
+      "0000-0002-2084-146X",
+      "0000-0002-2934-1920",
+      "0000-0003-2633-1767",
+      "0000-0001-8714-205X",
+      "0000-0001-8634-4135",
+      "0000-0001-9716-5909",
+      "0000-0001-5412-324X",
+      "0000-0001-6570-6125",
+      "0000-0001-8472-5516",
+      "0000-0002-3791-0548",
+      null,
+      "0000-0002-5916-3029",
+      "0000-0002-0748-834X",
+      "0000-0002-5636-6840",
+      "0000-0003-4671-1097",
+      "0000-0001-7549-9326",
+      "0000-0003-1773-7677",
+      "0000-0003-4291-3898",
+      "0000-0002-6212-3466",
+      "0000-0002-7166-5232"
+    ],
+    "journal": "",
+    "year": 2023,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
+    "doi": "10.1158/2159-8290.22541983",
+    "title": "Supplementary Tables S1-S4 from A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
+    "authors": [
+      "Fengbiao Zhou",
+      "Nesrine Aroua",
+      "Yi Liu",
+      "Christian Rohde",
+      "Jingdong Cheng",
+      "Anna-Katharina Wirth",
+      "Daria Fijalkowska",
+      "Stefanie Göllner",
+      "Michelle Lotze",
+      "Haiyang Yun",
+      "Xiaobing Yu",
+      "Caroline Pabst",
+      "Tim Sauer",
+      "Thomas Oellerich",
+      "Hubert Serve",
+      "Christoph Röllig",
+      "Martin Bornhäuser",
+      "Christian Thiede",
+      "Claudia Baldus",
+      "Michaela Frye",
+      "Simon Raffel",
+      "Jeroen Krijgsveld",
+      "Irmela Jeremias",
+      "Roland Beckmann",
+      "Andreas Trumpp",
+      "Carsten Müller-Tidow"
+    ],
+    "author_orcids": [
+      "0000-0002-9221-1096",
+      "0000-0002-0600-7954",
+      "0000-0002-4961-2660",
+      "0000-0001-6778-5971",
+      "0000-0003-4442-377X",
+      "0000-0002-0138-8583",
+      "0000-0002-2084-146X",
+      "0000-0002-2934-1920",
+      "0000-0003-2633-1767",
+      "0000-0001-8714-205X",
+      "0000-0001-8634-4135",
+      "0000-0001-9716-5909",
+      "0000-0001-5412-324X",
+      "0000-0001-6570-6125",
+      "0000-0001-8472-5516",
+      "0000-0002-3791-0548",
+      null,
+      "0000-0002-5916-3029",
+      "0000-0002-0748-834X",
+      "0000-0002-5636-6840",
+      "0000-0003-4671-1097",
+      "0000-0001-7549-9326",
+      "0000-0003-1773-7677",
+      "0000-0003-4291-3898",
+      "0000-0002-6212-3466",
+      "0000-0002-7166-5232"
+    ],
+    "journal": "",
+    "year": 2023,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1021/acs.jproteome.2c00711",
     "title": "Toward an Integrated Machine Learning Model of a Proteomics Experiment",
     "authors": [
@@ -2841,6 +4228,86 @@
     "group_orcids": [
       "0000-0001-6807-7029",
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1101/2023.03.10.531533",
+    "title": "Ultrapotent SARS coronavirus-neutralizing single-domain antibodies that bind a conserved membrane proximal epitope of the spike",
+    "authors": [
+      "Sieglinde De Cae",
+      "Inge Van Molle",
+      "Loes van Schie",
+      "Sophie R. Shoemaker",
+      "Julie Deckers",
+      "Nincy Debeuf",
+      "Sahine Lameire",
+      "Wim Nerinckx",
+      "Kenny Roose",
+      "Daria Fijalkowska",
+      "Simon Devos",
+      "Anne-Sophie Desmet",
+      "Jackeline Cecilia Zavala Marchan",
+      "Toon Venneman",
+      "Koen Sedeyn",
+      "Marlies Ballegeer",
+      "Manon Vanheerswynghels",
+      "Caroline De Wolf",
+      "Hans Demol",
+      "Pieter Vanhaverbeke",
+      "Gholamreza Hassanzadeh Ghassabeh",
+      "Chiara Lonigro",
+      "Viki Bockstal",
+      "Manuela Rinaldi",
+      "Rana Abdelnabi",
+      "Johan Neyts",
+      "Susan Marqusee",
+      "Bart N. Lambrecht",
+      "Nico Callewaert",
+      "Han Remaut",
+      "Xavier Saelens",
+      "Bert Schepens"
+    ],
+    "author_orcids": [
+      "0000-0002-9153-4926",
+      "0000-0003-0114-9379",
+      "0000-0003-2588-9750",
+      "0000-0002-5278-2361",
+      "0000-0002-2382-4630",
+      "0000-0002-4754-4772",
+      "0000-0003-3910-3763",
+      "0000-0002-6563-8342",
+      "0000-0002-5270-4603",
+      null,
+      null,
+      null,
+      "0000-0002-8996-8741",
+      null,
+      "0000-0002-1303-1629",
+      "0000-0002-4914-7455",
+      "0000-0001-9082-2267",
+      null,
+      "0000-0001-7595-0148",
+      "0000-0002-3459-6434",
+      "0000-0002-1678-7202",
+      "0000-0002-9523-7929",
+      "0000-0001-8653-1096",
+      null,
+      "0000-0001-9771-7312",
+      null,
+      null,
+      "0000-0003-4376-6834",
+      null,
+      null,
+      "0000-0002-3861-6965",
+      "0000-0002-2028-1984"
+    ],
+    "journal": "",
+    "year": 2023,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -3015,6 +4482,74 @@
     "pages": "1566-1574",
     "group_orcids": [
       "0000-0002-1679-1711"
+    ]
+  },
+  {
+    "doi": "10.1158/2159-8290.cd-22-0210",
+    "title": "A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
+    "authors": [
+      "Fengbiao Zhou",
+      "Nesrine Aroua",
+      "Yi Liu",
+      "Christian Rohde",
+      "Jingdong Cheng",
+      "Anna-Katharina Wirth",
+      "Daria Fijalkowska",
+      "Stefanie Göllner",
+      "Michelle Lotze",
+      "Haiyang Yun",
+      "Xiaobing Yu",
+      "Caroline Pabst",
+      "Tim Sauer",
+      "Thomas Oellerich",
+      "Hubert Serve",
+      "Christoph Röllig",
+      "Martin Bornhäuser",
+      "Christian Thiede",
+      "Claudia Baldus",
+      "Michaela Frye",
+      "Simon Raffel",
+      "Jeroen Krijgsveld",
+      "Irmela Jeremias",
+      "Roland Beckmann",
+      "Andreas Trumpp",
+      "Carsten Müller-Tidow"
+    ],
+    "author_orcids": [
+      "0000-0002-9221-1096",
+      "0000-0002-0600-7954",
+      "0000-0002-4961-2660",
+      "0000-0001-6778-5971",
+      "0000-0003-4442-377X",
+      "0000-0002-0138-8583",
+      "0000-0002-2084-146X",
+      "0000-0002-2934-1920",
+      "0000-0003-2633-1767",
+      "0000-0001-8714-205X",
+      "0000-0001-8634-4135",
+      "0000-0001-9716-5909",
+      "0000-0001-5412-324X",
+      "0000-0001-6570-6125",
+      "0000-0001-8472-5516",
+      "0000-0002-3791-0548",
+      null,
+      "0000-0002-5916-3029",
+      "0000-0002-0748-834X",
+      "0000-0002-5636-6840",
+      "0000-0003-4671-1097",
+      "0000-0001-7549-9326",
+      "0000-0003-1773-7677",
+      "0000-0003-4291-3898",
+      "0000-0002-6212-3466",
+      "0000-0002-7166-5232"
+    ],
+    "journal": "Cancer Discovery",
+    "year": 2022,
+    "volume": "13",
+    "issue": "2",
+    "pages": "332-347",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -3515,6 +5050,34 @@
     ]
   },
   {
+    "doi": "10.1016/j.mcpro.2022.100264",
+    "title": "Limited Evidence for Protein Products of Noncoding Transcripts in the HEK293T Cellular Cytosol",
+    "authors": [
+      "Annelies Bogaert",
+      "Daria Fijalkowska",
+      "An Staes",
+      "Tessa Van de Steene",
+      "Hans Demol",
+      "Kris Gevaert"
+    ],
+    "author_orcids": [
+      "0000-0002-4467-4299",
+      "0000-0002-2084-146X",
+      "0000-0001-8767-8508",
+      "0000-0001-7915-2055",
+      null,
+      null
+    ],
+    "journal": "Molecular &amp; Cellular Proteomics",
+    "year": 2022,
+    "volume": "21",
+    "issue": "8",
+    "pages": "100264",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1016/j.mcpro.2022.100266",
     "title": "MS2Rescore: Data-Driven Rescoring Dramatically Boosts Immunopeptide Identification Rates",
     "authors": [
@@ -3608,6 +5171,96 @@
     "pages": "1045-1059",
     "group_orcids": [
       "0000-0002-5295-010X"
+    ]
+  },
+  {
+    "doi": "10.1101/2022.12.13.519130",
+    "title": "OPENPichia: building a free-to-operate\n                  <i>Komagataella phaffii</i>\n                  protein expression toolkit",
+    "authors": [
+      "Dries Van Herpe",
+      "Robin Vanluchene",
+      "Kristof Vandewalle",
+      "Sandrine Vanmarcke",
+      "Elise Wyseure",
+      "Berre Van Moer",
+      "Hannah Eeckhaut",
+      "Daria Fijalkowska",
+      "Hendrik Grootaert",
+      "Chiara Lonigro",
+      "Leander Meuris",
+      "Gitte Michielsen",
+      "Justine Naessens",
+      "Charlotte Roels",
+      "Loes van Schie",
+      "Riet De Rycke",
+      "Michiel De Bruyne",
+      "Peter Borghgraef",
+      "Katrien Claes",
+      "Nico Callewaert"
+    ],
+    "author_orcids": [
+      "0000-0003-2842-4385",
+      null,
+      null,
+      "0000-0002-0955-7556",
+      "0000-0002-5539-4612",
+      "0000-0002-6315-3755",
+      "0000-0003-1519-3653",
+      "0000-0002-2084-146X",
+      "0000-0002-1411-8195",
+      "0000-0002-9523-7929",
+      "0000-0001-8940-3022",
+      "0000-0003-1378-8661",
+      "0000-0002-7093-0372",
+      "0000-0001-9659-5106",
+      "0000-0003-2588-9750",
+      "0000-0001-8270-7015",
+      "0000-0002-1276-1857",
+      null,
+      "0000-0001-5622-057X",
+      "0000-0003-2069-6917"
+    ],
+    "journal": "",
+    "year": 2022,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
+    "doi": "10.1038/s41598-022-05405-6",
+    "title": "Orthogonal proteomics methods to unravel the HOTAIR interactome",
+    "authors": [
+      "Louis Delhaye",
+      "Edith De Bruycker",
+      "Pieter-Jan Volders",
+      "Daria Fijalkowska",
+      "Delphine De Sutter",
+      "Sven Degroeve",
+      "Lennart Martens",
+      "Pieter Mestdagh",
+      "Sven Eyckerman"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "journal": "Scientific Reports",
+    "year": 2022,
+    "volume": "12",
+    "issue": "1",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -3865,6 +5518,148 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-1679-1711"
+    ]
+  },
+  {
+    "doi": "10.1126/scitranslmed.abi7826",
+    "title": "An affinity-enhanced, broadly neutralizing heavy chain–only antibody protects against SARS-CoV-2 infection in animal models",
+    "authors": [
+      "Bert Schepens",
+      "Loes van Schie",
+      "Wim Nerinckx",
+      "Kenny Roose",
+      "Wander Van Breedam",
+      "Daria Fijalkowska",
+      "Simon Devos",
+      "Wannes Weyts",
+      "Sieglinde De Cae",
+      "Sandrine Vanmarcke",
+      "Chiara Lonigro",
+      "Hannah Eeckhaut",
+      "Dries Van Herpe",
+      "Jimmy Borloo",
+      "Ana Filipa Oliveira",
+      "João Paulo Portela Catani",
+      "Sarah Creytens",
+      "Dorien De Vlieger",
+      "Gitte Michielsen",
+      "Jackeline Cecilia Zavala Marchan",
+      "George D. Moschonas",
+      "Iebe Rossey",
+      "Koen Sedeyn",
+      "Annelies Van Hecke",
+      "Xin Zhang",
+      "Lana Langendries",
+      "Sofie Jacobs",
+      "Sebastiaan ter Horst",
+      "Laura Seldeslachts",
+      "Laurens Liesenborghs",
+      "Robbert Boudewijns",
+      "Hendrik Jan Thibaut",
+      "Kai Dallmeier",
+      "Greetje Vande Velde",
+      "Birgit Weynand",
+      "Julius Beer",
+      "Daniel Schnepf",
+      "Annette Ohnemus",
+      "Isabel Remory",
+      "Caroline S. Foo",
+      "Rana Abdelnabi",
+      "Piet Maes",
+      "Suzanne J. F. Kaptein",
+      "Joana Rocha-Pereira",
+      "Dirk Jochmans",
+      "Leen Delang",
+      "Frank Peelman",
+      "Peter Staeheli",
+      "Martin Schwemmle",
+      "Nick Devoogdt",
+      "Dominique Tersago",
+      "Massimiliano Germani",
+      "James Heads",
+      "Alistair Henry",
+      "Andrew Popplewell",
+      "Mark Ellis",
+      "Kevin Brady",
+      "Alison Turner",
+      "Bruno Dombrecht",
+      "Catelijne Stortelers",
+      "Johan Neyts",
+      "Nico Callewaert",
+      "Xavier Saelens"
+    ],
+    "author_orcids": [
+      "0000-0002-2028-1984",
+      "0000-0003-2588-9750",
+      "0000-0002-6563-8342",
+      "0000-0002-5270-4603",
+      null,
+      "0000-0002-2084-146X",
+      null,
+      "0000-0002-8275-7853",
+      null,
+      "0000-0002-0955-7556",
+      "0000-0002-9523-7929",
+      "0000-0003-1519-3653",
+      "0000-0003-2842-4385",
+      null,
+      "0000-0001-9334-5101",
+      "0000-0002-4866-3933",
+      "0000-0001-7262-3117",
+      null,
+      "0000-0003-1378-8661",
+      "0000-0002-8996-8741",
+      "0000-0001-6739-9341",
+      "0000-0002-0795-972X",
+      "0000-0002-1303-1629",
+      null,
+      "0000-0001-8520-1060",
+      "0000-0001-6450-6324",
+      "0000-0001-8657-6841",
+      "0000-0001-7981-6376",
+      "0000-0002-9562-2923",
+      "0000-0001-5616-8548",
+      "0000-0002-5984-7279",
+      "0000-0001-5785-8276",
+      "0000-0002-8117-9166",
+      "0000-0002-5633-3993",
+      "0000-0003-4246-6303",
+      "0000-0002-0628-6543",
+      "0000-0002-7528-981X",
+      "0000-0002-4356-3175",
+      "0000-0003-4785-0371",
+      "0000-0002-6380-4917",
+      "0000-0001-9771-7312",
+      "0000-0002-4571-5232",
+      "0000-0002-7935-0219",
+      "0000-0001-8299-3787",
+      "0000-0002-9265-6028",
+      "0000-0002-8874-675X",
+      "0000-0001-6852-8731",
+      "0000-0001-7057-6177",
+      "0000-0002-2972-6855",
+      "0000-0001-9220-4833",
+      null,
+      "0000-0001-8286-9954",
+      "0000-0003-2444-9091",
+      "0000-0002-9081-1055",
+      null,
+      "0000-0001-6076-5994",
+      null,
+      null,
+      "0000-0003-3824-3975",
+      null,
+      "0000-0002-0033-7514",
+      "0000-0003-2069-6917",
+      "0000-0002-3861-6965"
+    ],
+    "journal": "Science Translational Medicine",
+    "year": 2021,
+    "volume": "13",
+    "issue": "621",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -4315,6 +6110,34 @@
     ]
   },
   {
+    "doi": "10.1101/2021.12.23.473848",
+    "title": "Limited, but potentially functional translation of non-coding transcripts in the HEK293T cellular cytosol",
+    "authors": [
+      "Annelies Bogaert",
+      "Daria Fijalkowska",
+      "An Staes",
+      "Tessa Van de Steene",
+      "Hans Demol",
+      "Kris Gevaert"
+    ],
+    "author_orcids": [
+      "0000-0002-4467-4299",
+      "0000-0002-2084-146X",
+      "0000-0001-8767-8508",
+      "0000-0001-7915-2055",
+      null,
+      "0000-0002-4237-0283"
+    ],
+    "journal": "",
+    "year": 2021,
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1101/2021.11.02.466886",
     "title": "MS\n                  <sup>2</sup>\n                  Rescore: Data-driven rescoring dramatically boosts immunopeptide identification rates",
     "authors": [
@@ -4345,6 +6168,30 @@
       "0000-0002-1679-1711",
       "0000-0002-9376-1399",
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1002/mas.21690",
+    "title": "Mass spectrometry and the cellular surfaceome",
+    "authors": [
+      "Jarne Pauwels",
+      "Daria Fijałkowska",
+      "Sven Eyckerman",
+      "Kris Gevaert"
+    ],
+    "author_orcids": [
+      "0000-0002-8525-7109",
+      "0000-0002-2084-146X",
+      "0000-0001-7525-0096",
+      "0000-0002-4237-0283"
+    ],
+    "journal": "Mass Spectrometry Reviews",
+    "year": 2021,
+    "volume": "41",
+    "issue": "5",
+    "pages": "804-841",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -4640,7 +6487,7 @@
   },
   {
     "doi": "10.1021/acs.jproteome.1c00264",
-    "title": "Personalized Proteome: Comparing Proteogenomics and Open Variant Search Approaches for Single Amino Acid Variant Detection",
+    "title": "Personalized Proteome:\nComparing Proteogenomics and\nOpen Variant Search Approaches for Single Amino Acid Variant Detection",
     "authors": [
       "Renee Salz",
       "Robbin Bouwmeester",
@@ -5224,6 +7071,30 @@
     ]
   },
   {
+    "doi": "10.1093/femsre/fuaa013",
+    "title": "Bacterial riboproteogenomics: the era of N-terminal proteoform existence revealed",
+    "authors": [
+      "Daria Fijalkowska",
+      "Igor Fijalkowski",
+      "Patrick Willems",
+      "Petra Van Damme"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "journal": "FEMS Microbiology Reviews",
+    "year": 2020,
+    "volume": "44",
+    "issue": "4",
+    "pages": "418-431",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.2174/1389203721666200426232531",
     "title": "Biochemical and Computational Approaches for the Large-Scale Analysis of Protein Arginine Methylation by Mass Spectrometry",
     "authors": [
@@ -5251,9 +7122,9 @@
   },
   {
     "doi": "10.1021/acs.jproteome.9b00743",
-    "title": "COSS: A Fast and User-Friendly Tool for Spectral Library Searching",
+    "title": "COSS: A Fast and\nUser-Friendly Tool for Spectral Library\nSearching",
     "authors": [
-      "Genet Abay Shiferaw",
+      "Genet\nAbay Shiferaw",
       "Elien Vandermarliere",
       "Niels Hulstaert",
       "Ralf Gabriels",
@@ -5830,6 +7701,50 @@
     "group_orcids": [
       "0000-0003-4039-5230",
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1182/blood.2019004121",
+    "title": "Site-specific methylation of 18S ribosomal RNA by SNORD42A is required for acute myeloid leukemia cell proliferation",
+    "authors": [
+      "Cornelius Pauli",
+      "Yi Liu",
+      "Christian Rohde",
+      "Chunhong Cui",
+      "Daria Fijalkowska",
+      "Dennis Gerloff",
+      "Carolin Walter",
+      "Jeroen Krijgsveld",
+      "Martin Dugas",
+      "Bayram Edemir",
+      "Caroline Pabst",
+      "Lutz P. Müller",
+      "Fengbiao Zhou",
+      "Carsten Müller-Tidow"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      "0000-0002-2084-146X",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "0000-0001-9716-5909",
+      null,
+      null,
+      "0000-0002-7166-5232"
+    ],
+    "journal": "Blood",
+    "year": 2020,
+    "volume": "135",
+    "issue": "23",
+    "pages": "2059-2070",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -6675,6 +8590,28 @@
     ]
   },
   {
+    "doi": "10.1074/mcp.ra117.000360",
+    "title": "Omics Assisted N-terminal Proteoform and Protein Expression Profiling On Methionine Aminopeptidase 1 (MetAP1) Deletion",
+    "authors": [
+      "Veronique Jonckheere",
+      "Daria Fijałkowska",
+      "Petra Van Damme"
+    ],
+    "author_orcids": [
+      null,
+      "0000-0002-2084-146X",
+      "0000-0001-9090-027X"
+    ],
+    "journal": "Molecular &amp; Cellular Proteomics",
+    "year": 2018,
+    "volume": "17",
+    "issue": "4",
+    "pages": "694-708",
+    "group_orcids": [
+      "0000-0002-2084-146X"
+    ]
+  },
+  {
     "doi": "10.1021/acs.jproteome.8b00681",
     "title": "Scop3D: Online Visualization of Mutation Rates on Protein Structure",
     "authors": [
@@ -6823,7 +8760,7 @@
   },
   {
     "doi": "10.1021/acs.analchem.7b03544",
-    "title": "MPA Portable: A Stand-Alone Software Package for Analyzing Metaproteome Samples on the Go",
+    "title": "MPA Portable: A Stand-Alone Software Package for Analyzing\nMetaproteome Samples on the Go",
     "authors": [
       "Thilo Muth",
       "Fabian Kohrs",
@@ -6911,7 +8848,7 @@
   },
   {
     "doi": "10.1021/acs.jproteome.7b00085",
-    "title": "Noncoding after All: Biases in Proteomics Data Do Not Explain Observed Absence of lncRNA Translation Products",
+    "title": "Noncoding after\nAll: Biases in Proteomics Data Do\nNot Explain Observed Absence of lncRNA Translation Products",
     "authors": [
       "Kenneth Verheggen",
       "Pieter-Jan Volders",
@@ -6943,7 +8880,7 @@
   },
   {
     "doi": "10.1021/acs.jproteome.6b01066",
-    "title": "Unbiased Protein Association Study on the Public Human Proteome Reveals Biological Connections between Co-Occurring Protein Pairs",
+    "title": "Unbiased Protein\nAssociation Study on the Public Human\nProteome Reveals Biological Connections between Co-Occurring Protein\nPairs",
     "authors": [
       "Surya Gupta",
       "Kenneth Verheggen",
@@ -6963,6 +8900,34 @@
     "pages": "2204-2212",
     "group_orcids": [
       "0000-0003-4277-658X"
+    ]
+  },
+  {
+    "doi": "10.1093/nar/gkx469",
+    "title": "eIF1 modulates the recognition of suboptimal translation initiation sites and steers gene expression via uORFs",
+    "authors": [
+      "Daria Fijałkowska",
+      "Steven Verbruggen",
+      "Elvis Ndah",
+      "Veronique Jonckheere",
+      "Gerben Menschaert",
+      "Petra Van Damme"
+    ],
+    "author_orcids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "journal": "Nucleic Acids Research",
+    "year": 2017,
+    "volume": "45",
+    "issue": "13",
+    "pages": "7997-8013",
+    "group_orcids": [
+      "0000-0002-2084-146X"
     ]
   },
   {
@@ -8950,7 +10915,7 @@
     ]
   },
   {
-    "doi": "34\n10.1186/1471-2105-11-34",
+    "doi": "10.1186/1471-2105-11-34",
     "title": "OLS Dialog: An open-source front end to the Ontology Lookup Service",
     "authors": [
       "Harald Barsnes",
@@ -10211,7 +12176,7 @@
   },
   {
     "doi": "10.1002/pmic.200800515",
-    "title": "Proteomics Data Collection – 3<sup>rd</sup> ProDaC Workshop April 22<sup>nd</sup> 2008, Toledo, Spain",
+    "title": "Proteomics Data Collection – 3\n                    <sup>rd</sup>\n                    ProDaC Workshop April 22\n                    <sup>nd</sup>\n                    2008, Toledo, Spain",
     "authors": [
       "Martin Eisenacher",
       "Tanja Hardt",
@@ -10936,7 +12901,7 @@
     ]
   },
   {
-    "doi": "289\n10.1186/1471-2105-7-289",
+    "doi": "10.1186/1471-2105-7-289",
     "title": "Cell_motility: a cross-platform, open source application for the study of cell motion paths",
     "authors": [
       "Lennart Martens",
