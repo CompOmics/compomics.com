@@ -7,8 +7,8 @@ on:
   schedule:
     # rebuild every Monday at 06:00 UTC to refresh publications
     # - cron: "0 6 * * 1"
-    # rebuild on the 1st of every month at 06:00 UTC to refresh publications
-    - cron: "0 6 1 * *"
+    # rebuild on the 1st and 15th of every month at 06:00 UTC to refresh publications
+    - cron: "0 6 1,15 * *"
 
 permissions:
   contents: read
