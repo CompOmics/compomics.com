@@ -9,9 +9,8 @@ toc: false
   <img class="page-hero-img" src="../assets/frames/bg-1.jpg" alt="">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <div class="page-hero-kicker">People</div>
     <h1 class="page-hero-title">Team</h1>
-    <p class="page-hero-sub">Researchers, developers, and support staff behind the CompOmics platform.</p>
+    <p class="page-hero-sub">Researchers, developers, and support staff of the CompOmics group.</p>
   </div>
 </div>
 <script>
@@ -34,7 +33,7 @@ toc: false
 <section class="team-shell">
   <div class="team-shell-intro">
 
-  <h3 class="team-section-title">Group Leader</h3>
+  <h2 class="team-section-title">Group leader</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="lennart">
@@ -44,7 +43,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Postdoctoral Researchers</h3>
+  <h2 class="team-section-title">Postdoctoral researchers</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="robbin">
@@ -96,7 +95,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Predoctoral Researchers</h3>
+  <h2 class="team-section-title">Predoctoral researchers</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="toon">
@@ -160,7 +159,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Support Staff</h3>
+  <h2 class="team-section-title">Support staff</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="lyuda">
@@ -578,7 +577,6 @@ toc: false
 
     // header
     let html = '<div class="team-detail-header">'
-      + '<div class="team-detail-eyebrow">Profile</div>'
       + '<h3>' + (d.title || key) + '</h3>'
       + '<p class="team-detail-role">' + (d.role || '') + '</p>'
       + '</div>';

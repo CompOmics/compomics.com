@@ -11,8 +11,7 @@ listing:
 
 ```{=html}
 <header class="tut-head">
-  <div class="tut-head-kicker">Learn</div>
   <h1 class="tut-head-title">Tutorials</h1>
-  <p class="tut-head-sub">Hands-on, step-by-step guides and walkthroughs for CompOmics proteomics tools and workflows. Each tutorial pairs practical examples with the underlying methods.</p>
+  <p class="tut-head-sub">Hands-on tutorials for CompOmics tools and workflows.</p>
 </header>
 ```

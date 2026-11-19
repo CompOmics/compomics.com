@@ -9,7 +9,6 @@ toc: false
   <img class="page-hero-img" src="../assets/frames/bg-2.jpg" alt="">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <div class="page-hero-kicker">People</div>
     <h1 class="page-hero-title">Alumni &amp; Collaborators</h1>
     <p class="page-hero-sub">The affiliated members, close collaborators, and former colleagues who have shaped CompOmics over the years.</p>
   </div>
@@ -34,7 +33,7 @@ toc: false
 <section class="team-shell">
   <div class="team-shell-intro">
 
-  <h3 class="team-section-title">Affiliated Members</h3>
+  <h2 class="team-section-title">Affiliated members</h2>
   <div class="network-chips network-chips-wide">
     <div class="network-chip">
       <span class="network-chip-name">Dr. Christophe Vanderaa</span>
@@ -42,7 +41,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Close Collaborators</h3>
+  <h2 class="team-section-title">Close collaborators</h2>
   <div class="network-chips network-chips-wide">
     <div class="network-chip">
       <span class="network-chip-name">Dr. Harald Barsnes</span>
@@ -90,7 +89,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Alumni &amp; Former Colleagues</h3>
+  <h2 class="team-section-title">Alumni &amp; former colleagues</h2>
   <div class="network-chips">
     <span class="network-chip"><span class="network-chip-name">Dr. Andrea Argentini</span></span>
     <span class="network-chip"><span class="network-chip-name">Dr. Sakina Bombaywala</span></span>

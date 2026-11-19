@@ -20,7 +20,7 @@ project:
 
 website:
   title: "CompOmics"
-  description: "Computational Proteomics — Ghent University / VIB"
+  description: "Computational proteomics at Ghent University and VIB"
   favicon: assets/images/favicon.png
   site-url: https://compomics.github.io
   # default social-preview image (per-page title/description come from front matter)
@@ -49,7 +49,7 @@ website:
         aria-label: GitHub
 
   page-footer:
-    left: "© CompOmics — Ghent University / VIB"
+    left: "© CompOmics, Ghent University and VIB"
     right:
       - text: "GitHub"
         href: https://github.com/compomics

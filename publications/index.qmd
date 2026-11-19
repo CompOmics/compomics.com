@@ -9,7 +9,6 @@ execute:
 
 ```{=html}
 <header class="pub-head">
-  <div class="pub-head-kicker">Research output</div>
   <h1 class="pub-head-title">Publications</h1>
   <p class="pub-head-sub">Peer-reviewed papers and preprints from CompOmics group members. For a complete list, see our <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> page or individual <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID profiles</a>.</p>
 </header>
@@ -187,7 +186,7 @@ else:
         '<div class="pub-search">'
         '<i class="bi bi-search pub-search-icon" aria-hidden="true"></i>'
         '<input type="search" id="pub-search-input" class="pub-search-input" '
-        'placeholder="Search title, author, journal…" autocomplete="off" '
+        'placeholder="Search title, author, journal" autocomplete="off" '
         'spellcheck="false" aria-label="Search publications">'
         '<button type="button" class="pub-search-clear" id="pub-search-clear" '
         'aria-label="Clear search" hidden>&times;</button>'
