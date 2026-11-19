@@ -11,6 +11,7 @@ project:
     # repository docs, not site pages
     - "!DESIGN.md"
     - "!CLAUDE.md"
+    - "!TODO.md"
   resources:
     - data/
     - tutorials/notebooks/
