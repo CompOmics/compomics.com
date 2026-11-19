@@ -127,11 +127,7 @@ body { background: transparent !important; }
 }
 
 #cmp-bg::after {
-  background:
-    linear-gradient(135deg, rgba(31,95,143,.10), rgba(214,55,41,.04) 45%, rgba(0,0,0,0) 70%),
-    linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0) 52%);
-  mix-blend-mode: screen;
-  opacity: .82;
+  background: linear-gradient(to top, rgba(0,0,0,.28), rgba(0,0,0,0) 52%);
 }
 
 .cmp-frame {
@@ -197,28 +193,17 @@ body { background: transparent !important; }
   }
 }
 
-.cmp-hero-kicker,
-.cmp-panel-kicker {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.84);
-  margin-bottom: .9rem;
-}
-
 .cmp-scenes h1 a,
 .cmp-scenes h2 a,
 .cmp-scenes h3 a { display: none !important; }
 
 .cmp-hero-title {
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
   line-height: .95;
   font-size: clamp(4rem, 14vw, 9rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   margin: 0;
   text-shadow: 0 3px 34px rgba(0,0,0,.55);
 }
@@ -238,14 +223,18 @@ body { background: transparent !important; }
 
 .cmp-scrollcue {
   margin-top: 2.25rem;
-  color: #fefefe;
-  font-family: "JetBrains Mono", monospace;
-  font-size: .78rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  color: rgba(255,255,255,.9);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
 }
 
-.cmp-scrollcue::before { content: "↓ "; }
+.cmp-scrollcue .bi {
+  display: inline-block;
+  margin-left: .2rem;
+  font-size: .85rem;
+}
 
 .cmp-panel {
   background: rgba(255,253,243,.90);
@@ -261,7 +250,7 @@ body { background: transparent !important; }
 .cmp-panel h2,
 .cmp-h-light {
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.08;
   margin: 0;
   border: 0;
@@ -294,14 +283,9 @@ body { background: transparent !important; }
   max-width: 960px;
 }
 
-.cmp-vision-v2 .cmp-panel-kicker {
-  color: rgba(255,255,255,.80);
-  margin-bottom: 1rem;
-}
-
 .cmp-vision-v2-headline {
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(2.6rem, 6vw, 4.2rem);
   line-height: 1.06;
   color: #ffffff;
@@ -309,14 +293,6 @@ body { background: transparent !important; }
   margin: 0 0 1.4rem;
   border: none;
   padding: 0;
-}
-
-.cmp-scene-tools .cmp-vision-v2-headline {
-  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: none;
 }
 
 .cmp-vision-v2-lead {
@@ -426,15 +402,14 @@ body { background: transparent !important; }
   gap: 1.25rem;
 }
 
-/* Dark frosted-glass cards — matched to the Vision panel so the landing
-   reads as one cohesive dark, cinematic piece (cream is the inner-page look). */
+/* Dark translucent cards over the photo; the blur keeps the text legible. */
 .cmp-tiles-row .nav-tile {
   background: rgba(18,22,28,.74);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-color: rgba(255,255,255,.12);
   min-height: 220px;
-  box-shadow: 0 28px 78px rgba(0,0,0,.48);
+  box-shadow: 0 14px 36px rgba(0,0,0,.35);
   opacity: 0;
   transform: translateY(22px);
   transition: opacity .5s ease, transform .5s ease, background .18s ease, border-color .18s ease;
@@ -494,24 +469,22 @@ body { background: transparent !important; }
   gap: .5rem;
   margin-top: 1.6rem;
   padding: .85rem 1.5rem;
-  border-radius: 2rem;
-  background: #1f5f8f;
-  border: 1px solid #1f5f8f;
+  border-radius: .5rem;
+  background: #276ba6;
+  border: 1px solid #276ba6;
   color: #fff;
   font-family: "Source Sans 3", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 12px 34px rgba(0,0,0,.28);
-  transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
+  transition: background .16s ease;
 }
 
 .cmp-btn:hover {
-  background: #184c73;
+  background: #1f5a8c;
   color: #fff;
   text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(0,0,0,.32);
 }
 
 .cmp-location-wrap {
@@ -524,20 +497,11 @@ body { background: transparent !important; }
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 28px 78px rgba(0,0,0,.48);
-}
-
-.cmp-location-wrap .location-eyebrow {
-  font-family: "JetBrains Mono", monospace;
-  color: rgba(255,255,255,.80);
-  letter-spacing: .18em;
+  box-shadow: 0 14px 36px rgba(0,0,0,.35);
 }
 
 .cmp-location-wrap .location-title {
-  background: linear-gradient(to right, #ffffff 0%, #c8ddf0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
   border-bottom: none;
 }
 
@@ -546,7 +510,7 @@ body { background: transparent !important; }
 }
 
 .cmp-location-wrap .location-affil {
-  color: rgba(255,255,255,.60);
+  color: rgba(255,255,255,.72);
 }
 
 .cmp-location-wrap .location-row {
@@ -566,9 +530,8 @@ body { background: transparent !important; }
 }
 
 .cmp-location-wrap .location-directions {
-  font-family: "JetBrains Mono", monospace;
-  border-color: #d63729;
-  color: #d63729;
+  border-color: #ee7a6d;
+  color: #ee7a6d;
   background: transparent;
   transition: background .18s ease, color .18s ease;
 }
