@@ -140,13 +140,49 @@ hr {
 
 .navbar-brand-title { display: none; }
 
-// ── Footer ───────────────────────────────────────────────────────────────────
+// ── Footer: navy band on every page ──────────────────────────────────────────
+.footer {
+  background: $navy-900;
+}
+
 .nav-footer {
-  border-top: 1px solid $line;
-  background: $paper-2;
-  color: $muted;
+  background: $navy-900;
+  border-top: 1px solid $navy-700;
+  color: $on-navy-muted;
   font-family: $font-family-sans-serif;
   font-size: $fs-sm;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+
+  a { color: $on-navy; }
+  a:hover { color: #ffffff; }
+
+  align-items: center;
+
+  .nav-footer-left,
+  .nav-footer-center {
+    display: flex;
+    align-items: center;
+  }
+
+  p { margin: 0; }
+
+  .nav-link { color: $on-navy !important; }
+  .nav-link:hover { color: #ffffff !important; }
+
+  .nav-footer-center,
+  .nav-footer-center * { color: $on-navy-muted; }
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
 }
 
 // ── Code blocks ──────────────────────────────────────────────────────────────
