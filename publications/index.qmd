@@ -19,6 +19,7 @@ import html
 import json
 import os
 import re
+import unicodedata
 from pathlib import Path
 from IPython.display import HTML
 
@@ -47,44 +48,29 @@ else:
         text = re.sub(r"<[^>]+>", "", text or "")
         return " ".join(html.unescape(text).split())
 
-    # Current CompOmics members (keep in sync with team/index.qmd). Used both for
-    # author highlighting and for the "by person" filter dropdown.
+    # Current CompOmics members: the `title` of every memberData entry in
+    # team/index.qmd. Used for author highlighting and the "by person" filter.
+    team_src = (project_root / "team" / "index.qmd").read_text(encoding="utf-8")
+    member_block = team_src[team_src.index("const memberData"):]
     MEMBERS = [
-        "Lennart Martens",
-        "Robbin Bouwmeester",
-        "Tine Claeys",
-        "Arthur Declercq",
-        "Ralf Gabriels",
-        "Alexander Kensert",
-        "Enrico Massignani",
-        "Pathmanaban Ramasamy",
-        "Tim Van Den Bossche",
-        "Toon Callens",
-        "Robbe Devreese",
-        "Sander Heyndrickx",
-        "Sude Güneş",
-        "Caroline Jachmann",
-        "Xuxa Malliet",
-        "Alireza Nameni",
-        "Harikrishnan Ramadasan",
-        "Sam Van Puyenbroeck",
-        "Tijl Verween",
-        "Lyudmila Kovalchuke",
-        "Patricia Lefèvre",
-        "Natalia Tichshenko",
-        "Kevin Velghe",
-        "Daria Fijalkowska",
-        "Jasper Zuallaert",
+        name.replace("\\'", "'")
+        for name in re.findall(
+            r"^ {4}[A-Za-z0-9_]+: \{\n {6}title: '((?:[^'\\]|\\.)*)'", member_block, re.M
+        )
     ]
 
-    # names for bold highlighting, used when CrossRef does not supply per-author ORCIDs
-    group_names = {m.lower() for m in MEMBERS}
+    def name_tokens(name):
+        """Lowercase name words with accents removed, so "Güneş" matches "Gunes"."""
+        plain = unicodedata.normalize("NFKD", name)
+        plain = "".join(c for c in plain if not unicodedata.combining(c))
+        return set(plain.lower().split())
 
-    _member_tokens = [(m, set(m.lower().split())) for m in MEMBERS]
+    # names for bold highlighting, used when CrossRef does not supply per-author ORCIDs
+    _member_tokens = [(m, name_tokens(m)) for m in MEMBERS]
 
     def matched_members(authors):
         """Return the member names that appear among a publication's authors."""
-        author_token_sets = [set(a.lower().split()) for a in authors]
+        author_token_sets = [name_tokens(a) for a in authors]
         hits = []
         for name, mtok in _member_tokens:
             if any(mtok.issubset(at) for at in author_token_sets):
@@ -96,8 +82,8 @@ else:
         if author_orcid and author_orcid in group_orcids_set:
             return True
         # Fallback: all tokens of a group member name must appear in the author name tokens
-        author_tokens = set(author_name.lower().split())
-        return any(set(gn.split()).issubset(author_tokens) for gn in group_names)
+        author_tokens = name_tokens(author_name)
+        return any(mtok.issubset(author_tokens) for _, mtok in _member_tokens)
 
     AUTHOR_LIMIT = 8  # authors shown before the "+ N more" toggle
 

@@ -10,6 +10,8 @@
 //   1. memberData parses as valid JavaScript.
 //   2. Every `data-member="x"` card has a matching entry in memberData
 //      (and each entry has a title), so no card is silently dead.
+// It also prints notes, without blocking, for memberData entries with no card
+// or no ORCID, and for tool developers in tools/index.qmd with no memberData entry.
 //
 // Runs on Quarto's bundled Deno — no extra dependency. Run manually with:
 //   quarto run scripts/check-team-data.js
@@ -86,6 +88,29 @@ const used = new Set(members);
 const orphans = [...keys].filter((k) => !used.has(k));
 if (orphans.length) {
   console.warn(`[check-team-data] note: memberData entries with no card (harmless): ${orphans.join(", ")}`);
+}
+
+// ── 5. Notes for team changes (never block the build) ────────────────────────
+// Members without an ORCID: their publications are not fetched.
+const noOrcid = [...keys].filter((k) => !data[k].orcid);
+if (noOrcid.length) {
+  console.warn(`[check-team-data] note: no orcid in memberData (publications not fetched): ${noOrcid.join(", ")}`);
+}
+
+// Tool developers that are not in memberData: their avatar links to a team
+// profile that does not exist (expected for former members).
+try {
+  const tools = Deno.readTextFileSync("tools/index.qmd");
+  const devKeys = new Set(
+    [...tools.matchAll(/devs:\s*\[([^\]]*)\]/g)]
+      .flatMap((m) => [...m[1].matchAll(/['"]([^'"]+)['"]/g)].map((d) => d[1])),
+  );
+  const unknownDevs = [...devKeys].filter((d) => !keys.has(d));
+  if (unknownDevs.length) {
+    console.warn(`[check-team-data] note: tool developers not in memberData (no team profile): ${unknownDevs.join(", ")}`);
+  }
+} catch (_) {
+  // tools page missing or moved: nothing to check
 }
 
 console.log(`[check-team-data] OK — ${keys.size} members, ${members.length} cards, all matched.`);
