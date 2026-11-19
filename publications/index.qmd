@@ -18,6 +18,7 @@ execute:
 import html
 import json
 import os
+import re
 from pathlib import Path
 from IPython.display import HTML
 
@@ -40,6 +41,11 @@ if not pub_file.exists():
     )
 else:
     publications = json.loads(pub_file.read_text(encoding="utf-8"))
+
+    def clean(text):
+        """Strip markup and entities and collapse whitespace in a metadata string."""
+        text = re.sub(r"<[^>]+>", "", text or "")
+        return " ".join(html.unescape(text).split())
 
     # Current CompOmics members (keep in sync with team/index.qmd). Used both for
     # author highlighting and for the "by person" filter dropdown.
@@ -257,9 +263,9 @@ else:
         lines.append(f'<h2 class="pub-year">{ylabel}</h2>')
         lines.append('<ol class="pub-list">')
         for pub in by_year[year]:
-            title = pub.get("title", "Untitled")
+            title = clean(pub.get("title", "")) or "Untitled"
             doi = pub.get("doi", "")
-            journal = pub.get("journal", "")
+            journal = clean(pub.get("journal", ""))
             authors_list = pub.get("authors", [])
             authors_str = format_authors(
                 authors_list,
