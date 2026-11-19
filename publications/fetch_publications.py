@@ -20,6 +20,7 @@ from pathlib import Path
 import requests
 
 TEAM_DIR = Path(__file__).parent.parent / "team"
+EXTRA_ORCIDS_FILE = Path(__file__).parent / "extra_orcids.txt"
 OUTPUT_FILE = Path(__file__).parent.parent / "data" / "publications.json"
 
 ORCID_API = "https://pub.orcid.org/v3.0/{orcid}/works"
@@ -31,12 +32,20 @@ CROSSREF_HEADERS = {
 
 
 ORCID_FIELD = re.compile(r"""\borcid:\s*['"](\d{4}-\d{4}-\d{4}-\d{3}[\dX])['"]""")
+ORCID_LINE = re.compile(r"^\s*(\d{4}-\d{4}-\d{4}-\d{3}[\dX])\b")
 
 
 def read_orcid_ids() -> list[str]:
-    """Read the `orcid:` fields of the `memberData` entries in team/index.qmd."""
+    """Read the `orcid:` fields of the `memberData` entries in team/index.qmd,
+    followed by the iDs listed in publications/extra_orcids.txt."""
     text = (TEAM_DIR / "index.qmd").read_text(encoding="utf-8")
-    return list(dict.fromkeys(ORCID_FIELD.findall(text)))
+    orcids = ORCID_FIELD.findall(text)
+    if EXTRA_ORCIDS_FILE.exists():
+        for line in EXTRA_ORCIDS_FILE.read_text(encoding="utf-8").splitlines():
+            match = ORCID_LINE.match(line)
+            if match:
+                orcids.append(match.group(1))
+    return list(dict.fromkeys(orcids))
 
 
 def fetch_dois_for_orcid(orcid: str) -> list[str]:

@@ -1,0 +1,5 @@
+# ORCID iDs whose publications are listed on the site in addition to the
+# `orcid:` fields of the current team in team/index.qmd. One iD per line;
+# text after the iD is ignored.
+0000-0001-5630-6269  Sakina Bombaywala
+0000-0002-6675-1048  Pieter Verschaffelt

@@ -34,6 +34,7 @@ publications/
   index.qmd          # publications list (searchable, filterable by year)
   publications.scss  # publications page styles
   fetch_publications.py  # pulls DOIs from ORCID, enriches via CrossRef
+  extra_orcids.txt   # ORCID iDs fetched in addition to the team's
 tools/
   index.qmd          # tools + community projects (searchable/filterable)
   tools.scss         # tools page styles
