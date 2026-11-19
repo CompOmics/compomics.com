@@ -1,6 +1,7 @@
 ---
 title: "Multi-modal Peptide Property Prediction with CompOmics Tools"
 date: 2026-06-10
+research-line: prediction
 description: "Predict fragment ion intensities (MS2PIP), retention times (DeepLC), and ion mobility / CCS values (IM2Deep) for any peptide sequence."
 categories: [proteomics, prediction, python, ms2pip, deeplc, im2deep]
 ---

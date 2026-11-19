@@ -4,8 +4,7 @@ description: "Hands-on tutorials for CompOmics proteomics tools and workflows."
 toc: false
 listing:
   contents: "posts/*.qmd"
-  type: default
-  fields: [date, title, description]
+  template: tutorials-list.ejs
   sort: "date desc"
 ---
 

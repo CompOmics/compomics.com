@@ -1,6 +1,7 @@
 ---
 title: "PSM Rescoring with MS²Rescore"
 date: 2026-06-11
+research-line: identification
 description: "Download a real HeLa LC-MS/MS dataset and rescore MaxQuant PSMs using MS2PIP fragment ion predictions, DeepLC retention time predictions, and mokapot, gaining 16% more identifications at 1% FDR."
 categories: [proteomics, rescoring, python, ms2rescore, ms2pip, deeplc, mokapot]
 ---
