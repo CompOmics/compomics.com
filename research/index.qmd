@@ -37,11 +37,11 @@ toc: false
       <!-- five accent peaks, one per research line (labelled by the nav below).
            The line initials spell the peptide AIMFR, so the peaks sit at the
            m/z of its b-ion ladder (b1..b4 + precursor). Same height for all. -->
-      <g class="spec-peak" style="--i:0; color:#1f5f8f"><rect x="120" y="50" width="10" height="130" rx="3" /></g>
-      <g class="spec-peak" style="--i:1; color:#c5392b"><rect x="271" y="50" width="10" height="130" rx="3" /></g>
-      <g class="spec-peak" style="--i:2; color:#24785c"><rect x="445" y="50" width="10" height="130" rx="3" /></g>
-      <g class="spec-peak" style="--i:3; color:#8f6020"><rect x="641" y="50" width="10" height="130" rx="3" /></g>
-      <g class="spec-peak" style="--i:4; color:#6a4c93"><rect x="873" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:0; color:var(--rl-prediction)"><rect x="120" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:1; color:var(--rl-identification)"><rect x="271" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:2; color:var(--rl-metaproteomics)"><rect x="445" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:3; color:var(--rl-fair)"><rect x="641" y="50" width="10" height="130" rx="3" /></g>
+      <g class="spec-peak" style="--i:4; color:var(--rl-reprocessing)"><rect x="873" y="50" width="10" height="130" rx="3" /></g>
 
       <!-- residue ladder: double-headed arrows between successive b-ions; each
            gap is one residue mass, so the arrows spell A·I·M·F·R across the peaks -->
@@ -53,11 +53,11 @@ toc: false
       </g>
     </svg>
     <nav class="research-spectrum-nav" aria-label="Research lines">
-      <a class="rs-line" style="--accent:#1f5f8f; --i:0; left:13.0%" href="#analyte-prediction">Analyte prediction</a>
-      <a class="rs-line" style="--accent:#c5392b; --i:1; left:28.8%" href="#identification">Identification</a>
-      <a class="rs-line" style="--accent:#24785c; --i:2; left:46.9%" href="#metaproteomics">Metaproteomics</a>
-      <a class="rs-line" style="--accent:#8f6020; --i:3; left:67.3%" href="#fair-ai-ready-data">FAIR &amp; AI-ready data</a>
-      <a class="rs-line" style="--accent:#6a4c93; --i:4; left:91.5%" href="#reprocessing">Reprocessing</a>
+      <a class="rs-line" style="--accent:var(--rl-prediction-text); --i:0; left:13.0%" href="#analyte-prediction">Analyte prediction</a>
+      <a class="rs-line" style="--accent:var(--rl-identification-text); --i:1; left:28.8%" href="#identification">Identification</a>
+      <a class="rs-line" style="--accent:var(--rl-metaproteomics-text); --i:2; left:46.9%" href="#metaproteomics">Metaproteomics</a>
+      <a class="rs-line" style="--accent:var(--rl-fair-text); --i:3; left:67.3%" href="#fair-ai-ready-data">FAIR &amp; AI-ready data</a>
+      <a class="rs-line" style="--accent:var(--rl-reprocessing-text); --i:4; left:91.5%" href="#reprocessing">Reprocessing</a>
     </nav>
   </figure>
 
@@ -69,7 +69,7 @@ toc: false
 
 <div class="research-sections">
 
-  <section class="research-section" id="analyte-prediction" style="--accent:#1f5f8f">
+  <section class="research-section" id="analyte-prediction" style="--accent:var(--rl-prediction)">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <h2 class="research-section-title">Analyte prediction</h2>
@@ -77,7 +77,7 @@ toc: false
     <p class="research-section-desc">Proteomics becomes more powerful when we can predict what a peptide should look like before it is measured. We build machine learning models that translate a peptide sequence into its expected behaviour in a mass spectrometer: fragment ion intensities, retention time, and ion mobility. Tools such as MS²PIP, DeepLC, and IM2Deep make these predictions available for everyday analysis workflows, supporting spectral library generation, targeted method design, and identification rescoring.</p>
   </section>
 
-  <section class="research-section" id="identification" style="--accent:#c5392b">
+  <section class="research-section" id="identification" style="--accent:var(--rl-identification)">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <h2 class="research-section-title">Identification</h2>
@@ -85,7 +85,7 @@ toc: false
     <p class="research-section-desc">Peptide and protein identification is usually treated as a database search problem, but much of the real difficulty is ambiguity. A first-pass search engine proposes candidate matches, yet a lot of the information already present in the data goes unused. We develop post-processing and data-driven rescoring methods that combine search engine scores with predicted peptide behaviour, spectrum evidence, retention time, and ion mobility. Tools such as MS²Rescore/TIMS²Rescore, used together with SearchGUI and PeptideShaker, increase the number of confident identifications in DDA and DIA workflows without loosening false discovery control.</p>
   </section>
 
-  <section class="research-section" id="metaproteomics" style="--accent:#24785c">
+  <section class="research-section" id="metaproteomics" style="--accent:var(--rl-metaproteomics)">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <h2 class="research-section-title">Metaproteomics</h2>
@@ -93,7 +93,7 @@ toc: false
     <p class="research-section-desc">Metaproteomics asks which organisms are present in a microbial community and what they are doing, and, just as important, how confidently any of that can be inferred from peptide evidence. That last part is hard: many peptides are shared across related taxa, and many functions are spread across microbial proteomes that are only partly characterized. We build methods for taxonomic and functional interpretation that account for this ambiguity instead of glossing over it. Tools such as Unipept and Peptonizer2000 turn peptide-level evidence into community profiles that are actually interpretable.</p>
   </section>
 
-  <section class="research-section" id="fair-ai-ready-data" style="--accent:#8f6020">
+  <section class="research-section" id="fair-ai-ready-data" style="--accent:var(--rl-fair)">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <h2 class="research-section-title">FAIR &amp; AI-ready data</h2>
@@ -101,7 +101,7 @@ toc: false
     <p class="research-section-desc">Public proteomics data only becomes reusable, by people or by machines, when it is well described. We work on metadata annotation, data standards, and community tools that make proteomics data findable, accessible, interoperable, and reusable, and increasingly, ready to train AI models directly. This is a community effort rather than something we do alone. Through PSI-AI we help shape metadata standards for AI use. ProteomicsML gives us a place to curate machine-learning-ready benchmark datasets and teach others how to apply AI to proteomics, and projects such as mzPeak and rusteomics give us fast, open tooling that makes parsing and reusing mass spectrometry data less painful. Resources such as lesSDRF and annotation workflows around public repositories turn deposited datasets into structured objects that can be searched, compared, reprocessed, and used to train models.</p>
   </section>
 
-  <section class="research-section" id="reprocessing" style="--accent:#6a4c93">
+  <section class="research-section" id="reprocessing" style="--accent:var(--rl-reprocessing)">
     <div class="research-section-top">
       <span class="research-peak" aria-hidden="true"><svg viewBox="0 0 30 56" preserveAspectRatio="xMidYMax meet"><line class="peak-base" x1="0" y1="55" x2="30" y2="55" /><rect class="peak-bar" x="12" y="8" width="6" height="47" rx="2" /></svg></span>
       <h2 class="research-section-title">Reprocessing</h2>

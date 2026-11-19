@@ -21,11 +21,11 @@ toc: false
     </div>
     <div class="tools-chips" id="tools-chips" role="group" aria-label="Filter by category">
       <button type="button" class="tools-chip is-active" data-cat="all">All</button>
-      <button type="button" class="tools-chip" data-cat="prediction" style="--cat: var(--cat-prediction)">Prediction</button>
-      <button type="button" class="tools-chip" data-cat="identification" style="--cat: var(--cat-identification)">Identification</button>
-      <button type="button" class="tools-chip" data-cat="support" style="--cat: var(--cat-support)">Support</button>
-      <button type="button" class="tools-chip" data-cat="biological" style="--cat: var(--cat-biological)">Interpretation</button>
-      <button type="button" class="tools-chip" data-cat="metaproteomics" style="--cat: var(--cat-metaproteomics)">Metaproteomics</button>
+      <button type="button" class="tools-chip" data-cat="prediction">Prediction</button>
+      <button type="button" class="tools-chip" data-cat="identification">Identification</button>
+      <button type="button" class="tools-chip" data-cat="support">Support</button>
+      <button type="button" class="tools-chip" data-cat="biological">Interpretation</button>
+      <button type="button" class="tools-chip" data-cat="metaproteomics">Metaproteomics</button>
     </div>
   </div>
 
@@ -371,7 +371,6 @@ toc: false
   function buildCard(tool, index) {
     const card = document.createElement('article');
     card.className = 'tool-tile';
-    card.style.setProperty('--cat', 'var(--cat-' + tool.cat + ')');
     card.style.setProperty('--i', index);
     card.dataset.cat = tool.cat;
     card.dataset.haystack = (tool.name + ' ' + tool.desc + ' ' + (CATS[tool.cat] ? CATS[tool.cat].label : '')).toLowerCase();

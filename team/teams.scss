@@ -122,8 +122,8 @@
   padding: clamp(1.6rem, 3.5vw, 2.8rem);
   border-radius: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(106, 174, 230, 0.20);
-  background: #12263f;
+  border: 1px solid $navy-700;
+  background: $navy-800;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 
   &[hidden] { display: none; }
@@ -138,7 +138,7 @@
   margin-bottom: 1rem;
   display: grid;
   gap: 1.15rem;
-  color: #f6f2ea;
+  color: $on-navy;
 
   max-height: 0;
   opacity: 0;
@@ -154,7 +154,7 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid #12263f;
+    border-bottom: 8px solid $navy-800;
     pointer-events: none;
     z-index: 2;
   }
@@ -165,7 +165,7 @@
   z-index: 1;
   display: grid;
   gap: 1.15rem;
-  color: #f6f2ea;
+  color: $on-navy;
 }
 
 .team-detail-header {
@@ -182,7 +182,7 @@
 
 .team-detail-role {
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: $on-navy-muted;
   font-size: $fs-sm;
 }
 
@@ -200,7 +200,7 @@
 
   p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: $on-navy;
     line-height: 1.8;
     font-size: $fs-base;
     max-width: 80ch;
@@ -219,7 +219,7 @@
   align-items: baseline;
   gap: 0.25rem 0.6rem;
   padding: 0.45rem 0.8rem;
-  border: 1px solid rgba(90, 167, 218, 0.28);
+  border: 1px solid $navy-700;
   border-radius: 0.4rem;
   background: rgba(255, 255, 255, 0.04);
   text-decoration: none;
@@ -227,8 +227,8 @@
   transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
-    border-color: rgba(90, 167, 218, 0.65);
-    background: rgba(90, 167, 218, 0.12);
+    border-color: rgba(106, 174, 230, 0.55);
+    background: rgba(106, 174, 230, 0.10);
     text-decoration: none;
   }
 }
@@ -245,7 +245,7 @@
   font-family: $font-family-sans-serif;
   font-size: $fs-sm;
   font-style: italic;
-  color: rgba(170, 205, 235, 0.9);
+  color: $on-navy-muted;
   white-space: nowrap;
 }
 
@@ -276,11 +276,10 @@
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(6,8,12,.55) 0%,
-      rgba(6,8,12,.22) 30%,
-      rgba(6,8,12,.34) 65%,
-      var(--bs-body-bg) 100%),
-    linear-gradient(135deg, rgba(31,95,143,.18), rgba(0,0,0,0) 80%);
+      rgba(15,26,38,.55) 0%,
+      rgba(15,26,38,.22) 30%,
+      rgba(15,26,38,.34) 65%,
+      var(--bs-body-bg) 100%);
 }
 
 
@@ -311,17 +310,17 @@
 .team-detail-email {
   margin-top: 1.4rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, .10);
+  border-top: 1px solid $navy-700;
   display: flex;
   align-items: center;
   gap: .45rem;
-  color: rgba(255, 255, 255, .7);
+  color: $on-navy-muted;
   font-size: $fs-sm;
 
   .bi { font-size: .78rem; }
 
   a {
-    color: rgba(255, 255, 255, .7);
+    color: $on-navy-muted;
     text-decoration: none;
     transition: color .15s ease;
     &:hover { color: #fff; text-decoration: underline; }
@@ -400,7 +399,7 @@
   border-radius: 0.5rem;
   background: $primary;
   border: 1px solid $primary;
-  color: #fff;
+  color: $paper-2;
   font-family: $font-family-sans-serif;
   font-size: $fs-base;
   font-weight: 700;
@@ -409,7 +408,7 @@
 
   &:hover {
     background: darken($primary, 8%);
-    color: #fff;
+    color: $paper-2;
     text-decoration: none;
   }
 
@@ -422,6 +421,6 @@
 
   &:hover {
     background: $primary;
-    color: #fff;
+    color: $paper-2;
   }
 }

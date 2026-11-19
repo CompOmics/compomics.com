@@ -362,9 +362,9 @@
 }
 
 .pub-badge-preprint {
-  color: mix($ink, #b0791f, 30%);
-  background: rgba(#c8912f, 0.16);
-  border: 1px solid rgba(#c8912f, 0.45);
+  color: $muted;
+  background: $paper-3;
+  border: 1px solid $line;
 }
 
 .pub-venue {
@@ -400,9 +400,9 @@
   // brief "copied" confirmation (icon swapped to a check in JS)
   &.is-copied {
     opacity: 1;
-    color: #fff;
-    background: #2f9e8b;   // green
-    border-color: #2f9e8b;
+    color: $paper-2;
+    background: $primary;
+    border-color: $primary;
   }
 }
 

@@ -22,6 +22,26 @@ $fs-display: clamp(2.5rem, 5vw, 3.5rem);  // 40-56px: page titles
 
 /*-- scss:rules --*/
 
+// Research-line colours and the navy scale as custom properties, so markup
+// and page scripts can use them (compiled per theme).
+:root {
+  --rl-prediction: #{$rl-prediction};
+  --rl-identification: #{$rl-identification};
+  --rl-metaproteomics: #{$rl-metaproteomics};
+  --rl-fair: #{$rl-fair};
+  --rl-reprocessing: #{$rl-reprocessing};
+  --rl-neutral: #{$rl-neutral};
+  --rl-prediction-text: #{$rl-prediction-text};
+  --rl-identification-text: #{$rl-identification-text};
+  --rl-metaproteomics-text: #{$rl-metaproteomics-text};
+  --rl-fair-text: #{$rl-fair-text};
+  --rl-reprocessing-text: #{$rl-reprocessing-text};
+  --rl-neutral-text: #{$rl-neutral-text};
+  --navy-900: #{$navy-900};
+  --navy-800: #{$navy-800};
+  --navy-700: #{$navy-700};
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 // ── Global ───────────────────────────────────────────────────────────────────

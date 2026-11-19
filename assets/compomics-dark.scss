@@ -1,28 +1,49 @@
 /*-- scss:defaults --*/
 
-// CompOmics DARK palette: cool blue-charcoal, matching the light theme.
+// CompOmics DARK palette: the ink navy of the homepage.
 // Same token names as compomics-light.scss, different values.
 
 $ink:        #e8edf2;   // headings and strong text
 $ink-soft:   #c5ced8;   // body text
-$muted:      #97a3b0;   // secondary text
-$paper:      #12161b;   // page background
-$paper-2:    #1a2027;   // cards, panels, inputs
-$paper-3:    #222a33;   // deeper panel
-$line:       #2e3843;   // borders
-$line-soft:  #252d36;
+$muted:      #9fb0c2;   // secondary text
+$paper:      #0f1a26;   // page background (navy 900)
+$paper-2:    #18232f;   // cards, panels, inputs (navy 800)
+$paper-3:    #233142;   // deeper panel (navy 700)
+$line:       #2b3b4e;   // borders
+$line-soft:  #223142;
 
 $primary:    #6aaee6;   // logo blue, lifted for contrast on dark
-$secondary:  #ec6e60;   // logo red, lifted
+$secondary:  #ef7a6d;   // logo red, lifted
 $accent:     #e8edf2;
 
 $light:      $paper-2;
 $dark:       $ink;
-$code-bg:    #1a2027;
+$code-bg:    #18232f;
 
 // derived surface tokens
-$surface-hover: #232c36;                   // card on hover
+$surface-hover: #1d2a38;                   // card on hover
 $icon-bg:       rgba(106, 174, 230, 0.16); // faint blue chip behind tool icons
+
+// Ink navy: every dark surface (homepage, team panel, footer, dark mode).
+$navy-900:      #0f1a26;
+$navy-800:      #18232f;
+$navy-700:      #233142;
+$on-navy:       #e8edf2;
+$on-navy-muted: #9fb0c2;
+
+// Research lines, lifted for use on navy (fill and text share one value).
+$rl-prediction:          #6aaee6;
+$rl-identification:      #ef7a6d;
+$rl-metaproteomics:      #4cc3a2;
+$rl-fair:                #e0b04d;
+$rl-reprocessing:        #a78bdb;
+$rl-prediction-text:     #6aaee6;
+$rl-identification-text: #ef7a6d;
+$rl-metaproteomics-text: #4cc3a2;
+$rl-fair-text:           #e0b04d;
+$rl-reprocessing-text:   #a78bdb;
+$rl-neutral:             #8e9cab;
+$rl-neutral-text:        #9fb0c2;
 
 $body-bg:    $paper;
 $body-color: $ink-soft;
@@ -40,16 +61,4 @@ $navbar-hl:  $primary;
 .navbar-brand {
   background: url('/assets/images/CompOmics_neg.png') no-repeat left center;
   background-size: contain;
-}
-
-// Team expander: blue-black panel in dark mode (light mode uses deep navy)
-.team-detail-panel,
-.team-profile-expander {
-  background: #161d26;
-  border-color: rgba(255, 255, 255, 0.10);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.30);
-}
-
-.team-profile-expander::after {
-  border-bottom-color: #161d26;
 }
