@@ -10,7 +10,7 @@ execute:
 ```{=html}
 <header class="pub-head">
   <h1 class="pub-head-title">Publications</h1>
-  <p class="pub-head-sub">Peer-reviewed papers and preprints from CompOmics group members. For a complete list, see our <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> page or individual <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID profiles</a>.</p>
+  <p class="pub-head-sub">Peer-reviewed papers and preprints from CompOmics group members, limited to work done at CompOmics. For a complete list, see our <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> page or individual <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID profiles</a>.</p>
 </header>
 ```
 
