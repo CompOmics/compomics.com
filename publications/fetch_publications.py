@@ -1,6 +1,11 @@
 """
 Fetch publications for CompOmics group members from ORCID and enrich via CrossRef.
 
+A publication is kept when at least one author has a Ghent University or VIB
+affiliation in CrossRef or OpenAlex, when neither source has affiliation data
+for it, or when an iD in AFFILIATION_EXEMPT_ORCIDS is a group author.
+Records that OpenAlex types as supplementary materials are skipped.
+
 Dependencies: requests
 Usage: python publications/fetch_publications.py
 Output: data/publications.json
@@ -26,6 +31,7 @@ OUTPUT_FILE = Path(__file__).parent.parent / "data" / "publications.json"
 ORCID_API = "https://pub.orcid.org/v3.0/{orcid}/works"
 ORCID_PERSON_API = "https://pub.orcid.org/v3.0/{orcid}/person"
 CROSSREF_API = "https://api.crossref.org/works/{doi}"
+OPENALEX_API = "https://api.openalex.org/works"
 CROSSREF_HEADERS = {
     "User-Agent": "CompOmics-website/1.0 (mailto:lennart.martens@UGent.be)"
 }
@@ -33,6 +39,10 @@ CROSSREF_HEADERS = {
 
 ORCID_FIELD = re.compile(r"""\borcid:\s*['"](\d{4}-\d{4}-\d{4}-\d{3}[\dX])['"]""")
 ORCID_LINE = re.compile(r"^\s*(\d{4}-\d{4}-\d{4}-\d{3}[\dX])\b")
+
+LOCAL_AFFILIATION = re.compile(r"\b(ghent|gent|ugent|vib)\b|flanders institute for biotechnology", re.I)
+# Group authors whose publications skip the affiliation check.
+AFFILIATION_EXEMPT_ORCIDS = {"0000-0003-4277-658X"}  # Lennart Martens
 
 
 def read_orcid_ids() -> list[str]:
@@ -100,6 +110,7 @@ def fetch_crossref_metadata(doi: str) -> dict | None:
     authors_raw = msg.get("author", [])
     authors = []
     author_orcids = []
+    affiliations = [aff.get("name", "") for a in authors_raw for aff in a.get("affiliation", [])]
     for a in authors_raw:
         given = a.get("given", "")
         family = a.get("family", "")
@@ -126,7 +137,40 @@ def fetch_crossref_metadata(doi: str) -> dict | None:
         "volume": msg.get("volume", ""),
         "issue": msg.get("issue", ""),
         "pages": msg.get("page", ""),
+        "affiliations": [aff for aff in affiliations if aff],
     }
+
+
+def fetch_openalex_works(dois: list[str]) -> dict[str, dict]:
+    """Map each DOI found in OpenAlex to its work `type` and the institution
+    names and raw affiliation strings of all its authors (`affiliations`)."""
+    result = {}
+    for i in range(0, len(dois), 50):
+        chunk = dois[i : i + 50]
+        params = {"filter": "doi:" + "|".join(chunk), "per-page": 50, "select": "doi,type,authorships"}
+        try:
+            resp = requests.get(OPENALEX_API, params=params, headers=CROSSREF_HEADERS, timeout=60)
+            resp.raise_for_status()
+        except Exception as exc:
+            print(f"  OpenAlex error for DOIs {i + 1}-{i + len(chunk)}: {exc}")
+            continue
+        for work in resp.json().get("results", []):
+            doi = (work.get("doi") or "").lower().removeprefix("https://doi.org/")
+            affiliations = []
+            for authorship in work.get("authorships", []):
+                affiliations += [inst.get("display_name") or "" for inst in authorship.get("institutions", [])]
+                affiliations += authorship.get("raw_affiliation_strings") or []
+            result[doi] = {"type": work.get("type"), "affiliations": [aff for aff in affiliations if aff]}
+        time.sleep(0.2)
+    return result
+
+
+def passes_affiliation_check(affiliations: list[str], group_orcids: list[str]) -> bool:
+    """True when an author has a local affiliation, when no affiliation data
+    exists, or when a group author is in AFFILIATION_EXEMPT_ORCIDS."""
+    if AFFILIATION_EXEMPT_ORCIDS.intersection(group_orcids) or not affiliations:
+        return True
+    return any(LOCAL_AFFILIATION.search(aff) for aff in affiliations)
 
 NAME_SIMILARITY_THRESHOLD = 0.7
 
@@ -242,10 +286,18 @@ def main():
         time.sleep(0.2)
 
     all_dois = sorted(doi_to_orcids)
+    print(f"\nFetching work types and affiliations for {len(all_dois)} DOI(s) from OpenAlex...")
+    openalex_works = fetch_openalex_works(all_dois)
+
     print(f"\n{len(all_dois)} unique DOI(s) to resolve via CrossRef...")
     publications = []
     for i, doi in enumerate(all_dois, 1):
         print(f"  [{i}/{len(all_dois)}] {doi}")
+        # OpenAlex lists a versioned DOI ("<doi>.v1") under its base DOI.
+        openalex = openalex_works.get(doi) or openalex_works.get(re.sub(r"\.v\d+$", "", doi), {})
+        if openalex.get("type") == "supplementary-materials":
+            print("    Skipping: supplementary materials")
+            continue
         meta = fetch_crossref_metadata(doi)
         if meta and meta.get("title") and meta.get("year"):
             group_orcids = validate_group_orcids(meta, doi_to_orcids[doi], orcid_names)
@@ -253,6 +305,7 @@ def main():
                 print(f"    Skipping: no candidate ORCID matches actual authors ({meta['title']!r})")
                 time.sleep(0.1)
                 continue
+            meta["affiliations"] += openalex.get("affiliations", [])
             meta["group_orcids"] = group_orcids
             publications.append(meta)
         time.sleep(0.1)
@@ -260,6 +313,16 @@ def main():
     before = len(publications)
     publications = deduplicate(publications)
     print(f"Deduplication removed {before - len(publications)} near-duplicate(s)")
+
+    # Filter after deduplication so a preprint does not replace a dropped journal version.
+    kept = []
+    for pub in publications:
+        if passes_affiliation_check(pub.pop("affiliations"), pub["group_orcids"]):
+            kept.append(pub)
+        else:
+            print(f"  Skipping: no Ghent University or VIB affiliation ({pub['title']!r})")
+    print(f"Affiliation check removed {len(publications) - len(kept)} publication(s)")
+    publications = kept
 
     publications.sort(key=lambda p: (-(p["year"] or 0), p.get("title", "")))
 

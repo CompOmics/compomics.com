@@ -33,7 +33,7 @@ research/
 publications/
   index.qmd          # publications list (searchable, filterable by year)
   publications.scss  # publications page styles
-  fetch_publications.py  # pulls DOIs from ORCID, enriches via CrossRef
+  fetch_publications.py  # pulls DOIs from ORCID, enriches via CrossRef, keeps Ghent/VIB work
   extra_orcids.txt   # ORCID iDs fetched in addition to the team's
 tools/
   index.qmd          # tools + community projects (searchable/filterable)
