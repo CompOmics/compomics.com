@@ -1,33 +1,54 @@
 /*-- scss:defaults --*/
 
-// CompOmics — DARK palette (warm charcoal, matches the cream light theme)
+// CompOmics DARK palette: the ink navy of the homepage.
 // Same token names as compomics-light.scss, different values.
 
-$ink:        #ece7db;   // primary text (warm off-white)
-$ink-soft:   #cdc7b9;   // secondary text
-$muted:      #8f897a;   // muted warm grey
-$cream:      #15130e;   // page background (warm near-black)
-$cream-2:    #1d1a14;   // subtle panel background
-$cream-3:    #262219;   // deeper panel
-$line:       #34302a;   // warm border
-$line-soft:  #2a2620;
+$ink:        #e8edf2;   // headings and strong text
+$ink-soft:   #c5ced8;   // body text
+$muted:      #9fb0c2;   // secondary text
+$paper:      #0f1a26;   // page background (navy 900)
+$paper-2:    #18232f;   // cards, panels, inputs (navy 800)
+$paper-3:    #233142;   // deeper panel (navy 700)
+$line:       #2b3b4e;   // borders
+$line-soft:  #223142;
 
-$primary:    #5aa7da;   // brighter blue for contrast on dark
-$secondary:  #e8705f;   // brighter red
-$accent:     #ece7db;
+$primary:    #6aaee6;   // logo blue, lifted for contrast on dark
+$secondary:  #ef7a6d;   // logo red, lifted
+$accent:     #e8edf2;
 
-$light:      $cream-2;
+$light:      $paper-2;
 $dark:       $ink;
-$code-bg:    #1d1a14;
+$code-bg:    #18232f;
 
 // derived surface tokens
-$surface-hover: #2b2720;                   // raised card on hover
-$icon-bg:       rgba(90, 167, 218, 0.16);  // faint blue chip behind tool icons
+$surface-hover: #1d2a38;                   // card on hover
+$icon-bg:       rgba(106, 174, 230, 0.16); // faint blue chip behind tool icons
 
-$body-bg:    $cream;
+// Ink navy: every dark surface (homepage, team panel, footer, dark mode).
+$navy-900:      #0f1a26;
+$navy-800:      #18232f;
+$navy-700:      #233142;
+$on-navy:       #e8edf2;
+$on-navy-muted: #9fb0c2;
+
+// Research lines, lifted for use on navy (fill and text share one value).
+$rl-prediction:          #6aaee6;
+$rl-identification:      #ef7a6d;
+$rl-metaproteomics:      #4cc3a2;
+$rl-fair:                #e0b04d;
+$rl-reprocessing:        #a78bdb;
+$rl-prediction-text:     #6aaee6;
+$rl-identification-text: #ef7a6d;
+$rl-metaproteomics-text: #4cc3a2;
+$rl-fair-text:           #e0b04d;
+$rl-reprocessing-text:   #a78bdb;
+$rl-neutral:             #8e9cab;
+$rl-neutral-text:        #9fb0c2;
+
+$body-bg:    $paper;
 $body-color: $ink-soft;
 
-$navbar-bg:  #15130e;
+$navbar-bg:  $paper;
 $navbar-fg:  $ink-soft;
 $navbar-hl:  $primary;
 
@@ -40,22 +61,4 @@ $navbar-hl:  $primary;
 .navbar-brand {
   background: url('/assets/images/CompOmics_neg.png') no-repeat left center;
   background-size: contain;
-}
-
-// Team expander — restore blue-black in dark mode (light mode uses deep navy)
-.team-detail-panel,
-.team-profile-expander {
-  background: linear-gradient(135deg, rgba(13, 17, 23, 0.98), rgba(21, 28, 39, 0.95));
-  border-color: rgba(255, 255, 255, 0.10);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
-
-  &::before {
-    background:
-      radial-gradient(circle at top right, rgba(90, 167, 218, 0.14), rgba(90, 167, 218, 0) 36%),
-      linear-gradient(135deg, rgba(10, 14, 20, 0.18), rgba(10, 14, 20, 0.64));
-  }
-}
-
-.team-profile-expander::after {
-  border-bottom-color: #0e1219;
 }

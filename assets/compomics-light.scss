@@ -1,32 +1,54 @@
 /*-- scss:defaults --*/
 
-// CompOmics — LIGHT palette (warm cream / ivory)
-// Logo colours kept as accents:  #276ba6 blue · #d63729 red · #3b3838 charcoal
+// CompOmics LIGHT palette: a pale tint of the logo blue with white cards.
+// Logo colours: #276ba6 blue, #d63729 red, #3b3838 charcoal.
 
-$ink:        #14110d;   // near-black warm text
-$ink-soft:   #2c2823;
-$muted:      #7e7a74;   // warm grey for secondary text
-$cream:      #fffdf3;   // page background (warm ivory)
-$cream-2:    #faf7ec;   // subtle panel background
-$cream-3:    #f4f0e2;   // deeper panel / hover
-$line:       #e6e1d0;   // warm hairline border
-$line-soft:  #efebdd;
+$ink:        #1c232b;   // headings and strong text
+$ink-soft:   #36404b;   // body text
+$muted:      #5b6673;   // secondary text
+$paper:      #f3f6f9;   // page background
+$paper-2:    #ffffff;   // cards, panels, inputs
+$paper-3:    #e7edf3;   // deeper panel / pressed surface
+$line:       #d9e1e9;   // borders
+$line-soft:  #e6ecf1;
 
-$primary:    #1f5f8f;   // deepened logo blue
-$secondary:  #c5392b;   // deepened logo red
-$accent:     #14110d;
+$primary:    #276ba6;   // logo blue
+$secondary:  #c4362a;   // logo red, deepened for text contrast
+$accent:     #1c232b;
 
-$light:      $cream-2;
+$light:      $paper-2;
 $dark:       $ink;
-$code-bg:    #f4f0e2;
+$code-bg:    #eaf0f5;
 
 // derived surface tokens
-$surface-hover: #ffffff;                  // raised card on hover
-$icon-bg:       rgba(31, 95, 143, 0.09);  // faint blue chip behind tool icons
+$surface-hover: #ffffff;                  // card on hover
+$icon-bg:       rgba(39, 107, 166, 0.09); // faint blue chip behind tool icons
 
-$body-bg:    $cream;
+// Ink navy: every dark surface (homepage, team panel, footer, dark mode).
+$navy-900:      #0f1a26;
+$navy-800:      #18232f;
+$navy-700:      #233142;
+$on-navy:       #e8edf2;
+$on-navy-muted: #9fb0c2;
+
+// Research lines. Fill: bars, peaks, swatches, card borders.
+// Text: the same hue at >= 4.5:1 on the page and on cards.
+$rl-prediction:          #276ba6;  // analyte prediction (logo blue)
+$rl-identification:      #d63729;  // identification (logo red)
+$rl-metaproteomics:      #1f8a70;
+$rl-fair:                #c08a1e;  // FAIR & AI-ready data
+$rl-reprocessing:        #6b4fa0;
+$rl-prediction-text:     #276ba6;
+$rl-identification-text: #c4362a;
+$rl-metaproteomics-text: #1b7a63;
+$rl-fair-text:           #8a6210;
+$rl-reprocessing-text:   #6b4fa0;
+$rl-neutral:             #6b7785;  // community projects, not tied to one line
+$rl-neutral-text:        #5b6673;
+
+$body-bg:    $paper;
 $body-color: $ink-soft;
 
-$navbar-bg:  $cream;
+$navbar-bg:  $paper;
 $navbar-fg:  $ink-soft;
 $navbar-hl:  $primary;

@@ -9,7 +9,7 @@ $headings-font-weight:   700;
 $font-size-root: 16px;
 
 // Type scale: use these tokens for every text font-size on the site
-$fs-xs:      0.75rem;                     // 12px: badges, counts, chips, eyebrows, meta
+$fs-xs:      0.8125rem;                   // 13px: badges, counts, chips, meta
 $fs-sm:      0.875rem;                    // 14px: secondary text, descriptions, inputs
 $fs-base:    1rem;                        // 16px: body text, navbar links, item titles
 $fs-md:      1.25rem;                     // 20px: lead paragraphs, card titles, hero subtitles
@@ -17,16 +17,36 @@ $fs-lg:      1.5rem;                      // 24px: h3
 $fs-xl:      1.75rem;                     // 28px: h2, section titles, large numbers
 $fs-display: clamp(2.5rem, 5vw, 3.5rem);  // 40-56px: page titles
 
-// Colour tokens ($ink, $cream, $line, $primary, $surface-hover, $icon-bg …)
+// Colour tokens ($ink, $paper, $line, $primary, $surface-hover, $icon-bg …)
 // are defined per-theme in compomics-light.scss / compomics-dark.scss
 
 /*-- scss:rules --*/
+
+// Research-line colours and the navy scale as custom properties, so markup
+// and page scripts can use them (compiled per theme).
+:root {
+  --rl-prediction: #{$rl-prediction};
+  --rl-identification: #{$rl-identification};
+  --rl-metaproteomics: #{$rl-metaproteomics};
+  --rl-fair: #{$rl-fair};
+  --rl-reprocessing: #{$rl-reprocessing};
+  --rl-neutral: #{$rl-neutral};
+  --rl-prediction-text: #{$rl-prediction-text};
+  --rl-identification-text: #{$rl-identification-text};
+  --rl-metaproteomics-text: #{$rl-metaproteomics-text};
+  --rl-fair-text: #{$rl-fair-text};
+  --rl-reprocessing-text: #{$rl-reprocessing-text};
+  --rl-neutral-text: #{$rl-neutral-text};
+  --navy-900: #{$navy-900};
+  --navy-800: #{$navy-800};
+  --navy-700: #{$navy-700};
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 // ── Global ───────────────────────────────────────────────────────────────────
 body {
-  background: $cream;
+  background: $paper;
   color: $ink-soft;
   font-size: $fs-base;
   line-height: 1.6;
@@ -34,15 +54,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.page-columns,
-main.content {
-  // a touch more breathing room on content pages
-}
+::selection { background: rgba($primary, 0.2); color: $ink; }
 
 a { color: $primary; text-decoration: none; }
 a:hover { color: $secondary; text-decoration: underline; text-underline-offset: 3px; }
 
-// ── Headings — Open Sans, bold (legacy compomics.com) ────────────────────────
+// ── Headings ─────────────────────────────────────────────────────────────────
 h1, h2, h3, h4, h5 {
   font-family: $font-family-heading;
   font-weight: 700;
@@ -84,7 +101,7 @@ hr {
 
 // ── Navbar ───────────────────────────────────────────────────────────────────
 .navbar {
-  background-color: $cream !important;
+  background-color: $paper !important;
   border-bottom: 1px solid $line;
   box-shadow: none;
   padding-top: 0.7rem;
@@ -123,13 +140,49 @@ hr {
 
 .navbar-brand-title { display: none; }
 
-// ── Footer ───────────────────────────────────────────────────────────────────
+// ── Footer: navy band on every page ──────────────────────────────────────────
+.footer {
+  background: $navy-900;
+}
+
 .nav-footer {
-  border-top: 1px solid $line;
-  background: $cream-2;
-  color: $muted;
+  background: $navy-900;
+  border-top: 1px solid $navy-700;
+  color: $on-navy-muted;
   font-family: $font-family-sans-serif;
   font-size: $fs-sm;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+
+  a { color: $on-navy; }
+  a:hover { color: #ffffff; }
+
+  align-items: center;
+
+  .nav-footer-left,
+  .nav-footer-center {
+    display: flex;
+    align-items: center;
+  }
+
+  p { margin: 0; }
+
+  .nav-link { color: $on-navy !important; }
+  .nav-link:hover { color: #ffffff !important; }
+
+  .nav-footer-center,
+  .nav-footer-center * { color: $on-navy-muted; }
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
 }
 
 // ── Code blocks ──────────────────────────────────────────────────────────────
@@ -141,121 +194,7 @@ pre.sourceCode {
 
 code { color: $ink; }
 
-// ── Vision section ───────────────────────────────────────────────────────────
-.vision-section {
-  padding: 4rem 0 2.5rem;
-  align-items: flex-start;
-}
-
-.vision-head {
-  h3 {
-    font-family: $font-family-heading;
-    font-size: $fs-xl;
-    font-weight: 700;
-    color: $ink;
-    line-height: 1.15;
-    margin: 0;
-    padding-bottom: 0;
-
-    &::after { display: none; }
-  }
-
-  @media (min-width: 768px) {
-    h3 { position: sticky; top: 6rem; }
-  }
-}
-
-.vision-text {
-  p {
-    text-align: left;
-    hyphens: none;
-    color: $ink-soft;
-    font-size: $fs-base;
-    line-height: 1.85;
-  }
-
-  // lead paragraph
-  p:first-child {
-    font-family: $font-family-sans-serif;
-    font-size: $fs-md;
-    font-weight: 400;
-    line-height: 1.6;
-    color: $ink;
-    margin-bottom: 1.4rem;
-  }
-
-  strong { color: $ink; font-weight: 600; }
-}
-
-// ── Stats row — flat, hairline-separated, no boxes-with-shadows ───────────────
-.stats-row {
-  padding: 1rem 0 2.5rem;
-  text-align: center;
-  gap: 0 !important;
-}
-
-.stat-tile {
-  padding: 1.5rem 1rem;
-  background: transparent;
-  border: none;
-  border-right: 1px solid $line;
-  border-radius: 0;
-  position: relative;
-  overflow: visible;
-  box-shadow: none;
-  transition: background 0.2s ease;
-
-  &::before { display: none; }
-
-  &:last-child { border-right: none; }
-
-  .stat-number {
-    display: block;
-    font-family: $font-family-heading;
-    font-size: $fs-xl;
-    font-weight: 800;
-    color: $ink;
-    line-height: 1;
-    background: none;
-    -webkit-text-fill-color: currentColor;
-  }
-
-  .stat-label {
-    display: block;
-    margin-top: 0.55rem;
-    font-family: $font-family-sans-serif;
-    font-size: $fs-xs;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.11em;
-    color: $muted;
-  }
-}
-
-a.stat-tile-link {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-
-  &:hover {
-    transform: none;
-    box-shadow: none;
-    text-decoration: none;
-    color: inherit;
-    background: $cream-2;
-
-    .stat-number { color: $primary; }
-  }
-}
-
-@media (max-width: 576px) {
-  .stat-tile { border-right: none; border-bottom: 1px solid $line; }
-  .stat-tile:last-child { border-bottom: none; }
-}
-
-// ── Nav tiles — flat cards, warm border, subtle hover ────────────────────────
+// ── Nav tiles (homepage) ─────────────────────────────────────────────────────
 .nav-tiles-row {
   display: flex;
   gap: 1.25rem;
@@ -271,20 +210,19 @@ a.stat-tile-link {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1.9rem 1.6rem;
-  background: $cream-2;
+  background: $paper-2;
   border: 1px solid $line;
   border-radius: 0.6rem;
   text-decoration: none;
   color: $ink;
   box-shadow: none;
-  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  transition: background 0.18s ease, border-color 0.18s ease;
   position: relative;
   overflow: hidden;
 
   &::after { display: none; }
 
   &:hover {
-    transform: translateY(-3px);
     background: $surface-hover;
     border-color: $primary;
     color: $ink;
@@ -319,22 +257,13 @@ a.stat-tile-link {
   }
 }
 
-// ── LCMS diagram ─────────────────────────────────────────────────────────────
-.lcms-container {
-  margin: 1.5rem 0 2.5rem;
-  border-radius: 0.6rem;
-  overflow: hidden;
-  box-shadow: none;
-  border: 1px solid $line;
-}
-
 // ── Generic content blockquote ───────────────────────────────────────────────
 blockquote {
   border-left: 2px solid $primary;
   color: $ink-soft;
   font-family: $font-family-sans-serif;
   font-size: $fs-base;
-  background: $cream-2;
+  background: $paper-2;
   padding: 0.9rem 1.2rem;
   border-radius: 0 0.4rem 0.4rem 0;
 }
@@ -346,7 +275,7 @@ blockquote {
 // (grid, cards, and the profile expander were consolidated there so the two
 //  files no longer both style the team page)
 
-// ── Location section — single elegant panel, address + map ───────────────────
+// ── Location section: address + map ──────────────────────────────────────────
 .location-section {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -355,7 +284,7 @@ blockquote {
   border: 1px solid $line;
   border-radius: 0.75rem;
   overflow: hidden;
-  background: $cream-2;
+  background: $paper-2;
 
   @media (max-width: 768px) { grid-template-columns: 1fr; }
 }
@@ -365,15 +294,6 @@ blockquote {
   display: flex;
   flex-direction: column;
 
-  .location-eyebrow {
-    font-family: $font-family-sans-serif;
-    font-size: $fs-xs;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: $primary;
-    margin-bottom: 0.6rem;
-  }
 
   .location-title {
     font-family: $font-family-heading;
@@ -437,7 +357,7 @@ blockquote {
   font-size: $fs-sm;
   font-weight: 500;
   border: 1px solid $primary;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   color: $primary;
   background: transparent;
   text-decoration: none;
@@ -476,3 +396,13 @@ blockquote {
 }
 
 // Publications list styles now live in publications/publications.scss
+
+// ── Quarto post categories (tutorial pages) ──────────────────────────────────
+.quarto-title .quarto-categories .quarto-category {
+  font-size: $fs-xs;
+  text-transform: none;
+  color: $muted;
+  border-color: $line;
+  border-radius: 0.4rem;
+  opacity: 1;
+}

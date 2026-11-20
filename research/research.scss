@@ -48,11 +48,9 @@
   gap: .35rem;
   color: $muted;
   text-decoration: none;
-  font-family: $font-family-monospace;
-  font-size: $fs-xs;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  font-size: $fs-sm;
+  font-weight: 600;
   transition: color .15s ease;
 
   i {
@@ -63,21 +61,12 @@
   &:focus-visible { color: $primary; }
 }
 @keyframes research-cue-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
-.research-header-kicker {
-  font-family: $font-family-monospace;
-  font-size: $fs-xs;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: $primary;
-  margin-bottom: .6rem;
-}
 .research-header-title {
   font-family: $font-family-heading;
-  font-weight: 800;
+  font-weight: 700;
   font-size: $fs-display;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   color: $ink;
   margin: 0;
   padding: 0;
@@ -89,18 +78,16 @@
   font-size: $fs-md;
   line-height: 1.6;
   margin: .95rem 0 0;
-  text-align: justify;
-  hyphens: auto;
+  max-width: 68ch;
 }
 // body copy: shares one size across the whole page (see .research-section-desc)
 .research-header-text {
-  color: $muted;
+  color: $ink-soft;
   font-family: $font-family-sans-serif;
   font-size: $fs-base;
   line-height: 1.7;
   margin: 1.1rem 0 0;
-  text-align: justify;
-  hyphens: auto;
+  max-width: 72ch;
 }
 
 // ── Signature: five research lines drawn as a five-channel mass spectrum ───────
@@ -276,11 +263,14 @@
 @media (prefers-reduced-motion: reduce) {
   .research-spectrum .spec-peak rect,
   .research-spectrum .spec-peak text,
-  .rs-line,
   .research-peak .peak-bar {
     animation: none;
     transition: none;
     transform: scaleY(1);
+    opacity: 1;
+  }
+  .rs-line {
+    animation: none;
     opacity: 1;
   }
   .research-scroll-cue i { animation: none; }
@@ -288,10 +278,10 @@
 
 .research-section-title {
   font-family: $font-family-heading;
-  font-weight: 800;
+  font-weight: 700;
   font-size: $fs-xl;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   color: $ink;
   margin: 0;
   padding: 0;
@@ -305,6 +295,5 @@
   line-height: 1.7;
   color: $ink-soft;
   margin: 0;
-  text-align: justify;
-  hyphens: auto;
+  max-width: 72ch;
 }

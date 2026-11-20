@@ -1,45 +1,5 @@
 [
   {
-    "doi": "10.64898/2026.06.09.730932",
-    "title": "Amino acid repeat mosaics shape protein functional landscape",
-    "authors": [
-      "Anjali Kumari Singh",
-      "Anurag Babu",
-      "Adhithya Subramanian Gopalakrishnan",
-      "Nagashree Rachote",
-      "Vaidehi Sharma",
-      "Sourav Ganguli",
-      "Keertana Sai Kappagantula",
-      "Harikrishnan Ramadasan",
-      "Palak Shukla",
-      "Arunkumar Dhayalan",
-      "Pavithra L Chavali",
-      "Sreenivas Chavali"
-    ],
-    "author_orcids": [
-      "0000-0002-0444-7913",
-      "0009-0002-3700-768X",
-      "0009-0005-3320-3650",
-      "0009-0008-2986-6365",
-      "0000-0002-0214-5436",
-      "0000-0002-4773-6205",
-      "0000-0002-2948-733X",
-      "0000-0003-1473-1595",
-      null,
-      "0000-0003-2588-9865",
-      "0000-0002-7525-5230",
-      "0000-0001-8307-1645"
-    ],
-    "journal": "",
-    "year": 2026,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-1473-1595"
-    ]
-  },
-  {
     "doi": "10.64898/2026.07.13.738155",
     "title": "Defining Quality Control Standards for Single-Cell Proteomics by Inter-Laboratory Benchmarking",
     "authors": [
@@ -1600,32 +1560,6 @@
     ]
   },
   {
-    "doi": "10.1007/978-3-031-80507-3_7",
-    "title": "Evaluation Metrics in Saliency Maps Applied to Graph Regression",
-    "authors": [
-      "Natàlia Segura-Alabart",
-      "Alberto Fernández",
-      "Alexander Kensert",
-      "Deirdre Cabooter",
-      "Francesc Serratosa"
-    ],
-    "author_orcids": [
-      "0000-0002-6276-2049",
-      "0000-0002-1241-1646",
-      "0000-0002-5295-010X",
-      "0000-0001-5502-5801",
-      "0000-0001-6112-5913"
-    ],
-    "journal": "Lecture Notes in Computer Science",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "62-71",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
     "doi": "10.3390/antibiotics14070714",
     "title": "Illuminating the Invisible: Green Fluorescent Protein as a Beacon for Antibiotic-Induced Phage Activity in Escherichia coli",
     "authors": [
@@ -1921,38 +1855,6 @@
     "pages": "118656",
     "group_orcids": [
       "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.1101/2025.10.01.679754",
-    "title": "Molecular attributes of intrinsically disordered regions in secretomes influence fungal pathogenesis",
-    "authors": [
-      "Ankita Mohapatra",
-      "Rajashekar Varma Kadumuri",
-      "Ashwin Sharma",
-      "Anita P Saju",
-      "Harikrishnan Ramadasan",
-      "Anushka Agrawal",
-      "Vaidehi Sharma",
-      "Sreenivas Chavali"
-    ],
-    "author_orcids": [
-      "0000-0002-0537-439X",
-      "0000-0002-0564-4441",
-      "0009-0000-3776-2832",
-      "0009-0001-6568-2992",
-      "0000-0003-1473-1595",
-      "0009-0002-8464-8703",
-      "0000-0002-0214-5436",
-      "0000-0001-8307-1645"
-    ],
-    "journal": "",
-    "year": 2025,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0003-1473-1595"
     ]
   },
   {
@@ -2768,30 +2670,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.chroma.2023.464577",
-    "title": "Automated method development in high-pressure liquid chromatography",
-    "authors": [
-      "Emery Bosten",
-      "Alexander Kensert",
-      "Gert Desmet",
-      "Deirdre Cabooter"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-5295-010X",
-      null,
-      "0000-0001-5502-5801"
-    ],
-    "journal": "Journal of Chromatography A",
-    "year": 2024,
-    "volume": "1714",
-    "issue": "",
-    "pages": "464577",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
     "doi": "10.1007/978-1-0716-4007-4_11",
     "title": "Biodiversity Analysis of Metaproteomics Samples with Unipept: A Comprehensive Tutorial",
     "authors": [
@@ -2901,30 +2779,6 @@
     "pages": "101938",
     "group_orcids": [
       "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.chroma.2024.464768",
-    "title": "Deep reinforcement learning for the direct optimization of gradient separations in liquid chromatography",
-    "authors": [
-      "Alexander Kensert",
-      "Pieter Libin",
-      "Gert Desmet",
-      "Deirdre Cabooter"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      "0000-0001-8781-7184",
-      "0000-0001-5502-5801"
-    ],
-    "journal": "Journal of Chromatography A",
-    "year": 2024,
-    "volume": "1720",
-    "issue": "",
-    "pages": "464768",
-    "group_orcids": [
-      "0000-0002-5295-010X"
     ]
   },
   {
@@ -3948,32 +3802,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.celrep.2023.112811",
-    "title": "Proteins with amino acid repeats constitute a rapidly evolvable and human-specific essentialome",
-    "authors": [
-      "Anjali K. Singh",
-      "Ishita Amar",
-      "Harikrishnan Ramadasan",
-      "Keertana S. Kappagantula",
-      "Sreenivas Chavali"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-8307-1645"
-    ],
-    "journal": "Cell Reports",
-    "year": 2023,
-    "volume": "42",
-    "issue": "7",
-    "pages": "112811",
-    "group_orcids": [
-      "0000-0003-1473-1595"
-    ]
-  },
-  {
     "doi": "10.1021/acs.jproteome.2c00629",
     "title": "ProteomicsML: An Online Platform for Community-Curated Data sets and Tutorials for Machine Learning in Proteomics",
     "authors": [
@@ -4039,142 +3867,6 @@
     "group_orcids": [
       "0000-0002-1679-1711",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1158/2159-8290.22541986",
-    "title": "Supplementary Figures S1-S9 from A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
-    "authors": [
-      "Fengbiao Zhou",
-      "Nesrine Aroua",
-      "Yi Liu",
-      "Christian Rohde",
-      "Jingdong Cheng",
-      "Anna-Katharina Wirth",
-      "Daria Fijalkowska",
-      "Stefanie Göllner",
-      "Michelle Lotze",
-      "Haiyang Yun",
-      "Xiaobing Yu",
-      "Caroline Pabst",
-      "Tim Sauer",
-      "Thomas Oellerich",
-      "Hubert Serve",
-      "Christoph Röllig",
-      "Martin Bornhäuser",
-      "Christian Thiede",
-      "Claudia Baldus",
-      "Michaela Frye",
-      "Simon Raffel",
-      "Jeroen Krijgsveld",
-      "Irmela Jeremias",
-      "Roland Beckmann",
-      "Andreas Trumpp",
-      "Carsten Müller-Tidow"
-    ],
-    "author_orcids": [
-      "0000-0002-9221-1096",
-      "0000-0002-0600-7954",
-      "0000-0002-4961-2660",
-      "0000-0001-6778-5971",
-      "0000-0003-4442-377X",
-      "0000-0002-0138-8583",
-      "0000-0002-2084-146X",
-      "0000-0002-2934-1920",
-      "0000-0003-2633-1767",
-      "0000-0001-8714-205X",
-      "0000-0001-8634-4135",
-      "0000-0001-9716-5909",
-      "0000-0001-5412-324X",
-      "0000-0001-6570-6125",
-      "0000-0001-8472-5516",
-      "0000-0002-3791-0548",
-      null,
-      "0000-0002-5916-3029",
-      "0000-0002-0748-834X",
-      "0000-0002-5636-6840",
-      "0000-0003-4671-1097",
-      "0000-0001-7549-9326",
-      "0000-0003-1773-7677",
-      "0000-0003-4291-3898",
-      "0000-0002-6212-3466",
-      "0000-0002-7166-5232"
-    ],
-    "journal": "",
-    "year": 2023,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.1158/2159-8290.22541983",
-    "title": "Supplementary Tables S1-S4 from A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
-    "authors": [
-      "Fengbiao Zhou",
-      "Nesrine Aroua",
-      "Yi Liu",
-      "Christian Rohde",
-      "Jingdong Cheng",
-      "Anna-Katharina Wirth",
-      "Daria Fijalkowska",
-      "Stefanie Göllner",
-      "Michelle Lotze",
-      "Haiyang Yun",
-      "Xiaobing Yu",
-      "Caroline Pabst",
-      "Tim Sauer",
-      "Thomas Oellerich",
-      "Hubert Serve",
-      "Christoph Röllig",
-      "Martin Bornhäuser",
-      "Christian Thiede",
-      "Claudia Baldus",
-      "Michaela Frye",
-      "Simon Raffel",
-      "Jeroen Krijgsveld",
-      "Irmela Jeremias",
-      "Roland Beckmann",
-      "Andreas Trumpp",
-      "Carsten Müller-Tidow"
-    ],
-    "author_orcids": [
-      "0000-0002-9221-1096",
-      "0000-0002-0600-7954",
-      "0000-0002-4961-2660",
-      "0000-0001-6778-5971",
-      "0000-0003-4442-377X",
-      "0000-0002-0138-8583",
-      "0000-0002-2084-146X",
-      "0000-0002-2934-1920",
-      "0000-0003-2633-1767",
-      "0000-0001-8714-205X",
-      "0000-0001-8634-4135",
-      "0000-0001-9716-5909",
-      "0000-0001-5412-324X",
-      "0000-0001-6570-6125",
-      "0000-0001-8472-5516",
-      "0000-0002-3791-0548",
-      null,
-      "0000-0002-5916-3029",
-      "0000-0002-0748-834X",
-      "0000-0002-5636-6840",
-      "0000-0003-4671-1097",
-      "0000-0001-7549-9326",
-      "0000-0003-1773-7677",
-      "0000-0003-4291-3898",
-      "0000-0002-6212-3466",
-      "0000-0002-7166-5232"
-    ],
-    "journal": "",
-    "year": 2023,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-2084-146X"
     ]
   },
   {
@@ -4485,74 +4177,6 @@
     ]
   },
   {
-    "doi": "10.1158/2159-8290.cd-22-0210",
-    "title": "A Dynamic rRNA Ribomethylome Drives Stemness in Acute Myeloid Leukemia",
-    "authors": [
-      "Fengbiao Zhou",
-      "Nesrine Aroua",
-      "Yi Liu",
-      "Christian Rohde",
-      "Jingdong Cheng",
-      "Anna-Katharina Wirth",
-      "Daria Fijalkowska",
-      "Stefanie Göllner",
-      "Michelle Lotze",
-      "Haiyang Yun",
-      "Xiaobing Yu",
-      "Caroline Pabst",
-      "Tim Sauer",
-      "Thomas Oellerich",
-      "Hubert Serve",
-      "Christoph Röllig",
-      "Martin Bornhäuser",
-      "Christian Thiede",
-      "Claudia Baldus",
-      "Michaela Frye",
-      "Simon Raffel",
-      "Jeroen Krijgsveld",
-      "Irmela Jeremias",
-      "Roland Beckmann",
-      "Andreas Trumpp",
-      "Carsten Müller-Tidow"
-    ],
-    "author_orcids": [
-      "0000-0002-9221-1096",
-      "0000-0002-0600-7954",
-      "0000-0002-4961-2660",
-      "0000-0001-6778-5971",
-      "0000-0003-4442-377X",
-      "0000-0002-0138-8583",
-      "0000-0002-2084-146X",
-      "0000-0002-2934-1920",
-      "0000-0003-2633-1767",
-      "0000-0001-8714-205X",
-      "0000-0001-8634-4135",
-      "0000-0001-9716-5909",
-      "0000-0001-5412-324X",
-      "0000-0001-6570-6125",
-      "0000-0001-8472-5516",
-      "0000-0002-3791-0548",
-      null,
-      "0000-0002-5916-3029",
-      "0000-0002-0748-834X",
-      "0000-0002-5636-6840",
-      "0000-0003-4671-1097",
-      "0000-0001-7549-9326",
-      "0000-0003-1773-7677",
-      "0000-0003-4291-3898",
-      "0000-0002-6212-3466",
-      "0000-0002-7166-5232"
-    ],
-    "journal": "Cancer Discovery",
-    "year": 2022,
-    "volume": "13",
-    "issue": "2",
-    "pages": "332-347",
-    "group_orcids": [
-      "0000-0002-2084-146X"
-    ]
-  },
-  {
     "doi": "10.1038/s41597-022-01216-6",
     "title": "A comprehensive LFQ benchmark dataset on modern day acquisition strategies in proteomics",
     "authors": [
@@ -4822,36 +4446,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.chroma.2022.463005",
-    "title": "Convolutional neural network for automated peak detection in reversed-phase liquid chromatography",
-    "authors": [
-      "Alexander Kensert",
-      "Emery Bosten",
-      "Gilles Collaerts",
-      "Kyriakos Efthymiadis",
-      "Peter Van Broeck",
-      "Gert Desmet",
-      "Deirdre Cabooter"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-8781-7184",
-      "0000-0001-5502-5801"
-    ],
-    "journal": "Journal of Chromatography A",
-    "year": 2022,
-    "volume": "1672",
-    "issue": "",
-    "pages": "463005",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
     "doi": "10.1101/2022.02.09.22270547",
     "title": "Cov\n                  <sup>2</sup>\n                  MS: an automated matrix-independent assay for mass spectrometric detection and measurement of SARS-CoV-2 nucleocapsid protein in infectious patients",
     "authors": [
@@ -4974,82 +4568,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.jenvman.2022.115856",
-    "title": "Differential colonization and functioning of microbial community in response to phosphate levels",
-    "authors": [
-      "Varsha Jha",
-      "Sakina Bombaywala",
-      "Hemant Purohit",
-      "Nishant A. Dafale"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Journal of Environmental Management",
-    "year": 2022,
-    "volume": "321",
-    "issue": "",
-    "pages": "115856",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
-    "doi": "10.1016/b978-0-323-91860-2.00010-5",
-    "title": "Efficacy of microbes in removal of pesticides from watershed system",
-    "authors": [
-      "Ashootosh Mandpe",
-      "Sakina Bombaywala",
-      "Sonam Paliya",
-      "Sunil Kumar"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Synergistic Approaches for Bioremediation of Environmental Pollutants : Recent Advances and Challenges",
-    "year": 2022,
-    "volume": "",
-    "issue": "",
-    "pages": "27-51",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
-    "doi": "10.1007/s11356-022-19840-5",
-    "title": "Genome plasticity as a paradigm of antibiotic resistance spread in ESKAPE pathogens",
-    "authors": [
-      "Sanchita Das",
-      "Sakina Bombaywala",
-      "Shweta Srivastava",
-      "Atya Kapley",
-      "Rita Dhodapkar",
-      "Nishant A. Dafale"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Environmental Science and Pollution Research",
-    "year": 2022,
-    "volume": "29",
-    "issue": "27",
-    "pages": "40507-40519",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
     "doi": "10.1016/j.mcpro.2022.100264",
     "title": "Limited Evidence for Protein Products of Noncoding Transcripts in the HEK293T Cellular Cytosol",
     "authors": [
@@ -5135,42 +4653,6 @@
     "group_orcids": [
       "0000-0001-9408-488X",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1002/psp4.12813",
-    "title": "Multi‐model averaging improves the performance of model‐guided infliximab dosing in patients with inflammatory bowel diseases",
-    "authors": [
-      "Wannee Kantasiripitak",
-      "An Outtier",
-      "Sebastian G. Wicha",
-      "Alexander Kensert",
-      "Zhigang Wang",
-      "João Sabino",
-      "Séverine Vermeire",
-      "Debby Thomas",
-      "Marc Ferrante",
-      "Erwin Dreesen"
-    ],
-    "author_orcids": [
-      "0000-0001-9285-799X",
-      "0000-0002-7351-0023",
-      "0000-0002-8773-4845",
-      "0000-0002-5295-010X",
-      "0000-0001-6415-2044",
-      "0000-0002-8892-7075",
-      "0000-0001-9942-3019",
-      "0000-0003-3075-9846",
-      "0000-0003-1492-0716",
-      "0000-0002-0785-2930"
-    ],
-    "journal": "CPT: Pharmacometrics &amp; Systems Pharmacology",
-    "year": 2022,
-    "volume": "11",
-    "issue": "8",
-    "pages": "1045-1059",
-    "group_orcids": [
-      "0000-0002-5295-010X"
     ]
   },
   {
@@ -5310,38 +4792,6 @@
     "pages": "",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.mcpro.2022.100243",
-    "title": "ProMetheusDB: An In-Depth Analysis of the High-Quality Human Methyl-proteome",
-    "authors": [
-      "Enrico Massignani",
-      "Roberto Giambruno",
-      "Marianna Maniaci",
-      "Luciano Nicosia",
-      "Avinash Yadav",
-      "Alessandro Cuomo",
-      "Francesco Raimondi",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-4566-261X",
-      "0000-0002-9477-2276",
-      null,
-      null,
-      null,
-      "0000-0002-6891-3178",
-      "0000-0003-3556-1265"
-    ],
-    "journal": "Molecular &amp; Cellular Proteomics",
-    "year": 2022,
-    "volume": "21",
-    "issue": "7",
-    "pages": "100243",
-    "group_orcids": [
-      "0000-0002-4328-0538"
     ]
   },
   {
@@ -5663,30 +5113,6 @@
     ]
   },
   {
-    "doi": "10.1007/s11356-021-13143-x",
-    "title": "Antibiotic resistance in the environment: a critical insight on its occurrence, fate, and eco-toxicity",
-    "authors": [
-      "Sakina Bombaywala",
-      "Ashootosh Mandpe",
-      "Sonam Paliya",
-      "Sunil Kumar"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Environmental Science and Pollution Research",
-    "year": 2021,
-    "volume": "28",
-    "issue": "20",
-    "pages": "24889-24916",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
     "doi": "10.1021/jacsau.1c00048",
     "title": "Cov-MS: A Community-Based Template Assay for Mass-Spectrometry-Based Protein Detection in SARS-CoV-2 Patients",
     "authors": [
@@ -5946,60 +5372,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.chroma.2021.461900",
-    "title": "Deep Q-learning for the selection of optimal isocratic scouting runs in liquid chromatography",
-    "authors": [
-      "Alexander Kensert",
-      "Gilles Collaerts",
-      "Kyriakos Efthymiadis",
-      "Gert Desmet",
-      "Deirdre Cabooter"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      null,
-      "0000-0001-8781-7184",
-      "0000-0001-5502-5801"
-    ],
-    "journal": "Journal of Chromatography A",
-    "year": 2021,
-    "volume": "1638",
-    "issue": "",
-    "pages": "461900",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.chroma.2021.462093",
-    "title": "Deep convolutional autoencoder for the simultaneous removal of baseline noise and baseline drift in chromatograms",
-    "authors": [
-      "Alexander Kensert",
-      "Gilles Collaerts",
-      "Kyriakos Efthymiadis",
-      "Peter Van Broeck",
-      "Gert Desmet",
-      "Deirdre Cabooter"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      null,
-      null,
-      "0000-0001-8781-7184",
-      "0000-0001-5502-5801"
-    ],
-    "journal": "Journal of Chromatography A",
-    "year": 2021,
-    "volume": "1646",
-    "issue": "",
-    "pages": "462093",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
     "doi": "10.1038/s41592-021-01301-5",
     "title": "DeepLC can predict retention times for peptides that carry as-yet unseen modifications",
     "authors": [
@@ -6024,32 +5396,6 @@
     "group_orcids": [
       "0000-0002-1679-1711",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.egyr.2021.06.031",
-    "title": "Determination of the urban rooftop photovoltaic potential: A state of the art",
-    "authors": [
-      "Elham Fakhraian",
-      "Marc Alier Forment",
-      "Francesc Valls Dalmau",
-      "Alireza Nameni",
-      "Maria José Casañ Guerrero"
-    ],
-    "author_orcids": [
-      "0000-0001-5023-8584",
-      "0000-0003-3922-1516",
-      "0000-0002-9400-5659",
-      "0000-0002-7471-9195",
-      null
-    ],
-    "journal": "Energy Reports",
-    "year": 2021,
-    "volume": "7",
-    "issue": "",
-    "pages": "176-185",
-    "group_orcids": [
-      "0000-0002-7471-9195"
     ]
   },
   {
@@ -6275,28 +5621,6 @@
       "0000-0002-5916-2587",
       "0000-0002-6675-1048",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.jenvman.2021.113315",
-    "title": "Mobility of antibiotic resistance and its co-occurrence with metal resistance in pathogens under oxidative stress",
-    "authors": [
-      "Sakina Bombaywala",
-      "Hemant J. Purohit",
-      "Nishant A. Dafale"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null
-    ],
-    "journal": "Journal of Environmental Management",
-    "year": 2021,
-    "volume": "297",
-    "issue": "",
-    "pages": "113315",
-    "group_orcids": [
-      "0000-0001-5630-6269"
     ]
   },
   {
@@ -6550,34 +5874,6 @@
     ]
   },
   {
-    "doi": "10.1007/s11356-021-15204-7",
-    "title": "Polybrominated diphenyl ethers in the environment: a wake-up call for concerted action in India",
-    "authors": [
-      "Sonam Paliya",
-      "Ashootosh Mandpe",
-      "Sakina Bombaywala",
-      "Manukonda Suresh Kumar",
-      "Sunil Kumar",
-      "Vivek Kumar Morya"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Environmental Science and Pollution Research",
-    "year": 2021,
-    "volume": "28",
-    "issue": "33",
-    "pages": "44693-44715",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
     "doi": "10.1242/bio.058919",
     "title": "Research culture: science from bench to society",
     "authors": [
@@ -6637,30 +5933,6 @@
     ]
   },
   {
-    "doi": "10.1016/b978-0-12-824463-0.00014-8",
-    "title": "Solid Waste Treatment: Technological Advancements and Challenges",
-    "authors": [
-      "Vinay Pratap",
-      "Sakina Bombaywala",
-      "Ashootosh Mandpe",
-      "Saif Ullah Khan"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Soft Computing Techniques in Solid Waste and Wastewater Management",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "215-231",
-    "group_orcids": [
-      "0000-0001-5630-6269"
-    ]
-  },
-  {
     "doi": "10.1016/j.mcpro.2021.100076",
     "title": "Spectral Prediction Features as a Solution for the Search Space Size Problem in Proteogenomics",
     "authors": [
@@ -6697,30 +5969,6 @@
     "group_orcids": [
       "0000-0002-1679-1711",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.3389/fmolb.2021.688973",
-    "title": "Systematic Analysis of the Impact of R-Methylation on RBPs-RNA Interactions: A Proteomic Approach",
-    "authors": [
-      "Marianna Maniaci",
-      "Francesca Ludovica Boffo",
-      "Enrico Massignani",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Frontiers in Molecular Biosciences",
-    "year": 2021,
-    "volume": "8",
-    "issue": "",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-4328-0538"
     ]
   },
   {
@@ -6810,32 +6058,6 @@
     ]
   },
   {
-    "doi": "10.3390/su13137447",
-    "title": "The Urban Rooftop Photovoltaic Potential Determination",
-    "authors": [
-      "Elham Fakhraian",
-      "Marc Alier",
-      "Francesc Valls Dalmau",
-      "Alireza Nameni",
-      "Maria José Casañ Guerrero"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0003-3922-1516",
-      "0000-0002-9400-5659",
-      null,
-      null
-    ],
-    "journal": "Sustainability",
-    "year": 2021,
-    "volume": "13",
-    "issue": "13",
-    "pages": "7447",
-    "group_orcids": [
-      "0000-0002-7471-9195"
-    ]
-  },
-  {
     "doi": "10.1101/2021.05.18.444604",
     "title": "UMGAP: the Unipept MetaGenomics Analysis Pipeline",
     "authors": [
@@ -6863,34 +6085,6 @@
     "pages": "",
     "group_orcids": [
       "0000-0002-6675-1048"
-    ]
-  },
-  {
-    "doi": "10.1007/978-3-030-86169-8_8",
-    "title": "Understanding the Role of Genetic and Protein Networking Involved in Microbial Bioremediation",
-    "authors": [
-      "Upasana Jhariya",
-      "Shweta Srivastava",
-      "Sanchita Das",
-      "Sakina Bombaywala",
-      "Sejal Mahallea",
-      "Nishant A. Dafale"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Bioremediation of Environmental Pollutants",
-    "year": 2021,
-    "volume": "",
-    "issue": "",
-    "pages": "187-219",
-    "group_orcids": [
-      "0000-0001-5630-6269"
     ]
   },
   {
@@ -7092,32 +6286,6 @@
     "pages": "418-431",
     "group_orcids": [
       "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.2174/1389203721666200426232531",
-    "title": "Biochemical and Computational Approaches for the Large-Scale Analysis of Protein Arginine Methylation by Mass Spectrometry",
-    "authors": [
-      "Daniele Musiani",
-      "Enrico Massignani",
-      "Alessandro Cuomo",
-      "Avinash Yadav",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      null,
-      "0000-0002-4328-0538",
-      null,
-      null,
-      "0000-0003-3556-1265"
-    ],
-    "journal": "Current Protein &amp; Peptide Science",
-    "year": 2020,
-    "volume": "21",
-    "issue": "7",
-    "pages": "725-739",
-    "group_orcids": [
-      "0000-0002-4328-0538"
     ]
   },
   {
@@ -7459,44 +6627,6 @@
     ]
   },
   {
-    "doi": "10.1016/j.celrep.2019.12.061",
-    "title": "PRMT1 Is Recruited via DNA-PK to Chromatin Where It Sustains the Senescence-Associated Secretory Phenotype in Response to Cisplatin",
-    "authors": [
-      "Daniele Musiani",
-      "Roberto Giambruno",
-      "Enrico Massignani",
-      "Marica Rosaria Ippolito",
-      "Marianna Maniaci",
-      "Sriganesh Jammula",
-      "Daria Manganaro",
-      "Alessandro Cuomo",
-      "Luciano Nicosia",
-      "Diego Pasini",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Cell Reports",
-    "year": 2020,
-    "volume": "30",
-    "issue": "4",
-    "pages": "1208-1222.e9",
-    "group_orcids": [
-      "0000-0002-4328-0538"
-    ]
-  },
-  {
     "doi": "10.1101/2020.03.16.994038",
     "title": "Pitfalls in re-analysis of observational omics studies: a post-mortem of the human pathology atlas",
     "authors": [
@@ -7701,76 +6831,6 @@
     "group_orcids": [
       "0000-0003-4039-5230",
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1182/blood.2019004121",
-    "title": "Site-specific methylation of 18S ribosomal RNA by SNORD42A is required for acute myeloid leukemia cell proliferation",
-    "authors": [
-      "Cornelius Pauli",
-      "Yi Liu",
-      "Christian Rohde",
-      "Chunhong Cui",
-      "Daria Fijalkowska",
-      "Dennis Gerloff",
-      "Carolin Walter",
-      "Jeroen Krijgsveld",
-      "Martin Dugas",
-      "Bayram Edemir",
-      "Caroline Pabst",
-      "Lutz P. Müller",
-      "Fengbiao Zhou",
-      "Carsten Müller-Tidow"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      "0000-0002-2084-146X",
-      null,
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-9716-5909",
-      null,
-      null,
-      "0000-0002-7166-5232"
-    ],
-    "journal": "Blood",
-    "year": 2020,
-    "volume": "135",
-    "issue": "23",
-    "pages": "2059-2070",
-    "group_orcids": [
-      "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.1007/s11356-020-11318-6",
-    "title": "Study of indiscriminate distribution of restrained antimicrobial resistome of different environmental niches",
-    "authors": [
-      "Sakina Bombaywala",
-      "Nishant A. Dafale",
-      "Varsha Jha",
-      "Abhay Bajaj",
-      "Hemant J. Purohit"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Environmental Science and Pollution Research",
-    "year": 2020,
-    "volume": "28",
-    "issue": "9",
-    "pages": "10780-10790",
-    "group_orcids": [
-      "0000-0001-5630-6269"
     ]
   },
   {
@@ -8028,40 +7088,6 @@
     ]
   },
   {
-    "doi": "10.1093/nar/gkz1051",
-    "title": "PRMT1-mediated methylation of the microprocessor-associated proteins regulates microRNA biogenesis",
-    "authors": [
-      "Valeria Spadotto",
-      "Roberto Giambruno",
-      "Enrico Massignani",
-      "Marija Mihailovich",
-      "Marianna Maniaci",
-      "Francesca Patuzzo",
-      "Francesco Ghini",
-      "Francesco Nicassio",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Nucleic Acids Research",
-    "year": 2019,
-    "volume": "48",
-    "issue": "1",
-    "pages": "96-115",
-    "group_orcids": [
-      "0000-0002-4328-0538"
-    ]
-  },
-  {
     "doi": "10.1021/acs.jproteome.9b00064",
     "title": "Proteomics Standards Initiative Extended FASTA Format",
     "authors": [
@@ -8120,48 +7146,6 @@
     ]
   },
   {
-    "doi": "10.1126/scisignal.aat8388",
-    "title": "Proteomics profiling of arginine methylation defines PRMT5 substrate specificity",
-    "authors": [
-      "Daniele Musiani",
-      "Jabez Bok",
-      "Enrico Massignani",
-      "Liling Wu",
-      "Tommaso Tabaglio",
-      "Marica Rosaria Ippolito",
-      "Alessandro Cuomo",
-      "Umut Ozbek",
-      "Habiba Zorgati",
-      "Umesh Ghoshdastider",
-      "Robert C. Robinson",
-      "Ernesto Guccione",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      "0000-0001-6851-2633",
-      "0000-0002-7659-7726",
-      "0000-0002-4328-0538",
-      null,
-      "0000-0001-6873-3073",
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-7764-5307",
-      "0000-0003-3556-1265"
-    ],
-    "journal": "Science Signaling",
-    "year": 2019,
-    "volume": "12",
-    "issue": "575",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-4328-0538"
-    ]
-  },
-  {
     "doi": "10.1101/681429",
     "title": "Removing the hidden data dependency of DIA with predicted spectral libraries",
     "authors": [
@@ -8203,116 +7187,6 @@
     ]
   },
   {
-    "doi": "10.1038/s41598-019-47952-5",
-    "title": "Stress-induced phospho-ubiquitin formation causes parkin degradation",
-    "authors": [
-      "Lyudmila Kovalchuke",
-      "Eugene V. Mosharov",
-      "Oren A. Levy",
-      "Lloyd A. Greene"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Scientific Reports",
-    "year": 2019,
-    "volume": "9",
-    "issue": "1",
-    "pages": "",
-    "group_orcids": [
-      "0009-0009-8207-353X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.ccell.2019.07.003",
-    "title": "Therapeutic Targeting of RNA Splicing Catalysis through Inhibition of Protein Arginine Methylation",
-    "authors": [
-      "Jia Yi Fong",
-      "Luca Pignata",
-      "Pierre-Alexis Goy",
-      "Kimihito Cojin Kawabata",
-      "Stanley Chun-Wei Lee",
-      "Cheryl M. Koh",
-      "Daniele Musiani",
-      "Enrico Massignani",
-      "Andriana G. Kotini",
-      "Alex Penson",
-      "Cheng Mun Wun",
-      "Yudao Shen",
-      "Megan Schwarz",
-      "Diana HP. Low",
-      "Alexander Rialdi",
-      "Michelle Ki",
-      "Heike Wollmann",
-      "Slim Mzoughi",
-      "Florence Gay",
-      "Christine Thompson",
-      "Timothy Hart",
-      "Olena Barbash",
-      "Genna M. Luciani",
-      "Magdalena M. Szewczyk",
-      "Bas J. Wouters",
-      "Ruud Delwel",
-      "Eirini P. Papapetrou",
-      "Dalia Barsyte-Lovejoy",
-      "Cheryl H. Arrowsmith",
-      "Mark D. Minden",
-      "Jian Jin",
-      "Ari Melnick",
-      "Tiziana Bonaldi",
-      "Omar Abdel-Wahab",
-      "Ernesto Guccione"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      "0000-0001-7764-5307"
-    ],
-    "journal": "Cancer Cell",
-    "year": 2019,
-    "volume": "36",
-    "issue": "2",
-    "pages": "194-209.e9",
-    "group_orcids": [
-      "0000-0002-4328-0538"
-    ]
-  },
-  {
     "doi": "10.1021/acs.jproteome.9b00328",
     "title": "ThermoRawFileParser: Modular, Scalable, and Cross-Platform RAW File Conversion",
     "authors": [
@@ -8340,28 +7214,6 @@
     "pages": "537-542",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1177/2472555218818756",
-    "title": "Transfer Learning with Deep Convolutional Neural Networks for Classifying Cellular Morphological Changes",
-    "authors": [
-      "Alexander Kensert",
-      "Philip J. Harrison",
-      "Ola Spjuth"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      null
-    ],
-    "journal": "SLAS Discovery",
-    "year": 2019,
-    "volume": "24",
-    "issue": "4",
-    "pages": "466-475",
-    "group_orcids": [
-      "0000-0002-5295-010X"
     ]
   },
   {
@@ -8407,34 +7259,6 @@
     "pages": "W295-W299",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1002/pmic.201800300",
-    "title": "hmSEEKER: Identification of hmSILAC Doublets in MaxQuant Output Data",
-    "authors": [
-      "Enrico Massignani",
-      "Alessandro Cuomo",
-      "Daniele Musiani",
-      "SriGanesh Jammula",
-      "Giulio Pavesi",
-      "Tiziana Bonaldi"
-    ],
-    "author_orcids": [
-      "0000-0002-4328-0538",
-      null,
-      null,
-      null,
-      null,
-      "0000-0003-3556-1265"
-    ],
-    "journal": "PROTEOMICS",
-    "year": 2019,
-    "volume": "19",
-    "issue": "5",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-4328-0538"
     ]
   },
   {
@@ -8506,30 +7330,6 @@
     ]
   },
   {
-    "doi": "10.1186/s13321-018-0304-9",
-    "title": "Evaluating parameters for ligand-based modeling with random forest on sparse data sets",
-    "authors": [
-      "Alexander Kensert",
-      "Jonathan Alvarsson",
-      "Ulf Norinder",
-      "Ola Spjuth"
-    ],
-    "author_orcids": [
-      "0000-0002-5295-010X",
-      null,
-      null,
-      null
-    ],
-    "journal": "Journal of Cheminformatics",
-    "year": 2018,
-    "volume": "10",
-    "issue": "1",
-    "pages": "",
-    "group_orcids": [
-      "0000-0002-5295-010X"
-    ]
-  },
-  {
     "doi": "10.1093/nar/gky1031",
     "title": "LNCipedia 5: towards a reference set of human long non-coding RNAs",
     "authors": [
@@ -8557,36 +7357,6 @@
     "pages": "D135-D139",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1093/gbe/evy024",
-    "title": "More than the “Killer Trait”: Infection with the Bacterial Endosymbiont Caedibacter taeniospiralis Causes Transcriptomic Modulation in Paramecium Host",
-    "authors": [
-      "Katrin Grosser",
-      "Pathmanaban Ramasamy",
-      "Azim Dehghani Amirabad",
-      "Marcel H Schulz",
-      "Gilles Gasparoni",
-      "Martin Simon",
-      "Martina Schrallhammer"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Genome Biology and Evolution",
-    "year": 2018,
-    "volume": "10",
-    "issue": "2",
-    "pages": "646-656",
-    "group_orcids": [
-      "0000-0003-4039-5230"
     ]
   },
   {
@@ -8637,36 +7407,6 @@
     "pages": "765-769",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.bbadis.2018.05.024",
-    "title": "Transgenic expression of the RNA binding protein IMP2 stabilizes miRNA targets in murine microsteatosis",
-    "authors": [
-      "Azim Dehghani Amirabad",
-      "Pathmanaban Ramasamy",
-      "Marina Wierz",
-      "Karl Nordström",
-      "Sonja M. Kessler",
-      "Marcel H. Schulz",
-      "Martin Simon"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Biochimica et Biophysica Acta (BBA) - Molecular Basis of Disease",
-    "year": 2018,
-    "volume": "1864",
-    "issue": "10",
-    "pages": "3099-3108",
-    "group_orcids": [
-      "0000-0003-4039-5230"
     ]
   },
   {
@@ -8928,30 +7668,6 @@
     "pages": "7997-8013",
     "group_orcids": [
       "0000-0002-2084-146X"
-    ]
-  },
-  {
-    "doi": "10.1016/j.bbamem.2016.09.022",
-    "title": "Differential subcellular distribution of four phospholipase C isoforms and secretion of GPI-PLC activity",
-    "authors": [
-      "Emanuel Staudt",
-      "Pathmanaban Ramasamy",
-      "Helmut Plattner",
-      "Martin Simon"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null,
-      null
-    ],
-    "journal": "Biochimica et Biophysica Acta (BBA) - Biomembranes",
-    "year": 2016,
-    "volume": "1858",
-    "issue": "12",
-    "pages": "3157-3168",
-    "group_orcids": [
-      "0000-0003-4039-5230"
     ]
   },
   {
@@ -10890,28 +9606,6 @@
     "pages": "1087-1090",
     "group_orcids": [
       "0000-0003-4277-658X"
-    ]
-  },
-  {
-    "doi": "10.1021/ja101292a",
-    "title": "Nucleophilic Acyl Substitution via Aromatic Cation Activation of Carboxylic Acids: Rapid Generation of Acid Chlorides under Mild Conditions",
-    "authors": [
-      "David J. Hardee",
-      "Lyudmila Kovalchuke",
-      "Tristan H. Lambert"
-    ],
-    "author_orcids": [
-      null,
-      null,
-      null
-    ],
-    "journal": "Journal of the American Chemical Society",
-    "year": 2010,
-    "volume": "132",
-    "issue": "14",
-    "pages": "5002-5003",
-    "group_orcids": [
-      "0009-0009-8207-353X"
     ]
   },
   {

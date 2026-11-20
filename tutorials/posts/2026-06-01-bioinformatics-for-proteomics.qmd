@@ -33,7 +33,6 @@ aliases:
     <header class="bfp-module-head">
       <span class="bfp-module-num">1</span>
       <div class="bfp-module-heading">
-        <span class="bfp-eyebrow">Module</span>
         <h2 class="bfp-module-title">Identification</h2>
         <p class="bfp-module-desc">The full path from a raw file to validated peptides and proteins: format conversion, spectrum processing, database preparation, peptide-spectrum matching, inference, validation, PTM analysis, and de novo sequencing.</p>
       </div>
@@ -122,7 +121,6 @@ aliases:
     <header class="bfp-module-head">
       <span class="bfp-module-num">2</span>
       <div class="bfp-module-heading">
-        <span class="bfp-eyebrow">Module</span>
         <h2 class="bfp-module-title">Functional analysis</h2>
         <p class="bfp-module-desc">Turning an identification list into biology: retrieving protein information, pathway analysis, 3D structure visualisation, and Gene Ontology annotation.</p>
       </div>
@@ -140,7 +138,6 @@ aliases:
     <header class="bfp-module-head">
       <span class="bfp-module-num">3</span>
       <div class="bfp-module-heading">
-        <span class="bfp-eyebrow">Module</span>
         <h2 class="bfp-module-title">Data sharing</h2>
         <p class="bfp-module-desc">Submitting and reusing data through community repositories: converting results to standard formats, submitting to PRIDE and ProteomeXchange, browsing published datasets, and reprocessing.</p>
       </div>
@@ -206,7 +203,6 @@ aliases:
     <header class="bfp-module-head">
       <span class="bfp-module-num">4</span>
       <div class="bfp-module-heading">
-        <span class="bfp-eyebrow">Module</span>
         <h2 class="bfp-module-title">Quantification</h2>
         <p class="bfp-module-desc">Estimating protein abundance across several orders of magnitude, covering the main quantification strategies and their trade-offs.</p>
       </div>

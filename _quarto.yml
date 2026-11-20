@@ -8,6 +8,10 @@ project:
   render:
     - "**/*.qmd"
     - "**/*.md"
+    # repository docs, not site pages
+    - "!DESIGN.md"
+    - "!CLAUDE.md"
+    - "!TODO.md"
   resources:
     - data/
     - tutorials/notebooks/
@@ -20,7 +24,7 @@ project:
 
 website:
   title: "CompOmics"
-  description: "Computational Proteomics — Ghent University / VIB"
+  description: "Computational proteomics at Ghent University and VIB"
   favicon: assets/images/favicon.png
   site-url: https://compomics.github.io
   # default social-preview image (per-page title/description come from front matter)
@@ -49,7 +53,8 @@ website:
         aria-label: GitHub
 
   page-footer:
-    left: "© CompOmics — Ghent University / VIB"
+    left: '<span class="footer-brand"><img class="footer-logo" src="/assets/images/CompOmics_neg.png" alt="CompOmics"> © CompOmics, Ghent University and VIB</span>'
+    center: "Technologiepark 75, 9052 Gent-Zwijnaarde, Belgium"
     right:
       - text: "GitHub"
         href: https://github.com/compomics

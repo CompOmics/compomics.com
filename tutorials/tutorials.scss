@@ -11,23 +11,13 @@
   margin: 0.5rem 0 2rem;
 }
 
-.tut-head-kicker {
-  font-family: $font-family-monospace;
-  font-size: $fs-xs;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: $primary;
-  margin-bottom: 0.55rem;
-}
-
 .tut-head-title {
   font-family: $font-family-heading;
-  font-weight: 800;
+  font-weight: 700;
   font-size: $fs-display;
   color: $ink;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   margin: 0 0 0.7rem;
   padding: 0;
   border: none;
@@ -42,10 +32,108 @@
   margin: 0;
 }
 
+// ── Tutorial list (tutorials-list.ejs) ─────────────────────────────────────────
+[data-line="prediction"]     { --line: var(--rl-prediction);     --line-text: var(--rl-prediction-text); }
+[data-line="identification"] { --line: var(--rl-identification); --line-text: var(--rl-identification-text); }
+[data-line="metaproteomics"] { --line: var(--rl-metaproteomics); --line-text: var(--rl-metaproteomics-text); }
+[data-line="fair"]           { --line: var(--rl-fair);           --line-text: var(--rl-fair-text); }
+[data-line="reprocessing"]   { --line: var(--rl-reprocessing);   --line-text: var(--rl-reprocessing-text); }
+[data-line="neutral"]        { --line: var(--rl-neutral);        --line-text: var(--rl-neutral-text); }
+
+.tut-list {
+  margin: 0 0 2.5rem;
+  border-top: 1px solid $line;
+}
+
+.tut-row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  column-gap: 2rem;
+  padding: 1.5rem 0.25rem;
+  border-bottom: 1px solid $line;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+
+    .tut-row-title { color: $primary; }
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+}
+
+.tut-row-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.35rem;
+  font-family: $font-family-sans-serif;
+  font-size: $fs-sm;
+
+  @media (max-width: 576px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding-top: 0;
+  }
+}
+
+.tut-row-date {
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+}
+
+// research line: a small dot in the line colour plus its name
+.tut-row-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--line-text);
+  font-weight: 600;
+
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--line);
+    flex-shrink: 0;
+  }
+}
+
+.tut-row-body {
+  display: block;
+  max-width: 68ch;
+}
+
+.tut-row-title {
+  display: block;
+  font-family: $font-family-heading;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: $ink;
+  margin-bottom: 0.4rem;
+  transition: color 0.15s ease;
+}
+
+.tut-row-desc {
+  display: block;
+  font-family: $font-family-sans-serif;
+  font-size: $fs-base;
+  line-height: 1.6;
+  color: $ink-soft;
+}
+
 // ── "Bioinformatics for Proteomics" course page ──────────────────────────────
 // A numbered lab-manual layout: each module is a chapter, each step hangs off a
 // left rail (the workflow is a real sequence, so the numbering carries meaning).
-// Resources are type-coded chips — blue for materials, red for external tools.
+// Resources are type-coded chips: blue for materials, neutral for external tools.
 // Scoped under .bfp so nothing leaks to other posts.
 .bfp {
   --bfp-rail: 3rem;      // width of the number column
@@ -66,10 +154,9 @@
     display: flex;
     gap: 0.8rem;
     padding: 0.9rem 1.1rem;
-    background: $cream-2;
+    background: $paper-2;
     border: 1px solid $line;
-    border-left: 3px solid $primary;
-    border-radius: 0 0.4rem 0.4rem 0;
+    border-radius: 0.5rem;
     margin: 1.5rem 0;
 
     > i {
@@ -93,7 +180,6 @@
   }
 
   .bfp-note--inline {
-    border-left-color: $secondary;
     margin: 0 0 1.5rem;
     > i { color: $secondary; }
   }
@@ -106,13 +192,11 @@
   .bfp-general-label,
   .bfp-related-label {
     display: block;
-    font-family: $font-family-monospace;
-    font-size: $fs-xs;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: $muted;
-    margin-bottom: 0.55rem;
+    font-family: $font-family-sans-serif;
+    font-size: $fs-sm;
+    font-weight: 600;
+    color: $ink;
+    margin-bottom: 0.5rem;
   }
 
   // ── Module (chapter) ──────────────────────────────────────────────────────
@@ -128,7 +212,7 @@
 
   .bfp-module-num {
     font-family: $font-family-heading;
-    font-weight: 800;
+    font-weight: 700;
     font-size: $fs-xl;
     line-height: 1;
     color: $primary;
@@ -136,21 +220,10 @@
     letter-spacing: -0.02em;
   }
 
-  .bfp-eyebrow {
-    display: block;
-    font-family: $font-family-monospace;
-    font-size: $fs-xs;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: $muted;
-    margin-bottom: 0.25rem;
-  }
-
   .bfp-module-title {
     font-family: $font-family-heading;
     font-size: $fs-xl;
-    font-weight: 800;
+    font-weight: 700;
     color: $ink;
     line-height: 1.1;
     margin: 0 0 0.4rem;
@@ -181,9 +254,10 @@
   }
 
   .bfp-step-num {
-    font-family: $font-family-monospace;
+    font-family: $font-family-sans-serif;
     font-size: $fs-sm;
-    font-weight: 700;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
     color: $primary;
     text-align: right;
     padding-top: 0.15rem;
@@ -223,7 +297,7 @@
     font-weight: 600;
     line-height: 1;
     color: $ink-soft;
-    background: $cream-2;
+    background: $paper-2;
     border: 1px solid $line;
     border-radius: 0.4rem;
     text-decoration: none;
@@ -239,10 +313,10 @@
     }
   }
 
-  // external software gets the red accent, so tools read differently from materials
+  // external software gets a neutral icon, so tools read differently from materials
   .bfp-link--tool {
-    i { color: $secondary; }
-    &:hover { border-color: $secondary; color: $secondary; }
+    i { color: $ink-soft; }
+    &:hover { border-color: $ink-soft; color: $ink; }
   }
 
   // ── Narrow screens: shrink the rail, keep the spine ───────────────────────

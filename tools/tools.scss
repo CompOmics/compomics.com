@@ -1,51 +1,31 @@
-/*-- scss:defaults --*/
-
-// Category accent colours (mid-tone: legible on both cream and charcoal).
-// Used as solid badge backgrounds and thin tile accents on the tools page.
-$cat-prediction:     #3a86c8;  // blue
-$cat-identification: #d6534a;  // red
-$cat-support:        #2f9e8b;  // teal
-$cat-biological:     #8a6fc0;  // violet
-$cat-metaproteomics: #c8912f;  // amber
-$cat-community:      #4f9d6b;  // green (community projects)
-
 /*-- scss:rules --*/
 
 // hide Quarto's default title block — the page renders its own .tools-head
 // (matches publications/tutorials/team, so the header sits at the same height)
 #title-block-header { display: none !important; }
 
-:root {
-  --cat-prediction:     #{$cat-prediction};
-  --cat-identification: #{$cat-identification};
-  --cat-support:        #{$cat-support};
-  --cat-biological:     #{$cat-biological};
-  --cat-metaproteomics: #{$cat-metaproteomics};
-  --cat-community:      #{$cat-community};
-}
+// Each tool category takes the colour of its research line (assets/compomics.scss):
+// --cat fills borders, dots and badge tints, --cat-text is used for text.
+[data-cat="all"]            { --cat: #{$primary};             --cat-text: #{$primary}; }
+[data-cat="prediction"]     { --cat: var(--rl-prediction);     --cat-text: var(--rl-prediction-text); }
+[data-cat="identification"] { --cat: var(--rl-identification); --cat-text: var(--rl-identification-text); }
+[data-cat="support"]        { --cat: var(--rl-fair);           --cat-text: var(--rl-fair-text); }
+[data-cat="biological"]     { --cat: var(--rl-reprocessing);   --cat-text: var(--rl-reprocessing-text); }
+[data-cat="metaproteomics"] { --cat: var(--rl-metaproteomics); --cat-text: var(--rl-metaproteomics-text); }
+[data-cat="community"]      { --cat: var(--rl-neutral);        --cat-text: var(--rl-neutral-text); }
 
-// ── Page header — kicker + title + intro (no banner) ─────────────────────────
+// ── Page header: title + intro ───────────────────────────────────────────────
 .tools-head {
   margin: 0.5rem 0 2rem;
 }
 
-.tools-head-kicker {
-  font-family: $font-family-monospace;
-  font-size: $fs-xs;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: $primary;
-  margin-bottom: 0.55rem;
-}
-
 .tools-head-title {
   font-family: $font-family-heading;
-  font-weight: 800;
+  font-weight: 700;
   font-size: $fs-display;
   color: $ink;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   margin: 0 0 0.7rem;
   padding: 0;
   border: none;
@@ -93,9 +73,9 @@ $cat-community:      #4f9d6b;  // green (community projects)
   font-family: $font-family-sans-serif;
   font-size: $fs-sm;
   color: $ink;
-  background: $cream-2;
+  background: $paper-2;
   border: 1px solid $line;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 
   &::placeholder { color: $muted; }
@@ -104,7 +84,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
     outline: none;
     background: $surface-hover;
     border-color: $primary;
-    box-shadow: 0 0 0 3px rgba(31, 95, 143, 0.12);
+    box-shadow: 0 0 0 3px rgba($primary, 0.18);
   }
 
   // hide native search clear (we render our own)
@@ -131,7 +111,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   border-radius: 50%;
   transition: color 0.15s ease, background 0.15s ease;
 
-  &:hover { color: $ink; background: $cream-3; }
+  &:hover { color: $ink; background: $paper-3; }
 }
 
 .tools-chips {
@@ -141,15 +121,14 @@ $cat-community:      #4f9d6b;  // green (community projects)
 }
 
 .tools-chip {
-  --cat: #{$primary};
   font-family: $font-family-sans-serif;
   font-size: $fs-xs;
   font-weight: 600;
   letter-spacing: 0.01em;
   padding: 0.4rem 0.9rem;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   border: 1px solid $line;
-  background: $cream-2;
+  background: $paper-2;
   color: $ink-soft;
   cursor: pointer;
   transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
@@ -170,19 +149,18 @@ $cat-community:      #4f9d6b;  // green (community projects)
   &:hover { border-color: var(--cat); color: $ink; }
 
   &.is-active {
-    background: var(--cat);
-    border-color: var(--cat);
-    color: #fff;
+    background: var(--cat-text);
+    border-color: var(--cat-text);
+    color: $paper-2;
 
-    &::before { background: rgba(255, 255, 255, 0.85); }
+    &::before { background: $paper-2; }
   }
 }
 
 .tools-count {
-  font-family: $font-family-monospace;
-  font-size: $fs-xs;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  font-size: $fs-sm;
+  font-variant-numeric: tabular-nums;
   color: $muted;
   margin-bottom: 1.4rem;
 }
@@ -216,41 +194,23 @@ $cat-community:      #4f9d6b;  // green (community projects)
 }
 
 .tool-tile {
-  --cat: #{$primary};
   display: flex;
   flex-direction: column;
   padding: 1.35rem 1.4rem 1.1rem;
-  // $cream-3 sits a step above the page background in both themes, so cards
-  // stay clearly separated (in dark mode $cream-2 was nearly the page colour)
-  background: $cream-3;
+  background: $paper-2;
   border: 1px solid $line;
   border-top: 3px solid var(--cat);
-  border-radius: 0.2rem 0.2rem 0.6rem 0.6rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-
-  // staggered entrance
-  animation: tool-tile-in 0.5s ease both;
-  animation-delay: calc(var(--i, 0) * 45ms);
+  border-radius: 0.25rem 0.25rem 0.6rem 0.6rem;
+  box-shadow: 0 1px 2px rgba(20, 40, 60, 0.05);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 
   &:hover {
-    transform: translateY(-4px);
-    background: $surface-hover;
-    border-color: $line;
+    border-color: color-mix(in srgb, var(--cat) 45%, $line);
     border-top-color: var(--cat);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 24px rgba(20, 40, 60, 0.10);
   }
 
   &.is-hidden { display: none; }
-}
-
-@keyframes tool-tile-in {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tool-tile { animation: none; }
 }
 
 .tool-tile-top {
@@ -270,7 +230,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--cat);
+  color: var(--cat-text);
   background: color-mix(in srgb, var(--cat) 12%, transparent);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -295,13 +255,12 @@ $cat-community:      #4f9d6b;  // green (community projects)
 .tool-tile-cat {
   font-family: $font-family-sans-serif;
   font-size: $fs-xs;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #fff;
-  background: var(--cat);
+  font-weight: 600;
+  color: var(--cat-text);
+  background: color-mix(in srgb, var(--cat) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat) 35%, transparent);
   padding: 0.2rem 0.55rem;
-  border-radius: 2rem;
+  border-radius: 0.4rem;
   white-space: nowrap;
 }
 
@@ -333,7 +292,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
   margin: 0;
 
   a {
-    color: var(--cat);
+    color: var(--cat-text);
     font-weight: 600;
     text-decoration: none;
     &:hover { text-decoration: underline; }
@@ -341,7 +300,7 @@ $cat-community:      #4f9d6b;  // green (community projects)
 
   // non-link highlighted term in the category accent colour
   .tool-tile-note-hl {
-    color: var(--cat);
+    color: var(--cat-text);
     font-weight: 600;
   }
 }
@@ -390,10 +349,8 @@ $cat-community:      #4f9d6b;  // green (community projects)
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 2px solid $cream-2;
-  background: $cream-3;
-
-  .tool-tile:hover & { border-color: $surface-hover; }
+  border: 2px solid $paper-2;
+  background: $paper-3;
 }
 
 // Always two badges per row (extra ones wrap to a new row of two)
@@ -412,11 +369,11 @@ $cat-community:      #4f9d6b;  // green (community projects)
   font-family: $font-family-sans-serif;
   font-size: $fs-xs;
   font-weight: 500;
-  border-radius: 2rem;
+  border-radius: 0.4rem;
   border: 1px solid $line;
   color: $ink-soft;
   text-decoration: none;
-  background: $cream;
+  background: $paper;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
   i { font-size: 0.78rem; }
@@ -424,27 +381,21 @@ $cat-community:      #4f9d6b;  // green (community projects)
   &:hover {
     background: $primary;
     border-color: $primary;
-    color: #fff;
+    color: $paper;
     text-decoration: none;
   }
 }
 
-.tool-tile-link-paper:hover {
-  background: $secondary;
-  border-color: $secondary;
-  color: #fff;
-}
-
-// Tutorial badge — filled category colour so it stands out from plain links
+// Tutorial badge: filled in the category colour so it stands out from plain links
 .tool-tile-link-tutorial {
-  background: var(--cat);
-  border-color: var(--cat);
-  color: #fff;
+  background: var(--cat-text);
+  border-color: var(--cat-text);
+  color: $paper-2;
 
   &:hover {
-    background: color-mix(in srgb, var(--cat) 82%, #000);
-    border-color: color-mix(in srgb, var(--cat) 82%, #000);
-    color: #fff;
+    background: color-mix(in srgb, var(--cat-text) 85%, $ink);
+    border-color: color-mix(in srgb, var(--cat-text) 85%, $ink);
+    color: $paper-2;
   }
 }
 
@@ -459,9 +410,9 @@ $cat-community:      #4f9d6b;  // green (community projects)
   font-size: $fs-xs;
   font-weight: 600;
   letter-spacing: 0.02em;
-  border-radius: 2rem;
+  border-radius: 0.4rem;
   border: 1px dashed var(--cat);
-  color: var(--cat);
+  color: var(--cat-text);
   background: color-mix(in srgb, var(--cat) 10%, transparent);
   white-space: nowrap;
 

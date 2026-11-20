@@ -9,9 +9,8 @@ toc: false
   <img class="page-hero-img" src="../assets/frames/bg-1.jpg" alt="">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <div class="page-hero-kicker">People</div>
     <h1 class="page-hero-title">Team</h1>
-    <p class="page-hero-sub">Researchers, developers, and support staff behind the CompOmics platform.</p>
+    <p class="page-hero-sub">Researchers, developers, and support staff of the CompOmics group.</p>
   </div>
 </div>
 <script>
@@ -34,7 +33,7 @@ toc: false
 <section class="team-shell">
   <div class="team-shell-intro">
 
-  <h3 class="team-section-title">Group Leader</h3>
+  <h2 class="team-section-title">Group leader</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="lennart">
@@ -44,7 +43,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Postdoctoral Researchers</h3>
+  <h2 class="team-section-title">Postdoctoral researchers</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="robbin">
@@ -96,7 +95,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Predoctoral Researchers</h3>
+  <h2 class="team-section-title">Predoctoral researchers</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="toon">
@@ -160,7 +159,7 @@ toc: false
     </div>
   </div>
 
-  <h3 class="team-section-title">Support Staff</h3>
+  <h2 class="team-section-title">Support staff</h2>
   <div class="team-grid team-grid-selectors">
     <div class="team-card-wrap">
       <button type="button" class="team-card" data-member="lyuda">
@@ -241,18 +240,6 @@ toc: false
         { title: 'lesSDRF is more: maximizing the value of proteomics data through streamlined metadata annotation', url: 'https://doi.org/10.1038/s41467-023-42543-5', venue: 'Nature Communications · 2023' },
         { title: 'MS²Rescore: Data-Driven Rescoring Dramatically Boosts Immunopeptide Identification Rates', url: 'https://doi.org/10.1016/j.mcpro.2022.100266', venue: 'Molecular & Cellular Proteomics · 2022' },
         { title: 'MLMarker: A machine learning framework for tissue inference and biomarker discovery', url: 'https://doi.org/10.1101/2025.06.10.658642', venue: 'bioRxiv · 2025' }
-      ]
-    },
-    sakina: {
-      title: 'Sakina Bombaywala',
-      orcid: '0000-0001-5630-6269',
-      role: 'Postdoctoral Researcher',
-      email: 'sakina.bombaywala@ugent.be',
-      about: 'Sakina obtained her PhD at the National Environmental Engineering Research Institute in India (Academy of Scientific and Innovative Research). Her doctoral research focused on applying multi-omics approaches to understand microbiome interactions, with applications in wastewater management. Soon after, she joined the CompOmics lab, where her current work focuses on developing omics workflows for disease tracking and environmental surveillance. Outside work, she enjoys trying out different athletic sports.',
-      currentWork: 'Sakina works across whole-genome sequencing, metagenomics, RNA-seq, variant calling, and phylogenetic analysis. She develops scalable, reproducible bioinformatics solutions that support disease tracking and environmental surveillance. In addition to data analysis, she contributes to bioinformatics training for researchers, laboratory technicians, and clinicians within international collaborations.',
-      publications: [
-        { title: 'Meta-analysis of wastewater microbiome for antibiotic resistance profiling', url: 'https://doi.org/10.1016/j.mimet.2024.106953', venue: 'Journal of Microbiological Methods · 2024' },
-        { title: 'Project ODIN: advancing environmental genomic surveillance for public health across sub-Saharan Africa', url: 'https://doi.org/10.1016/j.lanmic.2026.101426', venue: 'The Lancet Microbe · 2026' }
       ]
     },
     robbin: {
@@ -368,12 +355,6 @@ toc: false
         { title: 'Creating a supportive academic culture by preventing and responding to transgressive behavior', url: 'https://doi.org/10.1038/s44220-025-00409-3', venue: 'Nature Mental Health · 2025' },
         { title: 'mzPeak: Designing a Scalable, Interoperable, and Future-Ready Mass Spectrometry Data Format', url: 'https://doi.org/10.1021/acs.jproteome.5c00435', venue: 'Journal of Proteome Research · 2025' }
       ]
-    },
-    pieter: {
-      title: 'Pieter Verschaffelt',
-      orcid: '0000-0002-6675-1048',
-      role: 'Postdoctoral Researcher',
-      email: 'pieter.verschaffelt@ugent.be'
     },
     toon: {
       title: 'Toon Callens',
@@ -578,7 +559,6 @@ toc: false
 
     // header
     let html = '<div class="team-detail-header">'
-      + '<div class="team-detail-eyebrow">Profile</div>'
       + '<h3>' + (d.title || key) + '</h3>'
       + '<p class="team-detail-role">' + (d.role || '') + '</p>'
       + '</div>';

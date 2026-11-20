@@ -1,0 +1,23 @@
+<%
+// Tutorial list: one row per post, date and research line on the left, title
+// and description on the right. The optional `research-line` front-matter
+// field (prediction, identification, metaproteomics, fair, reprocessing) sets
+// the colour and label; a post in the `course` category is labelled "Course".
+const LINES = {
+  prediction: 'Analyte prediction',
+  identification: 'Identification',
+  metaproteomics: 'Metaproteomics',
+  fair: 'FAIR & AI-ready data',
+  reprocessing: 'Reprocessing'
+};
+%>
+```{=html}
+<div class="tut-list list">
+<% for (const item of items) { const line = LINES[item['research-line']] ? item['research-line'] : 'neutral'; const label = line !== 'neutral' ? LINES[line] : ((item.categories || []).includes('course') ? 'Course' : ''); %>
+<a class="tut-row" href="<%- item.path %>" data-line="<%= line %>" <%= metadataAttrs(item) %>>
+<span class="tut-row-meta"><span class="tut-row-date"><%= item.date %></span><% if (label) { %><span class="tut-row-line"><%= label %></span><% } %></span>
+<span class="tut-row-body"><span class="tut-row-title" role="heading" aria-level="2"><%= item.title %></span><% if (item.description) { %><span class="tut-row-desc"><%= item.description %></span><% } %></span>
+</a>
+<% } %>
+</div>
+```

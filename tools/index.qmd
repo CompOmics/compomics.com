@@ -7,26 +7,25 @@ toc: false
 ```{=html}
 <section class="tools-page">
   <header class="tools-head">
-    <div class="tools-head-kicker">Software</div>
     <h1 class="tools-head-title">Tools</h1>
-    <p class="tools-head-sub">Open-source software for mass spectrometry-based proteomics. All tools are freely available under permissive licences — source on <a href="https://github.com/compomics">GitHub</a>.</p>
+    <p class="tools-head-sub">Open-source software for mass spectrometry-based proteomics. All tools are freely available under permissive licences. Source code is on <a href="https://github.com/compomics">GitHub</a>.</p>
   </header>
 
   <div class="tools-toolbar">
     <div class="tools-search">
       <i class="bi bi-search tools-search-icon" aria-hidden="true"></i>
       <input type="search" id="tools-search-input" class="tools-search-input"
-             placeholder="Search tools…" autocomplete="off" spellcheck="false"
+             placeholder="Search tools" autocomplete="off" spellcheck="false"
              aria-label="Search tools">
       <button type="button" class="tools-search-clear" id="tools-search-clear" aria-label="Clear search" hidden>&times;</button>
     </div>
     <div class="tools-chips" id="tools-chips" role="group" aria-label="Filter by category">
       <button type="button" class="tools-chip is-active" data-cat="all">All</button>
-      <button type="button" class="tools-chip" data-cat="prediction" style="--cat: var(--cat-prediction)">Prediction</button>
-      <button type="button" class="tools-chip" data-cat="identification" style="--cat: var(--cat-identification)">Identification</button>
-      <button type="button" class="tools-chip" data-cat="support" style="--cat: var(--cat-support)">Support</button>
-      <button type="button" class="tools-chip" data-cat="biological" style="--cat: var(--cat-biological)">Interpretation</button>
-      <button type="button" class="tools-chip" data-cat="metaproteomics" style="--cat: var(--cat-metaproteomics)">Metaproteomics</button>
+      <button type="button" class="tools-chip" data-cat="prediction">Prediction</button>
+      <button type="button" class="tools-chip" data-cat="identification">Identification</button>
+      <button type="button" class="tools-chip" data-cat="support">Support</button>
+      <button type="button" class="tools-chip" data-cat="biological">Interpretation</button>
+      <button type="button" class="tools-chip" data-cat="metaproteomics">Metaproteomics</button>
     </div>
   </div>
 
@@ -40,7 +39,6 @@ toc: false
 
 <section class="community-page">
   <header class="tools-head community-head">
-    <div class="tools-head-kicker">Community</div>
     <h2 class="tools-head-title">Community projects</h2>
     <p class="tools-head-sub">Open, community-driven initiatives that CompOmics helps build and maintain, together with the wider proteomics community.</p>
   </header>
@@ -373,7 +371,6 @@ toc: false
   function buildCard(tool, index) {
     const card = document.createElement('article');
     card.className = 'tool-tile';
-    card.style.setProperty('--cat', 'var(--cat-' + tool.cat + ')');
     card.style.setProperty('--i', index);
     card.dataset.cat = tool.cat;
     card.dataset.haystack = (tool.name + ' ' + tool.desc + ' ' + (CATS[tool.cat] ? CATS[tool.cat].label : '')).toLowerCase();
