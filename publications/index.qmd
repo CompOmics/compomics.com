@@ -21,6 +21,8 @@ import os
 import re
 import unicodedata
 from pathlib import Path
+
+import yaml
 from IPython.display import HTML
 
 project_root = Path(os.environ.get("QUARTO_PROJECT_DIR") or Path.cwd())
@@ -48,16 +50,10 @@ else:
         text = re.sub(r"<[^>]+>", "", text or "")
         return " ".join(html.unescape(text).split())
 
-    # Current CompOmics members: the `title` of every memberData entry in
-    # team/index.qmd. Used for author highlighting and the "by person" filter.
-    team_src = (project_root / "team" / "index.qmd").read_text(encoding="utf-8")
-    member_block = team_src[team_src.index("const memberData"):]
-    MEMBERS = [
-        name.replace("\\'", "'")
-        for name in re.findall(
-            r"^ {4}[A-Za-z0-9_]+: \{\n {6}title: '((?:[^'\\]|\\.)*)'", member_block, re.M
-        )
-    ]
+    # Current CompOmics members from team/team.yml. Used for author highlighting
+    # and the "by person" filter.
+    team = yaml.safe_load((project_root / "team" / "team.yml").read_text(encoding="utf-8"))
+    MEMBERS = [m["name"] for group in team for m in group["members"]]
 
     def name_tokens(name):
         """Lowercase name words with accents removed, so "Güneş" matches "Gunes"."""
