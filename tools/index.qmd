@@ -2,6 +2,8 @@
 title: "Tools"
 description: "Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent."
 toc: false
+include-in-header:
+  file: ../_jsonld/tools.html
 listing:
   - id: tools
     contents: tools.yml

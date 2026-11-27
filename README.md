@@ -55,6 +55,8 @@ assets/
 
 The visual design system (colours, type, components, rules) is described in `DESIGN.md`.
 
+Structured data (schema.org JSON-LD) for the home, team and tools pages is generated from `team/team.yml` and `tools/tools.yml` by `scripts/build-structured-data.py` on every render. Tools marked `comingSoon` are left out.
+
 ## Team changes
 
 Team data lives in `team/team.yml`: one entry per person (`key`, `name`, `orcid`, `role`, profile text) in its section, with the photo at `assets/images/<key>.jpg`. The publication fetch, author highlighting and the person filter on the publications page read the current members from `team.yml`.

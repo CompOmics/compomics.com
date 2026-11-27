@@ -4,6 +4,7 @@ project:
   # Guard: fail the build when team/team.yml is broken.
   pre-render:
     - scripts/check-team-data.py
+    - scripts/build-structured-data.py
   render:
     - "**/*.qmd"
     - "**/*.md"

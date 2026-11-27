@@ -24,7 +24,7 @@ const grid = templateParams.grid;
 ```{=html}
 <div class="<%- grid %>" id="<%- grid %>">
 <% items.forEach((tool, i) => { const cat = CATS[tool.cat] || tool.cat; const links = tool.links || {}; %>
-<article class="tool-tile" style="--i: <%- i %>" data-cat="<%- tool.cat %>" data-haystack="<%- (tool.name + ' ' + tool.desc + ' ' + cat).toLowerCase() %>">
+<article class="tool-tile" id="<%- tool.name.normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') %>" style="--i: <%- i %>" data-cat="<%- tool.cat %>" data-haystack="<%- (tool.name + ' ' + tool.desc + ' ' + cat).toLowerCase() %>">
 <div class="tool-tile-top"><span class="tool-tile-icon<%- tool.logo ? ' has-logo' : '' %>"><% if (tool.logo) { %><img src="../assets/images/tools/<%- tool.logo %>" alt="<%- tool.name %> logo" onerror="this.remove(); this.closest('.tool-tile-icon').classList.remove('has-logo')"><% } %><i class="bi <%- tool.icon %>"></i></span><span class="tool-tile-cat"><%- cat %></span></div>
 <h3 class="tool-tile-name no-anchor"><%- tool.name %></h3>
 <p class="tool-tile-desc"><%- tool.desc %></p>
