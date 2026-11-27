@@ -1,0 +1,39 @@
+<%
+// Tool cards from tools.yml or community.yml; template-params.grid sets the grid class and id.
+// Quarto uses lodash templates: the dash tag escapes, the equals tag outputs raw HTML.
+const CATS = {
+  prediction: 'Prediction',
+  identification: 'Identification',
+  support: 'Support',
+  biological: 'Interpretation',
+  metaproteomics: 'Metaproteomics',
+  community: 'Community'
+};
+const LINKS = [
+  ['github',   'bi-github',            'Code',     ''],
+  ['docs',     'bi-book',              'Docs',     ''],
+  ['pypi',     'bi-box-seam',          'PyPI',     ''],
+  ['bioconda', 'bi-cpu',               'Bioconda', ''],
+  ['web',      'bi-globe',             'Web app',  ''],
+  ['api',      'bi-braces',            'API',      ''],
+  ['paper',    'bi-file-earmark-text', 'Paper',    ' tool-tile-link-paper'],
+  ['tutorial', 'bi-mortarboard-fill',  'Tutorial', ' tool-tile-link-tutorial']
+];
+const grid = templateParams.grid;
+%>
+```{=html}
+<div class="<%- grid %>" id="<%- grid %>">
+<% items.forEach((tool, i) => { const cat = CATS[tool.cat] || tool.cat; const links = tool.links || {}; %>
+<article class="tool-tile" style="--i: <%- i %>" data-cat="<%- tool.cat %>" data-haystack="<%- (tool.name + ' ' + tool.desc + ' ' + cat).toLowerCase() %>">
+<div class="tool-tile-top"><span class="tool-tile-icon<%- tool.logo ? ' has-logo' : '' %>"><% if (tool.logo) { %><img src="../assets/images/tools/<%- tool.logo %>" alt="<%- tool.name %> logo" onerror="this.remove(); this.closest('.tool-tile-icon').classList.remove('has-logo')"><% } %><i class="bi <%- tool.icon %>"></i></span><span class="tool-tile-cat"><%- cat %></span></div>
+<h3 class="tool-tile-name no-anchor"><%- tool.name %></h3>
+<p class="tool-tile-desc"><%- tool.desc %></p>
+<% if (tool.note) { %><p class="tool-tile-note"><%= tool.note %></p><% } %>
+<div class="tool-tile-foot">
+<% if (tool.devs && tool.devs.length) { %><div class="tool-tile-devs"><% tool.devs.slice(0, 4).forEach((key) => { const dev = key.charAt(0).toUpperCase() + key.slice(1); %><a class="tool-tile-dev-link" href="../team/index.html#member-<%- key %>" title="<%- dev %>"><img class="tool-tile-dev" src="../assets/images/<%- key %>.jpg" alt="<%- dev %>" onerror="this.closest('.tool-tile-dev-link').style.display='none'"></a><% }) %></div><% } %>
+<div class="tool-tile-links"><% if (tool.comingSoon) { %><span class="tool-tile-soon"><i class="bi bi-hourglass-split"></i>Coming soon</span><% } %><% LINKS.forEach(([key, icon, label, cls]) => { if (links[key]) { %><a class="tool-tile-link<%- cls %>" href="<%- links[key] %>" title="<%- label %>"><i class="bi <%- icon %>"></i><span><%- label %></span></a><% } }) %></div>
+</div>
+</article>
+<% }) %>
+</div>
+```

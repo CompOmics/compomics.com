@@ -1,0 +1,252 @@
+# Tools on the Tools page, in display order. Add a tool by adding an entry.
+# cat: prediction, identification, support, biological or metaproteomics
+# links (shown in this order): github, docs, pypi, bioconda, web, api, paper, tutorial
+# devs: team image keys (assets/images/<key>.jpg)
+# logo (optional): file in assets/images/tools/; falls back to icon if missing
+# comingSoon (optional): true shows a "Coming soon" pill
+
+# Prediction
+- name: MS²PIP
+  cat: prediction
+  icon: bi-bar-chart-fill
+  logo: ms2pip.png
+  desc: Predicts MS² fragment-ion intensities from peptide sequence, for spectral libraries and rescoring.
+  links:
+    github: https://github.com/compomics/ms2pip
+    web: https://iomics.ugent.be/ms2pip/
+    paper: https://doi.org/10.1093/nar/gkad335
+    tutorial: ../tutorials/posts/2026-06-10-peptide-predictor.html
+  devs: [arthur, ralf]
+
+- name: DeepLC
+  cat: prediction
+  icon: bi-clock-history
+  logo: deeplc.png
+  desc: Deep-learning retention-time prediction that generalises to peptides with unseen modifications.
+  links:
+    github: https://github.com/compomics/DeepLC
+    # docs: https://compomics.github.io/DeepLC
+    # pypi: https://pypi.org/project/deeplc/
+    # bioconda: https://bioconda.github.io/recipes/deeplc/README.html
+    web: https://iomics.ugent.be/deeplc/
+    paper: https://doi.org/10.1038/s41592-021-01301-5
+    tutorial: ../tutorials/posts/2026-06-10-peptide-predictor.html
+  devs: [robbin, ralf]
+
+- name: iDeepLC
+  cat: prediction
+  icon: bi-clock-history
+  logo: ideeplc.png
+  desc: Retention-time prediction from peptide chemical structure (SMILES), generalising to modifications unseen during training.
+  links:
+    github: https://github.com/compomics/iDeepLC
+    paper: https://doi.org/10.1021/acs.analchem.5c08017
+  devs: [alireza, robbin]
+
+- name: CALLC
+  cat: prediction
+  icon: bi-clock-history
+  logo: callc.png
+  desc: Generalized calibration that maps retention-time predictions between different liquid chromatography setups, avoiding setup-specific models.
+  links:
+    github: https://github.com/CompOmics/CALLC
+    paper: https://doi.org/10.1021/acs.analchem.0c00233
+  devs: [robbin]
+
+- name: peptide-GNN
+  cat: prediction
+  icon: bi-diagram-3
+  comingSoon: true
+  desc: Graph neural network for interpretable peptide retention-time prediction.
+  links:
+    github: https://github.com/CompOmics/peptide-gnn
+    paper: https://doi.org/10.64898/2026.05.18.725893
+  devs: [robbin, alex]
+
+- name: IM2Deep
+  cat: prediction
+  icon: bi-wind
+  logo: im2deep.svg
+  desc: Predicts collisional cross-section (CCS) values for peptides, including modified, and multiple conformations.
+  links:
+    github: https://github.com/compomics/im2deep
+    paper: https://doi.org/10.1021/acs.analchem.5c01142
+    tutorial: ../tutorials/posts/2026-06-10-peptide-predictor.html
+  devs: [robbe]
+
+- name: IM2Fly
+  cat: prediction
+  icon: bi-rocket-takeoff
+  logo: im2fly.png
+  comingSoon: true
+  desc: Peptide flyability prediction for targeted mass spectrometry.
+  devs: [xuxa]
+
+- name: MHC-3PO
+  cat: prediction
+  icon: bi-shield-shaded
+  logo: mhc3po.png
+  comingSoon: true
+  desc: Binding affinity predictions for HLA-bound immunopeptides, through graph neural networks and protein language models.
+  devs: [arthur]
+
+# Identification
+- name: MS²Rescore
+  cat: identification
+  icon: bi-arrow-repeat
+  logo: ms2rescore.png
+  desc: Rescores peptide-spectrum matches with predicted features to boost confident identifications.
+  links:
+    github: https://github.com/compomics/ms2rescore
+    paper: https://doi.org/10.1016/j.mcpro.2022.100266
+    tutorial: ../tutorials/posts/2026-06-11-ms2rescore.html
+  devs: [ralf, arthur, robbin, robbe]
+
+- name: SearchGUI
+  cat: identification
+  icon: bi-search
+  logo: searchgui.png
+  desc: A unified graphical interface to configure and run multiple proteomics search engines at once.
+  links:
+    github: https://github.com/compomics/searchgui
+    web: https://compomics.github.io/projects/searchgui.html
+    paper: https://doi.org/10.1021/acs.jproteome.8b00175
+
+- name: PeptideShaker
+  cat: identification
+  icon: bi-grid-3x3-gap-fill
+  logo: peptideshaker.png
+  desc: Interactive visualisation and interpretation of peptide and protein identification results.
+  links:
+    github: https://github.com/compomics/peptide-shaker
+    web: https://compomics.github.io/projects/peptide-shaker.html
+    paper: https://doi.org/10.1038/nbt.3109
+
+- name: MSI-PICASSO
+  cat: identification
+  icon: bi-brush
+  logo: msipicasso.png
+  comingSoon: true
+  desc: FDR-controlled peptide-feature matching for MALDI mass spectrometry imaging.
+  devs: [robbe]
+
+# Support
+- name: ThermoRawFileParser
+  cat: support
+  icon: bi-file-earmark-binary
+  logo: thermorawfileparser.png
+  desc: Converts Thermo .raw files to open formats (mzML, MGF, Parquet) on Windows, macOS, and Linux.
+  links:
+    github: https://github.com/compomics/ThermoRawFileParser
+    paper: https://doi.org/10.1021/acs.jproteome.9b00328
+
+- name: lesSDRF
+  cat: support
+  icon: bi-table
+  logo: lesSDRF.png
+  desc: Interactive app for ontology-compliant SDRF metadata annotation of proteomics experiments.
+  links:
+    github: https://github.com/compomics/lesSDRF
+    web: https://lessdrf.streamlit.app/
+    paper: https://doi.org/10.1038/s41467-023-42543-5
+  devs: [tine]
+
+- name: psm_utils
+  cat: support
+  icon: bi-code-slash
+  logo: psmutils.png
+  desc: Python library for reading, writing, and handling identification data from any search engine.
+  links:
+    github: https://github.com/compomics/psm_utils
+    docs: https://psm-utils.readthedocs.io
+  devs: [ralf]
+
+- name: HAMLET
+  cat: support
+  icon: bi-robot
+  comingSoon: true
+  desc: Agentic, LLM-based tool that extracts proteomics metadata from manuscript text for downstream reuse.
+  devs: [hari, tine]
+
+# Biological interpretation
+- name: Scop3P
+  cat: biological
+  icon: bi-diagram-3
+  logo: scop3p.png
+  desc: Comprehensive resource of human phosphosites mapped within their full structural context.
+  links:
+    github: https://github.com/compomics
+    web: https://iomics.ugent.be/scop3p/
+    paper: https://doi.org/10.1021/acs.jproteome.0c00306
+  devs: [pathmanaban, natalia]
+
+- name: Scop3PTM
+  cat: biological
+  icon: bi-diagram-3-fill
+  logo: scop3ptm.png
+  desc: Maps post-translational modifications onto protein structures for contextual, structure-aware analysis.
+  links:
+    github: https://github.com/compomics
+    web: https://iomics.ugent.be/scop3ptm
+  devs: [pathmanaban, natalia]
+
+- name: MLMarker
+  cat: biological
+  icon: bi-clipboard2-pulse
+  logo: mlmarker.png
+  desc: Machine-learning framework for tissue inference and biomarker discovery from proteomes.
+  links:
+    github: https://github.com/compomics
+    web: https://mlmarker.streamlit.app/
+    paper: https://doi.org/10.1101/2025.06.10.658642
+  devs: [tine]
+
+- name: ModPA
+  cat: biological
+  icon: bi-asterisk
+  logo: modpa.png
+  desc: Analyses associations between post-translational modifications to reveal PTM crosstalk and proteoforms.
+  links:
+    github: https://github.com/compomics
+  devs: [enrico]
+
+- name: PTMVision
+  cat: biological
+  icon: bi-eye
+  logo: ptmvision.png
+  desc: Interactive web platform for exploratory visual analysis of post-translational modifications from mass spectrometry data.
+  links:
+    web: https://ptmvision-tuevis.cs.uni-tuebingen.de/
+    paper: https://doi.org/10.1021/acs.jproteome.4c00679
+  devs: [caro]
+
+- name: E. coli PeptideAtlas Build
+  cat: biological
+  icon: bi-virus
+  logo: bacterium.png
+  desc: Characterizing the observed Escherichia coli pan-proteome and its post-translational modifications.
+  links:
+    web: https://peptideatlas.org/builds/ecoli/
+    paper: https://doi.org/10.1021/acs.jproteome.5c00902
+  devs: [caro]
+
+# Metaproteomics
+- name: Peptonizer2000
+  cat: metaproteomics
+  icon: bi-virus
+  logo: peptonizer2000.png
+  desc: Bayesian taxon confidence scoring for metaproteomics from peptide-level evidence.
+  links:
+    github: https://github.com/compomics/Peptonizer2000
+  devs: [tim, pieter]
+
+- name: Unipept
+  cat: metaproteomics
+  icon: bi-diagram-2
+  logo: unipept.png
+  desc: Tryptic-peptide-based taxonomic and functional analysis of metaproteome samples, with a public API.
+  links:
+    github: https://github.com/unipept/unipept
+    web: https://unipept.ugent.be/
+    paper: https://doi.org/10.1021/pr300576s
+  devs: [tim, pieter]

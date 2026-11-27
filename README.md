@@ -37,8 +37,10 @@ publications/
   extra_orcids.txt   # ORCID iDs fetched in addition to the team's
 tools/
   index.qmd          # tools + community projects (searchable/filterable)
+  tools.yml          # tool data, one entry per tool
+  community.yml      # community project data
+  tools-grid.ejs     # card template for both grids
   tools.scss         # tools page styles
-  example-tool.qmd   # one file per tool
 team/
   index.qmd          # team cards and memberData (profiles, ORCID iDs)
   network.qmd        # affiliated members, collaborators and alumni
@@ -64,6 +66,6 @@ When a member leaves:
 1. Remove the card and the `memberData` entry from `team/index.qmd`.
 2. Add the ORCID iD to `publications/extra_orcids.txt` to keep their publications listed.
 3. Add the person to `team/network.qmd`.
-4. Remove their key from the `devs` lists in `tools/index.qmd`, or keep it to show them as a developer without a team profile.
+4. Remove their key from the `devs` lists in `tools/tools.yml` and `tools/community.yml`, or keep it to show them as a developer without a team profile.
 
 `scripts/check-team-data.js` runs before every render. It blocks the build when `memberData` has a syntax error or a card has no entry, and prints notes for members without an ORCID iD and for tool developers without a team profile.
