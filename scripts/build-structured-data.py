@@ -108,7 +108,10 @@ for t in tools:
     if t.get("comingSoon"):
         continue
     links = {k: absolute(v, "tools") for k, v in (t.get("links") or {}).items()}
-    url = links.get("web") or links.get("docs") or links.get("github")
+    org_page = None
+    if not re.match(r"https://github\.com/[^/]+/[^/]+", links.get("github", "")):
+        org_page = links.pop("github", None)  # organisation page, not a repository
+    url = links.get("web") or links.get("docs") or links.get("github") or org_page
     app = {
         "@type": ["SoftwareApplication", "SoftwareSourceCode"] if "github" in links else "SoftwareApplication",
         "@id": f"{SITE}/tools/#{slug(t['name'])}",

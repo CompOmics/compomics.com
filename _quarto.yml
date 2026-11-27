@@ -5,6 +5,8 @@ project:
   pre-render:
     - scripts/check-team-data.py
     - scripts/build-structured-data.py
+  post-render:
+    - scripts/build-llms-txt.py
   render:
     - "**/*.qmd"
     - "**/*.md"

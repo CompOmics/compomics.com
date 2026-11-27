@@ -55,7 +55,7 @@ assets/
 
 The visual design system (colours, type, components, rules) is described in `DESIGN.md`.
 
-Structured data (schema.org JSON-LD) for the home, team and tools pages is generated from `team/team.yml` and `tools/tools.yml` by `scripts/build-structured-data.py` on every render. Tools marked `comingSoon` are left out.
+Structured data (schema.org JSON-LD) for the home, team and tools pages is generated from `team/team.yml` and `tools/tools.yml` by `scripts/build-structured-data.py` on every render. `scripts/build-llms-txt.py` writes `llms.txt` from the same data, the page descriptions and the tutorial posts. Tools marked `comingSoon` are left out of both.
 
 ## Team changes
 
