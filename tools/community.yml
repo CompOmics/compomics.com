@@ -1,0 +1,57 @@
+# Community projects, shown below the tools. Same fields as tools.yml (cat: community).
+# note (optional): short line under the description; HTML allowed.
+
+- name: ProteoBench
+  cat: community
+  icon: bi-balloon
+  logo: proteobench.png
+  desc: Community-curated platform for comparing and benchmarking proteomics data analysis workflows.
+  note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.'
+  links:
+    github: https://github.com/Proteobench/ProteoBench
+    web: https://proteobench.cubimed.rub.de/
+    paper: https://doi.org/10.64898/2025.12.09.692895
+  devs: [robbin, robbe, caro, sam]
+
+- name: ProteomicsML
+  cat: community
+  icon: bi-journal-bookmark
+  logo: proteomicsml.svg
+  desc: Open, community-driven datasets and tutorials for machine learning on proteomics data.
+  note: 'Started at a 2022 <span class="tool-tile-note-hl">Lorentz Center</span> workshop.'
+  links:
+    github: https://github.com/ProteomicsML/ProteomicsML
+    web: https://www.proteomicsml.org/
+    paper: https://doi.org/10.1021/acs.jproteome.2c00629
+  devs: [ralf, robbin]
+
+- name: Rusteomics
+  cat: community
+  icon: bi-gear-wide-connected
+  logo: rusteomics.png
+  desc: Community effort building fast, reliable Rust libraries and tooling for mass spectrometry proteomics.
+  note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.'
+  links:
+    web: https://rusteomics.eubic-ms.org/
+  devs: [kevin, ralf]
+
+- name: mzPeak
+  cat: community
+  icon: bi-layer-forward
+  logo: mzpeak.png
+  desc: A scalable, interoperable, and future-ready mass spectrometry data format.
+  note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.'
+  links:
+    github: https://github.com/HUPO-PSI/mzPeak
+    web: https://www.mzpeak.org/
+    paper: https://doi.org/10.1021/acs.jproteome.5c00435
+  devs: [tim, ralf]
+
+- name: PSI-AI
+  cat: community
+  icon: bi-filetype-ai
+  desc: Working group making proteomics data AI-ready and standardizing the use of AI in data analysis workflows.
+  note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.'
+  links:
+    web: https://psi-ai.org/
+  devs: [ralf, tine, hari]

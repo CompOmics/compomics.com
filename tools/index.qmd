@@ -2,6 +2,25 @@
 title: "Tools"
 description: "Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent."
 toc: false
+include-in-header:
+  file: ../_jsonld/tools.html
+listing:
+  - id: tools
+    contents: tools.yml
+    template: tools-grid.ejs
+    template-params:
+      grid: tools-grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+  - id: community
+    contents: community.yml
+    template: tools-grid.ejs
+    template-params:
+      grid: community-grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
 ---
 
 ```{=html}
@@ -30,7 +49,12 @@ toc: false
   </div>
 
   <div class="tools-count" id="tools-count" aria-live="polite"></div>
-  <div class="tools-grid" id="tools-grid"></div>
+```
+
+::: {#tools}
+:::
+
+```{=html}
   <div class="tools-empty" id="tools-empty" hidden>
     <i class="bi bi-search"></i>
     <p>No tools match your search.</p>
@@ -42,409 +66,23 @@ toc: false
     <h2 class="tools-head-title">Community projects</h2>
     <p class="tools-head-sub">Open, community-driven initiatives that CompOmics helps build and maintain, together with the wider proteomics community.</p>
   </header>
-  <div class="community-grid" id="community-grid"></div>
+```
+
+::: {#community}
+:::
+
+```{=html}
 </section>
 
 <script>
 (function () {
-  // ── Category metadata ───────────────────────────────────────────────────────
-  const CATS = {
-    prediction:     { label: 'Prediction' },
-    identification: { label: 'Identification' },
-    support:        { label: 'Support' },
-    biological:     { label: 'Interpretation' },
-    metaproteomics: { label: 'Metaproteomics' },
-    community:      { label: 'Community' }
-  };
-
-  // ── Tool data — add a new tool by appending an object here ───────────────────
-  // links keys (rendered in this order, always): github, docs, pypi, bioconda,
-  //   web, api, paper, tutorial. Just add the ones a tool has — order is automatic.
-  // devs: array of team image keys (assets/images/<key>.jpg)
-  // logo (optional): filename in assets/images/tools/ (e.g. 'deeplc.png');
-  //   shown in the icon slot, falls back to `icon` if missing. Omit to use icon.
-  // comingSoon (optional): set true to show a "Coming soon" pill in the links row.
-  const TOOLS = [
-    // ── Prediction ─────────────────────────────────────────────────────────
-    {
-      name: 'MS²PIP', cat: 'prediction', icon: 'bi-bar-chart-fill', logo: 'ms2pip.png',
-      desc: 'Predicts MS² fragment-ion intensities from peptide sequence, for spectral libraries and rescoring.',
-      links: {
-        github: 'https://github.com/compomics/ms2pip',
-        web: 'https://iomics.ugent.be/ms2pip/',
-        paper: 'https://doi.org/10.1093/nar/gkad335',
-        tutorial: '../tutorials/posts/2026-06-10-peptide-predictor.html',
-      },
-      devs: ['arthur', 'ralf']
-    },
-    {
-      name: 'DeepLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'deeplc.png',
-      desc: 'Deep-learning retention-time prediction that generalises to peptides with unseen modifications.',
-      links: {
-        github: 'https://github.com/compomics/DeepLC',
-        // docs: 'https://compomics.github.io/DeepLC',
-        // pypi: 'https://pypi.org/project/deeplc/',
-        // bioconda: 'https://bioconda.github.io/recipes/deeplc/README.html',
-        web: 'https://iomics.ugent.be/deeplc/',
-        paper: 'https://doi.org/10.1038/s41592-021-01301-5',
-        tutorial: '../tutorials/posts/2026-06-10-peptide-predictor.html'
-      },
-      devs: ['robbin', 'ralf']
-    },
-    {
-      name: 'iDeepLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'ideeplc.png',
-      desc: 'Retention-time prediction from peptide chemical structure (SMILES), generalising to modifications unseen during training.',
-      links: {
-        github: 'https://github.com/compomics/iDeepLC',
-        paper: 'https://doi.org/10.1021/acs.analchem.5c08017',
-      },
-      devs: ['alireza', 'robbin']
-    },
-    {
-      name: 'CALLC', cat: 'prediction', icon: 'bi-clock-history', logo: 'callc.png',
-      desc: 'Generalized calibration that maps retention-time predictions between different liquid chromatography setups, avoiding setup-specific models.',
-      links: {
-        github: 'https://github.com/CompOmics/CALLC',
-        paper: 'https://doi.org/10.1021/acs.analchem.0c00233',
-      },
-      devs: ['robbin']
-    },
-    {
-      name: 'peptide-GNN', cat: 'prediction', icon: 'bi-diagram-3', comingSoon: true,
-      desc: 'Graph neural network for interpretable peptide retention-time prediction.',
-      links: {
-        github: 'https://github.com/CompOmics/peptide-gnn',
-        paper: 'https://doi.org/10.64898/2026.05.18.725893',
-      },
-      devs: ['robbin', 'alex']
-    },
-    {
-      name: 'IM2Deep', cat: 'prediction', icon: 'bi-wind', logo: 'im2deep.svg',
-      desc: 'Predicts collisional cross-section (CCS) values for peptides, including modified, and multiple conformations.',
-      links: {
-        github: 'https://github.com/compomics/im2deep',
-        paper: 'https://doi.org/10.1021/acs.analchem.5c01142',
-        tutorial: '../tutorials/posts/2026-06-10-peptide-predictor.html'
-      },
-      devs: ['robbe']
-    },
-    {
-      name: 'IM2Fly', cat: 'prediction', icon: 'bi-rocket-takeoff', logo: 'im2fly.png', comingSoon: true,
-      desc: 'Peptide flyability prediction for targeted mass spectrometry.', comingSoon: true,
-      // links: { github: 'https://github.com/compomics' },
-      devs: ['xuxa']
-    },
-    {
-      name: 'MHC-3PO', cat: 'prediction', icon: 'bi-shield-shaded', logo: 'mhc3po.png',
-      desc: 'Binding affinity predictions for HLA-bound immunopeptides, through graph neural networks and protein language models.', comingSoon: true,
-      // links: { github: 'https://github.com/compomics' },
-      devs: ['arthur']
-    },
-
-    // ── Identification ─────────────────────────────────────────────────────
-    {
-      name: 'MS²Rescore', cat: 'identification', icon: 'bi-arrow-repeat', logo: 'ms2rescore.png',
-      desc: 'Rescores peptide-spectrum matches with predicted features to boost confident identifications.',
-      links: {
-        github: 'https://github.com/compomics/ms2rescore',
-        paper: 'https://doi.org/10.1016/j.mcpro.2022.100266',
-        tutorial: '../tutorials/posts/2026-06-11-ms2rescore.qmd'
-      },
-      devs: ['ralf', 'arthur', 'robbin', 'robbe']
-    },
-      {
-        name: 'SearchGUI', cat: 'identification', icon: 'bi-search', logo: 'searchgui.png',
-        desc: 'A unified graphical interface to configure and run multiple proteomics search engines at once.',
-        links: {
-          github: 'https://github.com/compomics/searchgui',
-          web: 'https://compomics.github.io/projects/searchgui.html',
-          paper: 'https://doi.org/10.1021/acs.jproteome.8b00175',
-        }
-      },
-    {
-      name: 'PeptideShaker', cat: 'identification', icon: 'bi-grid-3x3-gap-fill', logo: 'peptideshaker.png',
-      desc: 'Interactive visualisation and interpretation of peptide and protein identification results.',
-      links: {
-        github: 'https://github.com/compomics/peptide-shaker',
-        web: 'https://compomics.github.io/projects/peptide-shaker.html',
-        paper: 'https://doi.org/10.1038/nbt.3109',
-      }
-    },
-    {
-      name: 'MSI-PICASSO', cat: 'identification', icon: 'bi-brush', logo: 'msipicasso.png',
-      desc: 'FDR-controlled peptide-feature matching for MALDI mass spectrometry imaging.', comingSoon: true,
-      links: {
-      },
-      devs: ['robbe']
-    },
-
-    // ── Support ────────────────────────────────────────────────────────────
-    {
-      name: 'ThermoRawFileParser', cat: 'support', icon: 'bi-file-earmark-binary', logo: 'thermorawfileparser.png',
-      desc: 'Converts Thermo .raw files to open formats (mzML, MGF, Parquet) on Windows, macOS, and Linux.',
-      links: {
-        github: 'https://github.com/compomics/ThermoRawFileParser',
-        paper: 'https://doi.org/10.1021/acs.jproteome.9b00328',
-      }
-    },
-    {
-      name: 'lesSDRF', cat: 'support', icon: 'bi-table', logo: 'lesSDRF.png',
-      desc: 'Interactive app for ontology-compliant SDRF metadata annotation of proteomics experiments.',
-      links: {
-        github: 'https://github.com/compomics/lesSDRF',
-        web: 'https://lessdrf.streamlit.app/',
-        paper: 'https://doi.org/10.1038/s41467-023-42543-5',
-      },
-      devs: ['tine']
-    },
-    {
-      name: 'psm_utils', cat: 'support', icon: 'bi-code-slash', logo: 'psmutils.png',
-      desc: 'Python library for reading, writing, and handling identification data from any search engine.',
-      links: {
-        github: 'https://github.com/compomics/psm_utils',
-        docs: 'https://psm-utils.readthedocs.io',
-      },
-      devs: ['ralf']
-    },
-    {
-      name: 'HAMLET', cat: 'support', icon: 'bi-robot',
-      desc: 'Agentic, LLM-based tool that extracts proteomics metadata from manuscript text for downstream reuse.', comingSoon: true,
-      // links: { github: 'https://github.com/compomics' },
-      devs: ['hari', 'tine']
-    },
-
-    // ── Biological interpretation ────────────────────────────────────────────
-    {
-      name: 'Scop3P', cat: 'biological', icon: 'bi-diagram-3', logo: 'scop3p.png',
-      desc: 'Comprehensive resource of human phosphosites mapped within their full structural context.',
-      links: {
-        github: 'https://github.com/compomics',
-        web: 'https://iomics.ugent.be/scop3p/',
-        paper: 'https://doi.org/10.1021/acs.jproteome.0c00306',
-      },
-      devs: ['pathmanaban', 'natalia']
-    },
-    {
-      name: 'Scop3PTM', cat: 'biological', icon: 'bi-diagram-3-fill', logo: 'scop3ptm.png',
-      desc: 'Maps post-translational modifications onto protein structures for contextual, structure-aware analysis.',
-      links: {
-        github: 'https://github.com/compomics',
-        web: 'https://iomics.ugent.be/scop3ptm',
-      },
-      devs: ['pathmanaban', 'natalia']
-    },
-    {
-      name: 'MLMarker', cat: 'biological', icon: 'bi-clipboard2-pulse', logo: 'mlmarker.png',
-      desc: 'Machine-learning framework for tissue inference and biomarker discovery from proteomes.',
-      links: {
-        github: 'https://github.com/compomics',
-        web: 'https://mlmarker.streamlit.app/',
-        paper: 'https://doi.org/10.1101/2025.06.10.658642',
-      },
-      devs: ['tine']
-    },
-    {
-      name: 'ModPA', cat: 'biological', icon: 'bi-asterisk', logo: 'modpa.png',
-      desc: 'Analyses associations between post-translational modifications to reveal PTM crosstalk and proteoforms.',
-      links: { github: 'https://github.com/compomics' },
-      devs: ['enrico']
-    },
-    {
-      name: 'PTMVision', cat: 'biological', icon: 'bi-eye', logo: 'ptmvision.png',
-      desc: 'Interactive web platform for exploratory visual analysis of post-translational modifications from mass spectrometry data.',
-      links: {
-        web: 'https://ptmvision-tuevis.cs.uni-tuebingen.de/',
-        paper: 'https://doi.org/10.1021/acs.jproteome.4c00679',
-      },
-      devs: ['caro']
-    },
-    {
-      name: 'E. coli PeptideAtlas Build', cat: 'biological', icon: 'bi-virus', logo: 'bacterium.png',
-      desc:'Characterizing the observed Escherichia coli pan-proteome and its post-translational modifications.',
-      links: {
-        web: 'https://peptideatlas.org/builds/ecoli/',
-        paper: 'https://doi.org/10.1021/acs.jproteome.5c00902'
-        },
-        devs: ['caro']
-    },
-
-    // ── Metaproteomics ─────────────────────────────────────────────────────
-    {
-      name: 'Peptonizer2000', cat: 'metaproteomics', icon: 'bi-virus', logo: 'peptonizer2000.png',
-      desc: 'Bayesian taxon confidence scoring for metaproteomics from peptide-level evidence.',
-      links: { github: 'https://github.com/compomics/Peptonizer2000' },
-      devs: ['tim', 'pieter']
-    },
-    {
-      name: 'Unipept', cat: 'metaproteomics', icon: 'bi-diagram-2', logo: 'unipept.png',
-      desc: 'Tryptic-peptide-based taxonomic and functional analysis of metaproteome samples, with a public API.',
-      links: {
-        github: 'https://github.com/unipept/unipept',
-        web: 'https://unipept.ugent.be/',
-        paper: 'https://doi.org/10.1021/pr300576s',
-      },
-      devs: ['tim', 'pieter']
-    }
-  ];
-
-  // ── Community projects — shown in a separate 2-column grid below the tools ────
-  // Same fields as TOOLS (cat: 'community' for the accent/badge).
-  const COMMUNITY = [
-    {
-      name: 'ProteoBench', cat: 'community', icon: 'bi-balloon', logo: 'proteobench.png',
-      desc: 'Community-curated platform for comparing and benchmarking proteomics data analysis workflows.',
-      note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.',
-      links: {
-        github: 'https://github.com/Proteobench/ProteoBench',
-        web: 'https://proteobench.cubimed.rub.de/',
-        paper: 'https://doi.org/10.64898/2025.12.09.692895',
-      },
-      devs: ['robbin', 'robbe', 'caro', 'sam']
-    },
-    {
-      name: 'ProteomicsML', cat: 'community', icon: 'bi-journal-bookmark', logo: 'proteomicsml.svg',
-      desc: 'Open, community-driven datasets and tutorials for machine learning on proteomics data.',
-      note: 'Started at a 2022 <span class="tool-tile-note-hl">Lorentz Center</span> workshop.',
-      links: {
-        github: 'https://github.com/ProteomicsML/ProteomicsML',
-        web: 'https://www.proteomicsml.org/',
-        paper: 'https://doi.org/10.1021/acs.jproteome.2c00629',
-      },
-      devs: ['ralf', 'robbin']
-    },
-    {
-      name: 'Rusteomics', cat: 'community', icon: 'bi-gear-wide-connected', logo: 'rusteomics.png',
-      desc: 'Community effort building fast, reliable Rust libraries and tooling for mass spectrometry proteomics.',
-      note: 'A <a href="https://eubic-ms.org" target="_blank" rel="noopener noreferrer">EuBIC-MS</a> community initiative.',
-      links: {
-        web: 'https://rusteomics.eubic-ms.org/',
-      },
-      devs: ['kevin', 'ralf']
-    },
-    {
-      name: 'mzPeak', cat: 'community', icon: 'bi-layer-forward', logo: 'mzpeak.png',
-      desc: 'A scalable, interoperable, and future-ready mass spectrometry data format.',
-      note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.',
-      links: {
-        github: 'https://github.com/HUPO-PSI/mzPeak',
-        web: 'https://www.mzpeak.org/',
-        paper: 'https://doi.org/10.1021/acs.jproteome.5c00435',
-      },
-      devs: ['tim','ralf']
-    },
-    {
-      name: 'PSI-AI', cat: 'community', icon: 'bi-filetype-ai',
-      desc: 'Working group making proteomics data AI-ready and standardizing the use of AI in data analysis workflows.',
-      note: 'A <a href="https://www.psidev.info/" target="_blank" rel="noopener noreferrer">HUPO-PSI</a> community initiative.',
-      links: {
-        web: 'https://psi-ai.org/',
-      },
-      devs: ['ralf', 'tine', 'hari']
-    }
-  ];
-
-  // ── Link button rendering ────────────────────────────────────────────────
-  const LINK_META = {
-    github:   { icon: 'bi-github',            label: 'Code' },
-    docs:     { icon: 'bi-book',              label: 'Docs' },
-    pypi:     { icon: 'bi-box-seam',          label: 'PyPI' },
-    bioconda: { icon: 'bi-cpu',               label: 'Bioconda' },
-    web:      { icon: 'bi-globe',             label: 'Web app' },
-    api:      { icon: 'bi-braces',            label: 'API' },
-    paper:    { icon: 'bi-file-earmark-text', label: 'Paper', cls: 'tool-tile-link-paper' },
-    tutorial: { icon: 'bi-mortarboard-fill',  label: 'Tutorial', cls: 'tool-tile-link-tutorial' }
-  };
-
   const grid = document.getElementById('tools-grid');
+  const cards = Array.from(grid.children);
   const countEl = document.getElementById('tools-count');
   const emptyEl = document.getElementById('tools-empty');
   const searchInput = document.getElementById('tools-search-input');
   const searchClear = document.getElementById('tools-search-clear');
   const chips = Array.from(document.querySelectorAll('.tools-chip'));
-
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-
-  function buildCard(tool, index) {
-    const card = document.createElement('article');
-    card.className = 'tool-tile';
-    card.style.setProperty('--i', index);
-    card.dataset.cat = tool.cat;
-    card.dataset.haystack = (tool.name + ' ' + tool.desc + ' ' + (CATS[tool.cat] ? CATS[tool.cat].label : '')).toLowerCase();
-
-    let html = '';
-
-    // icon slot: tool logo if provided (falls back to the Bootstrap icon if the
-    // image is missing/broken, via onerror stripping .has-logo), else the icon
-    let iconInner = '<i class="bi ' + tool.icon + '"></i>';
-    if (tool.logo) {
-      iconInner = '<img src="../assets/images/tools/' + esc(tool.logo) + '" alt="' + esc(tool.name) + ' logo" '
-        + 'onerror="this.remove(); this.closest(\'.tool-tile-icon\').classList.remove(\'has-logo\')">'
-        + iconInner;
-    }
-    html += '<div class="tool-tile-top">'
-      + '<span class="tool-tile-icon' + (tool.logo ? ' has-logo' : '') + '">' + iconInner + '</span>'
-      + '<span class="tool-tile-cat">' + esc(CATS[tool.cat] ? CATS[tool.cat].label : tool.cat) + '</span>'
-      + '</div>';
-
-    html += '<h3 class="tool-tile-name">' + esc(tool.name) + '</h3>';
-    html += '<p class="tool-tile-desc">' + esc(tool.desc) + '</p>';
-    // optional small note (HTML allowed — authored here, e.g. a community link)
-    if (tool.note) {
-      html += '<p class="tool-tile-note">' + tool.note + '</p>';
-    }
-
-    // links — rendered in LINK_META key order (consistent everywhere; Paper then
-    // Tutorial come last). Legacy `papers: [{url}]` maps to links.paper as a fallback.
-    const links = Object.assign({}, tool.links);
-    if (!links.paper && tool.papers && tool.papers.length) {
-      links.paper = tool.papers[0].url;
-    }
-    let linksHtml = '';
-    Object.keys(LINK_META).forEach(function (key) {
-      if (links[key]) {
-        const m = LINK_META[key];
-        linksHtml += '<a class="tool-tile-link' + (m.cls ? ' ' + m.cls : '') + '" href="' + esc(links[key]) + '" title="' + m.label + '">'
-          + '<i class="bi ' + m.icon + '"></i><span>' + m.label + '</span></a>';
-      }
-    });
-    // "Coming soon" pill — sits where the links go, before any existing links
-    if (tool.comingSoon) {
-      linksHtml = '<span class="tool-tile-soon"><i class="bi bi-hourglass-split"></i>Coming soon</span>' + linksHtml;
-    }
-
-    html += '<div class="tool-tile-foot">';
-    // devs (own row, above the links) — each avatar links to that person's team entry
-    if (tool.devs && tool.devs.length) {
-      html += '<div class="tool-tile-devs">';
-      tool.devs.slice(0, 4).forEach(function (key) {
-        const devName = key.charAt(0).toUpperCase() + key.slice(1);
-        html += '<a class="tool-tile-dev-link" href="../team/index.html#member-' + esc(key) + '" title="' + esc(devName) + '">'
-          + '<img class="tool-tile-dev" src="../assets/images/' + esc(key) + '.jpg" alt="' + esc(devName) + '" '
-          + 'onerror="this.closest(\'.tool-tile-dev-link\').style.display=\'none\'">'
-          + '</a>';
-      });
-      html += '</div>';
-    }
-    html += '<div class="tool-tile-links">' + linksHtml + '</div>';
-    html += '</div>';
-
-    card.innerHTML = html;
-    return card;
-  }
-
-  // initial render
-  TOOLS.forEach(function (tool, i) { grid.appendChild(buildCard(tool, i)); });
-  const cards = Array.from(grid.children);
-
-  // community projects — separate static grid (not searched/filtered)
-  const communityGrid = document.getElementById('community-grid');
-  if (communityGrid) {
-    COMMUNITY.forEach(function (tool, i) { communityGrid.appendChild(buildCard(tool, i)); });
-  }
 
   // ── Filtering ──────────────────────────────────────────────────────────────
   let activeCat = 'all';

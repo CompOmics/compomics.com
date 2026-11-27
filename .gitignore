@@ -1,6 +1,7 @@
 # Quarto
 .quarto/
 _site/
+_jsonld/
 **/*.quarto_ipynb*
 /.luarc.json
 

@@ -37,7 +37,7 @@ CROSSREF_HEADERS = {
 }
 
 
-ORCID_FIELD = re.compile(r"""\borcid:\s*['"](\d{4}-\d{4}-\d{4}-\d{3}[\dX])['"]""")
+ORCID_FIELD = re.compile(r"""^\s*orcid:\s*['"]?(\d{4}-\d{4}-\d{4}-\d{3}[\dX])""", re.M)
 ORCID_LINE = re.compile(r"^\s*(\d{4}-\d{4}-\d{4}-\d{3}[\dX])\b")
 
 LOCAL_AFFILIATION = re.compile(r"\b(ghent|gent|ugent|vib)\b|flanders institute for biotechnology", re.I)
@@ -46,9 +46,9 @@ AFFILIATION_EXEMPT_ORCIDS = {"0000-0003-4277-658X"}  # Lennart Martens
 
 
 def read_orcid_ids() -> list[str]:
-    """Read the `orcid:` fields of the `memberData` entries in team/index.qmd,
-    followed by the iDs listed in publications/extra_orcids.txt."""
-    text = (TEAM_DIR / "index.qmd").read_text(encoding="utf-8")
+    """Read the `orcid:` fields in team/team.yml, followed by the iDs listed in
+    publications/extra_orcids.txt."""
+    text = (TEAM_DIR / "team.yml").read_text(encoding="utf-8")
     orcids = ORCID_FIELD.findall(text)
     if EXTRA_ORCIDS_FILE.exists():
         for line in EXTRA_ORCIDS_FILE.read_text(encoding="utf-8").splitlines():
@@ -260,7 +260,7 @@ def deduplicate(publications: list[dict]) -> list[dict]:
 def main():
     orcids = read_orcid_ids()
     if not orcids:
-        raise SystemExit("No ORCID IDs found. Add orcid: 'xxxx-xxxx-xxxx-xxxx' to the memberData entries in team/index.qmd.")
+        raise SystemExit("No ORCID IDs found. Add orcid: xxxx-xxxx-xxxx-xxxx to the entries in team/team.yml.")
 
     print(f"Found {len(orcids)} ORCID ID(s): {', '.join(orcids)}")
 
