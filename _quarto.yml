@@ -1,10 +1,12 @@
 project:
   type: website
   output-dir: _site
-  # Guard: fail the build loudly if the team page's inline memberData has a JS
-  # syntax error or a card with no data entry (both silently break card clicks).
+  # Guard: fail the build when team/team.yml is broken.
   pre-render:
-    - scripts/check-team-data.js
+    - scripts/check-team-data.py
+    - scripts/build-structured-data.py
+  post-render:
+    - scripts/build-llms-txt.py
   render:
     - "**/*.qmd"
     - "**/*.md"

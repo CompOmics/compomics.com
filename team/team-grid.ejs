@@ -1,0 +1,28 @@
+<%
+// Team cards and profiles from team.yml. Profiles are hidden until a card is clicked.
+// Quarto uses lodash templates: the dash tag escapes, the equals tag outputs raw HTML.
+%>
+```{=html}
+<% items.forEach((group) => { %>
+<h2 class="team-section-title"><%- group.section %></h2>
+<div class="team-grid team-grid-selectors">
+<% group.members.forEach((m) => { %>
+<div class="team-card-wrap" id="member-<%- m.key %>">
+<button type="button" class="team-card" data-member="<%- m.key %>">
+<img src="../assets/images/<%- m.key %>.jpg" class="team-photo" alt="<%- m.name %>">
+<div class="team-name"><%- m.name %></div>
+<% if (group.showRole) { %><div class="team-role"><%- m.role %></div><% } %>
+</button>
+<div class="team-profile" hidden>
+<div class="team-detail-header"><h3 class="no-anchor"><%- m.name %></h3><p class="team-detail-role"><%- m.role || '' %></p></div>
+<% if (m.about) { %><section class="team-detail-section"><h4 class="no-anchor">About</h4><p><%= m.about %></p></section><% } %>
+<% if (m.currentWork) { %><section class="team-detail-section"><h4 class="no-anchor">Current work</h4><p><%= m.currentWork %></p></section><% } %>
+<% if (m.recognition) { %><section class="team-detail-section"><h4 class="no-anchor">Recognition</h4><p><%= m.recognition %></p></section><% } %>
+<% if (m.publications && m.publications.length) { %><section class="team-detail-section"><h4 class="no-anchor">Key publications</h4><div class="team-pub-list"><% m.publications.forEach((p) => { %><a class="team-pub-item" href="<%- p.url %>" target="_blank" rel="noopener"><span class="team-pub-title"><%- p.title %></span><span class="team-pub-venue"><%- p.venue %></span></a><% }) %></div></section><% } %>
+<% if (m.email) { %><div class="team-detail-email"><i class="bi bi-envelope" aria-hidden="true"></i><a href="mailto:<%- m.email %>"><%- m.email %></a></div><% } %>
+</div>
+</div>
+<% }) %>
+</div>
+<% }) %>
+```
